@@ -12,7 +12,6 @@
   @include('partials.clients')
   @include('partials.services')
   @include('partials.testimonials')
-  @include('partials.portfolio')
   @include('partials.team')
   @include('partials.pricing')
   @include('partials.faq')

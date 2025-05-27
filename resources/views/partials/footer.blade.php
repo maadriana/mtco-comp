@@ -21,14 +21,17 @@
   <div class="container footer-top">
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6 footer-about">
-        <a href="{{ url('/') }}" class="d-flex align-items-center">
-          <span class="sitename">BizLand</span>
-        </a>
+        <a href="{{ url('/') }}" class="logo d-flex align-items-center">
+      <img src="{{ asset('assets/img/mtco-logo.png') }}" alt="MTCO Logo" height="40">
+      </a>
         <div class="footer-contact pt-3">
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p>16F The Salcedo Towers</p>
+          <p>169 H.V. de la Costa St.</p>
+          <p>Salcedo Village</p>
+          <p>Makati City 1227</p>
+          <p>Philippines</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+632 8887 1888</span></p>
+          <p><strong>Email:</strong> <span>contact@mtco.com.ph</span></p>
         </div>
       </div>
 
@@ -53,8 +56,8 @@
       </div>
 
       <div class="col-lg-4 col-md-12">
-        <h4>Follow Us</h4>
-        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+        <h4>Get In Touch</h4>
+        <p>For inquiries, you may call us through our hotline at (02) 8887-1888 or send an email to contact@mtco.com.ph</p>
         <div class="social-links d-flex">
           <a href="#"><i class="bi bi-twitter-x"></i></a>
           <a href="#"><i class="bi bi-facebook"></i></a>
