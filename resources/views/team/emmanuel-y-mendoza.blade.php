@@ -1,9 +1,20 @@
 @extends('layouts.app')
 
+@section('title', 'Emmanuel Y. Mendoza - Managing Partner')
+
 @section('content')
 
 <section class="team-member-detail py-5">
   <div class="container">
+
+<div class="mb-3">
+  <a href="{{ url('/#team') }}" class="btn btn-outline-secondary">
+    ← Back
+  </a>
+</div>
+
+    </div>
+
     <div class="text-center mb-4">
       <img src="{{ asset('assets/img/team/emmanuel-y-mendoza.jpeg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Emmanuel Y. Mendoza">
       <h2>Emmanuel Y. Mendoza</h2>

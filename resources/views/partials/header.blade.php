@@ -23,40 +23,32 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="{{ url('/#hero') }}">Home</a></li>
+          <li><a href="{{ url('/#about') }}">About</a></li>
           <li class="dropdown">
-          <a href="#services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-         <li><a href="#Audit and Assurance">Audit and Assurance</a></li>
-         <li><a href="#Business Advisory">Business Advisory</a></li>
-         <li><a href="#Outsourcing">Outsourcing</a></li>
-         <li><a href="#Business Restructuring and Insolvency">Business Restructuring and Insolvency</a></li>
-         <li><a href="#Corporate Finance and Advisory">Corporate Finance and Advisory</a></li>
-         <li><a href="#Forensic and Litigation Support">Forensic and Litigation Support</a></li>
-         <li><a href="#Governance, Risk and Internal Audit">Governance, Risk and Internal Audit</a></li>
-         <li><a href="#Taxation">Taxation</a></li>
-        </ul>
-       </li>
-          <li><a href="#team">People</a></li>
+  <a href="{{ url('/#services') }}"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+  <ul>
+    <li><a href="{{ route('services.audit') }}">Audit and Assurance</a></li>
+    <li><a href="{{ route('services.advisory') }}">Business Advisory</a></li>
+    <li><a href="{{ route('services.outsourcing') }}">Outsourcing</a></li>
+    <li><a href="{{ route('services.restructuring') }}">Business Restructuring and Insolvency</a></li>
+    <li><a href="{{ route('services.finance') }}">Corporate Finance and Advisory</a></li>
+    <li><a href="{{ route('services.forensic') }}">Forensic and Litigation Support</a></li>
+    <li><a href="{{ route('services.governance') }}">Governance, Risk and Internal Audit</a></li>
+    <li><a href="{{ route('services.taxation') }}">Taxation</a></li>
+  </ul>
+</li>
+
+          <li><a href="{{ url('/#team') }}">People</a></li>
           <li class="dropdown"><a href="#"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="#current-vacancies">Current Vacancies</a></li>
+              <li><a href="#experienced-professionals">Experienced Professionals</a></li>
+              <li><a href="#graduate">Graduate</a></li>
+              <li><a href="#internship-opportunities">Internship Opportunities</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ url('/#contact') }}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

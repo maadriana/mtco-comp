@@ -1,9 +1,18 @@
 @extends('layouts.app')
 
+@section('title', 'Pamela Grace S. Tangso - Partner')
+
 @section('content')
 
 <section class="team-member-detail py-5">
   <div class="container">
+    <div class="mb-3">
+  <a href="{{ url('/#team') }}" class="btn btn-outline-secondary">
+    ← Back
+  </a>
+</div>
+
+    </div>
     <div class="text-center mb-4">>
     <img src="{{ asset('assets/img/team/pamela-grace-s-tangso.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Pamela Grace S. Tangso">
     <h2>Pamela Grace S. Tangso</h2>

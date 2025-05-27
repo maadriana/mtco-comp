@@ -15,7 +15,7 @@
         <div class="icon">
           <i class="bi bi-shield-check"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.audit') }}" class="stretched-link">
           <h3>Audit and Assurance</h3>
         </a>
       </div>
@@ -26,7 +26,7 @@
         <div class="icon">
           <i class="bi bi-briefcase"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.advisory') }}" class="stretched-link">
           <h3>Business Advisory</h3>
         </a>
       </div>
@@ -37,7 +37,7 @@
         <div class="icon">
           <i class="bi bi-people"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.outsourcing') }}" class="stretched-link">
           <h3>Outsourcing</h3>
         </a>
       </div>
@@ -48,7 +48,7 @@
         <div class="icon">
           <i class="bi bi-arrow-repeat"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.restructuring') }}" class="stretched-link">
           <h3>Business Restructuring and Insolvency</h3>
         </a>
       </div>
@@ -60,7 +60,7 @@
         <div class="icon">
           <i class="bi bi-currency-exchange"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.finance') }}" class="stretched-link">
           <h3>Corporate Finance and Advisory</h3>
         </a>
       </div>
@@ -71,7 +71,7 @@
         <div class="icon">
           <i class="bi bi-search"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.forensic') }}" class="stretched-link">
           <h3>Forensic and Litigation Support</h3>
         </a>
       </div>
@@ -82,7 +82,7 @@
         <div class="icon">
           <i class="bi bi-shield-lock"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.governance') }}" class="stretched-link">
           <h3>Governance, Risk and Internal Audit</h3>
         </a>
       </div>
@@ -93,7 +93,7 @@
         <div class="icon">
           <i class="bi bi-file-earmark-bar-graph"></i>
         </div>
-        <a href="#" class="stretched-link">
+        <a href="{{ route('services.taxation') }}" class="stretched-link">
           <h3>Taxation</h3>
         </a>
       </div>

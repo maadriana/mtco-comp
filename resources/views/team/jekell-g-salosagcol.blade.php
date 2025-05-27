@@ -1,9 +1,18 @@
 @extends('layouts.app')
 
+@section('title', 'Jekell G. Salosagcol - External Quality Assurance Consultant')
+
 @section('content')
 
 <section class="team-member-detail py-5">
   <div class="container">
+    <div class="mb-3">
+  <a href="{{ url('/#team') }}" class="btn btn-outline-secondary">
+    ← Back
+  </a>
+</div>
+
+    </div>
     <div class="text-center mb-4">
     <img src="{{ asset('assets/img/team/jekell-g-salosagcol.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Jekell G. Salosagcol">
     <h2>Jekell G. Salosagcol</h2>
