@@ -4,7 +4,17 @@
   <div class="container section-title" data-aos="fade-up">
     <h2>Services</h2>
     <p><span>Check Our</span> <span class="description-title">Services</span></p>
-  </div><!-- End Section Title -->
+
+    <!-- New Descriptive Text -->
+    <div style="max-width: 900px; margin: 0 auto; padding: 1rem 0; text-align: justify;">
+  <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
+    Mendoza Tugano &amp; Co., CPAs (MTC) operates as a comprehensive firm, offering an array of services that encompass accounting services, assurance, tax services, financial advisory, and consulting. We extend our expertise to both privately held enterprises and publicly listed companies. Our commitment to excellence and leadership is exemplified by the unwavering dedication of our highly skilled and passionate experts.
+  </p>
+  <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
+    Each of our clients enjoys the benefits of collaborative teamwork, bringing together diverse skills and proficiencies. This collaborative synergy is expertly guided by our partners, all of whom are committed to addressing your unique requirements. The solutions provided by MTC consistently adhere to the highest standards of quality, ensuring they are delivered with precision, timeliness, responsiveness, and thoroughness.
+  </p>
+</div>
+    <!-- End Descriptive Text -->
 
   <div class="container">
   <div class="row gy-4">

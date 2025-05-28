@@ -1955,21 +1955,44 @@ section,
 # Starter Section Section
 --------------------------------------------------------------*/
 
-.team-member-detail .description p {
-    text-align: justify;
-    text-indent: 2em;
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444444;
+  max-width: 1100px;
+  margin: 1.7rem auto;
+  text-align: justify !important;
+  padding: 0 1rem;
 }
 
-.team-member-detail .email {
-    color: #444444;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    text-align: center;
-    text-indent: 0;
+/* Default: Desktop view with sticky behavior */
+.back-button {
+  position: sticky;
+  top: 7rem;
+  z-index: 1;
+  background: transparent;
+  width: fit-content;
+  margin-left: 1rem;
 }
 
-.team-member-detail .description {
-    max-width: 800px;
-    margin: 0 auto;
+.back-button a.btn:hover {
+  background-color: #326D78;
+  color: white;
+  border-color: #326D78;
+}
+
+
+/* Below 1025px: behaves normally (not sticky) */
+@media (max-width: 1024px) {
+  .back-button {
+    position: relative;
+    top: auto;
+    margin-left: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .back-button a.btn {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+  }
 }
