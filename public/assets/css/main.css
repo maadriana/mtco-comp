@@ -1996,3 +1996,22 @@ section,
     padding: 0.45rem 0.9rem;
   }
 }
+
+/* Shared Box Style for Service & Career Cards */
+.service-item {
+  padding: 30px;
+  background: #fff;
+  border: 0px solid #f0f0f0;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+

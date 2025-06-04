@@ -1,116 +1,66 @@
-<!-- Services Section -->
-<section id="services" class="services section">
+<!-- Careers Section -->
+<section id="careers" class="careers section">
+
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Services</h2>
-    <p><span>Check Our</span> <span class="description-title">Services</span></p>
+    <h2>Careers</h2>
+    <p><span>Explore</span> <span class="description-title">Opportunities</span></p>
 
-    <!-- New Descriptive Text -->
-    <div style="max-width: 900px; margin: 0 auto; padding: 1rem 0; text-align: justify;">
-  <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
-    Mendoza Tugano &amp; Co., CPAs (MTC) operates as a comprehensive firm, offering an array of services that encompass accounting services, assurance, tax services, financial advisory, and consulting. We extend our expertise to both privately held enterprises and publicly listed companies. Our commitment to excellence and leadership is exemplified by the unwavering dedication of our highly skilled and passionate experts.
-  </p>
-  <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
-    Each of our clients enjoys the benefits of collaborative teamwork, bringing together diverse skills and proficiencies. This collaborative synergy is expertly guided by our partners, all of whom are committed to addressing your unique requirements. The solutions provided by MTC consistently adhere to the highest standards of quality, ensuring they are delivered with precision, timeliness, responsiveness, and thoroughness.
-  </p>
-</div>
-    <!-- End Descriptive Text -->
-
-  <div class="container">
-  <div class="row gy-4">
-
-    <!-- First 4 (Top Row) -->
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-shield-check"></i>
-        </div>
-        <a href="{{ route('services.audit') }}" class="stretched-link">
-          <h3>Audit and Assurance</h3>
-        </a>
-      </div>
+    <!-- Descriptive Text -->
+    <div style="max-width: 900px; margin: 0 auto; padding: 1rem 0 0 0; text-align: justify;">
+      <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
+        At Mendoza Tugano & Co., we encourage people within the firm to be their best and our culture empowers individuality.
+      </p>
+      <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
+        The firm’s goal is to promote a working environment where individual differences are respected and valued, and everyone has the opportunity to excel. With this insight, we are able to offer better commercial solutions.
+      </p>
+      <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
+        Join Mendoza Tugano & Co. and you will discover an ambitious firm with strong leadership and a shared direction.  We provide exceptional service to our clients, stimulating work and excellent development for our people.  Our working culture is inclusive, collaborative and supportive. We want to allow our employees to reach their full potential.
+      </p>
+      <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0 1rem 0; color: #444444; font-weight: normal;">
+        We believe in rewarding outstanding performance as we want to retain our talent.
+      </p>
     </div>
-
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-briefcase"></i>
-        </div>
-        <a href="{{ route('services.advisory') }}" class="stretched-link">
-          <h3>Business Advisory</h3>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-people"></i>
-        </div>
-        <a href="{{ route('services.outsourcing') }}" class="stretched-link">
-          <h3>Outsourcing</h3>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-arrow-repeat"></i>
-        </div>
-        <a href="{{ route('services.restructuring') }}" class="stretched-link">
-          <h3>Business Restructuring and Insolvency</h3>
-        </a>
-      </div>
-    </div>
-
-    <!-- Next 4 (Bottom Row) -->
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-currency-exchange"></i>
-        </div>
-        <a href="{{ route('services.finance') }}" class="stretched-link">
-          <h3>Corporate Finance and Advisory</h3>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-search"></i>
-        </div>
-        <a href="{{ route('services.forensic') }}" class="stretched-link">
-          <h3>Forensic and Litigation Support</h3>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="700">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-shield-lock"></i>
-        </div>
-        <a href="{{ route('services.governance') }}" class="stretched-link">
-          <h3>Governance, Risk and Internal Audit</h3>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="800">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="bi bi-file-earmark-bar-graph"></i>
-        </div>
-        <a href="{{ route('services.taxation') }}" class="stretched-link">
-          <h3>Taxation</h3>
-        </a>
-      </div>
-    </div>
-
   </div>
-</div>
 
-  </div>
-</section><!-- /Services Section -->
+<!-- Featured Services Section -->
+  <section id="featured-services" class="featured-services section" style="padding-top: 0;">
+    <div class="container">
+      <div class="row gy-4">
+
+        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-megaphone icon"></i></div>
+            <h4 style="font-size: 1.5rem;"><a href="{{ route('careers.vacancies') }}" class="stretched-link">Current Vacancies</a></h4>
+            <p style="font-size: 1.1rem;">Explore our current job openings and become part of our growing team.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-person-badge icon"></i></div>
+            <h4 style="font-size: 1.5rem;"><a href="{{ route('careers.professionals') }}" class="stretched-link">Experienced Professionals</a></h4>
+            <p style="font-size: 1.1rem;">Bring your expertise and advance your career in a dynamic work environment.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-mortarboard icon"></i></div>
+            <h4 style="font-size: 1.5rem;"><a href="{{ route('careers.graduate') }}" class="stretched-link">Graduate</a></h4>
+            <p style="font-size: 1.1rem;">Start your professional journey with structured learning and mentorship.</p>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-journal-code icon"></i></div>
+            <h4 style="font-size: 1.5rem;"><a href="{{ route('careers.internship') }}" class="stretched-link">Internship Opportunities</a></h4>
+            <p style="font-size: 1.1rem;">Gain valuable real-world experience through our internship programs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</section>

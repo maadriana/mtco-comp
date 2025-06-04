@@ -38,16 +38,17 @@
     <li><a href="{{ route('services.taxation') }}">Taxation</a></li>
   </ul>
 </li>
-
-          <li><a href="{{ url('/#team') }}">People</a></li>
-          <li class="dropdown"><a href="{{ route('careers') }}"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+         <li><a href="{{ url('/#team') }}">People</a></li>
+ <li class="dropdown">
+  <a href="{{ url('/#careers') }}"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
   <ul>
-    <li><a href="{{ route('careers') }}#current-vacancies">Current Vacancies</a></li>
-    <li><a href="{{ route('careers') }}#experienced-professionals">Experienced Professionals</a></li>
-    <li><a href="{{ route('careers') }}#graduate">Graduate</a></li>
-    <li><a href="{{ route('careers') }}#internship-opportunities">Internship Opportunities</a></li>
+    <li><a href="{{ route('careers.vacancies') }}">Current Vacancies</a></li>
+    <li><a href="{{ route('careers.professionals') }}">Experienced Professionals</a></li>
+    <li><a href="{{ route('careers.graduate') }}">Graduate</a></li>
+    <li><a href="{{ route('careers.internship') }}">Internship Opportunities</a></li>
   </ul>
 </li>
+ <li><a href="{{ url('/') }}">International</a></li>
           <li><a href="{{ url('/#contact') }}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

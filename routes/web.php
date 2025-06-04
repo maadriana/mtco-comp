@@ -26,3 +26,10 @@ Route::view('/services/corporate-finance', 'services.corporate-finance')->name('
 Route::view('/services/forensic-support', 'services.forensic-support')->name('services.forensic');
 Route::view('/services/governance-risk', 'services.governance-risk')->name('services.governance');
 Route::view('/services/taxation', 'services.taxation')->name('services.taxation');
+
+
+// Careers subpages (blade files already exist)
+Route::view('/careers/current-vacancies', 'careers.current-vacancies')->name('careers.vacancies');
+Route::view('/careers/experienced-professionals', 'careers.experienced-professionals')->name('careers.professionals');
+Route::view('/careers/graduate', 'careers.graduate')->name('careers.graduate');
+Route::view('/careers/internship-opportunities', 'careers.internship-opportunities')->name('careers.internship');

@@ -5,7 +5,6 @@
 @section('content')
 
   @include('partials.hero')
-  @include('partials.featured-services')
   @include('partials.about')
   @include('partials.services')
   @include('partials.testimonials')
