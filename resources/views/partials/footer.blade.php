@@ -38,21 +38,25 @@
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          <li><a href="{{ url('/#hero') }}"><i class="bi bi-chevron-right"></i>Home</a></li>
+          <li><a href="{{ url('/#about') }}"><i class="bi bi-chevron-right"></i>About us</a></li>
+          <li><a href="{{ url('/#services') }}"><i class="bi bi-chevron-right"></i>Services</a></li>
+          <li><a href="{{ url('/#hero') }}"><i class="bi bi-chevron-right"></i>Term of service</a></li>
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Our Services</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-        </ul>
+    <li><a href="{{ route('services.audit') }}"><i class="bi bi-chevron-right"></i>Audit and Assurance</a></li>
+    <li><a href="{{ route('services.advisory') }}"><i class="bi bi-chevron-right"></i>Business Advisory</a></li>
+    <li><a href="{{ route('services.outsourcing') }}"><i class="bi bi-chevron-right"></i>Outsourcing</a></li>
+    <li><a href="{{ route('services.restructuring') }}"><i class="bi bi-chevron-right"></i>Business Restructuring and Insolvency</a></li>
+    <li><a href="{{ route('services.finance') }}"><i class="bi bi-chevron-right"></i>Corporate Finance and Advisory</a></li>
+    <li><a href="{{ route('services.forensic') }}"><i class="bi bi-chevron-right"></i>Forensic and Litigation Support</a></li>
+    <li><a href="{{ route('services.governance') }}"><i class="bi bi-chevron-right"></i>Governance, Risk and Internal Audit</a></li>
+    <li><a href="{{ route('services.taxation') }}"><i class="bi bi-chevron-right"></i>Taxation</a></li>
+  </ul>
       </div>
 
       <div class="col-lg-4 col-md-12">

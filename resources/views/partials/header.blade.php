@@ -40,7 +40,7 @@
 </li>
 
           <li><a href="{{ url('/#team') }}">People</a></li>
-          <li class="dropdown"><a href="#"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="{{ url('/#careers') }}"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#current-vacancies">Current Vacancies</a></li>
               <li><a href="#experienced-professionals">Experienced Professionals</a></li>
