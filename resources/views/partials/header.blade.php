@@ -40,14 +40,14 @@
 </li>
 
           <li><a href="{{ url('/#team') }}">People</a></li>
-          <a href="{{ url('/#careers') }}"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#current-vacancies">Current Vacancies</a></li>
-              <li><a href="#experienced-professionals">Experienced Professionals</a></li>
-              <li><a href="#graduate">Graduate</a></li>
-              <li><a href="#internship-opportunities">Internship Opportunities</a></li>
-            </ul>
-          </li>
+          <li class="dropdown"><a href="{{ route('careers') }}"><span>Careers</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+  <ul>
+    <li><a href="{{ route('careers') }}#current-vacancies">Current Vacancies</a></li>
+    <li><a href="{{ route('careers') }}#experienced-professionals">Experienced Professionals</a></li>
+    <li><a href="{{ route('careers') }}#graduate">Graduate</a></li>
+    <li><a href="{{ route('careers') }}#internship-opportunities">Internship Opportunities</a></li>
+  </ul>
+</li>
           <li><a href="{{ url('/#contact') }}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
