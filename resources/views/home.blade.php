@@ -7,7 +7,6 @@
   @include('partials.hero')
   @include('partials.about')
   @include('partials.services')
-  @include('partials.testimonials')
   @include('partials.team')
   @include('partials.careers')
   @include('partials.faq')
