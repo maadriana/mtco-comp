@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section id="audit-and-assurance" class="py-5">
+<section id="audit-and-assurance" class="py-5" data-aos="fade-up">
   <div class="container">
 
     <!-- Back Button -->

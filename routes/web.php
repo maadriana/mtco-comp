@@ -33,3 +33,7 @@ Route::view('/careers/current-vacancies', 'careers.current-vacancies')->name('ca
 Route::view('/careers/experienced-professionals', 'careers.experienced-professionals')->name('careers.professionals');
 Route::view('/careers/graduate', 'careers.graduate')->name('careers.graduate');
 Route::view('/careers/internship-opportunities', 'careers.internship-opportunities')->name('careers.internship');
+
+Route::get('/about', function () {
+return view('partials.about');
+})->name('about');

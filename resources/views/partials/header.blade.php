@@ -24,7 +24,6 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ url('/#hero') }}">Home</a></li>
-          <li><a href="{{ url('/#about') }}">About</a></li>
           <li class="dropdown">
   <a href="{{ url('/#services') }}"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
   <ul>
@@ -49,9 +48,10 @@
   </ul>
 </li>
  <li><a href="{{ url('/') }}">International</a></li>
-          <li><a href="{{ url('/#contact') }}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+  <li><a href="{{ url('/#contact') }}">Contact</a></li>
+  <li><a href="{{ route('about') }}">About</a></li>
+</ul>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
     </div>
   </div>
