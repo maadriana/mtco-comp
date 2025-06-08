@@ -2,7 +2,7 @@
 
   <div class="container footer-top">
     <div class="row gy-4">
-      <div class="col-lg-4 col-md-6 footer-about">
+      <div class="col-lg-3 col-md-6 footer-about">
         <a href="{{ url('/') }}" class="logo d-flex align-items-center">
       <img src="{{ asset('assets/img/mtco-logo.png') }}" alt="MTCO Logo" height="40">
       </a>
@@ -17,31 +17,31 @@
         </div>
       </div>
 
-      <div class="col-lg-2 col-md-3 footer-links">
+      <div class="col-lg-3 col-md-3 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><a href="{{ url('/#hero') }}"><i class="bi bi-chevron-right"></i>Home</a></li>
-          <li><a href="{{ url('/#about') }}"><i class="bi bi-chevron-right"></i>About us</a></li>
-          <li><a href="{{ url('/#services') }}"><i class="bi bi-chevron-right"></i>Services</a></li>
-          <li><a href="{{ url('/#hero') }}"><i class="bi bi-chevron-right"></i>Term of service</a></li>
+          <li><a href="{{ url('/#hero') }}">Home</a></li>
+          <li><a href="{{ route('about') }}">About us</a></li>
+          <li><a href="{{ url('/#careers') }}">Careers</a></li>
+          <li><a href="{{ url('/#team') }}">People</a></li>
         </ul>
       </div>
 
-      <div class="col-lg-2 col-md-3 footer-links">
+      <div class="col-lg-3 col-md-3 footer-links">
         <h4>Our Services</h4>
         <ul>
-    <li><a href="{{ route('services.audit') }}"><i class="bi bi-chevron-right"></i>Audit and Assurance</a></li>
-    <li><a href="{{ route('services.advisory') }}"><i class="bi bi-chevron-right"></i>Business Advisory</a></li>
-    <li><a href="{{ route('services.outsourcing') }}"><i class="bi bi-chevron-right"></i>Outsourcing</a></li>
-    <li><a href="{{ route('services.restructuring') }}"><i class="bi bi-chevron-right"></i>Business Restructuring and Insolvency</a></li>
-    <li><a href="{{ route('services.finance') }}"><i class="bi bi-chevron-right"></i>Corporate Finance and Advisory</a></li>
-    <li><a href="{{ route('services.forensic') }}"><i class="bi bi-chevron-right"></i>Forensic and Litigation Support</a></li>
-    <li><a href="{{ route('services.governance') }}"><i class="bi bi-chevron-right"></i>Governance, Risk and Internal Audit</a></li>
-    <li><a href="{{ route('services.taxation') }}"><i class="bi bi-chevron-right"></i>Taxation</a></li>
+    <li><a href="{{ route('services.audit') }}">Audit and Assurance</a></li>
+    <li><a href="{{ route('services.advisory') }}">Business Advisory</a></li>
+    <li><a href="{{ route('services.outsourcing') }}">Outsourcing</a></li>
+    <li><a href="{{ route('services.restructuring') }}">Business Restructuring and Insolvency</a></li>
+    <li><a href="{{ route('services.finance') }}">Corporate Finance and Advisory</a></li>
+    <li><a href="{{ route('services.forensic') }}">Forensic and Litigation Support</a></li>
+    <li><a href="{{ route('services.governance') }}">Governance, Risk and Internal Audit</a></li>
+    <li><a href="{{ route('services.taxation') }}">Taxation</a></li>
   </ul>
       </div>
 
-      <div class="col-lg-4 col-md-12">
+      <div class="col-lg-3 col-md-12">
         <h4>Get In Touch</h4>
         <p>For inquiries, you may call us through our hotline at (02) 8887-1888 or send an email to contact@mtco.com.ph</p>
         <div class="social-links d-flex">

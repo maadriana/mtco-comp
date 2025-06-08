@@ -37,3 +37,11 @@ Route::view('/careers/internship-opportunities', 'careers.internship-opportuniti
 Route::get('/about', function () {
 return view('partials.about');
 })->name('about');
+
+Route::get('/current-vacancies/external-audit', function () {
+    return view('current-vacancies.external-audit');
+})->name('careers.external-audit');
+
+Route::get('/current-vacancies/accounting-services', function () {
+    return view('current-vacancies.accounting-services');
+})->name('careers.accounting-services');

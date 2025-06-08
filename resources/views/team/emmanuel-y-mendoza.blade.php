@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="team-member-detail py-5">
+<section class="team-member-detail py-5" data-aos="fade-up">
   <div class="container">
 
     <!-- Back Button -->
@@ -18,10 +18,14 @@
     <!-- Profile Section -->
     <div class="text-center mb-4">
       <img src="{{ asset('assets/img/team/emmanuel-y-mendoza.jpeg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Emmanuel Y. Mendoza">
-      <h2>Emmanuel Y. Mendoza</h2>
-      <h4 class="text-muted">Managing Partner</h4>
-      <p class="email"><a href="mailto:eymendoza@mtco.com.ph">eymendoza@mtco.com.ph</a></p>
-    </div>
+      <h2 class="fw-bold mb-1" style="color: #2f5d62;">Emmanuel Y. Mendoza</h2>
+        <h5 class="text-muted">Managing Partner</h5>
+        <p class="mt-2">
+          <a href="mailto:eymendoza@mtco.com.ph" class="text-decoration-none" style="color: #007bff;">
+            eymendoza@mtco.com.ph
+          </a>
+        </p>
+      </div>
 
     <!-- Bio Content -->
     <div class="text-start mt-4 description">

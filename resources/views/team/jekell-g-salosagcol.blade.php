@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="team-member-detail py-5">
+<section class="team-member-detail py-5" data-aos="fade-up">
   <div class="container">
 
     <!-- Back Button -->
@@ -17,10 +17,14 @@
     <!-- Profile Header -->
     <div class="text-center mb-4">
       <img src="{{ asset('assets/img/team/jekell-g-salosagcol.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Jekell G. Salosagcol">
-      <h2>Jekell G. Salosagcol</h2>
-      <h4 class="text-muted">External Quality Assurance Consultant</h4>
-      <p class="email"><a href="mailto:jekell.salosagcol@mtco.com.ph">jekell.salosagcol@mtco.com.ph</a></p>
-    </div>
+      <h2 class="fw-bold mb-1" style="color: #2f5d62;">Jekell G. Salosagcol</h2>
+        <h5 class="text-muted">External Quality Assurance Consultant</h5>
+        <p class="mt-2">
+          <a href="mailto:ekell.salosagcol@mtco.com.ph" class="text-decoration-none" style="color: #007bff;">
+            ekell.salosagcol@mtco.com.ph
+          </a>
+        </p>
+      </div>
 
     <!-- Bio Content -->
     <div class="description">

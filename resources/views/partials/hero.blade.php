@@ -6,7 +6,7 @@
         <h1>Welcome to <span>Mendoza Tugano & Co., CPAs</span></h1>
         <p>Preserving a legacy of excellence</p>
         <div class="d-flex">
-          <a href="#about" class="btn-get-started">Get Started</a>
+          <li><a href="{{ url('/#contact') }}" class="btn-get-started">Connect with us</a>
           </a>
         </div>
       </div>

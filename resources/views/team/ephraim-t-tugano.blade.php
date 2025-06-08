@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="team-member-detail py-5">
+<section class="team-member-detail py-5" data-aos="fade-up">
   <div class="container">
 
     <!-- Back Button -->
@@ -18,10 +18,14 @@
     <!-- Profile Section -->
     <div class="text-center mb-4">
       <img src="{{ asset('assets/img/team/ephraim-t-tugano.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Ephraim T. Tugano">
-      <h2>Ephraim T. Tugano</h2>
-      <h4 class="text-muted">Partner</h4>
-      <p class="email"><a href="mailto:ephraim.tugano@mtco.com.ph">ephraim.tugano@mtco.com.ph</a></p>
-    </div>
+     <h2 class="fw-bold mb-1" style="color: #2f5d62;">Ephraim T. Tugano</h2>
+        <h5 class="text-muted">Partner</h5>
+        <p class="mt-2">
+          <a href="mailto:ephraim.tugano@mtco.com.ph" class="text-decoration-none" style="color: #007bff;">
+            ephraim.tugano@mtco.com.ph
+          </a>
+        </p>
+      </div>
 
     <!-- Bio Content -->
     <div class="description">

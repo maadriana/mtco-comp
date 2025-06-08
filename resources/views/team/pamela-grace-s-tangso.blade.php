@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="team-member-detail py-5">
+<section class="team-member-detail py-5" data-aos="fade-up">
   <div class="container">
 
     <!-- Back Button -->
@@ -18,9 +18,13 @@
     <!-- Profile Header -->
     <div class="text-center mb-4">
       <img src="{{ asset('assets/img/team/pamela-grace-s-tangso.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Pamela Grace S. Tangso">
-      <h2>Pamela Grace S. Tangso</h2>
-      <h4 class="text-muted">Partner</h4>
-      <p class="email"><a href="mailto:pamelagrace.tangso@mtco.com.ph">pamelagrace.tangso@mtco.com.ph</a></p>
+       <h2 class="fw-bold mb-1" style="color: #2f5d62;">Pamela Grace S. Tangso</h2>
+        <h5 class="text-muted">Partner</h5>
+        <p class="mt-2">
+          <a href="mailto:epamelagrace.tangso@mtco.com.ph" class="text-decoration-none" style="color: #007bff;">
+            pamelagrace.tangso@mtco.com.ph
+          </a>
+        </p>
     </div>
 
     <!-- Bio Content -->
