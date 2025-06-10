@@ -4,29 +4,30 @@
 
 @section('content')
 
-<section id="external-audit-associate" class="py-5" data-aos="fade-up">
+<section id="external-audit-associate" class="pt-4 pb-5" data-aos="fade-up">
   <div class="container">
 
-    <!-- Back Button -->
-    <div class="back-button">
+    <!-- Back Button (original style) -->
+    <div class="back-button mb-3">
       <a href="{{ url('/careers/current-vacancies') }}" class="btn btn-outline-secondary">
         ← Back
       </a>
     </div>
 
-    <!-- Title -->
-    <div class="text-left mb-4" style="max-width: 900px; margin: 0 auto;">
-  <h2 style="color: #22646e; font-weight: bold; font-size: 2rem; text-align: center; margin-bottom: 1.5rem;">
-    External Audit Associate
-  </h2>
-  <p style="font-size: 1.15rem; color: #444;"><strong>Department:</strong> Audit and Assurance</p>
-  <p style="font-size: 1.15rem; color: #444;"><strong>Job Type:</strong> Permanent</p>
-</div>
+    <!-- Title & Meta Info -->
+    <div class="text-center mb-3" style="max-width: 900px; margin: 0 auto;">
+      <h2 style="color: #22646e; font-weight: bold; font-size: 2rem; margin-bottom: 1rem;">
+        External Audit Associate
+      </h2>
+      <p style="font-size: 1.15rem; color: #444;"><strong>Department:</strong> Audit and Assurance</p>
+      <p style="font-size: 1.15rem; color: #444;"><strong>Job Type:</strong> Permanent</p>
+    </div>
 
     <!-- Main Content -->
     <div style="max-width: 900px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; color: #444444; text-align: justify;">
 
-      <h4 style="font-weight: bold; margin-top: 1.5rem;">Responsibilities:</h4>
+      <!-- Responsibilities -->
+      <h4 style="font-weight: bold; margin-top: 2rem;">Responsibilities:</h4>
       <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
         <li>Assists in planning work on assigned segments of an audit</li>
         <li>Recommends the means of obtaining, analyzing and evaluating evidence</li>
@@ -38,6 +39,7 @@
         <li>Performs other duties as may be assigned</li>
       </ul>
 
+      <!-- Qualifications -->
       <h4 style="font-weight: bold; margin-top: 2rem;">Qualifications:</h4>
       <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
         <li>Holder of Bachelor of Science in Accountancy, or its equivalent</li>
@@ -48,6 +50,7 @@
         <li>Able to work in a fast-paced changing environment</li>
       </ul>
 
+      <!-- Requirements -->
       <h4 style="font-weight: bold; margin-top: 2rem;">Requirements:</h4>
       <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
         <li>Curriculum vitae / resume</li>
@@ -59,9 +62,9 @@
       </ul>
 
       <!-- Action Buttons -->
-      <div class="mt-4 d-flex gap-2">
-        <a href="#" class="btn btn-outline-primary">APPLY</a>
-        <a href="{{ url('/careers/current-vacancies') }}" class="btn btn-outline-danger">RETURN</a>
+      <div class="mt-4 d-flex flex-wrap gap-2 justify-content-center">
+        <a href="#" class="btn btn-outline-primary px-4 rounded-pill shadow-sm">APPLY</a>
+        <a href="{{ url('/careers/current-vacancies') }}" class="btn btn-outline-danger px-4 rounded-pill shadow-sm">RETURN</a>
       </div>
 
     </div>

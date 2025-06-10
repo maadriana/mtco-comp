@@ -23,7 +23,7 @@
     <div class="row gy-3">
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <img src="{{ asset('assets/img/' . getContent('about_image', 'about.jpg')) }}" alt="About" class="img-fluid">
+        <img src="{{ asset('assets/img/' . getContent('about_image', 'about.jpg')) }}" alt="About Image" style="max-width: 100%; height: auto;">
       </div>
 
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
