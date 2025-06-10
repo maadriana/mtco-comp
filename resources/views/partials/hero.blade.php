@@ -23,7 +23,11 @@
     <div class="row gy-3">
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <img src="{{ asset('assets/img/' . getContent('about_image', 'about.jpg')) }}" alt="About Image" style="max-width: 100%; height: auto;">
+        @if(hasImageContent('about_image'))
+          <img src="{{ getContent('about_image') }}" alt="About Image" style="max-width: 100%; height: auto;">
+        @else
+          <img src="{{ asset('assets/img/about.jpg') }}" alt="About Image" style="max-width: 100%; height: auto;">
+        @endif
       </div>
 
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -41,7 +45,6 @@
     </div>
   </div>
 </section>
-
 
 <style>
   .custom-btn {
