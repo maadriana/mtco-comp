@@ -8,18 +8,19 @@
 <div style="position: relative; margin-top: -1.5rem;">
   <img src="{{ asset('assets/img/job-accounting.jpg') }}" alt="Accounting Team" style="width: 100%; height: 400px; object-fit: cover;">
 
-<!-- Breadcrumb Overlay -->
-<div style="position: absolute; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
-      <li class="breadcrumb-item">
-        <a href="{{ url('/') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">
-          <i class="fas fa-home me-1"></i>Home
-        </a>
-      </li>
-      <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">About</li>
-    </ol>
-  </nav>
+  <!-- Breadcrumb Overlay -->
+  <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
+        <li class="breadcrumb-item">
+          <a href="{{ url('/') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">
+            <i class="fas fa-home me-1"></i>Home
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">About</li>
+      </ol>
+    </nav>
+  </div>
 </div>
 
 <section id="about" class="py-5" data-aos="fade-up">
@@ -49,19 +50,11 @@
     <div class="mb-6" style="padding-bottom: 5rem;">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <div class="position-relative">
-            <img src="{{ asset('assets/img/job-accounting.jpg') }}" alt="Vision and Mission"
-                 class="img-fluid rounded shadow-sm" style="width: 100%; height: 350px; object-fit: cover;">
-            <div class="position-absolute top-0 start-0 w-100 h-100 rounded"
-                 style="background: linear-gradient(135deg, rgba(50, 109, 120, 0.1), rgba(50, 109, 120, 0.05));"></div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="ps-lg-4">
+          <div class="pe-lg-4">
             <div class="mb-4">
               <div class="d-flex align-items-center mb-3">
                 <div class="me-3" style="width: 4px; height: 40px; background: #326D78; border-radius: 2px;"></div>
-                <h4 class="fw-bold mb-0" style="color: #326D78;">Our Vision</h4>
+                <h3 class="fw-bold mb-0" style="color: #333; font-size: 1.8rem; font-style: italic;">Our Vision</h3>
               </div>
               <p class="text-muted mb-0" style="font-size: 1.1rem; line-height: 1.7;">
                 To lead the audit and accounting industry through our unwavering "Passion for Excellence", becoming a trusted standard for ethical innovation and generational impact.
@@ -71,7 +64,7 @@
             <div>
               <div class="d-flex align-items-center mb-3">
                 <div class="me-3" style="width: 4px; height: 40px; background: #326D78; border-radius: 2px;"></div>
-                <h4 class="fw-bold mb-0" style="color: #326D78;">Our Mission</h4>
+                <h3 class="fw-bold mb-0" style="color: #333; font-size: 1.8rem; font-style: italic;">Our Mission</h3>
               </div>
               <p class="text-muted mb-0" style="font-size: 1.1rem; line-height: 1.7;">
                 To deliver outstanding, ethical, and client-focused financial services that empower businesses to grow confidently in a dynamic world — all anchored in our legacy of trust and excellence.
@@ -79,155 +72,119 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- Core Values Section -->
     <div class="text-center mb-5" style="padding-top: 4rem; padding-bottom: 2rem;">
-      <h3 class="fw-bold mb-2" style="color: #333; font-size: 2rem;">Our Core Values</h3>
+      <h3 class="fw-bold mb-2" style="color: #326D78; font-size: 2rem;">Our Core Values</h3>
       <p class="text-muted" style="font-size: 1.1rem;">The foundation of everything we do</p>
     </div>
 
-    <!-- Values in a more dynamic layout -->
+    <!-- Values in clean card layout -->
     <div class="row g-4 mb-5" style="padding-bottom: 3rem;">
-      <!-- Left Column - 3 Values -->
-      <div class="col-lg-4">
-        <div class="mb-4">
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-star" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
+      <!-- Excellence -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-star me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Excellence</h5>
             </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Excellence</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We set high standards in everything we do, delivering with precision and pride.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-4">
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-shield-alt" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
-            </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Integrity</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We are honest, ethical, and transparent in our commitments.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-lightbulb" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
-            </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Innovation</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We embrace change and lead with forward-thinking solutions.
-              </p>
-            </div>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We set high standards in everything we do, delivering with precision and pride.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Center Column - Featured Core Values Header -->
-      <div class="col-lg-4 d-flex align-items-center justify-content-center">
-        <div class="text-center">
-          <div class="position-relative d-inline-block">
-            <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
-                 style="width: 120px; height: 120px; background: linear-gradient(135deg, #326D78, #4a9ead); box-shadow: 0 10px 30px rgba(50, 109, 120, 0.3);">
-              <i class="fas fa-gem" style="color: white; font-size: 3rem;"></i>
+      <!-- Integrity -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-shield-alt me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Integrity</h5>
             </div>
-            <!-- Decorative dots -->
-            <div style="position: absolute; top: -10px; right: -10px; width: 20px; height: 20px; background: rgba(50, 109, 120, 0.2); border-radius: 50%;"></div>
-            <div style="position: absolute; bottom: -5px; left: -5px; width: 15px; height: 15px; background: rgba(50, 109, 120, 0.15); border-radius: 50%;"></div>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We are honest, ethical, and transparent in our commitments.
+            </p>
           </div>
-          <h5 class="fw-bold mb-2" style="color: #326D78;">Core Values</h5>
-          <p class="text-muted mb-0" style="font-size: 0.9rem;">Our guiding principles</p>
         </div>
       </div>
 
-      <!-- Right Column - 4 Values -->
-      <div class="col-lg-4">
-        <div class="mb-4">
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-chart-line" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
+      <!-- Innovation -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-lightbulb me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Innovation</h5>
             </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Professional Growth</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We encourage lifelong learning and support our people's development.
-              </p>
-            </div>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We embrace change and lead with forward-thinking solutions.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="mb-4">
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-users" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
+      <!-- Professional Growth -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-chart-line me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Professional Growth</h5>
             </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Teamwork</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We thrive in collaboration, valuing the strength of collective effort.
-              </p>
-            </div>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We encourage lifelong learning and support our people's development.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="mb-4">
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-heart" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
+      <!-- Teamwork -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-users me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Teamwork</h5>
             </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Employee Care</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We prioritize wellbeing and inclusion within our firm.
-              </p>
-            </div>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We thrive in collaboration, valuing the strength of collective effort.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div>
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0 me-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                   style="width: 50px; height: 50px; background: rgba(50, 109, 120, 0.1);">
-                <i class="fas fa-hands-helping" style="color: #326D78; font-size: 1.2rem;"></i>
-              </div>
+      <!-- Employee Care -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-heart me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Employee Care</h5>
             </div>
-            <div>
-              <h5 class="fw-bold mb-2" style="color: #326D78;">Community Engagement</h5>
-              <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
-                We give back to society and act as responsible corporate citizens.
-              </p>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We prioritize wellbeing and inclusion within our firm.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Engagement -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #326D78;">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-hands-helping me-3" style="color: #326D78; font-size: 1.2rem; width: 20px;"></i>
+              <h5 class="fw-bold mb-0" style="color: #326D78;">Community Engagement</h5>
             </div>
+            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+              We give back to society and act as responsible corporate citizens.
+            </p>
           </div>
         </div>
       </div>
@@ -250,9 +207,10 @@
 </section>
 
 <style>
-.value-card:hover {
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+  transition: all 0.3s ease;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
