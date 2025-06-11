@@ -7,13 +7,6 @@
 <section id="graduate" class="py-5" data-aos="fade-up">
   <div class="container">
 
-    <!-- Back Button -->
-<div class="back-button">
-  <a href="{{ url('/#careers') }}" class="btn btn-outline-secondary">
-    ← Back
-  </a>
-</div>
-
     <!-- Title -->
     <div class="text-center" style="margin-bottom: 0.5rem;">
       <h2 style="color: #326D78; font-weight: bold; font-size: 2.2rem; margin-bottom: 0.5rem;">

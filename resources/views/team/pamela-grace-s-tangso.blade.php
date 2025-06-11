@@ -7,14 +7,6 @@
 <section class="team-member-detail py-5" data-aos="fade-up">
   <div class="container">
 
-    <!-- Back Button -->
-<div class="back-button">
-  <a href="{{ url('/#team') }}" class="btn btn-outline-secondary">
-    ← Back
-  </a>
-</div>
-
-
     <!-- Profile Header -->
     <div class="text-center mb-4">
       <img src="{{ asset('assets/img/team/pamela-grace-s-tangso.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Pamela Grace S. Tangso">

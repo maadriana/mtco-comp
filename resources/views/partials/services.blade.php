@@ -47,12 +47,12 @@
 
         <div class="service-slide">
           <img src="{{ asset('assets/img/forensic.jpg') }}" alt="Forensic" />
-          <a href="{{ route('services.forensic') }}"><h3>Forensic and Ligitation Support</h3></a>
+          <a href="{{ route('services.forensic') }}"><h3>Forensic and Litigation Support</h3></a>
         </div>
 
         <div class="service-slide">
           <img src="{{ asset('assets/img/risk-and-internal.jpg') }}" alt="Governance" />
-          <a href="{{ route('services.governance') }}"><h3>Governance, Risk and & Internal Audit</h3></a>
+          <a href="{{ route('services.governance') }}"><h3>Governance, Risk and Internal Audit</h3></a>
         </div>
 
         <div class="service-slide">

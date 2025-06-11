@@ -4,10 +4,10 @@
 
 @section('content')
 
-<!-- Hero Image with Breadcrumb Overlay -->
+<!-- Hero Image -->
 <div style="position: relative; margin-top: -1.5rem;">
     <img src="{{ asset('assets/img/job-accounting.jpg') }}" alt="Accounting Team"
-        style="width: 100%; height: 400px; object-fit: cover;">
+        style="width: 100%; height: 350px; object-fit: cover;">
 
     <!-- Breadcrumb Overlay -->
     <div
