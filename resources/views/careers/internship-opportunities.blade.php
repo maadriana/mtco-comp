@@ -146,7 +146,7 @@
                         <div style="position: absolute; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #28a745; border-radius: 30px; opacity: 0.1; transform: rotate(15deg);"></div>
 
                         <div style="position: relative; z-index: 2;">
-                            <div style="background: linear-gradient(135deg, #ffc107, #fd7e14); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <div style="background: linear-gradient(135deg, #326D78, #4a8a96); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
                                 <i class="fas fa-paper-plane" style="font-size: 2rem; color: white;"></i>
                             </div>
 
