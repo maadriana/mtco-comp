@@ -27,7 +27,7 @@
     <div class="container text-center text-white">
         <div style="max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
             <i class="fas fa-briefcase" style="font-size: 3rem; margin-bottom: 1.5rem; opacity: 0.95;"></i>
-            <h1 style="font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff;">
                 Join Our Team
             </h1>
             <p style="font-size: 1.3rem; opacity: 0.95; line-height: 1.6; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
