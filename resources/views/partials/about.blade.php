@@ -32,7 +32,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-10">
                 <div style="text-align: center; padding: 2rem 0;">
-                    <h1 style="font-size: 4.5rem; font-weight: 300; color: #2a2a2a; line-height: 1.1; margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
+                    <h1 style="font-size: 3.7rem; font-weight: 300; color: #2a2a2a; line-height: 1.1; margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
                         Preserving<br>
                         <span style="font-weight: 700; color: #326D78;">Excellence</span>
                     </h1>
@@ -57,9 +57,9 @@
         <div style="position: absolute; top: 50%; right: 5%; transform: translateY(-50%); opacity: 0; animation: fadeInScale 1s ease-out 1.2s forwards;">
             <div style="width: 250px; height: 250px; background: linear-gradient(135deg, #326D78, #5ba3b0); border-radius: 50%; position: relative; box-shadow: 0 20px 60px rgba(50, 109, 120, 0.2); display: flex; align-items: center; justify-content: center;">
                 <div style="color: white; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">"Passion</div>
+                    <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem;">"Passion</div>
                     <div style="font-size: 1rem; opacity: 0.9;">for</div>
-                    <div style="font-size: 2rem; font-weight: 700; margin-top: 0.5rem;">Excellence"</div>
+                    <div style="font-size: 1.6rem; font-weight: 700; margin-top: 0.5rem;">Excellence"</div>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                     <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.3s forwards;">
                         Our Foundation
                     </div>
-                    <h2 style="font-size: 3rem; font-weight: 300; color: #2a2a2a; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.6s forwards;">
+                    <h2 style="font-size: 2.1rem; font-weight: 300; color: #2a2a2a; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.6s forwards;">
                         Built on <span style="font-weight: 700; color: #326D78;">Legacy</span>
                     </h2>
                     <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #326D78, #5ba3b0); border-radius: 2px; margin-bottom: 2rem; opacity: 0; animation: scaleX 1s ease-out 0.9s forwards; transform-origin: left;"></div>
@@ -118,169 +118,188 @@
     </div>
 </section>
 
-<!-- Vision & Mission - Split Design -->
+<!-- Vision & Mission - Split Design with SVG Icons -->
 <section style="background: #f8fafb; padding: 6rem 0;">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
-                Our Direction
-            </div>
-            <h2 style="font-size: 3rem; font-weight: 300; color: #2a2a2a; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
-                Vision & <span style="font-weight: 700; color: #326D78;">Mission</span>
-            </h2>
-        </div>
+  <style>
+    .circle-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+  </style>
 
-        <div class="row g-0" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); opacity: 0; animation: fadeInUp 1s ease-out 0.9s forwards;">
-            <!-- Vision -->
-            <div class="col-lg-6" style="background: white; padding: 4rem 3rem; position: relative; transition: all 0.3s ease;">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #326D78, #4a8a96);"></div>
-                <div style="width: 80px; height: 80px; background: rgba(50, 109, 120, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; transition: all 0.3s ease;">
-                    <i class="fas fa-eye" style="color: #326D78; font-size: 2rem;"></i>
-                </div>
-                <h3 style="color: #2a2a2a; font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem;">Our Vision</h3>
-                <p style="color: #6c757d; line-height: 1.7; font-size: 1.1rem; margin: 0;">
-                    To lead the audit and accounting industry through our unwavering "Passion for Excellence", becoming a trusted standard for ethical innovation and generational impact.
-                </p>
-            </div>
-
-            <!-- Mission -->
-            <div class="col-lg-6" style="background: #326D78; padding: 4rem 3rem; color: white; position: relative; transition: all 0.3s ease;">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #5ba3b0, #4a8a96);"></div>
-                <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; transition: all 0.3s ease;">
-                    <i class="fas fa-bullseye" style="color: white; font-size: 2rem;"></i>
-                </div>
-                <h3 style="color: white; font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem;">Our Mission</h3>
-                <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1.1rem; margin: 0;">
-                    To deliver outstanding, ethical, and client-focused financial services that empower businesses to grow confidently in a dynamic world — anchored in our legacy of trust and excellence.
-                </p>
-            </div>
-        </div>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
+        Our Direction
+      </div>
+      <h2 style="font-size: 2.7rem; font-weight: 300; color: #2a2a2a; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
+        Vision & <span style="font-weight: 700; color: #326D78;">Mission</span>
+      </h2>
     </div>
+
+    <div class="row g-0" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); opacity: 0; animation: fadeInUp 1s ease-out 0.9s forwards;">
+
+      <!-- Vision -->
+      <div class="col-lg-6" style="background: white; padding: 4rem 3rem; position: relative; transition: all 0.3s ease;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #326D78, #4a8a96);"></div>
+        <div class="circle-icon" style="background: rgba(50, 109, 120, 0.1);">
+          <!-- Eye Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#326D78" viewBox="0 0 24 24">
+            <path d="M12 5c-7.633 0-11 6.5-11 6.5S4.367 18 12 18s11-6.5 11-6.5S19.633 5 12 5zm0 11a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-7a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/>
+          </svg>
+        </div>
+        <h3 style="color: #2a2a2a; font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem;">Our Vision</h3>
+        <p style="color: #6c757d; line-height: 1.7; font-size: 1.1rem; margin: 0;">
+          To lead the audit and accounting industry through our unwavering "Passion for Excellence", becoming a trusted standard for ethical innovation and generational impact.
+        </p>
+      </div>
+
+      <!-- Mission -->
+      <div class="col-lg-6" style="background: #326D78; padding: 4rem 3rem; color: white; position: relative; transition: all 0.3s ease;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #5ba3b0, #4a8a96);"></div>
+        <div class="circle-icon" style="background: rgba(255, 255, 255, 0.15);">
+          <!-- Target/Bullseye Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9zm0-16a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 9z"/>
+          </svg>
+        </div>
+        <h3 style="color: white; font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem;">Our Mission</h3>
+        <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1.1rem; margin: 0;">
+          To deliver outstanding, ethical, and client-focused financial services that empower businesses to grow confidently in a dynamic world — anchored in our legacy of trust and excellence.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Core Values - Minimal Grid -->
+
+<!-- Core Values - Minimal Grid with Hover Effects -->
 <section style="padding: 6rem 0; background: white;">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
-                What Drives Us
-            </div>
-            <h2 style="font-size: 3rem; font-weight: 300; color: #2a2a2a; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
-                Core <span style="font-weight: 700; color: #326D78;">Values</span>
-            </h2>
-            <p style="color: #6c757d; font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0; animation: fadeInUp 1s ease-out 0.9s forwards;">
-                The principles that guide every decision and define our character
-            </p>
-        </div>
 
-        <div class="row g-4">
-            <!-- Excellence -->
-            <div class="col-lg-4 col-md-6">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 1.2s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #326D78, #5ba3b0); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-star" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Excellence</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We set high standards in everything we do, delivering with precision and pride.</p>
-                </div>
-            </div>
-
-            <!-- Integrity -->
-            <div class="col-lg-4 col-md-6">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 1.4s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #5ba3b0, #4a8a96); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-shield-alt" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Integrity</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We are honest, ethical, and transparent in our commitments.</p>
-                </div>
-            </div>
-
-            <!-- Innovation -->
-            <div class="col-lg-4 col-md-6">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 1.6s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #4a8a96, #326D78); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-lightbulb" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Innovation</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We embrace change and lead with forward-thinking solutions.</p>
-                </div>
-            </div>
-
-            <!-- Professional Growth -->
-            <div class="col-lg-4 col-md-6">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 1.8s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-chart-line" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Professional Growth</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We encourage lifelong learning and support our people's development.</p>
-                </div>
-            </div>
-
-            <!-- Teamwork -->
-            <div class="col-lg-4 col-md-6">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 2s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #5ba3b0, #326D78); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-users" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Teamwork</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We thrive in collaboration, valuing the strength of collective effort.</p>
-                </div>
-            </div>
-
-            <!-- Employee Care -->
-            <div class="col-lg-4 col-md-6">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 2.2s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #4a8a96, #5ba3b0); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-heart" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Employee Care</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We prioritize wellbeing and inclusion within our firm.</p>
-                </div>
-            </div>
-
-            <!-- Community Engagement - Centered -->
-            <div class="col-lg-4 col-md-6 mx-auto">
-                <div style="text-align: center; padding: 2rem; border-radius: 16px; transition: all 0.3s ease; cursor: pointer; opacity: 0; animation: fadeInUp 1s ease-out 2.4s forwards;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #326D78, #5ba3b0); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;">
-                        <i class="fas fa-hands-helping" style="color: white; font-size: 2rem;"></i>
-                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
-                    </div>
-                    <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Community Engagement</h4>
-                    <p style="color: #6c757d; line-height: 1.6; font-size: 0.95rem; margin: 0;">We give back to society and act as responsible corporate citizens.</p>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">
+  What Drives Us
+</div>
+<h2 style="font-size: 2.7rem; font-weight: 300; color: #2a2a2a;">
+  Core <span style="font-weight: 700; color: #326D78;">Values</span>
+</h2>
+      <p style="color: #6c757d; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+        The principles that guide every decision and define our character
+      </p>
     </div>
-</section>
 
-<!-- Clean CTA Section -->
-<section style="background: #f8fafb; padding: 4rem 0;">
-    <div class="container">
-        <div style="background: white; border-radius: 24px; padding: 4rem 2rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.06); position: relative; overflow: hidden; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
-            <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(50, 109, 120, 0.05); border-radius: 50%;"></div>
-            <div style="position: absolute; bottom: -30px; right: -30px; width: 100px; height: 100px; background: rgba(91, 163, 176, 0.08); border-radius: 50%;"></div>
+    <div class="row g-4">
+      <!-- Each card below now uses value-card and value-icon classes -->
 
-            <div style="position: relative; z-index: 2;">
-                <h2 style="font-size: 2.5rem; font-weight: 300; color: #2a2a2a; margin-bottom: 1rem;">
-                    Ready to Experience <span style="font-weight: 700; color: #326D78;">Excellence?</span>
-                </h2>
-                <p style="color: #6c757d; font-size: 1.2rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                    Join us in building a legacy of trust and professional excellence.
-                </p>
-                <a href="{{ url('/#contact') }}" style="display: inline-block; background: linear-gradient(135deg, #326D78, #5ba3b0); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(50, 109, 120, 0.2);">
-                    Get in Touch <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-            </div>
+      <!-- Excellence -->
+      <div class="col-lg-4 col-md-6" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #326D78, #5ba3b0);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M12 .587l3.668 7.429 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.86 1.4-8.166L.132 9.208l8.2-1.192z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Excellence</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We set high standards in everything we do, delivering with precision and pride.</p>
         </div>
+      </div>
+
+      <!-- Integrity -->
+      <div class="col-lg-4 col-md-6" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #5ba3b0, #4a8a96);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2l8 4v6c0 5.25-3.39 10.74-8 12-4.61-1.26-8-6.75-8-12V6l8-4z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Integrity</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We are honest, ethical, and transparent in our commitments.</p>
+        </div>
+      </div>
+
+      <!-- Innovation -->
+      <div class="col-lg-4 col-md-6" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #4a8a96, #326D78);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M9 21h6v-1H9v1zm3-20C7.48 1 4 4.48 4 9c0 3.25 2.5 6.26 4 7v3h8v-3c1.5-.74 4-3.75 4-7 0-4.52-3.48-8-8-8z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Innovation</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We embrace change and lead with forward-thinking solutions.</p>
+        </div>
+      </div>
+
+      <!-- Professional Growth -->
+      <div class="col-lg-4 col-md-6" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #326D78, #4a8a96);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M3 17h2v-7H3v7zm4 0h2v-4H7v4zm4 0h2V7h-2v10zm4 0h2v-2h-2v2zm4 0h2v-8h-2v8z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Professional Growth</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We encourage lifelong learning and support our people's development.</p>
+        </div>
+      </div>
+
+      <!-- Teamwork -->
+      <div class="col-lg-4 col-md-6" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #5ba3b0, #326D78);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5s-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.07 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Teamwork</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We thrive in collaboration, valuing the strength of collective effort.</p>
+        </div>
+      </div>
+
+      <!-- Employee Care -->
+      <div class="col-lg-4 col-md-6" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #4a8a96, #5ba3b0);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42
+              4.42 3 7.5 3c1.74 0 3.41 1.01
+              4.5 2.09C13.09 4.01 14.76 3 16.5
+              3 19.58 3 22 5.42 22 8.5c0 3.78-3.4
+              6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Employee Care</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We prioritize wellbeing and inclusion within our firm.</p>
+        </div>
+      </div>
+
+      <!-- Community Engagement -->
+      <div class="col-lg-4 col-md-6 mx-auto" style="text-align: center;">
+        <div class="value-card">
+          <div class="value-icon" style="background: linear-gradient(135deg, #326D78, #5ba3b0);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" viewBox="0 0 24 24">
+              <path d="M12.1 18.55l-.1.1-.11-.1C7.14
+              14.24 4 11.39 4 8.5 4 6.5 5.5
+              5 7.5 5c1.54 0 3.04 1.04
+              3.57 2.36h1.87C13.46 6.04
+              14.96 5 16.5 5 18.5 5 20
+              6.5 20 8.5c0 2.89-3.14
+              5.74-7.9 10.05z"/>
+            </svg>
+          </div>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Community Engagement</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">We give back to society and act as responsible corporate citizens.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
@@ -398,6 +417,32 @@
         div[style*="position: absolute"][style*="right: 5%"] {
             display: none;
         }
+    }
+        .value-card {
+      padding: 2rem;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover .value-icon {
+      transform: scale(1.08);
     }
 </style>
 

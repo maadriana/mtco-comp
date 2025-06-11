@@ -3,15 +3,22 @@
   <div class="container">
     <div class="row gy-4">
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-        <h1>{!! getContent('hero_title', 'Welcome to <span>Mendoza Tugano & Co., CPAs</span>') !!}</h1>
-        <p>{{ getContent('hero_subtitle', 'Preserving a legacy of excellence') }}</p>
+        <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.2;">
+          {!! getContent('hero_title', 'Welcome to <span>Mendoza Tugano & Co., CPAs</span>') !!}
+        </h1>
+        <p style="font-size: 1.3rem; color: #666;">
+          {{ getContent('hero_subtitle', 'Preserving a legacy of excellence') }}
+        </p>
         <div class="d-flex">
-          <a href="{{ url('/#contact') }}" class="btn-get-started">{{ getContent('hero_button', 'Connect with us') }}</a>
+          <a href="{{ url('/#contact') }}" class="btn-get-started">
+            {{ getContent('hero_button', 'Connect with us') }}
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- About Section -->
 <section id="about" class="about section light-background">
