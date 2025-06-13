@@ -13,7 +13,7 @@ Route::get('/', function () {
 });
 
 // Contact form submission route
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])->name('contact.submit');
 
 // Team overview page
 Route::view('/team/emmanuel-y-mendoza', 'team.emmanuel-y-mendoza');
