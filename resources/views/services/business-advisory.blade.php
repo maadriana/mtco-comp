@@ -47,7 +47,7 @@
             <div class="col-lg-8">
 
                 <!-- Service Overview -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up">
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
                         Targeted Consulting Advice
                     </h2>
@@ -91,7 +91,7 @@
                 </div>
 
                 <!-- Services List -->
-                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;">
+                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">Our Services Include:</h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div style="display: flex; align-items: center;">
@@ -106,7 +106,7 @@
                 </div>
 
                 <!-- Benefits Section -->
-                <div data-aos="fade-up" data-aos-delay="300">
+                <div data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         Why Choose Us
                     </h3>

@@ -47,13 +47,13 @@
             <div class="col-lg-8">
 
                 <!-- Service Image -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up">
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <img src="{{ asset('assets/img/corporate-finance.jpg') }}" alt="Corporate Finance and Advisory"
                          style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 </div>
 
                 <!-- Service Overview -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up">
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
                         Achieving Your Business Ambitions
                     </h2>
@@ -97,7 +97,7 @@
                 </div>
 
                 <!-- Services List -->
-                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;">
+                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100"">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">Our Services Include:</h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div style="display: flex; align-items: center;">

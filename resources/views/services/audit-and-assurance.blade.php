@@ -100,7 +100,7 @@
                 </div>
 
                 <!-- Services List -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="200">
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         Our Services Include
                     </h3>
@@ -137,7 +137,7 @@
                 </div>
 
                 <!-- Benefits Section -->
-                <div data-aos="fade-up" data-aos-delay="300">
+                <div data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         Benefits of Our Audit Services
                     </h3>
