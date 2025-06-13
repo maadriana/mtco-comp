@@ -118,10 +118,151 @@
                 </div>
 
                 @if(session('success'))
-                    <div class="alert alert-success" style="border-radius: 15px; border-left: 5px solid #28a745;">
-                        {{ session('success') }}
+    <!-- Modern Success Popup -->
+    <div id="successAlert" style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        background: linear-gradient(135deg, #326D78 0%, rgb(101, 204, 214) 100%);
+        color: white;
+        padding: 20px 25px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        max-width: 420px;
+        min-width: 350px;
+        animation: slideInRight 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        backdrop-filter: blur(10px);
+    ">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 15px;">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div style="
+                        background: rgba(255, 255, 255, 0.25);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    ">
+                        <i class="fas fa-check" style="font-size: 16px; font-weight: bold;"></i>
                     </div>
-                @endif
+                    <h6 style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.5px; color: white">Application Submitted!</h6>
+                </div>
+                <p style="margin: 0; opacity: 0.95; font-size: 14px; line-height: 1.5; padding-left: 47px;">
+                    {{ session('success') }}
+                </p>
+            </div>
+            <button onclick="closeSuccessAlert()" style="
+                background: rgba(255, 255, 255, 0.2);
+                border: none;
+                color: white;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+                flex-shrink: 0;
+                font-weight: bold;
+            "
+            onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'; this.style.transform='scale(1.1)'"
+            onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='scale(1)'">
+                &times;
+            </button>
+        </div>
+
+        <!-- Progress bar for auto-dismiss -->
+        <div style="
+            margin-top: 15px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        ">
+            <div id="progressBar" style="
+                height: 100%;
+                background: rgba(255, 255, 255, 0.8);
+                width: 100%;
+                border-radius: 2px;
+                animation: shrinkProgress 5s linear forwards;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            "></div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(400px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(400px) scale(0.8);
+            }
+        }
+
+        @keyframes shrinkProgress {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+
+        .success-alert-fade-out {
+            animation: slideOutRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            #successAlert {
+                top: 10px !important;
+                right: 10px !important;
+                left: 10px !important;
+                max-width: none !important;
+                min-width: none !important;
+            }
+        }
+    </style>
+
+    <script>
+        // Auto-dismiss after 5 seconds
+        setTimeout(function() {
+            closeSuccessAlert();
+        }, 5000);
+
+        function closeSuccessAlert() {
+            const alert = document.getElementById('successAlert');
+            if (alert) {
+                alert.classList.add('success-alert-fade-out');
+                setTimeout(function() {
+                    alert.remove();
+                }, 400);
+            }
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSuccessAlert();
+            }
+        });
+    </script>
+@endif
 
                 <!-- Application Form -->
                 <div style="background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 3px solid #326D78; position: relative;" data-aos="fade-up" data-aos-delay="200">
