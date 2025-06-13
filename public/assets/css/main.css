@@ -1997,3 +1997,103 @@ section,
   }
 }
 
+/* Careers Section Only Styles */
+#careers .service-item {
+  padding: 30px;
+  background: #fff;
+  border: 0px solid #f0f0f0;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+#careers .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#careers .service-slide {
+  width: 300px;
+  height: 365px;
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#careers .service-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.15);
+}
+
+#careers .service-slide img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  display: block;
+}
+
+#careers .service-slide h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #326D78;
+  margin: 0 0 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#careers .service-slide h3:hover {
+  background-color: rgba(50, 109, 120, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+#careers .service-slide p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  padding: 0 0.5rem;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 4.2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #careers .service-slide {
+    width: 80%;
+    height: 500px;
+  }
+  #careers .carousel-arrow.left {
+    left: 0;
+  }
+  #careers .carousel-arrow.right {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #careers .service-slide {
+    width: 100%;
+    height: 500px;
+  }
+}

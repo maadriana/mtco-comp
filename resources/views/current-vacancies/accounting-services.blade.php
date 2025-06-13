@@ -319,6 +319,10 @@
 </section>
 
 <style>
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
 
     .btn-outline-primary:hover {
         background: #326D78 !important;
