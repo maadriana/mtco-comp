@@ -7,19 +7,20 @@
 <!-- Clean Hero Section -->
 <div style="position: relative; margin-top: -1.5rem; background: #f8fafb; min-height: 70vh; display: flex; align-items: center; overflow: hidden;">
 
-    <!-- Breadcrumb - Keep original -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
-                <li class="breadcrumb-item">
-                    <a href="{{ url('/') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">
-                        <i class="fas fa-home me-1"></i>Home
-                    </a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">About</li>
-            </ol>
-        </nav>
-    </div>
+    <!-- Breadcrumb -->
+<div style="position: absolute; top: 20px; left: 70px; z-index: 9999; pointer-events: auto; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
+            <li class="breadcrumb-item">
+                <a href="{{ url('/') }}" style="color: #326D78; text-decoration: none; font-weight: 500; pointer-events: auto;">
+                    <i class="fas fa-home me-1"></i>Home
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">About</li>
+        </ol>
+    </nav>
+</div>
+
 
     <!-- Geometric Elements -->
     <div style="position: absolute; top: 15%; right: 8%; width: 120px; height: 120px; background: rgba(50, 109, 120, 0.1); border-radius: 50%; z-index: 1; animation:"></div>
@@ -32,9 +33,9 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-10">
                 <div style="text-align: center; padding: 2rem 0;">
-                    <h1 style="font-size: 3.7rem; font-weight: 300; color: #2a2a2a; line-height: 1.1; margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
+                    <h1 style="font-size: 3.7rem; font-weight: 600; color: #2a2a2a; line-height: 1.1; margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
                         Preserving<br>
-                        <span style="font-weight: 700; color: #326D78;">Excellence</span>
+                        <span style="font-weight: 600; color: #326D78;">Excellence</span>
                     </h1>
                     <p style="font-size: 1.4rem; color: #6c757d; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
                         A legacy of trust, precision, and unwavering dedication to client success since our founding.
@@ -75,8 +76,8 @@
                     <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.3s forwards;">
                         Our Foundation
                     </div>
-                    <h2 style="font-size: 2.1rem; font-weight: 300; color: #2a2a2a; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.6s forwards;">
-                        Built on <span style="font-weight: 700; color: #326D78;">Legacy</span>
+                    <h2 style="font-size: 2.1rem; font-weight: 600; color: #2a2a2a; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.6s forwards;">
+                        Built on <span style="font-weight: 600; color: #326D78;">Legacy</span>
                     </h2>
                     <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #326D78, #5ba3b0); border-radius: 2px; margin-bottom: 2rem; opacity: 0; animation: scaleX 1s ease-out 0.9s forwards; transform-origin: left;"></div>
                     <p style="font-size: 1.1rem; color: #6c757d; line-height: 1.7; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 1.2s forwards;">
@@ -138,8 +139,8 @@
       <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
         Our Direction
       </div>
-      <h2 style="font-size: 2.7rem; font-weight: 300; color: #2a2a2a; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
-        Vision & <span style="font-weight: 700; color: #326D78;">Mission</span>
+      <h2 style="font-size: 2.6rem; font-weight: 600; color: #2a2a2a; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
+        Vision & <span style="font-weight: 600; color: #326D78;">Mission</span>
       </h2>
     </div>
 
@@ -187,8 +188,8 @@
       <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">
   What Drives Us
 </div>
-<h2 style="font-size: 2.7rem; font-weight: 300; color: #2a2a2a;">
-  Core <span style="font-weight: 700; color: #326D78;">Values</span>
+<h2 style="font-size: 2.6rem; font-weight: 600; color: #2a2a2a;">
+  Core <span style="font-weight: 600; color: #326D78;">Values</span>
 </h2>
       <p style="color: #6c757d; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
         The principles that guide every decision and define our character

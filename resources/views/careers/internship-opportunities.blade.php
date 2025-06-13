@@ -4,8 +4,22 @@
 
 @section('content')
 
-<!-- Floating Cards Hero Section -->
-<div style="position: relative; margin-top: -1.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%); min-height: 500px; overflow: hidden;">
+<!-- Unique Diagonal Header Design -->
+<div style="position: relative; margin-top: -1.5rem; background: white; padding: 0; overflow: hidden; height: 400px;">
+
+    <!-- Diagonal Background Sections -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+        <!-- Main diagonal section -->
+        <div style="position: absolute; top: 0; left: 0; width: 70%; height: 100%; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: 2;"></div>
+
+        <!-- Secondary diagonal accent -->
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); z-index: 1;"></div>
+
+        <!-- Floating geometric elements -->
+        <div style="position: absolute; top: 15%; right: 15%; width: 80px; height: 80px; background: #4a9aba; transform: rotate(45deg); opacity: 0.7; z-index: 3;"></div>
+        <div style="position: absolute; bottom: 20%; right: 25%; width: 60px; height: 60px; background: #326D78; border-radius: 50%; opacity: 0.5; z-index: 3;"></div>
+        <div style="position: absolute; top: 50%; right: 8%; width: 40px; height: 40px; background: #4a9aba; transform: rotate(45deg); opacity: 0.6; z-index: 3;"></div>
+    </div>
 
     <!-- Breadcrumb Overlay -->
     <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
@@ -24,58 +38,66 @@
         </nav>
     </div>
 
-    <!-- Floating Background Elements -->
-    <div style="position: absolute; top: 100px; right: 100px; width: 120px; height: 120px; background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 30px; opacity: 0.1; transform: rotate(15deg);"></div>
-    <div style="position: absolute; bottom: 150px; left: 80px; width: 80px; height: 80px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 50%; opacity: 0.15;"></div>
-    <div style="position: absolute; top: 200px; left: 200px; width: 60px; height: 60px; background: linear-gradient(135deg, #3af5ec, #4c88bb); border-radius: 20px; opacity: 0.2; transform: rotate(-20deg);"></div>
+    <!-- Content Container -->
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <!-- Left Content on Diagonal -->
+            <div class="col-lg-7" style="position: relative; z-index: 10;">
+                <div style="color: white; padding-right: 2rem;">
+                    <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 0.5rem 1.5rem; border-radius: 25px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
+                        <small style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Learn & Grow</small>
+                    </div>
 
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="row align-items-center justify-content-center" style="min-height: 500px;">
-            <div class="col-lg-8 text-center">
+                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white">
+                        Internship<br>
+                        <span style="font-weight: 300; color: white;">Opportunities</span>
+                    </h1>
 
-                <!-- Main Hero Card -->
-                <div style="background: white; padding: 3rem 2rem; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden;" data-aos="fade-up">
+                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px;">
+                        Are you passionate, creative, and enthusiastic? Do you want to learn more about business?
+                    </p>
 
-                    <!-- Card Background Pattern -->
-                    <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; opacity: 0.05;"></div>
-
-                    <div style="position: relative; z-index: 2;">
-                        <!-- Icon with Animation -->
-                        <div style="background: linear-gradient(135deg, #326D78, #4a8a96); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 10px 30px rgba(50, 109, 120, 0.3);">
-                            <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: white;"></i>
+                    <!-- Inline Stats -->
+                    <div class="d-flex align-items-center gap-4 flex-wrap">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                                <i class="fas fa-clock" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">3-6</h4>
+                                <small style="opacity: 0.8;">Months Duration</small>
+                            </div>
                         </div>
-
-                        <h1 style="font-size: 2.8rem; font-weight: 750; margin-bottom: 1.5rem; color: #333; line-height: 1.2;">
-                            Internship<br>Opportunities
-                        </h1>
-
-                        <p style="font-size: 1.3rem; color: #666; margin-bottom: 2rem; line-height: 1.6;">
-                            Are you passionate, creative, and enthusiastic?<br>
-                            Do you want to learn more about business?
-                        </p>
-
-                        <!-- Quick Stats -->
-                        <div class="row text-center mt-4">
-                            <div class="col-4">
-                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 15px;">
-                                    <h4 style="color: #326D78; font-weight: 700; margin-bottom: 0.5rem;">3-6</h4>
-                                    <small style="color: #666;">Months Duration</small>
-                                </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                                <i class="fas fa-handshake" style="color: white; font-size: 1.2rem;"></i>
                             </div>
-                            <div class="col-4">
-                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 15px;">
-                                    <h4 style="color: #326D78; font-weight: 700; margin-bottom: 0.5rem;">Real</h4>
-                                    <small style="color: #666;">Work Experience</small>
-                                </div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">Real</h4>
+                                <small style="opacity: 0.8;">Work Experience</small>
                             </div>
-                            <div class="col-4">
-                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 15px;">
-                                    <h4 style="color: #326D78; font-weight: 700; margin-bottom: 0.5rem;">Pro</h4>
-                                    <small style="color: #666;">Mentorship</small>
-                                </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                                <i class="fas fa-user-tie" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">Pro</h4>
+                                <small style="opacity: 0.8;">Mentorship</small>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Minimalist -->
+            <div class="col-lg-5" style="position: relative; z-index: 5;">
+                <div style="text-align: center; color: #64748b; padding: 2rem;">
+                    <div style="display: inline-block; width: 120px; height: 120px; background: #326D78; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(50, 109, 120, 0.3); transform: rotate(-5deg);">
+                        <i class="fas fa-user-graduate" style="font-size: 3rem; color: white; transform: rotate(5deg);"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #326D78; margin-bottom: 0.5rem;">Start Learning</h3>
+                    <p style="font-size: 1rem; color: #64748b; margin: 0;">Real experience awaits</p>
                 </div>
             </div>
         </div>
@@ -100,7 +122,7 @@
                 <div class="row gy-4">
 
                     <!-- Step 1: Experience -->
-                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div style="background: linear-gradient(135deg, #326D78, #74d3e3); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
                             <!-- Background Pattern -->
                             <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border: 2px solid rgba(255,255,255,0.1); border-radius: 50%;"></div>
@@ -118,7 +140,7 @@
                     </div>
 
                     <!-- Step 2: Learning -->
-                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div style="background: linear-gradient(135deg, #326D78, #74d3e3); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
                             <!-- Background Pattern -->
                             <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border: 2px solid rgba(255,255,255,0.1); border-radius: 50%;"></div>
@@ -138,7 +160,7 @@
                 </div>
 
                 <!-- Application Process Section -->
-                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
                     <div style="background: #f8f9fa; padding: 3rem 2rem; border-radius: 25px; border: 3px dashed #326D78; position: relative;">
 
                         <!-- Decorative Elements -->
@@ -146,7 +168,7 @@
                         <div style="position: absolute; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #28a745; border-radius: 30px; opacity: 0.1; transform: rotate(15deg);"></div>
 
                         <div style="position: relative; z-index: 2;">
-                            <div style="background: linear-gradient(135deg, #326D78, #4a8a96); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <div style="background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
                                 <i class="fas fa-paper-plane" style="font-size: 2rem; color: white;"></i>
                             </div>
 
@@ -202,19 +224,19 @@
         position: relative;
     }
 
-    /* Floating animation for background elements */
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(15deg); }
-        50% { transform: translateY(-10px) rotate(15deg); }
-    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container h1 {
+            font-size: 2.5rem !important;
+        }
 
-    /* Add subtle animations to decorative elements */
-    div[style*="transform: rotate(15deg)"]:first-of-type {
-        animation: float 6s ease-in-out infinite;
-    }
+        .container p {
+            font-size: 1rem !important;
+        }
 
-    div[style*="transform: rotate(-20deg)"] {
-        animation: float 8s ease-in-out infinite reverse;
+        .col-lg-5:first-child {
+            margin-bottom: 2rem;
+        }
     }
 </style>
 

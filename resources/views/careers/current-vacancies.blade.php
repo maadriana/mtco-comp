@@ -4,8 +4,22 @@
 
 @section('content')
 
-<!-- Modern Header Section -->
-<div style="position: relative; margin-top: -1.5rem; background: linear-gradient(135deg, rgba(50, 109, 120, 0.85) 0%, rgba(74, 138, 150, 0.85) 100%), url('{{ asset('assets/img/job-accounting.jpg') }}'); background-size: cover; background-position: center; padding: 80px 0 60px 0;">
+<!-- Unique Diagonal Header Design -->
+<div style="position: relative; margin-top: -1.5rem; background: white; padding: 0; overflow: hidden; height: 400px;">
+
+    <!-- Diagonal Background Sections -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+        <!-- Main diagonal section -->
+        <div style="position: absolute; top: 0; left: 0; width: 70%; height: 180%; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: 2;"></div>
+
+        <!-- Secondary diagonal accent -->
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 150%; background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); z-index: 1;"></div>
+
+        <!-- Floating geometric elements -->
+        <div style="position: absolute; top: 15%; right: 15%; width: 80px; height: 80px; background: #4a9aba; transform: rotate(45deg); opacity: 0.7; z-index: 3;"></div>
+        <div style="position: absolute; bottom: 20%; right: 25%; width: 60px; height: 60px; background: #326D78; border-radius: 50%; opacity: 0.5; z-index: 3;"></div>
+        <div style="position: absolute; top: 50%; right: 8%; width: 40px; height: 40px; background: #4a9aba; transform: rotate(45deg); opacity: 0.6; z-index: 3;"></div>
+    </div>
 
     <!-- Breadcrumb Overlay -->
     <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
@@ -24,27 +38,80 @@
         </nav>
     </div>
 
-    <div class="container text-center text-white">
-        <div style="max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
-            <i class="fas fa-briefcase" style="font-size: 3rem; margin-bottom: 1.5rem; opacity: 0.95;"></i>
-            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff;">
-                Join Our Team
-            </h1>
-            <p style="font-size: 1.3rem; opacity: 0.95; line-height: 1.6; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
-                We are always interested in receiving applications from high-caliber individuals to further strengthen our team.
-            </p>
+    <!-- Content Container -->
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <!-- Left Content on Diagonal -->
+            <div class="col-lg-7" style="position: relative; z-index: 10;">
+                <div style="color: white; padding-right: 2rem;">
+                    <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 0.5rem 1.5rem; border-radius: 25px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
+                        <small style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Join Our Team</small>
+                    </div>
+
+                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white">
+                        Build Your Career<br>
+                        <span style="font-weight: 300; color: white;">With Excellence</span>
+                    </h1>
+
+                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
+                        We are always interested in receiving applications from high-caliber individuals to further strengthen our team.
+                    </p>
+
+                    <!-- Inline Stats -->
+                    <div class="d-flex align-items-center gap-4 flex-wrap">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                                <i class="fas fa-briefcase" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">2</h4>
+                                <small style="opacity: 0.8;">Open Roles</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                                <i class="fas fa-users" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">50+</h4>
+                                <small style="opacity: 0.8;">Professionals</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                                <i class="fas fa-chart-line" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">∞</h4>
+                                <small style="opacity: 0.8;">Growth</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Minimalist -->
+            <div class="col-lg-5" style="position: relative; z-index: 5;">
+                <div style="text-align: center; color: #64748b; padding: 2rem;">
+                    <div style="display: inline-block; width: 120px; height: 120px; background: #326D78; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(50, 109, 120, 0.3); transform: rotate(-5deg);">
+                        <i class="fas fa-rocket" style="font-size: 3rem; color: white; transform: rotate(5deg);"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #326D78; margin-bottom: 0.5rem;">Start Your Journey</h3>
+                    <p style="font-size: 1rem; color: #64748b; margin: 0;">Excellence begins here</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- Job Listings Section -->
-<section class="py-5" data-aos="fade-up" style="background: #f8f9fa;">
+<section class="py-5" style="background: #f8f9fa;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
 
                 <!-- Section Header -->
-                <div class="text-center mb-5">
+                <div class="text-center mb-5" data-aos="fade-up">
                     <h2 style="color: #326D78; font-weight: 400; font-size: 2.1rem; margin-bottom: 1rem;">
                         Available Positions
                     </h2>
@@ -118,7 +185,7 @@
                                     <a href="{{ $job['route'] }}" class="btn btn-view w-100 mb-2" style="background: #326D78; color: white; border: none; border-radius: 25px; padding: 0.7rem; transition: background-color 0.3s ease;">
                                         View Details
                                     </a>
-                                    <a href="#" class="btn btn-apply btn-outline-success w-100" style="border-radius: 25px; padding: 0.7rem; transition: all 0.3s ease;">
+                                    <a href="{{ route('careers.apply') }}" class="btn btn-apply btn-outline-success w-100" style="border-radius: 25px; padding: 0.7rem; transition: all 0.3s ease;">
                                         Apply Now
                                     </a>
                                 </div>
@@ -127,6 +194,20 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+
+                <!-- Call to Action Section -->
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                    <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">Don't See the Right Fit?</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
+                            We're always interested in connecting with talented professionals. Send us your resume and we'll keep you in mind for future opportunities.
+                        </p>
+                        <a href="{{ route('careers.apply') }}" class="btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
+                            <i class="fas fa-envelope me-2"></i>Send Your Resume
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -156,6 +237,10 @@
         border-color: #28a745 !important;
     }
 
+    .btn[style*="background: #326D78"]:hover {
+        background: #2c5f69 !important;
+    }
+
     .breadcrumb-item+.breadcrumb-item::before {
         content: "›";
         color: #6c757d;
@@ -165,6 +250,30 @@
     section[data-aos] {
         z-index: 1 !important;
         position: relative;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container h1 {
+            font-size: 2.5rem !important;
+        }
+
+        .container p {
+            font-size: 1rem !important;
+        }
+
+        .job-card {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .col-lg-6:first-child {
+            margin-bottom: 2rem;
+        }
     }
 </style>
 
