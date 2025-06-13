@@ -4,35 +4,295 @@
 
 @section('content')
 
-<section class="team-member-detail py-5" data-aos="fade-up">
-  <div class="container">
+<!-- Modern Magazine-Style Layout -->
+<div style="position: relative; margin-top: -1.5rem; background: #f8f9fa;">
 
-    <!-- Profile Section -->
-    <div class="text-center mb-4">
-      <img src="{{ asset('assets/img/team/ephraim-t-tugano.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Ephraim T. Tugano">
-     <h2 class="fw-bold mb-1" style="color: #2f5d62;">Ephraim T. Tugano</h2>
-        <h5 class="text-muted">Partner</h5>
-        <p class="mt-2">
-          <a href="mailto:ephraim.tugano@mtco.com.ph" class="text-decoration-none" style="color: #007bff;">
-            ephraim.tugano@mtco.com.ph
-          </a>
-        </p>
-      </div>
+    <!-- Breadcrumb -->
+    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">
+                        <i class="fas fa-home me-1"></i>Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/#team') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">People</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Ephraim T. Tugano</li>
+            </ol>
+        </nav>
 
-    <!-- Bio Content -->
-    <div class="description">
-      <p>Ephraim is a seasoned Certified Public Accountant (CPA) with an impressive career spanning over twelve years in public accounting, encompassing both assurance and non-assurance services. His tenure includes a prominent role as a former Assurance Partner and Ethics Director at Mendoza Querido &amp; Co. His extensive industry expertise covers a diverse spectrum, including manufacturing, retail, pharmaceuticals, services, mining, hospitality, real estate, regional operating headquarters, foundations, and non-profit organizations.</p>
+    <!-- Hero Profile Section -->
+    <div style="background: white; position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="row min-vh-75 align-items-center" style="padding: 80px 0;">
 
-      <p>Ephraim has held managerial positions overseeing various audit engagements for private entities, including projects funded by the European Union (EU). He has excelled in conducting due diligence exercises and actively contributed to purchase price allocations, goodwill valuation, and impairment testing for a wide array of entities.</p>
+                <!-- Large Profile Image Section -->
+                <div class="col-lg-5">
+                    <div style="position: relative;">
+                        <!-- Main Profile Image -->
+                        <div style="position: relative; z-index: 2;">
+                            <img src="{{ asset('assets/img/team/ephraim-t-tugano.jpg') }}"
+                                 alt="Ephraim T. Tugano"
+                                 style="width: 100%; max-width: 400px; height: 500px; object-fit: cover; object-position: center top; border-radius: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                        </div>
 
-      <p>A key contributor to his former firm, Ephraim played a pivotal role in implementing cutting-edge audit software and spearheading the revision of the audit and quality assurance manual. Additionally, he served as the Chief Financial Officer for a non-audit client, showcasing his multifaceted financial acumen.</p>
+                        <!-- Decorative Background Elements -->
+                        <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: #326D78; z-index: 1;"></div>
+                        <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: #4a9aba; z-index: 1;"></div>
 
-      <p>Ephraim's professional journey also includes hands-on experience in accounting and consulting assignments, where he played a crucial role in migrating accounting records to facilitate the implementation of a computerized accounting system.</p>
+                        <!-- Professional Badge -->
+                        <div style="position: absolute; bottom: 20px; right: 20px; background: #326D78; color: white; padding: 1rem 1.5rem; z-index: 3;">
+                            <h4 style="color: white; font-weight: 700; margin: 0; font-size: 1.2rem;">CPA</h4>
+                            <small style="color: rgba(255,255,255,0.8);">Licensed Professional</small>
+                        </div>
+                    </div>
+                </div>
 
-      <p>His educational foundation comprises a bachelor’s degree in accountancy earned from Far Eastern University. As a dedicated Certified Public Accountant, Ephraim is an active member of the esteemed Philippine Institute of Certified Public Accountants (PICPA).</p>
+                <!-- Profile Information -->
+                <div class="col-lg-7 ps-lg-5">
+                    <div style="max-width: 600px;">
+
+                        <!-- Name and Title -->
+                        <div style="margin-bottom: 2rem;">
+                            <h1 style="font-size: 4rem; font-weight: 900; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
+                                Ephraim T.<br>
+                                <span style="color: #326D78;">Tugano</span>
+                            </h1>
+                            <h2 style="font-size: 1.8rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
+                                Partner
+                            </h2>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div style="background: #326D78; color: white; padding: 2rem; margin-bottom: 2rem; position: relative;">
+                            <div style="position: absolute; top: 0; right: 0; width: 0; height: 0; border-left: 50px solid transparent; border-top: 50px solid #4a9aba;"></div>
+
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-envelope" style="font-size: 1.5rem; margin-right: 1rem; width: 30px;"></i>
+                                <a href="mailto:ephraim.tugano@mtco.com.ph" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500;">
+                                    ephraim.tugano@mtco.com.ph
+                                </a>
+                            </div>
+
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-building" style="font-size: 1.5rem; margin-right: 1rem; width: 30px;"></i>
+                                <span style="font-size: 1.1rem;">Mendoza Tugano & Co., CPAs</span>
+                            </div>
+                        </div>
+
+                        <!-- Key Achievements -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #326D78;">
+                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">12+</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">Years Public Accounting</p>
+                            </div>
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #4a9aba;">
+                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #4a9aba; margin-bottom: 0.5rem;">8+</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">Industry Sectors</p>
+                            </div>
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #74d3e3;">
+                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">CFO</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">Executive Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
-</section>
+    <!-- Biography Content -->
+    <div class="container" style="padding: 60px 0;">
+        <div class="row">
+
+            <!-- Main Biography -->
+            <div class="col-lg-8">
+
+                <!-- Professional Journey -->
+                <div style="margin-bottom: 4rem;" data-aos="fade-up">
+                    <h2 style="font-size: 3rem; font-weight: 700; color: #333; margin-bottom: 3rem; position: relative;">
+                        Professional Journey
+                        <div style="position: absolute; bottom: -10px; left: 0; width: 100px; height: 4px; background: linear-gradient(45deg, #326D78, #4a9aba);"></div>
+                    </h2>
+
+                    <!-- Timeline Style Biography -->
+                    <div style="position: relative; padding-left: 2rem;">
+                        <!-- Timeline Line -->
+                        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #326D78, #4a9aba, #74d3e3);"></div>
+
+                        <!-- Assurance & Ethics Leadership -->
+                        <div style="position: relative; margin-bottom: 3rem;">
+                            <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #326D78; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #326D78;"></div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
+                                <h3 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Assurance Partner & Ethics Director</h3>
+                                <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                                    Ephraim is a seasoned Certified Public Accountant with an impressive career spanning over twelve years in public accounting, encompassing both assurance and non-assurance services. His distinguished tenure includes a prominent role as former Assurance Partner and Ethics Director at Mendoza Querido & Co.
+                                </p>
+                                <p style="color: #666; line-height: 1.7; margin: 0;">
+                                    His extensive industry expertise covers a diverse spectrum including manufacturing, retail, pharmaceuticals, services, mining, hospitality, real estate, regional operating headquarters, foundations, and non-profit organizations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Management & Advisory Roles -->
+                        <div style="position: relative; margin-bottom: 3rem;">
+                            <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #4a9aba; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #4a9aba;"></div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
+                                <h3 style="color: #4a9aba; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Strategic Management & Advisory</h3>
+                                <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                                    Ephraim has held critical managerial positions overseeing various audit engagements for private entities, including specialized projects funded by the European Union (EU). His expertise extends to conducting comprehensive due diligence exercises and actively contributing to purchase price allocations, goodwill valuation, and impairment testing across a wide array of entities.
+                                </p>
+                                <p style="color: #666; line-height: 1.7; margin: 0;">
+                                    As a key contributor to his former firm, Ephraim played a pivotal role in implementing cutting-edge audit software and spearheading the comprehensive revision of audit and quality assurance manuals, demonstrating his commitment to operational excellence and innovation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Executive & Consulting Experience -->
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #74d3e3; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #74d3e3;"></div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
+                                <h3 style="color: #74d3e3; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Executive & Consulting Leadership</h3>
+                                <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                                    Demonstrating his multifaceted financial acumen, Ephraim served as Chief Financial Officer for a non-audit client, showcasing his ability to translate audit expertise into executive financial leadership. His hands-on experience extends to accounting and consulting assignments where he played crucial roles in complex system implementations.
+                                </p>
+                                <p style="color: #666; line-height: 1.7; margin: 0;">
+                                    His technical expertise includes successfully migrating accounting records to facilitate the implementation of computerized accounting systems, demonstrating his proficiency in both traditional accounting practices and modern financial technology solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar Information -->
+            <div class="col-lg-4">
+                <div style="position: sticky; top: 2rem;">
+
+                    <!-- Education Block -->
+                    <div style="background: #326D78; color: white; padding: 2rem; margin-bottom: 2rem; position: relative;" data-aos="fade-up" data-aos-delay="300">
+                        <div style="position: absolute; top: -15px; right: -15px; width: 60px; height: 60px; border: 3px solid #4a9aba; transform: rotate(45deg);"></div>
+
+                        <h3 style="color: white; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
+
+                        <div>
+                            <h4 style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">Bachelor's Degree in Accountancy</h4>
+                            <p style="color: rgba(255,255,255,0.7); margin: 0;">Far Eastern University</p>
+                        </div>
+                    </div>
+
+                    <!-- Industry Expertise -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Industry Expertise</h3>
+
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #326D78;">Manufacturing</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #4a9aba;">Retail</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #74d3e3;">Pharmaceuticals</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #5bb3c7;">Services</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #326D78;">Mining</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #4a9aba;">Hospitality</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #74d3e3;">Real Estate</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #5bb3c7;">Non-Profit</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Affiliations -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="500">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
+
+                        <div style="display: flex; align-items: start;">
+                            <div style="width: 8px; height: 8px; background: #326D78; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
+                            <div>
+                                <strong style="color: #333;">PICPA</strong><br>
+                                <small style="color: #666;">Philippine Institute of Certified Public Accountants</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Competencies -->
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78;" data-aos="fade-up" data-aos-delay="600">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Core Competencies</h3>
+
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.75rem; color: #666; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle me-2" style="color: #326D78;"></i>
+                                Due Diligence & Valuation
+                            </li>
+                            <li style="margin-bottom: 0.75rem; color: #666; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle me-2" style="color: #4a9aba;"></i>
+                                Audit Software Implementation
+                            </li>
+                            <li style="margin-bottom: 0.75rem; color: #666; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle me-2" style="color: #74d3e3;"></i>
+                                Quality Assurance Management
+                            </li>
+                            <li style="margin-bottom: 0.75rem; color: #666; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle me-2" style="color: #5bb3c7;"></i>
+                                Financial System Migration
+                            </li>
+                            <li style="color: #666; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle me-2" style="color: #326D78;"></i>
+                                Ethics & Compliance Leadership
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "›";
+        color: #6c757d;
+        font-weight: bold;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container h1 {
+            font-size: 2.5rem !important;
+            line-height: 1.1 !important;
+        }
+
+        .col-lg-4, .col-lg-7, .col-lg-8 {
+            margin-bottom: 3rem;
+        }
+
+        div[style*="position: sticky"] {
+            position: static !important;
+        }
+
+        div[style*="padding-left: 2rem"] {
+            padding-left: 1rem !important;
+        }
+
+        div[style*="margin-left: 1rem"] {
+            margin-left: 0.5rem !important;
+        }
+
+        img {
+            height: 400px !important;
+        }
+
+        .ps-lg-5 {
+            padding-left: 0 !important;
+            margin-top: 2rem;
+        }
+
+        div[style*="grid-template-columns: repeat(2, 1fr)"] {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
 
 @endsection

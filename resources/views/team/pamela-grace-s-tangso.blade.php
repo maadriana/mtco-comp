@@ -4,31 +4,312 @@
 
 @section('content')
 
-<section class="team-member-detail py-5" data-aos="fade-up">
-  <div class="container">
+<!-- Modern Magazine-Style Layout -->
+<div style="position: relative; margin-top: -1.5rem; background: #f8f9fa;">
 
-    <!-- Profile Header -->
-    <div class="text-center mb-4">
-      <img src="{{ asset('assets/img/team/pamela-grace-s-tangso.jpg') }}" class="img-fluid mb-4" style="max-width: 300px;" alt="Pamela Grace S. Tangso">
-       <h2 class="fw-bold mb-1" style="color: #2f5d62;">Pamela Grace S. Tangso</h2>
-        <h5 class="text-muted">Partner</h5>
-        <p class="mt-2">
-          <a href="mailto:epamelagrace.tangso@mtco.com.ph" class="text-decoration-none" style="color: #007bff;">
-            pamelagrace.tangso@mtco.com.ph
-          </a>
-        </p>
+        <!-- Breadcrumb -->
+    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">
+                        <i class="fas fa-home me-1"></i>Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/#team') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">People</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Pamela Grace S. Tangso</li>
+            </ol>
+        </nav>
+
+    <!-- Hero Profile Section -->
+    <div style="background: white; position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="row min-vh-75 align-items-center" style="padding: 80px 0;">
+
+                <!-- Large Profile Image Section -->
+                <div class="col-lg-5">
+                    <div style="position: relative;">
+                        <!-- Main Profile Image -->
+                        <div style="position: relative; z-index: 2;">
+                            <img src="{{ asset('assets/img/team/pamela-grace-s-tangso.jpg') }}"
+                                 alt="Pamela Grace S. Tangso"
+                                 style="width: 100%; max-width: 400px; height: 500px; object-fit: cover; object-position: center top; border-radius: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                        </div>
+
+                        <!-- Decorative Background Elements -->
+                        <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: #326D78; z-index: 1;"></div>
+                        <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: #4a9aba; z-index: 1;"></div>
+
+                        <!-- Professional Badge -->
+                        <div style="position: absolute; bottom: 20px; right: 20px; background: #326D78; color: white; padding: 1rem 1.5rem; z-index: 3;">
+                            <h4 style="color: white; font-weight: 700; margin: 0; font-size: 1.2rem;">CPA</h4>
+                            <small style="color: rgba(255,255,255,0.8);">Tax Specialist</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Information -->
+                <div class="col-lg-7 ps-lg-5">
+                    <div style="max-width: 600px;">
+
+                        <!-- Name and Title -->
+                        <div style="margin-bottom: 2rem;">
+                            <h1 style="font-size: 4rem; font-weight: 900; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
+                                Pamela Grace<br>
+                                <span style="color: #326D78;">S. Tangso</span>
+                            </h1>
+                            <h2 style="font-size: 1.8rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
+                                Partner
+                            </h2>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div style="background: #326D78; color: white; padding: 2rem; margin-bottom: 2rem; position: relative;">
+                            <div style="position: absolute; top: 0; right: 0; width: 0; height: 0; border-left: 50px solid transparent; border-top: 50px solid #4a9aba;"></div>
+
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-envelope" style="font-size: 1.5rem; margin-right: 1rem; width: 30px;"></i>
+                                <a href="mailto:pamelagrace.tangso@mtco.com.ph" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500;">
+                                    pamelagrace.tangso@mtco.com.ph
+                                </a>
+                            </div>
+
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-building" style="font-size: 1.5rem; margin-right: 1rem; width: 30px;"></i>
+                                <span style="font-size: 1.1rem;">Mendoza Tugano & Co., CPAs</span>
+                            </div>
+                        </div>
+
+                        <!-- Key Achievements -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #326D78;">
+                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">17+</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">Years Total Experience</p>
+                            </div>
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #4a9aba;">
+                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #4a9aba; margin-bottom: 0.5rem;">10+</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">Industries Served</p>
+                            </div>
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #74d3e3;">
+                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">Tax</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">Head - OIC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Bio Content -->
-    <div class="description">
-      <p>Pam embarked on her professional journey, dedicating seven formative years to Mendoza Querido &amp; Co. During her tenure, she expertly conducted audits and handled tax services for a diverse array of companies spanning multiple industries. Her clientele encompassed manufacturing, manning agencies, merchandising, stock brokerage firms, banking institutions, online gaming enterprises, trusts, non-profit organizations, cooperatives, power generation companies, property management firms, and Business Process Outsourcing (BPO) entities.</p>
+    <!-- Biography Content -->
+    <div class="container" style="padding: 60px 0;">
+        <div class="row">
 
-      <p>Transitioning to the private sector for ten years, Pam assumed various pivotal tax-related roles. Her most recent position was with Global Business Power Corporation, a wholly-owned subsidiary of Meralco PowerGen Corporation (MGen), where she served as the Tax Head – Officer-in-Charge. In this capacity, she adeptly oversaw tax compliance and planning functions, offering comprehensive taxation services across the organization. Pam played a pivotal role in initiating a range of tax strategies aimed at mitigating the company's tax risks. Subsequently, in 2022, she rejoined Mendoza Querido &amp; Co.</p>
+            <!-- Main Biography -->
+            <div class="col-lg-8">
 
-      <p>Pam is a proud graduate of the University of Santo Tomas, having earned her Bachelor of Science in Accountancy. She is a Certified Public Accountant (CPA) and an esteemed member of the Philippine Institute of Certified Public Accountants (PICPA).</p>
+                <!-- Professional Journey -->
+                <div style="margin-bottom: 4rem;" data-aos="fade-up">
+                    <h2 style="font-size: 3rem; font-weight: 700; color: #333; margin-bottom: 3rem; position: relative;">
+                        Professional Journey
+                        <div style="position: absolute; bottom: -10px; left: 0; width: 100px; height: 4px; background: linear-gradient(45deg, #326D78, #4a9aba);"></div>
+                    </h2>
+
+                    <!-- Timeline Style Biography -->
+                    <div style="position: relative; padding-left: 2rem;">
+                        <!-- Timeline Line -->
+                        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #326D78, #4a9aba, #74d3e3);"></div>
+
+                        <!-- Early Career - Mendoza Querido & Co. -->
+                        <div style="position: relative; margin-bottom: 3rem;">
+                            <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #326D78; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #326D78;"></div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
+                                <h3 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Foundation Years at Mendoza Querido & Co.</h3>
+                                <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                                    Pam embarked on her professional journey with seven formative years at Mendoza Querido & Co., where she expertly conducted audits and handled comprehensive tax services for a remarkably diverse array of companies spanning multiple industries.
+                                </p>
+                                <p style="color: #666; line-height: 1.7; margin: 0;">
+                                    Her extensive clientele encompassed manufacturing companies, manning agencies, merchandising firms, stock brokerage houses, banking institutions, online gaming enterprises, trusts, non-profit organizations, cooperatives, power generation companies, property management firms, and Business Process Outsourcing (BPO) entities.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Corporate Leadership -->
+                        <div style="position: relative; margin-bottom: 3rem;">
+                            <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #4a9aba; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #4a9aba;"></div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
+                                <h3 style="color: #4a9aba; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Corporate Tax Leadership Excellence</h3>
+                                <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
+                                    Transitioning to the private sector for a transformative decade, Pam assumed various pivotal tax-related roles that showcased her strategic expertise and leadership capabilities. Her most recent and distinguished position was with Global Business Power Corporation, a wholly-owned subsidiary of Meralco PowerGen Corporation (MGen).
+                                </p>
+                                <p style="color: #666; line-height: 1.7; margin: 0;">
+                                    As Tax Head – Officer-in-Charge, she adeptly oversaw comprehensive tax compliance and planning functions, offering sophisticated taxation services across the entire organization. Pam played a pivotal role in initiating and implementing a comprehensive range of innovative tax strategies specifically aimed at mitigating the company's tax risks and optimizing fiscal efficiency.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Return & Partnership -->
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #74d3e3; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #74d3e3;"></div>
+
+                            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
+                                <h3 style="color: #74d3e3; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Partnership & Strategic Return</h3>
+                                <p style="color: #666; line-height: 1.7; margin: 0;">
+                                    In 2022, bringing together her comprehensive experience from both public practice and corporate leadership, Pam made the strategic decision to rejoin Mendoza Querido & Co. (now Mendoza Tugano & Co.) as a Partner. Her return represents the culmination of her professional evolution, combining deep technical expertise in taxation with proven leadership capabilities and extensive cross-industry experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar Information -->
+            <div class="col-lg-4">
+                <div style="position: sticky; top: 2rem;">
+
+                    <!-- Education Block -->
+                    <div style="background: #326D78; color: white; padding: 2rem; margin-bottom: 2rem; position: relative;" data-aos="fade-up" data-aos-delay="300">
+                        <div style="position: absolute; top: -15px; right: -15px; width: 60px; height: 60px; border: 3px solid #4a9aba; transform: rotate(45deg);"></div>
+
+                        <h3 style="color: white; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
+
+                        <div>
+                            <h4 style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">Bachelor of Science in Accountancy</h4>
+                            <p style="color: rgba(255,255,255,0.7); margin: 0;">University of Santo Tomas</p>
+                        </div>
+                    </div>
+
+                    <!-- Industry Experience -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Industry Experience</h3>
+
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #326D78;">Manufacturing</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #4a9aba;">Manning Agencies</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #74d3e3;">Merchandising</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #5bb3c7;">Stock Brokerage</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #326D78;">Banking</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #4a9aba;">Online Gaming</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #74d3e3;">Trusts</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #5bb3c7;">Non-Profit</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #326D78;">Cooperatives</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #4a9aba;">Power Generation</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #74d3e3;">Property Mgmt</span>
+                            <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid #5bb3c7;">BPO</span>
+                        </div>
+                    </div>
+
+                    <!-- Career Highlights -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="500">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Career Timeline</h3>
+
+                        <div style="space-y: 1.5rem;">
+                            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e9ecef;">
+                                <h5 style="color: #326D78; font-weight: 600; margin-bottom: 0.5rem;">2022 - Present</h5>
+                                <p style="color: #666; margin: 0; font-size: 0.9rem;">Partner at Mendoza Tugano & Co.</p>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e9ecef;">
+                                <h5 style="color: #4a9aba; font-weight: 600; margin-bottom: 0.5rem;">10 Years Corporate</h5>
+                                <p style="color: #666; margin: 0; font-size: 0.9rem;">Tax Head - OIC at Global Business Power Corporation (MGen Subsidiary)</p>
+                            </div>
+
+                            <div>
+                                <h5 style="color: #74d3e3; font-weight: 600; margin-bottom: 0.5rem;">7 Years Foundation</h5>
+                                <p style="color: #666; margin: 0; font-size: 0.9rem;">Audit & Tax Services at Mendoza Querido & Co.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Affiliations -->
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78;" data-aos="fade-up" data-aos-delay="600">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Membership</h3>
+
+                        <div style="display: flex; align-items: start;">
+                            <div style="width: 8px; height: 8px; background: #326D78; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
+                            <div>
+                                <strong style="color: #333;">PICPA</strong><br>
+                                <small style="color: #666;">Philippine Institute of Certified Public Accountants</small>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px;">
+                            <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.5rem;">Core Expertise</h6>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.5rem; color: #666; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle me-2" style="color: #326D78; font-size: 0.8rem;"></i>
+                                    Tax Compliance & Planning
+                                </li>
+                                <li style="margin-bottom: 0.5rem; color: #666; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle me-2" style="color: #4a9aba; font-size: 0.8rem;"></i>
+                                    Risk Mitigation Strategies
+                                </li>
+                                <li style="margin-bottom: 0.5rem; color: #666; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle me-2" style="color: #74d3e3; font-size: 0.8rem;"></i>
+                                    Multi-Industry Auditing
+                                </li>
+                                <li style="color: #666; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle me-2" style="color: #5bb3c7; font-size: 0.8rem;"></i>
+                                    Corporate Tax Leadership
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
+</div>
 
-  </div>
-</section>
+<style>
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "›";
+        color: #6c757d;
+        font-weight: bold;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container h1 {
+            font-size: 2.5rem !important;
+            line-height: 1.1 !important;
+        }
+
+        .col-lg-4, .col-lg-7, .col-lg-8 {
+            margin-bottom: 3rem;
+        }
+
+        div[style*="position: sticky"] {
+            position: static !important;
+        }
+
+        div[style*="padding-left: 2rem"] {
+            padding-left: 1rem !important;
+        }
+
+        div[style*="margin-left: 1rem"] {
+            margin-left: 0.5rem !important;
+        }
+
+        img {
+            height: 400px !important;
+        }
+
+        .ps-lg-5 {
+            padding-left: 0 !important;
+            margin-top: 2rem;
+        }
+
+        div[style*="grid-template-columns: repeat(2, 1fr)"] {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
 
 @endsection
