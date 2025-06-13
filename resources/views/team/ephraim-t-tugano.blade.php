@@ -56,7 +56,7 @@
 
                         <!-- Name and Title -->
                         <div style="margin-bottom: 2rem;">
-                            <h1 style="font-size: 4rem; font-weight: 900; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
+                            <h1 style="font-size: 2.9rem; font-weight: 700; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
                                 Ephraim T.<br>
                                 <span style="color: #326D78;">Tugano</span>
                             </h1>
@@ -85,15 +85,15 @@
                         <!-- Key Achievements -->
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                             <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #326D78;">
-                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">12+</h3>
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">12+</h3>
                                 <p style="color: #666; margin: 0; font-weight: 500;">Years Public Accounting</p>
                             </div>
                             <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #4a9aba;">
-                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #4a9aba; margin-bottom: 0.5rem;">8+</h3>
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #4a9aba; margin-bottom: 0.5rem;">8+</h3>
                                 <p style="color: #666; margin: 0; font-weight: 500;">Industry Sectors</p>
                             </div>
                             <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #74d3e3;">
-                                <h3 style="font-size: 2.5rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">CFO</h3>
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">CFO</h3>
                                 <p style="color: #666; margin: 0; font-weight: 500;">Executive Experience</p>
                             </div>
                         </div>
