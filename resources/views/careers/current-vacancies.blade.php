@@ -143,7 +143,7 @@
 
                 <div class="row gy-4">
                     @foreach ($jobs as $job)
-                    <div class="col-12">
+                    <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                         <div class="card border-0 shadow-lg job-card h-100" style="border-radius: 16px; overflow: hidden;">
                             <div class="row g-0 align-items-stretch">
 
@@ -196,19 +196,19 @@
                     @endforeach
                 </div>
 
-                <!-- Call to Action Section -->
-                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-                    <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                        <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
-                        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">Don't See the Right Fit?</h3>
-                        <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
-                            We're always interested in connecting with talented professionals. Send us your resume and we'll keep you in mind for future opportunities.
-                        </p>
-                        <a href="{{ route('careers.apply') }}" class="btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
-                            <i class="fas fa-envelope me-2"></i>Send Your Resume
-                        </a>
-                    </div>
-                </div>
+<!-- Call to Action Section -->
+<div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+    <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+        <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
+        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">Don't See the Right Fit?</h3>
+        <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
+            We're always interested in connecting with talented professionals. Send us your resume and we'll keep you in mind for future opportunities.
+        </p>
+        <a href="{{ route('careers.apply') }}" class="btn send-resume-btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
+            <i class="fas fa-envelope me-2"></i>Send Your Resume
+        </a>
+    </div>
+</div>
 
             </div>
         </div>
@@ -216,6 +216,12 @@
 </section>
 
 <style>
+        .send-resume-btn:hover {
+        background: #2c5f69 !important;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
     .job-card {
         transition: all 0.3s ease;
         border-radius: 16px;

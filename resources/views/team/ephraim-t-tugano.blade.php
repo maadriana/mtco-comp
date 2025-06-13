@@ -60,7 +60,7 @@
                                 Ephraim T.<br>
                                 <span style="color: #326D78;">Tugano</span>
                             </h1>
-                            <h2 style="font-size: 1.8rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
+                            <h2 style="font-size: 1.3rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
                                 Partner
                             </h2>
                         </div>

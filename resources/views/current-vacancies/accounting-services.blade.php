@@ -286,29 +286,30 @@
                 <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
                     <div style="background: white; border-radius: 25px; padding: 3rem 2rem; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 3px solid #326D78; position: relative; overflow: hidden;">
 
-                        <!-- Background decoration -->
-                        <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: linear-gradient(135deg, #326D78, #4a9aba); border-radius: 50%; opacity: 0.05;"></div>
-                        <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: linear-gradient(135deg, #4a9aba, #74d3e3); border-radius: 50%; opacity: 0.08;"></div>
+                       <!-- Background decoration -->
+<div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: linear-gradient(135deg, #326D78, #4a9aba); border-radius: 50%; opacity: 0.05;"></div>
+<div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: linear-gradient(135deg, #4a9aba, #74d3e3); border-radius: 50%; opacity: 0.08;"></div>
 
-                        <div style="position: relative; z-index: 2;">
-                            <div style="background: linear-gradient(135deg, #326D78, #4a9aba); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                                <i class="fas fa-rocket" style="font-size: 2rem; color: white;"></i>
-                            </div>
+<div style="position: relative; z-index: 2;">
+    <div style="background: linear-gradient(135deg, #326D78, #4a9aba); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+        <i class="fas fa-rocket" style="font-size: 2rem; color: white;"></i>
+    </div>
 
-                            <h3 style="color: #333; font-weight: 700; margin-bottom: 1rem;">Ready to Join Our Team?</h3>
-                            <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
-                                Take the next step in your career with Mendoza Tugano & Co., CPAs
-                            </p>
+    <h3 style="color: #333; font-weight: 700; margin-bottom: 1rem;">Ready to Join Our Team?</h3>
+    <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
+        Take the next step in your career with Mendoza Tugano & Co., CPAs
+    </p>
 
-                            <div class="d-flex flex-wrap gap-3 justify-content-center">
-                                <a href="#" class="btn btn-lg" style="background: linear-gradient(135deg, #326D78, #4a9aba); color: white; border: none; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; transition: all 0.3s ease;">
-                                    <i class="fas fa-paper-plane me-2"></i>Apply Now
-                                </a>
-                                <a href="{{ route('careers.vacancies') }}" class="btn btn-outline-primary btn-lg" style="border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; transition: all 0.3s ease; border-color: #326D78; color: #326D78;">
-                                    <i class="fas fa-arrow-left me-2"></i>View All Positions
-                                </a>
-                            </div>
-                        </div>
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="{{ route('careers.apply') }}" class="btn btn-lg" style="background: linear-gradient(135deg, #326D78, #4a9aba); color: white; border: none; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; transition: all 0.3s ease;">
+            Apply Now
+        </a>
+        <a href="{{ route('careers.vacancies') }}" class="btn btn-outline-primary btn-lg" style="border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; transition: all 0.3s ease; border-color: #326D78; color: #326D78;">
+            <i class="fas fa-arrow-left me-2"></i>View All Positions
+        </a>
+    </div>
+</div>
+
                     </div>
                 </div>
 
@@ -318,10 +319,6 @@
 </section>
 
 <style>
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
 
     .btn-outline-primary:hover {
         background: #326D78 !important;

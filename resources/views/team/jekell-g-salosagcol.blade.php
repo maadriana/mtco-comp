@@ -60,7 +60,7 @@
                                 Jekell G.<br>
                                 <span style="color: #326D78;">Salosagcol</span>
                             </h1>
-                            <h2 style="font-size: 1.8rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
+                            <h2 style="font-size: 1.3rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
                                 External Quality Assurance Consultant
                             </h2>
                         </div>

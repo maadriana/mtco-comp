@@ -19,10 +19,14 @@
                 <li class="breadcrumb-item">
                     <a href="{{ url('/#careers') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">Careers</a>
                 </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('careers.vacancies') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">Current Vacancies</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Apply</li>
             </ol>
         </nav>
     </div>
+
     <!-- Wave Background Layers -->
     <div style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 60px;">
