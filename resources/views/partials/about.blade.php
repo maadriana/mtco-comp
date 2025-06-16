@@ -21,7 +21,6 @@
     </nav>
 </div>
 
-
     <!-- Geometric Elements -->
     <div style="position: absolute; top: 15%; right: 8%; width: 120px; height: 120px; background: rgba(50, 109, 120, 0.1); border-radius: 50%; z-index: 1; animation:"></div>
     <div style="position: absolute; top: 60%; left: 12%; width: 80px; height: 80px; background: rgba(91, 163, 176, 0.15); transform: rotate(45deg); border-radius: 20px; z-index: 1;"></div>
@@ -34,19 +33,18 @@
             <div class="col-lg-10">
                 <div style="text-align: center; padding: 2rem 0;">
                     <h1 style="font-size: 3.7rem; font-weight: 600; color: #2a2a2a; line-height: 1.1; margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
-                        Preserving<br>
-                        <span style="font-weight: 600; color: #326D78;">Excellence</span>
+                        {!! getContent('about_hero_title', 'Preserving<br><span style="font-weight: 600; color: #326D78;">Excellence</span>') !!}
                     </h1>
                     <p style="font-size: 1.4rem; color: #6c757d; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
-                        A legacy of trust, precision, and unwavering dedication to client success since our founding.
+                        {{ getContent('about_hero_subtitle', 'A legacy of trust, precision, and unwavering dedication to client success since our founding.') }}
                     </p>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeInUp 1s ease-out 0.9s forwards;">
                         <div style="background: white; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-left: 4px solid #326D78; transition: all 0.3s ease;">
-                            <div style="font-size: 1.8rem; font-weight: 700; color: #326D78; margin-bottom: 0.2rem;">20+</div>
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #326D78; margin-bottom: 0.2rem;">{{ getContent('about_years_legacy', '20+') }}</div>
                             <div style="font-size: 0.9rem; color: #6c757d;">Years Legacy</div>
                         </div>
                         <div style="background: white; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-left: 4px solid #5ba3b0; transition: all 0.3s ease;">
-                            <div style="font-size: 1.8rem; font-weight: 700; color: #5ba3b0; margin-bottom: 0.2rem;">100+</div>
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #5ba3b0; margin-bottom: 0.2rem;">{{ getContent('about_clients_served', '100+') }}</div>
                             <div style="font-size: 0.9rem; color: #6c757d;">Clients Served</div>
                         </div>
                     </div>
@@ -58,9 +56,7 @@
         <div style="position: absolute; top: 50%; right: 5%; transform: translateY(-50%); opacity: 0; animation: fadeInScale 1s ease-out 1.2s forwards;">
             <div style="width: 250px; height: 250px; background: linear-gradient(135deg, #326D78, #5ba3b0); border-radius: 50%; position: relative; box-shadow: 0 20px 60px rgba(50, 109, 120, 0.2); display: flex; align-items: center; justify-content: center;">
                 <div style="color: white; text-align: center;">
-                    <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem;">"Passion</div>
-                    <div style="font-size: 1rem; opacity: 0.9;">for</div>
-                    <div style="font-size: 1.6rem; font-weight: 700; margin-top: 0.5rem;">Excellence"</div>
+                    <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem;">{{ getContent('about_circular_quote', '"Passion for Excellence"') }}</div>
                 </div>
             </div>
         </div>
@@ -74,17 +70,17 @@
             <div class="col-lg-6">
                 <div style="position: sticky; top: 2rem;">
                     <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.3s forwards;">
-                        Our Foundation
+                        {{ getContent('about_story_badge', 'Our Foundation') }}
                     </div>
                     <h2 style="font-size: 2.1rem; font-weight: 600; color: #2a2a2a; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 0.6s forwards;">
-                        Built on <span style="font-weight: 600; color: #326D78;">Legacy</span>
+                        {!! getContent('about_story_title', 'Built on <span style="font-weight: 600; color: #326D78;">Legacy</span>') !!}
                     </h2>
                     <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #326D78, #5ba3b0); border-radius: 2px; margin-bottom: 2rem; opacity: 0; animation: scaleX 1s ease-out 0.9s forwards; transform-origin: left;"></div>
                     <p style="font-size: 1.1rem; color: #6c757d; line-height: 1.7; margin-bottom: 2rem; opacity: 0; animation: fadeInLeft 1s ease-out 1.2s forwards;">
-                        Emmanuel Y. Mendoza redefined the audit and accounting landscape, founding an institution built on unwavering dedication, precision, and integrity.
+                        {{ getContent('about_story_paragraph1', 'Emmanuel Y. Mendoza redefined the audit and accounting landscape, founding an institution built on unwavering dedication, precision, and integrity.') }}
                     </p>
                     <p style="font-size: 1.1rem; color: #6c757d; line-height: 1.7; opacity: 0; animation: fadeInLeft 1s ease-out 1.5s forwards;">
-                        Today, Mendoza Tugano & Co., CPAs continues this legacy, representing not just continuity but an elevation of the principles that have earned client trust for decades.
+                        {{ getContent('about_story_paragraph2', 'Today, Mendoza Tugano & Co., CPAs continues this legacy, representing not just continuity but an elevation of the principles that have earned client trust for decades.') }}
                     </p>
                 </div>
             </div>
@@ -92,25 +88,25 @@
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <!-- Excellence Card -->
                     <div style="background: linear-gradient(135deg, #f8fafb 0%, #e9ecef 100%); padding: 2rem; border-radius: 16px; border-left: 6px solid #326D78; opacity: 0; animation: fadeInRight 1s ease-out 0.6s forwards; transition: all 0.3s ease;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">Continuous Excellence</h4>
+                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">{{ getContent('about_card1_title', 'Continuous Excellence') }}</h4>
                         <p style="color: #6c757d; line-height: 1.6; margin: 0;">
-                            Our commitment to delivering precise, ethical, and personalized financial solutions mirrors the trust and reliability clients expect from our lineage.
+                            {{ getContent('about_card1_description', 'Our commitment to delivering precise, ethical, and personalized financial solutions mirrors the trust and reliability clients expect from our lineage.') }}
                         </p>
                     </div>
 
                     <!-- Innovation Card -->
                     <div style="background: linear-gradient(135deg, #f8fafb 0%, #e9ecef 100%); padding: 2rem; border-radius: 16px; border-left: 6px solid #326D78; opacity: 0; animation: fadeInRight 1s ease-out 0.6s forwards; transition: all 0.3s ease;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">Continuous Excellence</h4>
+                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">{{ getContent('about_card2_title', 'Digital Innovation') }}</h4>
                         <p style="color: #6c757d; line-height: 1.6; margin: 0;">
-                            As we embrace the opportunities of the digital age, we do so with the same unwavering commitment to client success that has defined our heritage.
+                            {{ getContent('about_card2_description', 'As we embrace the opportunities of the digital age, we do so with the same unwavering commitment to client success that has defined our heritage.') }}
                         </p>
                     </div>
 
                     <!-- Promise Card -->
                     <div style="background: linear-gradient(135deg, #f8fafb 0%, #e9ecef 100%); padding: 2rem; border-radius: 16px; border-left: 6px solid #326D78; opacity: 0; animation: fadeInRight 1s ease-out 0.6s forwards; transition: all 0.3s ease;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">Continuous Excellence</h4>
+                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">{{ getContent('about_card3_title', 'Heritage Promise') }}</h4>
                         <p style="color: #6c757d; line-height: 1.6; margin: 0;">
-                            "Passion for Excellence" isn't merely our motto — it's a pledge rooted in a heritage of trust and dedication to your success.
+                            {{ getContent('about_card3_description', '"Passion for Excellence" isn\'t merely our motto — it\'s a pledge rooted in a heritage of trust and dedication to your success.') }}
                         </p>
                     </div>
                 </div>
@@ -157,7 +153,7 @@
         </div>
         <h3 style="color: #2a2a2a; font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem;">Our Vision</h3>
         <p style="color: #6c757d; line-height: 1.7; font-size: 1.1rem; margin: 0;">
-          To lead the audit and accounting industry through our unwavering "Passion for Excellence", becoming a trusted standard for ethical innovation and generational impact.
+          {{ getContent('about_vision_text', 'To lead the audit and accounting industry through our unwavering "Passion for Excellence", becoming a trusted standard for ethical innovation and generational impact.') }}
         </p>
       </div>
 
@@ -172,13 +168,12 @@
         </div>
         <h3 style="color: white; font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem;">Our Mission</h3>
         <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1.1rem; margin: 0;">
-          To deliver outstanding, ethical, and client-focused financial services that empower businesses to grow confidently in a dynamic world — anchored in our legacy of trust and excellence.
+          {{ getContent('about_mission_text', 'To deliver outstanding, ethical, and client-focused financial services that empower businesses to grow confidently in a dynamic world — anchored in our legacy of trust and excellence.') }}
         </p>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- Core Values - Minimal Grid with Hover Effects -->
 <section style="padding: 6rem 0; background: white;">
@@ -207,8 +202,8 @@
               <path d="M12 .587l3.668 7.429 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.86 1.4-8.166L.132 9.208l8.2-1.192z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Excellence</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We set high standards in everything we do, delivering with precision and pride.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value1_title', 'Excellence') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value1_description', 'We set high standards in everything we do, delivering with precision and pride.') }}</p>
         </div>
       </div>
 
@@ -220,8 +215,8 @@
               <path d="M12 2l8 4v6c0 5.25-3.39 10.74-8 12-4.61-1.26-8-6.75-8-12V6l8-4z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Integrity</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We are honest, ethical, and transparent in our commitments.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value2_title', 'Integrity') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value2_description', 'We are honest, ethical, and transparent in our commitments.') }}</p>
         </div>
       </div>
 
@@ -233,8 +228,8 @@
               <path d="M9 21h6v-1H9v1zm3-20C7.48 1 4 4.48 4 9c0 3.25 2.5 6.26 4 7v3h8v-3c1.5-.74 4-3.75 4-7 0-4.52-3.48-8-8-8z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Innovation</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We embrace change and lead with forward-thinking solutions.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value3_title', 'Innovation') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value3_description', 'We embrace change and lead with forward-thinking solutions.') }}</p>
         </div>
       </div>
 
@@ -246,8 +241,8 @@
               <path d="M3 17h2v-7H3v7zm4 0h2v-4H7v4zm4 0h2V7h-2v10zm4 0h2v-2h-2v2zm4 0h2v-8h-2v8z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Professional Growth</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We encourage lifelong learning and support our people's development.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value4_title', 'Professional Growth') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value4_description', 'We encourage lifelong learning and support our people\'s development.') }}</p>
         </div>
       </div>
 
@@ -259,8 +254,8 @@
               <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5s-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.07 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Teamwork</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We thrive in collaboration, valuing the strength of collective effort.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value5_title', 'Teamwork') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value5_description', 'We thrive in collaboration, valuing the strength of collective effort.') }}</p>
         </div>
       </div>
 
@@ -276,8 +271,8 @@
               6.86-8.55 11.54L12 21.35z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Employee Care</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We prioritize wellbeing and inclusion within our firm.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value6_title', 'Employee Care') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value6_description', 'We prioritize wellbeing and inclusion within our firm.') }}</p>
         </div>
       </div>
 
@@ -295,8 +290,8 @@
               5.74-7.9 10.05z"/>
             </svg>
           </div>
-          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">Community Engagement</h4>
-          <p style="color: #6c757d; font-size: 0.95rem;">We give back to society and act as responsible corporate citizens.</p>
+          <h4 style="color: #2a2a2a; font-size: 1.3rem; font-weight: 600;">{{ getContent('about_value7_title', 'Community Engagement') }}</h4>
+          <p style="color: #6c757d; font-size: 0.95rem;">{{ getContent('about_value7_description', 'We give back to society and act as responsible corporate citizens.') }}</p>
         </div>
       </div>
     </div>

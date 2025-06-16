@@ -1,15 +1,15 @@
 <section id="services" class="services section">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Services</h2>
-    <p><span>Check Our</span> <span class="description-title" style="font-weight: bold;">Services</span></p>
+    <h2>{{ getContent('services_main_title', 'Services') }}</h2>
+    <p>{!! getContent('services_subtitle', '<span>Check Our</span> <span class="description-title" style="font-weight: bold;">Services</span>') !!}</p>
 
     <div style="max-width: 900px; margin: 0 auto; padding: 1rem 0; text-align: justify;">
       <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
-       Mendoza Tugano & Co., CPAs (MTC) operates as a comprehensive firm, offering an array of services that encompass accounting services, assurance, tax services, financial advisory, and consulting. We extend our expertise to both privately held enterprises and publicly listed companies. Our commitment to excellence and leadership is exemplified by the unwavering dedication of our highly skilled and passionate experts.
+       {{ getContent('services_description_paragraph1', 'Mendoza Tugano & Co., CPAs (MTC) operates as a comprehensive firm, offering an array of services that encompass accounting services, assurance, tax services, financial advisory, and consulting. We extend our expertise to both privately held enterprises and publicly listed companies. Our commitment to excellence and leadership is exemplified by the unwavering dedication of our highly skilled and passionate experts.') }}
       </p>
       <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; color: #444444; font-weight: normal;">
-       Each of our client enjoys the benefits of collaborative teamwork, bringing together diverse skills and proficiencies. This collaborative synergy is expertly guided by our partners, all of whom are committed to addressing your unique requirements. The solutions provided by MTC consistently adhere to the highest standards of quality, ensuring they are delivered with precision, timeliness, responsiveness, and thoroughness.
+       {{ getContent('services_description_paragraph2', 'Each of our client enjoys the benefits of collaborative teamwork, bringing together diverse skills and proficiencies. This collaborative synergy is expertly guided by our partners, all of whom are committed to addressing your unique requirements. The solutions provided by MTC consistently adhere to the highest standards of quality, ensuring they are delivered with precision, timeliness, responsiveness, and thoroughness.') }}
       </p>
     </div>
   </div>
@@ -23,108 +23,148 @@
       <div class="carousel-container" id="serviceCarousel">
         <div class="carousel-track" id="carouselTrack">
 
+        <!-- Service 1: Audit and Assurance -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/audit-assurance.jpg') }}" alt="Audit and Assurance" />
+            @if(hasImageContent('service1_image'))
+              <img src="{{ getContent('service1_image') }}" alt="{{ getContent('service1_title', 'Audit and Assurance') }}" />
+            @else
+              <img src="{{ asset('assets/img/audit-assurance.jpg') }}" alt="{{ getContent('service1_title', 'Audit and Assurance') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-search-dollar service-icon"></i>
-                <p>Professional audit services ensuring compliance and accuracy</p>
+                <p>{{ getContent('service1_description', 'Professional audit services ensuring compliance and accuracy') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.audit') }}"><h3>Audit and Assurance</h3></a>
+          <a href="{{ route('services.audit') }}"><h3>{{ getContent('service1_title', 'Audit and Assurance') }}</h3></a>
         </div>
 
+        <!-- Service 2: Business Advisory -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/business-advisory.jpg') }}" alt="Business Advisory" />
+            @if(hasImageContent('service2_image'))
+              <img src="{{ getContent('service2_image') }}" alt="{{ getContent('service2_title', 'Business Advisory') }}" />
+            @else
+              <img src="{{ asset('assets/img/business-advisory.jpg') }}" alt="{{ getContent('service2_title', 'Business Advisory') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-lightbulb service-icon"></i>
-                <p>Strategic guidance to drive business growth and success</p>
+                <p>{{ getContent('service2_description', 'Strategic guidance to drive business growth and success') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.advisory') }}"><h3>Business Advisory</h3></a>
+          <a href="{{ route('services.advisory') }}"><h3>{{ getContent('service2_title', 'Business Advisory') }}</h3></a>
         </div>
 
+        <!-- Service 3: Outsourcing -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/outsourcing.jpg') }}" alt="Outsourcing" />
+            @if(hasImageContent('service3_image'))
+              <img src="{{ getContent('service3_image') }}" alt="{{ getContent('service3_title', 'Outsourcing') }}" />
+            @else
+              <img src="{{ asset('assets/img/outsourcing.jpg') }}" alt="{{ getContent('service3_title', 'Outsourcing') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-users service-icon"></i>
-                <p>Comprehensive outsourcing solutions for operational efficiency</p>
+                <p>{{ getContent('service3_description', 'Comprehensive outsourcing solutions for operational efficiency') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.outsourcing') }}"><h3>Outsourcing</h3></a>
+          <a href="{{ route('services.outsourcing') }}"><h3>{{ getContent('service3_title', 'Outsourcing') }}</h3></a>
         </div>
 
+        <!-- Service 4: Business Restructuring -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/business-restructuring-and-insolvency.jpg') }}" alt="Restructuring" />
+            @if(hasImageContent('service4_image'))
+              <img src="{{ getContent('service4_image') }}" alt="{{ getContent('service4_title', 'Business Restructuring and Insolvency') }}" />
+            @else
+              <img src="{{ asset('assets/img/business-restructuring-and-insolvency.jpg') }}" alt="{{ getContent('service4_title', 'Business Restructuring and Insolvency') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-project-diagram service-icon"></i>
-                <p>Expert restructuring and insolvency advisory services</p>
+                <p>{{ getContent('service4_description', 'Expert restructuring and insolvency advisory services') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.restructuring') }}"><h3>Business Restructuring and Insolvency</h3></a>
+          <a href="{{ route('services.restructuring') }}"><h3>{{ getContent('service4_title', 'Business Restructuring and Insolvency') }}</h3></a>
         </div>
 
+        <!-- Service 5: Corporate Finance -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/corporate-finance.jpg') }}" alt="Corporate Finance" />
+            @if(hasImageContent('service5_image'))
+              <img src="{{ getContent('service5_image') }}" alt="{{ getContent('service5_title', 'Corporate Finance and Advisory') }}" />
+            @else
+              <img src="{{ asset('assets/img/corporate-finance.jpg') }}" alt="{{ getContent('service5_title', 'Corporate Finance and Advisory') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-chart-pie service-icon"></i>
-                <p>Strategic financial advisory and investment solutions</p>
+                <p>{{ getContent('service5_description', 'Strategic financial advisory and investment solutions') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.finance') }}"><h3>Corporate Finance and Advisory</h3></a>
+          <a href="{{ route('services.finance') }}"><h3>{{ getContent('service5_title', 'Corporate Finance and Advisory') }}</h3></a>
         </div>
 
+        <!-- Service 6: Forensic -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/forensic.jpg') }}" alt="Forensic" />
+            @if(hasImageContent('service6_image'))
+              <img src="{{ getContent('service6_image') }}" alt="{{ getContent('service6_title', 'Forensic and Litigation Support') }}" />
+            @else
+              <img src="{{ asset('assets/img/forensic.jpg') }}" alt="{{ getContent('service6_title', 'Forensic and Litigation Support') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-search service-icon"></i>
-                <p>Forensic accounting and litigation support expertise</p>
+                <p>{{ getContent('service6_description', 'Forensic accounting and litigation support expertise') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.forensic') }}"><h3>Forensic and Litigation Support</h3></a>
+          <a href="{{ route('services.forensic') }}"><h3>{{ getContent('service6_title', 'Forensic and Litigation Support') }}</h3></a>
         </div>
 
+        <!-- Service 7: Governance -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/risk-and-internal.jpg') }}" alt="Governance" />
+            @if(hasImageContent('service7_image'))
+              <img src="{{ getContent('service7_image') }}" alt="{{ getContent('service7_title', 'Governance, Risk and Internal Audit') }}" />
+            @else
+              <img src="{{ asset('assets/img/risk-and-internal.jpg') }}" alt="{{ getContent('service7_title', 'Governance, Risk and Internal Audit') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-shield-check service-icon"></i>
-                <p>Comprehensive governance and risk management solutions</p>
+                <p>{{ getContent('service7_description', 'Comprehensive governance and risk management solutions') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.governance') }}"><h3>Governance, Risk and Internal Audit</h3></a>
+          <a href="{{ route('services.governance') }}"><h3>{{ getContent('service7_title', 'Governance, Risk and Internal Audit') }}</h3></a>
         </div>
 
+        <!-- Service 8: Taxation -->
         <div class="service-slide">
           <div class="service-image-container">
-            <img src="{{ asset('assets/img/taxation.jpg') }}" alt="Taxation" />
+            @if(hasImageContent('service8_image'))
+              <img src="{{ getContent('service8_image') }}" alt="{{ getContent('service8_title', 'Taxation') }}" />
+            @else
+              <img src="{{ asset('assets/img/taxation.jpg') }}" alt="{{ getContent('service8_title', 'Taxation') }}" />
+            @endif
             <div class="service-overlay">
               <div class="service-overlay-content">
                 <i class="fas fa-calculator service-icon"></i>
-                <p>Expert tax planning and compliance services</p>
+                <p>{{ getContent('service8_description', 'Expert tax planning and compliance services') }}</p>
               </div>
             </div>
           </div>
-          <a href="{{ route('services.taxation') }}"><h3>Taxation</h3></a>
+          <a href="{{ route('services.taxation') }}"><h3>{{ getContent('service8_title', 'Taxation') }}</h3></a>
         </div>
 
       </div>

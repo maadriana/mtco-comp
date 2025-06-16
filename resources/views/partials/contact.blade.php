@@ -2,8 +2,8 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
+        <h2>{{ getContent('contact_main_title', 'Contact') }}</h2>
+        <p>{!! getContent('contact_subtitle', '<span>Need Help?</span> <span class="description-title">Contact Us</span>') !!}</p>
     </div><!-- End Section Title -->
 
 @if(session('contact_success'))
@@ -38,7 +38,7 @@
                     <h6 style="margin: 0; font-weight: bold; font-size: 18px; letter-spacing: 0.5px; color: #333;">Message Sent!</h6>
                 </div>
                 <p style="margin: 0; font-size: 14px; line-height: 1.6; padding-left: 47px; color: #555;">
-                    {{ session('contact_success') }}
+                    {{ getContent('contact_success_message', 'Thank you for your message! We will get back to you as soon as possible.') }}
                 </p>
             </div>
             <button onclick="closeContactAlert()" style="
@@ -151,7 +151,7 @@
                         <h6 style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.5px;">Error</h6>
                     </div>
                     <p style="margin: 0; opacity: 0.95; font-size: 14px; line-height: 1.5; padding-left: 47px;">
-                        {{ $errors->first('contact_error') }}
+                        {{ getContent('contact_error_message', 'Sorry, there was an error sending your message. Please try again later or contact us directly.') }}
                     </p>
                 </div>
                 <button onclick="closeContactErrorAlert()" style="
@@ -271,32 +271,42 @@
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
                         <div>
-                            <h3>Address</h3>
-                            <p>16F The Salcedo Towers</p>
-                            <p>169 H.V. de la Costa St.</p>
-                            <p>Salcedo Village</p>
-                            <p>Makati City 1227</p>
-                            <p>Philippines</p>
+                            <h3>{{ getContent('contact_address_title', 'Address') }}</h3>
+                            @if(getContent('contact_address_line1'))
+                                <p>{{ getContent('contact_address_line1') }}</p>
+                            @endif
+                            @if(getContent('contact_address_line2'))
+                                <p>{{ getContent('contact_address_line2') }}</p>
+                            @endif
+                            @if(getContent('contact_address_line3'))
+                                <p>{{ getContent('contact_address_line3') }}</p>
+                            @endif
+                            @if(getContent('contact_address_line4'))
+                                <p>{{ getContent('contact_address_line4') }}</p>
+                            @endif
+                            @if(getContent('contact_address_line5'))
+                                <p>{{ getContent('contact_address_line5') }}</p>
+                            @endif
                         </div>
                     </div><!-- End Info Item -->
 
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
-                            <h3>Call Us</h3>
-                            <p>+632 8887 1888</p>
+                            <h3>{{ getContent('contact_phone_title', 'Call Us') }}</h3>
+                            <p>{{ getContent('contact_phone_number', '+632 8887 1888') }}</p>
                         </div>
                     </div><!-- End Info Item -->
 
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
-                            <h3>Email Us</h3>
-                            <p>contact@mtco.com.ph</p>
+                            <h3>{{ getContent('contact_email_title', 'Email Us') }}</h3>
+                            <p>{{ getContent('contact_email_address', 'contact@mtco.com.ph') }}</p>
                         </div>
                     </div><!-- End Info Item -->
 
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.018732062944!2d121.02433507509568!3d14.56086078591368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9e4f6db6c37%3A0xdffb3b5b3329e8c3!2sThe%20Salcedo%20Towers%2C%20169%20H.%20V.%20Dela%20Costa%2C%20Makati%2C%201220%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1716829892686!5m2!1sen!2sph" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="{{ getContent('contact_map_embed_url', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.018732062944!2d121.02433507509568!3d14.56086078591368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9e4f6db6c37%3A0xdffb3b5b3329e8c3!2sThe%20Salcedo%20Towers%2C%20169%20H.%20V.%20Dela%20Costa%2C%20Makati%2C%201220%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1716829892686!5m2!1sen!2sph') }}" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -306,22 +316,22 @@
                     <div class="row gy-4">
 
                         <div class="col-md-6">
-                            <label for="name-field" class="pb-2">Your Name</label>
+                            <label for="name-field" class="pb-2">{{ getContent('contact_form_name_label', 'Your Name') }}</label>
                             <input type="text" name="name" id="name-field" class="form-control" required value="{{ old('name') }}">
                         </div>
 
                         <div class="col-md-6">
-                            <label for="email-field" class="pb-2">Your Email</label>
+                            <label for="email-field" class="pb-2">{{ getContent('contact_form_email_label', 'Your Email') }}</label>
                             <input type="email" class="form-control" name="email" id="email-field" required value="{{ old('email') }}">
                         </div>
 
                         <div class="col-md-12">
-                            <label for="subject-field" class="pb-2">Subject</label>
+                            <label for="subject-field" class="pb-2">{{ getContent('contact_form_subject_label', 'Subject') }}</label>
                             <input type="text" class="form-control" name="subject" id="subject-field" required value="{{ old('subject') }}">
                         </div>
 
                         <div class="col-md-12">
-                            <label for="message-field" class="pb-2">Message</label>
+                            <label for="message-field" class="pb-2">{{ getContent('contact_form_message_label', 'Message') }}</label>
                             <textarea class="form-control" name="message" rows="10" id="message-field" required>{{ old('message') }}</textarea>
                         </div>
 
@@ -338,7 +348,7 @@
                    transition: all 0.3s ease;"
             onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(50, 108, 121, 0.3)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Send Message
+        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>{{ getContent('contact_form_button_text', 'Send Message') }}
     </button>
 </div>
                  </div>
