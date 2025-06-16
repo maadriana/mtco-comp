@@ -19,11 +19,10 @@
   </div>
 </section>
 
-
 <!-- About Section -->
 <section id="about" class="about section light-background">
   <div class="container section-title" data-aos="fade-up">
-    <p><span>Find Out More</span> <span class="description-title">About Us</span></p>
+    <p>{!! getContent('about_section_title', '<span>Find Out More</span> <span class="description-title">About Us</span>') !!}</p>
   </div>
 
   <div class="container">
@@ -40,11 +39,11 @@
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
         <div class="about-content ps-0 ps-lg-3">
           <p style="font-size: 1.25rem; line-height: 1.8; margin: 2rem 0; padding: 1rem 0; text-align: justify;">
-            {!! getContent('about_text', 'Default about paragraph...') !!}
+            {!! getContent('about_text', 'At Mendoza Tugano & Co., CPAs, "Passion for Excellence" is not merely a motto — it\'s a pledge rooted in a heritage of trust and dedication. As we embrace the opportunities of the digital age, we do so with the same unwavering commitment to client success. With Mendoza Tugano & Co., CPAs, we look forward to creating a future where our clients\' financial aspirations are not only realized but exceeded, ensuring that our legacy of excellence continues to thrive for generations to come.') !!}
           </p>
 
           <div class="mt-3">
-            <a href="{{ route('about') }}" class="btn btn-primary custom-btn">Learn More</a>
+            <a href="{{ route('about') }}" class="btn btn-primary custom-btn">{{ getContent('about_button_text', 'Learn More') }}</a>
           </div>
         </div>
       </div>
