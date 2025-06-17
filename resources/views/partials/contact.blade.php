@@ -1,3 +1,188 @@
+<style>
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Validation alert animations */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(100px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) scale(1);
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50%) translateX(100px) scale(0.9);
+    }
+}
+
+@keyframes shrinkProgressFast {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Button Loading State */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from { transform: rotate(0turn); }
+    to { transform: rotate(1turn); }
+}
+
+/* Existing animations */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(400px) scale(0.8); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0) scale(1); }
+    to { opacity: 0; transform: translateX(400px) scale(0.8); }
+}
+@keyframes shrinkProgress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #contactSuccessAlert, #contactErrorAlert, #contactFieldErrorAlert, #contactValidationAlert {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+        min-width: none !important;
+        transform: none !important;
+    }
+}
+</style>
+
+<!-- Loading Overlay -->
+<div id="contactLoadingOverlay" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+">
+    <div style="
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 90%;
+    ">
+        <div style="
+            width: 60px;
+            height: 60px;
+            border: 4px solid #e9ecef;
+            border-top: 4px solid #326C79;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        "></div>
+        <div style="color: #326C79; font-size: 18px; font-weight: 600; margin-bottom: 10px;">
+            {{ getContent('contact_loading_title', 'Sending Message...') }}
+        </div>
+        <div style="color: #6c757d; font-size: 14px;">
+            {{ getContent('contact_loading_subtitle', 'Please wait while we process your request') }}
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form Validation Alert -->
+<div id="contactValidationAlert" style="
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 9999;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 380px;
+    width: 380px;
+    padding: 25px;
+    display: none;
+    animation: slideInFromRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <h3 style="font-size: 20px; font-weight: 600; color: #333; margin: 0; flex: 1;">
+            Form Validation Error!
+        </h3>
+        <button onclick="closeContactValidationAlert()" style="
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            margin-left: 15px;
+        " onmouseover="this.style.background='#f5f5f5'; this.style.color='#666'" onmouseout="this.style.background='none'; this.style.color='#999'">
+            ×
+        </button>
+    </div>
+
+    <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0 0 20px 0;" id="contactValidationMessage">
+        Please fill in all required fields before submitting the form.
+    </p>
+
+    <div style="height: 3px; background: #f0f0f0; border-radius: 2px; overflow: hidden; margin: 0;">
+        <div style="
+            height: 100%;
+            background: #ef4444;
+            width: 100%;
+            border-radius: 2px;
+            animation: shrinkProgressFast 1.5s linear forwards;
+        "></div>
+    </div>
+</div>
+
 <section id="contact" class="contact section">
 
     <!-- Section Title -->
@@ -44,6 +229,9 @@
             <button onclick="closeContactAlert()" style="
                 background: #f8f9fa;
                 border: 1px solid #dee2e6;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
                 color: #6c757d;
                 cursor: pointer;
                 font-size: 16px;
@@ -63,44 +251,20 @@
             <div style="
                 margin-top: 15px;
                 height: 4px;
-                background: rgba(255, 255, 255, 0.2);
+                background: rgba(50, 108, 121, 0.2);
                 border-radius: 2px;
                 overflow: hidden;
             ">
                 <div id="contactProgressBar" style="
                     height: 100%;
-                    background: rgba(255, 255, 255, 0.8);
+                    background: #326C79;
                     width: 100%;
                     border-radius: 2px;
                     animation: shrinkProgress 5s linear forwards;
-                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    box-shadow: 0 0 10px rgba(50, 108, 121, 0.3);
                 "></div>
             </div>
         </div>
-
-        <style>
-            @keyframes slideInRight {
-                from { opacity: 0; transform: translateX(400px) scale(0.8); }
-                to { opacity: 1; transform: translateX(0) scale(1); }
-            }
-            @keyframes slideOutRight {
-                from { opacity: 1; transform: translateX(0) scale(1); }
-                to { opacity: 0; transform: translateX(400px) scale(0.8); }
-            }
-            @keyframes shrinkProgress {
-                from { width: 100%; }
-                to { width: 0%; }
-            }
-            @media (max-width: 768px) {
-                #contactSuccessAlert, #contactErrorAlert {
-                    top: 10px !important;
-                    right: 10px !important;
-                    left: 10px !important;
-                    max-width: none !important;
-                    min-width: none !important;
-                }
-            }
-        </style>
 
         <script>
             setTimeout(function() { closeContactAlert(); }, 5000);
@@ -140,6 +304,9 @@
                     <div style="display: flex; align-items: center; margin-bottom: 10px;">
                         <div style="
                             background: rgba(255, 255, 255, 0.25);
+                            border-radius: 50%;
+                            width: 35px;
+                            height: 35px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -157,6 +324,9 @@
                 <button onclick="closeContactErrorAlert()" style="
                     background: rgba(255, 255, 255, 0.2);
                     border: none;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
                     color: white;
                     cursor: pointer;
                     font-size: 16px;
@@ -233,6 +403,9 @@
                 <button onclick="closeContactFieldErrorAlert()" style="
                     background: rgba(255, 255, 255, 0.2);
                     border: none;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
                     color: white;
                     cursor: pointer;
                     font-size: 16px;
@@ -311,7 +484,7 @@
             </div>
 
             <div class="col-lg-7">
-                <form action="{{ route('contact.submit') }}" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <form action="{{ route('contact.submit') }}" method="post" class="contact-form" id="contactForm" data-aos="fade-up" data-aos-delay="200">
                     @csrf
                     <div class="row gy-4">
 
@@ -336,23 +509,24 @@
                         </div>
 
                         <div class="col-md-12 text-center">
-                <button type="submit"
-               style="background: #326C79;
-                   color: white;
-                   border: none;
-                   border-radius: 25px;
-                   padding: 12px 30px;
-                   font-weight: 600;
-                   font-size: 16px;
-                   cursor: pointer;
-                   transition: all 0.3s ease;"
-            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(50, 108, 121, 0.3)'"
-            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>{{ getContent('contact_form_button_text', 'Send Message') }}
-    </button>
-</div>
-                 </div>
-             </form>
+                            <button type="submit" id="submitBtn"
+                                   style="background: #326C79;
+                                       color: white;
+                                       border: none;
+                                       border-radius: 25px;
+                                       padding: 12px 30px;
+                                       font-weight: 600;
+                                       font-size: 16px;
+                                       cursor: pointer;
+                                       transition: all 0.3s ease;"
+                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(50, 108, 121, 0.3)'"
+                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                            <span id="submitBtnText">{{ getContent('contact_form_button_text', 'Send Message') }}</span>
+                        </button>
+                        </div>
+                     </div>
+                 </form>
             </div><!-- End Contact Form -->
 
         </div>
@@ -360,3 +534,69 @@
     </div>
 
 </section><!-- /Contact Section -->
+
+<script>
+// Contact form validation and submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitBtnText = document.getElementById('submitBtnText');
+    const loadingOverlay = document.getElementById('contactLoadingOverlay');
+
+    if (form && submitBtn) {
+        form.addEventListener('submit', function(e) {
+            // Validate form before submission
+            const nameField = document.getElementById('name-field');
+            const emailField = document.getElementById('email-field');
+            const subjectField = document.getElementById('subject-field');
+            const messageField = document.getElementById('message-field');
+
+            // Check if all required fields are filled
+            if (!nameField.value.trim() || !emailField.value.trim() || !subjectField.value.trim() || !messageField.value.trim()) {
+                e.preventDefault(); // Prevent form submission
+                showContactValidationAlert();
+                return;
+            }
+
+            // Show loading states
+            submitBtn.classList.add('btn-loading');
+            submitBtnText.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            loadingOverlay.style.display = 'flex';
+
+            // Form will submit normally to Laravel backend
+        });
+    }
+});
+
+// Show contact validation alert
+function showContactValidationAlert() {
+    const alert = document.getElementById('contactValidationAlert');
+    alert.style.display = 'block';
+
+    // Auto-dismiss after 1.5 seconds
+    setTimeout(() => {
+        closeContactValidationAlert();
+    }, 1500);
+}
+
+// Close contact validation alert
+function closeContactValidationAlert() {
+    const alert = document.getElementById('contactValidationAlert');
+
+    if (alert && alert.style.display !== 'none') {
+        alert.style.animation = 'slideOutToRight 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards';
+        setTimeout(() => {
+            alert.style.display = 'none';
+            alert.style.animation = 'slideInFromRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        }, 300);
+    }
+}
+
+// Close alerts with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeContactValidationAlert();
+    }
+});
+</script>

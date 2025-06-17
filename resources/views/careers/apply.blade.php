@@ -4,6 +4,360 @@
 
 @section('content')
 
+<style>
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form validation alert animations */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(100px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) scale(1);
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50%) translateX(100px) scale(0.9);
+    }
+}
+
+@keyframes shrinkProgressFast {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Button Loading State */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from { transform: rotate(0turn); }
+    to { transform: rotate(1turn); }
+}
+
+/* Existing animations */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px) scale(0.8);
+    }
+}
+
+@keyframes shrinkProgress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.success-alert-fade-out {
+    animation: slideOutRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+}
+
+/* File validation alert - exact match to your success alert */
+.file-error-alert {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 9999;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 380px;
+    width: 380px;
+    padding: 25px;
+    display: none;
+    animation: slideInFromRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.file-error-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.file-error-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.file-error-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    margin-left: 15px;
+}
+
+.file-error-close:hover {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.file-error-message {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+}
+
+.file-error-progress {
+    height: 3px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.file-error-progress-bar {
+    height: 100%;
+    background: #ef4444;
+    width: 100%;
+    border-radius: 2px;
+    animation: shrinkProgressFast 1.5s linear forwards;
+}
+
+/* Form validation alert */
+.form-validation-alert {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 9999;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 380px;
+    width: 380px;
+    padding: 25px;
+    display: none;
+    animation: slideInFromRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Dropzone error state */
+.dropzone-error {
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: #6c757d;
+    font-weight: bold;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(50, 109, 120, 0.1) !important;
+    border-color: #326D78 !important;
+}
+
+/* File input styling */
+input[type="file"] {
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background: linear-gradient(135deg, #326D78, #4a9aba);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .col-sm-6 {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    div[style*="padding: 3rem"] {
+        padding: 2rem !important;
+    }
+
+    #successAlert, .file-error-alert, .form-validation-alert {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+        min-width: none !important;
+        width: auto !important;
+        transform: none !important;
+    }
+}
+</style>
+
+<!-- Loading Overlay -->
+<div id="careersLoadingOverlay" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+">
+    <div style="
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 90%;
+    ">
+        <div style="
+            width: 60px;
+            height: 60px;
+            border: 4px solid #e9ecef;
+            border-top: 4px solid #326D78;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        "></div>
+        <div style="color: #326D78; font-size: 18px; font-weight: 600; margin-bottom: 10px;">
+            Submitting Application...
+        </div>
+        <div style="color: #6c757d; font-size: 14px;">
+            Please wait while we process your application
+        </div>
+    </div>
+</div>
+
+<!-- Form Validation Alert -->
+<div id="formValidationAlert" class="form-validation-alert">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <h3 style="font-size: 20px; font-weight: 600; color: #333; margin: 0; flex: 1;">
+            Form Validation Error!
+        </h3>
+        <button onclick="closeFormValidationAlert()" style="
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            margin-left: 15px;
+        " onmouseover="this.style.background='#f5f5f5'; this.style.color='#666'" onmouseout="this.style.background='none'; this.style.color='#999'">
+            ×
+        </button>
+    </div>
+
+    <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0 0 20px 0;" id="formValidationMessage">
+        Please fill in all required fields before submitting your application.
+    </p>
+
+    <div style="height: 3px; background: #f0f0f0; border-radius: 2px; overflow: hidden; margin: 0;">
+        <div style="
+            height: 100%;
+            background: #ef4444;
+            width: 100%;
+            border-radius: 2px;
+            animation: shrinkProgressFast 1.5s linear forwards;
+        "></div>
+    </div>
+</div>
+
+<!-- File Error Alert -->
+<div id="fileErrorAlert" class="file-error-alert">
+    <div class="file-error-header">
+        <h3 class="file-error-title">Invalid File Type!</h3>
+        <button onclick="closeFileErrorAlert()" class="file-error-close">×</button>
+    </div>
+
+    <p class="file-error-message" id="fileErrorMessage">
+        Please upload only PDF, DOC, or DOCX files for your resume.
+    </p>
+
+    <div class="file-error-progress">
+        <div class="file-error-progress-bar"></div>
+    </div>
+</div>
+
 <!-- Wave Header (Top Part Only) -->
 <div style="position: relative; margin-top: -1.5rem; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); padding: 0; overflow: hidden; height: 200px;">
 
@@ -86,6 +440,9 @@
                             <button onclick="closeSuccessAlert()" style="
                                 background: #f8f9fa;
                                 border: 1px solid #dee2e6;
+                                border-radius: 50%;
+                                width: 30px;
+                                height: 30px;
                                 color: #6c757d;
                                 cursor: pointer;
                                 font-size: 16px;
@@ -121,50 +478,6 @@
                         </div>
                     </div>
 
-                    <style>
-                        @keyframes slideInRight {
-                            from {
-                                opacity: 0;
-                                transform: translateX(400px) scale(0.8);
-                            }
-                            to {
-                                opacity: 1;
-                                transform: translateX(0) scale(1);
-                            }
-                        }
-
-                        @keyframes slideOutRight {
-                            from {
-                                opacity: 1;
-                                transform: translateX(0) scale(1);
-                            }
-                            to {
-                                opacity: 0;
-                                transform: translateX(400px) scale(0.8);
-                            }
-                        }
-
-                        @keyframes shrinkProgress {
-                            from { width: 100%; }
-                            to { width: 0%; }
-                        }
-
-                        .success-alert-fade-out {
-                            animation: slideOutRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
-                        }
-
-                        /* Mobile responsive */
-                        @media (max-width: 768px) {
-                            #successAlert {
-                                top: 10px !important;
-                                right: 10px !important;
-                                left: 10px !important;
-                                max-width: none !important;
-                                min-width: none !important;
-                            }
-                        }
-                    </style>
-
                     <script>
                         // Auto-dismiss after 5 seconds
                         setTimeout(function() {
@@ -194,7 +507,7 @@
                 <div style="background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 3px solid #326D78; position: relative;" data-aos="fade-up" data-aos-delay="200">
 
                     <!-- Form Header -->
-                    <div style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); color: white; padding: 2rem; text-center;">
+                    <div style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); color: white; padding: 2rem; text-align: center;">
                         <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
                             <i class="fas fa-paper-plane" style="font-size: 2rem;"></i>
                         </div>
@@ -204,7 +517,7 @@
 
                     <!-- Form Body -->
                     <div style="padding: 3rem;">
-                        <form method="POST" action="{{ route('careers.apply.submit') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('careers.apply.submit') }}" enctype="multipart/form-data" id="careersForm">
                             @csrf
 
                             <div class="row gy-4">
@@ -289,46 +602,17 @@
                                     </div>
                                 </div>
 
-                                <script>
-                                    function previewFile(input) {
-                                        const file = input.files[0];
-                                        if (file) {
-                                            document.getElementById('fileName').textContent = file.name;
-                                            document.getElementById('filePreview').style.display = 'block';
-                                            document.getElementById('dropzone-text').style.display = 'none';
-                                        }
-                                    }
-
-                                    function removeFile() {
-                                        const input = document.getElementById('cv');
-                                        input.value = "";
-                                        document.getElementById('filePreview').style.display = 'none';
-                                        document.getElementById('dropzone-text').style.display = 'block';
-                                    }
-
-                                    function handleFileDrop(event) {
-                                        event.preventDefault();
-                                        const files = event.dataTransfer.files;
-                                        if (files.length > 0) {
-                                            const input = document.getElementById('cv');
-                                            const dataTransfer = new DataTransfer();
-                                            dataTransfer.items.add(files[0]);
-                                            input.files = dataTransfer.files;
-                                            previewFile(input);
-                                        }
-                                    }
-                                </script>
-
                                 <!-- Submit Button -->
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-lg"
-                                            style="background: linear-gradient(135deg, #326D78, #4a9aba); color: white; border: none; border-radius: 25px; padding: 1rem 3rem; font-weight: 600; transition: all 0.3s ease;">
-                                        <i class="fas fa-paper-plane me-2"></i>Submit Application
-                                    </button>
-                                    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                                        <i class="fas fa-lock me-1"></i>Your information is secure and will only be used for recruitment purposes.
-                                    </p>
-                                </div>
+                                   <button type="submit" id="submitBtn" class="btn btn-lg"
+                                  style="background: linear-gradient(135deg, #326D78, #4a9aba); color: white; border: none; border-radius: 25px; padding: 1rem 3rem; font-weight: 600; transition: all 0.3s ease;">
+                                <i class="fas fa-paper-plane me-2"></i>
+                             <span id="submitBtnText">Submit Application</span>
+                              </button>
+                             <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                             <i class="fas fa-lock me-1"></i>Your information is secure and will only be used for recruitment purposes.
+                         </p>
+                        </div>
 
                             </div>
                         </form>
@@ -340,57 +624,192 @@
     </div>
 </section>
 
-<style>
-    .breadcrumb-item + .breadcrumb-item::before {
-        content: "›";
-        color: #6c757d;
-        font-weight: bold;
-    }
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
+<script>
+// File validation function
+function validateFile(file) {
+    const allowedTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
 
-    .form-control:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(50, 109, 120, 0.1) !important;
-        border-color: #326D78 !important;
-    }
+    const allowedExtensions = ['pdf', 'doc', 'docx'];
+    const fileExtension = file.name.split('.').pop().toLowerCase();
 
-    /* File input styling */
-    input[type="file"] {
-        cursor: pointer;
-    }
+    return allowedTypes.includes(file.type) || allowedExtensions.includes(fileExtension);
+}
 
-    input[type="file"]::-webkit-file-upload-button {
-        background: linear-gradient(135deg, #326D78, #4a9aba);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-        margin-right: 1rem;
-    }
+// Show file error alert
+function showFileError(fileName, fileType) {
+    const alert = document.getElementById('fileErrorAlert');
+    const message = document.getElementById('fileErrorMessage');
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .container h1 {
-            font-size: 2.2rem !important;
+    // Get file extension for better error message
+    const extension = fileName.split('.').pop().toUpperCase();
+
+    message.innerHTML = `
+        The file "<strong>${fileName}</strong>" (${extension}) is not supported. Please upload only PDF, DOC, or DOCX files for your resume.
+    `;
+
+    alert.style.display = 'block';
+
+    // Auto-dismiss after 1.5 seconds
+    setTimeout(() => {
+        closeFileErrorAlert();
+    }, 1500);
+}
+
+// Close file error alert
+function closeFileErrorAlert() {
+    const alert = document.getElementById('fileErrorAlert');
+
+    if (alert && alert.style.display !== 'none') {
+        alert.style.animation = 'slideOutToRight 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards';
+        setTimeout(() => {
+            alert.style.display = 'none';
+            alert.style.animation = 'slideInFromRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        }, 300);
+    }
+}
+
+// Show form validation alert
+function showFormValidationAlert() {
+    const alert = document.getElementById('formValidationAlert');
+    alert.style.display = 'block';
+
+    // Auto-dismiss after 1.5 seconds
+    setTimeout(() => {
+        closeFormValidationAlert();
+    }, 1500);
+}
+
+// Close form validation alert
+function closeFormValidationAlert() {
+    const alert = document.getElementById('formValidationAlert');
+
+    if (alert && alert.style.display !== 'none') {
+        alert.style.animation = 'slideOutToRight 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards';
+        setTimeout(() => {
+            alert.style.display = 'none';
+            alert.style.animation = 'slideInFromRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        }, 300);
+    }
+}
+
+// Updated previewFile function
+function previewFile(input) {
+    const file = input.files[0];
+    const dropzone = document.getElementById('dropzone');
+
+    if (file) {
+        // Validate file type
+        if (!validateFile(file)) {
+            // Show error
+            showFileError(file.name, file.type);
+
+            // Add error styling to dropzone
+            dropzone.classList.add('dropzone-error');
+
+            // Clear the input
+            input.value = "";
+
+            // Remove error styling after 2 seconds
+            setTimeout(() => {
+                dropzone.classList.remove('dropzone-error');
+            }, 2000);
+
+            return;
         }
 
-        .col-sm-6 {
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            width: 100%;
-        }
-
-        div[style*="padding: 3rem"] {
-            padding: 2rem !important;
-        }
+        // File is valid, proceed with preview
+        dropzone.classList.remove('dropzone-error');
+        document.getElementById('fileName').textContent = file.name;
+        document.getElementById('filePreview').style.display = 'block';
+        document.getElementById('dropzone-text').style.display = 'none';
     }
-</style>
+}
+
+function removeFile() {
+    const input = document.getElementById('cv');
+    const dropzone = document.getElementById('dropzone');
+
+    input.value = "";
+    dropzone.classList.remove('dropzone-error');
+    document.getElementById('filePreview').style.display = 'none';
+    document.getElementById('dropzone-text').style.display = 'block';
+}
+
+// Updated handleFileDrop function
+function handleFileDrop(event) {
+    event.preventDefault();
+    const dropzone = document.getElementById('dropzone');
+    dropzone.style.background = 'rgba(50, 109, 120, 0.02)';
+
+    const files = event.dataTransfer.files;
+    if (files.length > 0) {
+        const file = files[0];
+
+        // Validate file type
+        if (!validateFile(file)) {
+            showFileError(file.name, file.type);
+            dropzone.classList.add('dropzone-error');
+
+            setTimeout(() => {
+                dropzone.classList.remove('dropzone-error');
+            }, 2000);
+
+            return;
+        }
+
+        // File is valid, proceed
+        const input = document.getElementById('cv');
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        input.files = dataTransfer.files;
+        previewFile(input);
+    }
+}
+
+// Form submission with validation and loading
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('careersForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitBtnText = document.getElementById('submitBtnText');
+    const loadingOverlay = document.getElementById('careersLoadingOverlay');
+
+    if (form && submitBtn) {
+        form.addEventListener('submit', function(e) {
+            // Validate form before submission
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const jobTitleField = document.getElementById('job_title');
+            const cvField = document.getElementById('cv');
+
+            // Check if all required fields are filled
+            if (!nameField.value.trim() || !emailField.value.trim() || !jobTitleField.value.trim() || !cvField.files.length) {
+                e.preventDefault(); // Prevent form submission
+                showFormValidationAlert();
+                return;
+            }
+
+            // Show loading states
+            submitBtn.classList.add('btn-loading');
+            submitBtnText.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            loadingOverlay.style.display = 'flex';
+
+            // Form will submit normally to Laravel backend
+        });
+    }
+});
+
+// Close alerts with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeFileErrorAlert();
+        closeFormValidationAlert();
+    }
+});
+</script>
 
 @endsection

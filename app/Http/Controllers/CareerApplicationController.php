@@ -47,21 +47,39 @@ class CareerApplicationController extends Controller
             ]);
 
             // Create email body
-            $emailBody = "
-                <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'>
-                    <div style='background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); color: white; padding: 20px; text-align: center;'>
-                        <h2>New Career Application</h2>
-                    </div>
-                    <div style='padding: 20px; background: #f8f9fa;'>
-                        <p><strong>Name:</strong> " . htmlspecialchars($request->name) . "</p>
-                        <p><strong>Email:</strong> " . htmlspecialchars($request->email) . "</p>
-                        <p><strong>Position:</strong> " . htmlspecialchars($request->job_title) . "</p>
-                        <p><strong>Message:</strong><br>" . nl2br(htmlspecialchars($request->message ?: 'No message provided')) . "</p>
-                        <p><strong>CV File:</strong> " . htmlspecialchars($file->getClientOriginalName()) . " (attached)</p>
-                        <p><strong>Submitted:</strong> " . now()->format('F j, Y \a\t g:i A') . "</p>
-                    </div>
-                </div>
-            ";
+           $emailBody = "
+    <div style='font-family: \"Open Sans\", sans-serif; max-width: 650px; margin: 0 auto; background-color: #f4f6f8; padding: 0; border-radius: 10px; overflow: hidden; font-size: 12px; color: #333;'>
+
+        <!-- HEADER -->
+        <div style='background: linear-gradient(135deg, #326C79 0%, #289DD2 100%); padding: 24px; text-align: center;'>
+            <h2 style='color: white; font-family: \"Raleway\", sans-serif; margin: 0;'>New Career Application</h2>
+        </div>
+
+        <!-- CONTENT -->
+        <div style='padding: 24px; background-color: #ffffff;'>
+            <p><strong style='color: #326C79;'>Name:</strong> " . htmlspecialchars($request->name) . "</p>
+            <p><strong style='color: #326C79;'>Email:</strong> " . htmlspecialchars($request->email) . "</p>
+            <p><strong style='color: #326C79;'>Position:</strong> " . htmlspecialchars($request->job_title) . "</p>
+
+            <hr style='margin: 20px 0; border-top: 1px solid #ddd;' />
+
+            <p><strong style='color: #326C79;'>Message:</strong></p>
+            <div style='padding: 15px; background-color: #f5f5f5; border-radius: 8px; line-height: 1.6;'>
+                " . nl2br(htmlspecialchars($request->message ?: 'No message provided')) . "
+            </div>
+
+            <p style='margin-top: 20px;'><strong style='color: #326C79;'>CV File:</strong> " . htmlspecialchars($file->getClientOriginalName()) . " (attached)</p>
+        </div>
+
+        <!-- FOOTER -->
+        <div style='padding: 16px; background-color: #f9f9f9; text-align: center; font-size: 11px; color: #666;'>
+            <p style='margin: 0;'>Submitted on " . now()->format('F j, Y \a\t g:i A') . "</p>
+            <p style='margin: 0;'>Sent from mtco.com.ph careers page</p>
+        </div>
+    </div>
+";
+
+
 
             Log::info('=== ATTEMPTING TO SEND EMAIL ===');
 
