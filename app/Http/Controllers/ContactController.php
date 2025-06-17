@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class ContactController extends Controller
 {
@@ -22,6 +23,9 @@ class ContactController extends Controller
             ]);
 
             Log::info('=== CONTACT VALIDATION PASSED ===');
+
+            // Get current time in Philippines timezone
+            $philippinesTime = Carbon::now('Asia/Manila')->format('F j, Y \a\t g:i A');
 
             // Create email body
            $emailBody = "
@@ -48,7 +52,7 @@ class ContactController extends Controller
 
         <!-- FOOTER -->
         <div style='padding: 16px; background-color: #f9f9f9; text-align: center; font-size: 11px; color: #666;'>
-            <p style='margin: 0;'>Submitted on " . now()->format('F j, Y \a\t g:i A') . "</p>
+            <p style='margin: 0;'>Submitted on " . $philippinesTime . "</p>
             <p style='margin: 0;'>Sent from mtco.com.ph contact form</p>
         </div>
     </div>

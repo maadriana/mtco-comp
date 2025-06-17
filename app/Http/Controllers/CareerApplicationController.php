@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class CareerApplicationController extends Controller
 {
@@ -46,6 +47,9 @@ class CareerApplicationController extends Controller
                 'temp_exists' => file_exists($tempPath)
             ]);
 
+            // Get current time in Philippines timezone
+            $philippinesTime = Carbon::now('Asia/Manila')->format('F j, Y \a\t g:i A');
+
             // Create email body
            $emailBody = "
     <div style='font-family: \"Open Sans\", sans-serif; max-width: 650px; margin: 0 auto; background-color: #f4f6f8; padding: 0; border-radius: 10px; overflow: hidden; font-size: 12px; color: #333;'>
@@ -73,13 +77,11 @@ class CareerApplicationController extends Controller
 
         <!-- FOOTER -->
         <div style='padding: 16px; background-color: #f9f9f9; text-align: center; font-size: 11px; color: #666;'>
-            <p style='margin: 0;'>Submitted on " . now()->format('F j, Y \a\t g:i A') . "</p>
+            <p style='margin: 0;'>Submitted on " . $philippinesTime . "</p>
             <p style='margin: 0;'>Sent from mtco.com.ph careers page</p>
         </div>
     </div>
 ";
-
-
 
             Log::info('=== ATTEMPTING TO SEND EMAIL ===');
 
