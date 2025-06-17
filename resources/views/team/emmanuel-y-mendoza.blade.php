@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Emmanuel Y. Mendoza - Managing Partner')
+@section('title', \App\Models\Content::where('key', 'emmanuel_full_name')->value('value') . ' - ' . \App\Models\Content::where('key', 'emmanuel_position')->value('value'))
 
 @section('content')
 
@@ -19,10 +19,11 @@
                 <li class="breadcrumb-item">
                     <a href="{{ url('/#team') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">People</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Emmanuel Y. Mendoza</li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">{{ \App\Models\Content::where('key', 'emmanuel_full_name')->value('value') ?: 'Emmanuel Y. Mendoza' }}</li>
             </ol>
         </nav>
     </div>
+
     <!-- Hero Profile Section -->
     <div style="background: white; position: relative; overflow: hidden;">
         <div class="container">
@@ -33,9 +34,18 @@
                     <div style="position: relative;">
                         <!-- Main Profile Image -->
                         <div style="position: relative; z-index: 2;">
-                            <img src="{{ asset('assets/img/team/emmanuel-y-mendoza.jpeg') }}"
-                                 alt="Emmanuel Y. Mendoza"
-                                 style="width: 100%; max-width: 400px; height: 500px; object-fit: cover; object-position: center top; border-radius: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                            @php
+                                $emmanuelProfileImage = \App\Models\Content::where('key', 'emmanuel_profile_image')->first();
+                            @endphp
+                            @if($emmanuelProfileImage && $emmanuelProfileImage->image)
+                                <img src="data:image/jpeg;base64,{{ base64_encode($emmanuelProfileImage->image) }}"
+                                     alt="{{ \App\Models\Content::where('key', 'emmanuel_full_name')->value('value') ?: 'Emmanuel Y. Mendoza' }}"
+                                     style="width: 100%; max-width: 400px; height: 500px; object-fit: cover; object-position: center top; border-radius: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                            @else
+                                <img src="{{ asset('assets/img/team/emmanuel-y-mendoza.jpeg') }}"
+                                     alt="{{ \App\Models\Content::where('key', 'emmanuel_full_name')->value('value') ?: 'Emmanuel Y. Mendoza' }}"
+                                     style="width: 100%; max-width: 400px; height: 500px; object-fit: cover; object-position: center top; border-radius: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                            @endif
                         </div>
 
                         <!-- Decorative Background Elements -->
@@ -56,12 +66,18 @@
 
                         <!-- Name and Title -->
                         <div style="margin-bottom: 2rem;">
+                            @php
+                                $fullName = \App\Models\Content::where('key', 'emmanuel_full_name')->value('value') ?: 'Emmanuel Y. Mendoza';
+                                $nameParts = explode(' ', $fullName);
+                                $firstName = array_slice($nameParts, 0, -1);
+                                $lastName = end($nameParts);
+                            @endphp
                             <h1 style="font-size: 2.9rem; font-weight: 700; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
-                                Emmanuel Y.<br>
-                                <span style="color: #326D78;">Mendoza</span>
+                                {{ implode(' ', $firstName) }}<br>
+                                <span style="color: #326D78;">{{ $lastName }}</span>
                             </h1>
                             <h2 style="font-size: 1.3rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
-                                Managing Partner
+                                {{ \App\Models\Content::where('key', 'emmanuel_position')->value('value') ?: 'Managing Partner' }}
                             </h2>
                         </div>
 
@@ -71,30 +87,30 @@
 
                             <div style="display: flex; align-items: center; margin-bottom: 1rem;">
                                 <i class="fas fa-envelope" style="font-size: 1.5rem; margin-right: 1rem; width: 30px;"></i>
-                                <a href="mailto:eymendoza@mtco.com.ph" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500;">
-                                    eymendoza@mtco.com.ph
+                                <a href="mailto:{{ \App\Models\Content::where('key', 'emmanuel_email')->value('value') ?: 'eymendoza@mtco.com.ph' }}" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500;">
+                                    {{ \App\Models\Content::where('key', 'emmanuel_email')->value('value') ?: 'eymendoza@mtco.com.ph' }}
                                 </a>
                             </div>
 
                             <div style="display: flex; align-items: center;">
                                 <i class="fas fa-building" style="font-size: 1.5rem; margin-right: 1rem; width: 30px;"></i>
-                                <span style="font-size: 1.1rem;">Mendoza Tugano & Co., CPAs</span>
+                                <span style="font-size: 1.1rem;">{{ \App\Models\Content::where('key', 'emmanuel_company')->value('value') ?: 'Mendoza Tugano & Co., CPAs' }}</span>
                             </div>
                         </div>
 
                         <!-- Key Achievements -->
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                             <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #326D78;">
-                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">10+</h3>
-                                <p style="color: #666; margin: 0; font-weight: 500;">Years at SGV & Co.</p>
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">{{ \App\Models\Content::where('key', 'emmanuel_stat1_value')->value('value') ?: '10+' }}</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">{{ \App\Models\Content::where('key', 'emmanuel_stat1_label')->value('value') ?: 'Years at SGV & Co.' }}</p>
                             </div>
                             <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #4a9aba;">
-                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #4a9aba; margin-bottom: 0.5rem;">3</h3>
-                                <p style="color: #666; margin: 0; font-weight: 500;">Board Positions</p>
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #4a9aba; margin-bottom: 0.5rem;">{{ \App\Models\Content::where('key', 'emmanuel_stat2_value')->value('value') ?: '3' }}</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">{{ \App\Models\Content::where('key', 'emmanuel_stat2_label')->value('value') ?: 'Board Positions' }}</p>
                             </div>
                             <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #74d3e3;">
-                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">2015</h3>
-                                <p style="color: #666; margin: 0; font-weight: 500;">Independent Director Since</p>
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">{{ \App\Models\Content::where('key', 'emmanuel_stat3_value')->value('value') ?: '2015' }}</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">{{ \App\Models\Content::where('key', 'emmanuel_stat3_label')->value('value') ?: 'Independent Director Since' }}</p>
                             </div>
                         </div>
                     </div>
@@ -122,44 +138,52 @@
                         <!-- Timeline Line -->
                         <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #326D78, #4a9aba, #74d3e3);"></div>
 
-                        <!-- Early Career -->
+                        <!-- Biography Section 1 -->
                         <div style="position: relative; margin-bottom: 3rem;">
                             <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #326D78; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #326D78;"></div>
 
                             <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
-                                <h3 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Foundation Years at SGV & Co.</h3>
+                                <h3 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">{{ \App\Models\Content::where('key', 'emmanuel_bio_section1_title')->value('value') ?: 'Foundation Years at SGV & Co.' }}</h3>
                                 <p style="color: #666; line-height: 1.7; margin: 0;">
-                                    Mr. Emmanuel Y. Mendoza commenced his distinguished career with a decade of service at SyCip, Gorres, Velayo & Co (SGV & Co.), the Philippines' premier accounting firm. During this foundational period, he developed expertise across a comprehensive range of financial services including auditing, due diligence reviews for mergers and acquisitions, bond offerings, initial public offerings, and sophisticated investment valuation methodologies.
+                                    {{ \App\Models\Content::where('key', 'emmanuel_bio_section1_content')->value('value') ?: 'Mr. Emmanuel Y. Mendoza commenced his distinguished career with a decade of service at SyCip, Gorres, Velayo & Co (SGV & Co.), the Philippines\' premier accounting firm. During this foundational period, he developed expertise across a comprehensive range of financial services including auditing, due diligence reviews for mergers and acquisitions, bond offerings, initial public offerings, and sophisticated investment valuation methodologies.' }}
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Banking Career -->
+                        <!-- Biography Section 2 -->
                         <div style="position: relative; margin-bottom: 3rem;">
                             <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #4a9aba; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #4a9aba;"></div>
 
                             <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
-                                <h3 style="color: #4a9aba; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Executive Banking Leadership</h3>
+                                <h3 style="color: #4a9aba; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">{{ \App\Models\Content::where('key', 'emmanuel_bio_section2_title')->value('value') ?: 'Executive Banking Leadership' }}</h3>
+                                @php
+                                    $bioSection2 = \App\Models\Content::where('key', 'emmanuel_bio_section2_content')->value('value') ?: 'Transitioning into the complex world of banking operations, Mr. Mendoza served as First Vice President and Financial Controller of Global Business Bank (GLOBALBANK), a prestigious affiliate of Metrobank and Tokai Bank of Japan. His multifaceted role encompassed Deputy Compliance Officer responsibilities, serving as Liaison Officer with the Bangko Sentral ng Pilipinas, and maintaining active membership in critical committees including the Bank\'s Asset Liability Committee (ALCO) and Operations and Compliance Committee.';
+                                    $bioSection2Additional = 'His strategic leadership proved instrumental during the successful three-way merger between GLOBALBANK, Philippine Banking Corporation, and Asianbank Corporation, where he expertly navigated complex regulatory requirements, sophisticated tax planning initiatives, comprehensive computer system integration, and the harmonization of organizational policies and procedures.';
+                                @endphp
                                 <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
-                                    Transitioning into the complex world of banking operations, Mr. Mendoza served as First Vice President and Financial Controller of Global Business Bank (GLOBALBANK), a prestigious affiliate of Metrobank and Tokai Bank of Japan. His multifaceted role encompassed Deputy Compliance Officer responsibilities, serving as Liaison Officer with the Bangko Sentral ng Pilipinas, and maintaining active membership in critical committees including the Bank's Asset Liability Committee (ALCO) and Operations and Compliance Committee.
+                                    {{ $bioSection2 }}
                                 </p>
                                 <p style="color: #666; line-height: 1.7; margin: 0;">
-                                    His strategic leadership proved instrumental during the successful three-way merger between GLOBALBANK, Philippine Banking Corporation, and Asianbank Corporation, where he expertly navigated complex regulatory requirements, sophisticated tax planning initiatives, comprehensive computer system integration, and the harmonization of organizational policies and procedures.
+                                    {{ $bioSection2Additional }}
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Current Leadership -->
+                        <!-- Biography Section 3 -->
                         <div style="position: relative;">
                             <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #74d3e3; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 4px #74d3e3;"></div>
 
                             <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-left: 1rem;">
-                                <h3 style="color: #74d3e3; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">Current Leadership & Governance</h3>
+                                <h3 style="color: #74d3e3; font-weight: 600; margin-bottom: 1rem; font-size: 1.3rem;">{{ \App\Models\Content::where('key', 'emmanuel_bio_section3_title')->value('value') ?: 'Current Leadership & Governance' }}</h3>
+                                @php
+                                    $bioSection3 = \App\Models\Content::where('key', 'emmanuel_bio_section3_content')->value('value') ?: 'Mr. Mendoza\'s influence extends significantly into corporate governance as an Independent Director of a publicly listed universal bank since 2015, where he presides as Chairman of the Audit Committee and actively participates in the institution\'s IT Steering Committee. His technical expertise proved crucial in leading the evaluation team that selected the bank\'s core banking system.';
+                                    $bioSection3Additional = 'His governance expertise extends to his role as Independent Director of Medicard Philippines, one of the nation\'s largest Health Maintenance Organizations, where he serves as Chairman of the Audit and Risk Committee. Additionally, he contributes his strategic insights as Independent Director of the Makati Sports Club, taking on the leadership role of Chairman of the Planning and Development Committee.';
+                                @endphp
                                 <p style="color: #666; line-height: 1.7; margin-bottom: 1rem;">
-                                    Mr. Mendoza's influence extends significantly into corporate governance as an Independent Director of a publicly listed universal bank since 2015, where he presides as Chairman of the Audit Committee and actively participates in the institution's IT Steering Committee. His technical expertise proved crucial in leading the evaluation team that selected the bank's core banking system.
+                                    {{ $bioSection3 }}
                                 </p>
                                 <p style="color: #666; line-height: 1.7; margin: 0;">
-                                    His governance expertise extends to his role as Independent Director of Medicard Philippines, one of the nation's largest Health Maintenance Organizations, where he serves as Chairman of the Audit and Risk Committee. Additionally, he contributes his strategic insights as Independent Director of the Makati Sports Club, taking on the leadership role of Chairman of the Planning and Development Committee.
+                                    {{ $bioSection3Additional }}
                                 </p>
                             </div>
                         </div>
@@ -179,13 +203,13 @@
                         <h3 style="color: white; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
 
                         <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
-                            <h4 style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">Master's in Management</h4>
-                            <p style="color: rgba(255,255,255,0.7); margin: 0;">Asian Institute of Management</p>
+                            <h4 style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">{{ \App\Models\Content::where('key', 'emmanuel_education1_degree')->value('value') ?: 'Master\'s in Management' }}</h4>
+                            <p style="color: rgba(255,255,255,0.7); margin: 0;">{{ \App\Models\Content::where('key', 'emmanuel_education1_institution')->value('value') ?: 'Asian Institute of Management' }}</p>
                         </div>
 
                         <div>
-                            <h4 style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">Bachelor in Business Administration</h4>
-                            <p style="color: rgba(255,255,255,0.7); margin: 0;">Accountancy • University of the Philippines</p>
+                            <h4 style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">{{ \App\Models\Content::where('key', 'emmanuel_education2_degree')->value('value') ?: 'Bachelor in Business Administration' }}</h4>
+                            <p style="color: rgba(255,255,255,0.7); margin: 0;">{{ \App\Models\Content::where('key', 'emmanuel_education2_institution')->value('value') ?: 'Accountancy • University of the Philippines' }}</p>
                         </div>
                     </div>
 
@@ -197,32 +221,32 @@
                             <div style="display: flex; align-items: start; margin-bottom: 1rem;">
                                 <div style="width: 8px; height: 8px; background: #326D78; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <strong style="color: #333;">PICPA</strong><br>
-                                    <small style="color: #666;">Philippine Institute of Certified Public Accountants</small>
+                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_name')->value('value') ?: 'PICPA' }}</strong><br>
+                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_description')->value('value') ?: 'Philippine Institute of Certified Public Accountants' }}</small>
                                 </div>
                             </div>
 
                             <div style="display: flex; align-items: start; margin-bottom: 1rem;">
                                 <div style="width: 8px; height: 8px; background: #4a9aba; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <strong style="color: #333;">ACPAPP</strong><br>
-                                    <small style="color: #666;">Association of CPAs in Public Practice</small>
+                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_name')->value('value') ?: 'ACPAPP' }}</strong><br>
+                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_description')->value('value') ?: 'Association of CPAs in Public Practice' }}</small>
                                 </div>
                             </div>
 
                             <div style="display: flex; align-items: start; margin-bottom: 1rem;">
                                 <div style="width: 8px; height: 8px; background: #74d3e3; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <strong style="color: #333;">Bank Institute of the Philippines</strong><br>
-                                    <small style="color: #666;">Professional Banking Association</small>
+                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_name')->value('value') ?: 'Bank Institute of the Philippines' }}</strong><br>
+                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_description')->value('value') ?: 'Professional Banking Association' }}</small>
                                 </div>
                             </div>
 
                             <div style="display: flex; align-items: start;">
                                 <div style="width: 8px; height: 8px; background: #5bb3c7; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <strong style="color: #333;">ACPAPP Committee</strong><br>
-                                    <small style="color: #666;">Auditing Standards and Practices</small>
+                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_name')->value('value') ?: 'ACPAPP Committee' }}</strong><br>
+                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_description')->value('value') ?: 'Auditing Standards and Practices' }}</small>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +255,7 @@
                     <!-- Quote/Philosophy -->
                     <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="500">
                         <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin: 0;">
-                            "Excellence in professional practice comes from the intersection of technical expertise, ethical leadership, and unwavering commitment to client success."
+                            "{{ \App\Models\Content::where('key', 'emmanuel_quote')->value('value') ?: 'Excellence in professional practice comes from the intersection of technical expertise, ethical leadership, and unwavering commitment to client success.' }}"
                         </p>
                     </div>
 
