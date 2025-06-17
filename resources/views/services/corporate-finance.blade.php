@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    Corporate Finance and Advisory
+                    {{ getContent('finance_page_title', 'Corporate Finance and Advisory') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    Strategic solutions to support your financial growth and business goals.
+                    {{ getContent('finance_page_subtitle', 'Strategic solutions to support your financial growth and business goals.') }}
                 </p>
             </div>
         </div>
@@ -48,73 +48,80 @@
 
                 <!-- Service Image -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{ asset('assets/img/corporate-finance.jpg') }}" alt="Corporate Finance and Advisory"
-                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @if(hasImageContent('finance_service_image'))
+                        <img src="{{ getContent('finance_service_image') }}" alt="Corporate Finance and Advisory"
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @else
+                        <img src="{{ asset('assets/img/corporate-finance.jpg') }}" alt="Corporate Finance and Advisory"
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @endif
                 </div>
 
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        Achieving Your Business Ambitions
+                        {{ getContent('finance_overview_title', 'Achieving Your Business Ambitions') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        Whatever ambitions you have for your business, Mendoza Tugano & Co., CPAs' corporate finance specialists can help you to achieve them.
+                        {{ getContent('finance_overview_paragraph1', 'Whatever ambitions you have for your business, Mendoza Tugano & Co., CPAs\' corporate finance specialists can help you to achieve them.') }}
                     </p>
                 </div>
 
                 <!-- Key Approaches -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        Our Approach
+                        {{ getContent('finance_approach_title', 'Our Approach') }}
                     </h3>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            Specialist Expertise
+                            {{ getContent('finance_approach_item1_title', 'Specialist Expertise') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            We provide specialist skills, practical experience, know-how and objectivity to assist you in your future plans, whether you are looking to expand, merge or sell your business.
+                            {{ getContent('finance_approach_item1_description', 'We provide specialist skills, practical experience, know-how and objectivity to assist you in your future plans, whether you are looking to expand, merge or sell your business.') }}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            Comprehensive Services
+                            {{ getContent('finance_approach_item2_title', 'Comprehensive Services') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            We provide a comprehensive range of partner-led advisory and transaction support services across a wide variety of industry sectors both locally and overseas.
+                            {{ getContent('finance_approach_item2_description', 'We provide a comprehensive range of partner-led advisory and transaction support services across a wide variety of industry sectors both locally and overseas.') }}
                         </p>
                     </div>
 
                     <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            Growth Identification
+                            {{ getContent('finance_approach_item3_title', 'Growth Identification') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            Our team of professionals have the capability of identifying growth opportunities for businesses from start-up ventures to established enterprises.
+                            {{ getContent('finance_approach_item3_description', 'Our team of professionals have the capability of identifying growth opportunities for businesses from start-up ventures to established enterprises.') }}
                         </p>
                     </div>
                 </div>
 
                 <!-- Services List -->
-                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100"">
-                    <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">Our Services Include:</h4>
+                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
+                    <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
+                        {{ getContent('finance_services_title', 'Our Services Include:') }}
+                    </h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>Financial due diligence</span>
+                            <span>{{ getContent('finance_service1', 'Financial due diligence') }}</span>
                         </div>
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>Valuations</span>
+                            <span>{{ getContent('finance_service2', 'Valuations') }}</span>
                         </div>
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>Initial public offerings</span>
+                            <span>{{ getContent('finance_service3', 'Initial public offerings') }}</span>
                         </div>
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>Mergers and acquisitions</span>
+                            <span>{{ getContent('finance_service4', 'Mergers and acquisitions') }}</span>
                         </div>
                     </div>
                 </div>
@@ -122,7 +129,7 @@
                 <!-- CTA -->
                 <div style="text-align: left;">
                     <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
-                        Start Your Journey Today
+                        {{ getContent('finance_cta_text', 'Start Your Journey Today') }}
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -135,37 +142,53 @@
 
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">Start Your Journey Today</h4>
+                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
+                            {{ getContent('finance_sidebar_cta_title', 'Start Your Journey Today') }}
+                        </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            Let’s talk about how we can help your business meet its corporate finance goals.
+                            {{ getContent('finance_sidebar_cta_description', 'Let\'s talk about how we can help your business meet its corporate finance goals.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            Contact Us Now
+                            {{ getContent('finance_sidebar_cta_button_text', 'Contact Us Now') }}
                         </a>
                     </div>
 
-                    <!-- Quick Facts (Updated Layout) -->
+                    <!-- Quick Facts -->
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
+                            {{ getContent('finance_related_title', 'Quick Facts') }}
+                        </h5>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">Years of Experience</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">20+</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('finance_fact1_label', 'Years of Experience') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('finance_fact1_value', '20+') }}
+                                </strong>
                             </div>
                         </div>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">Team Strength</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">Partner-Led</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('finance_fact2_label', 'Team Strength') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('finance_fact2_value', 'Partner-Led') }}
+                                </strong>
                             </div>
                         </div>
 
                         <div>
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">Sectors Served</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">15+</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('finance_fact3_label', 'Sectors Served') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('finance_fact3_value', '15+') }}
+                                </strong>
                             </div>
                         </div>
                     </div>
@@ -177,21 +200,21 @@
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                Business Advisory
+                                {{ getContent('finance_related_service1', 'Business Advisory') }}
                             </a>
                         </div>
 
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                Audit & Assurance
+                                {{ getContent('finance_related_service2', 'Audit & Assurance') }}
                             </a>
                         </div>
 
                         <div>
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                Risk & Restructuring
+                                {{ getContent('finance_related_service3', 'Risk & Restructuring') }}
                             </a>
                         </div>
                     </div>

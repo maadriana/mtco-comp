@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    Business Outsourcing
+                    {{ getContent('outsourcing_page_title', 'Business Outsourcing') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    Tailored bookkeeping and financial support to help optimize your business resources and focus on growth.
+                    {{ getContent('outsourcing_page_subtitle', 'Tailored bookkeeping and financial support to help optimize your business resources and focus on growth.') }}
                 </p>
             </div>
         </div>
@@ -48,53 +48,58 @@
 
                 <!-- Service Image -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up">
-                    <img src="{{ asset('assets/img/outsourcing.jpg') }}" alt="Outsourcing Services"
-                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @if(hasImageContent('outsourcing_service_image'))
+                        <img src="{{ getContent('outsourcing_service_image') }}" alt="Outsourcing Services"
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @else
+                        <img src="{{ asset('assets/img/outsourcing.jpg') }}" alt="Outsourcing Services"
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @endif
                 </div>
 
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        Tailored Solutions for Every Need
+                        {{ getContent('outsourcing_overview_title', 'Tailored Solutions for Every Need') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        At Mendoza Tugano & Co., CPAs (MTC), we have an outsourcing division to provide our clients with tailored solutions for all bookkeeping requirements.
+                        {{ getContent('outsourcing_overview_paragraph1', 'At Mendoza Tugano & Co., CPAs (MTC), we have an outsourcing division to provide our clients with tailored solutions for all bookkeeping requirements.') }}
                     </p>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin: 0;">
-                        Our approach focuses on building strong relationships with our clients to understand their unique business needs and provide strategic insights that drive growth and success.
+                        {{ getContent('outsourcing_overview_paragraph2', 'Our approach focuses on building strong relationships with our clients to understand their unique business needs and provide strategic insights that drive growth and success.') }}
                     </p>
                 </div>
 
                 <!-- Key Approaches -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        Our Approach
+                        {{ getContent('outsourcing_approach_title', 'Our Approach') }}
                     </h3>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            Resource Optimization
+                            {{ getContent('outsourcing_approach_item1_title', 'Resource Optimization') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            Outsource financial and admin functions to reduce overhead, free up time, and focus on what matters most for your business growth and development.
+                            {{ getContent('outsourcing_approach_item1_description', 'Outsource financial and admin functions to reduce overhead, free up time, and focus on what matters most for your business growth and development.') }}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            Focus on Core Business
+                            {{ getContent('outsourcing_approach_item2_title', 'Focus on Core Business') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            Let us handle complex financial operations so you can refocus on business strategy and growth. We invest time in understanding your business to provide tailored solutions.
+                            {{ getContent('outsourcing_approach_item2_description', 'Let us handle complex financial operations so you can refocus on business strategy and growth. We invest time in understanding your business to provide tailored solutions.') }}
                         </p>
                     </div>
 
                     <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            Comprehensive Support
+                            {{ getContent('outsourcing_approach_item3_title', 'Comprehensive Support') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            By involving the most experienced members of our team right from the start, we focus on your specific strategic needs and ensure the highest quality of service delivery.
+                            {{ getContent('outsourcing_approach_item3_description', 'By involving the most experienced members of our team right from the start, we focus on your specific strategic needs and ensure the highest quality of service delivery.') }}
                         </p>
                     </div>
                 </div>
@@ -102,7 +107,7 @@
                 <!-- Services List -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="200">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        Our Services Include
+                        {{ getContent('outsourcing_services_title', 'Our Services Include') }}
                     </h3>
 
                     <div style="background: white; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
@@ -112,9 +117,9 @@
                                     <i class="fas fa-book" style="font-size: 1rem;"></i>
                                 </div>
                                 <div>
-                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">Bookkeeping & Accounting</h5>
+                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">{{ getContent('outsourcing_service1_title', 'Bookkeeping & Accounting') }}</h5>
                                     <p style="color: #666; margin: 0; line-height: 1.6;">
-                                        Stay compliant and organized with our expert accounting and ledger maintenance services. We provide comprehensive bookkeeping solutions tailored to your business needs.
+                                        {{ getContent('outsourcing_service1_description', 'Stay compliant and organized with our expert accounting and ledger maintenance services. We provide comprehensive bookkeeping solutions tailored to your business needs.') }}
                                     </p>
                                 </div>
                             </div>
@@ -126,9 +131,9 @@
                                     <i class="fas fa-coins" style="font-size: 1rem;"></i>
                                 </div>
                                 <div>
-                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">Payroll, Forecasting & More</h5>
+                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">{{ getContent('outsourcing_service2_title', 'Payroll, Forecasting & More') }}</h5>
                                     <p style="color: #666; margin: 0; line-height: 1.6;">
-                                        From payslips to performance modeling — our team handles it all with precision and confidentiality. We help ensure your business operations meet industry standards and requirements.
+                                        {{ getContent('outsourcing_service2_description', 'From payslips to performance modeling — our team handles it all with precision and confidentiality. We help ensure your business operations meet industry standards and requirements.') }}
                                     </p>
                                 </div>
                             </div>
@@ -139,39 +144,39 @@
                 <!-- Benefits Section -->
                 <div data-aos="fade-up" data-aos-delay="300">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        Benefits of Our Outsourcing Services
+                        {{ getContent('outsourcing_benefits_title', 'Benefits of Our Outsourcing Services') }}
                     </h3>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">Lower Costs</h6>
+                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('outsourcing_benefit1_title', 'Lower Costs') }}</h6>
                                 <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    Avoid hiring costs and reduce overhead by letting us manage back-office tasks efficiently.
+                                    {{ getContent('outsourcing_benefit1_description', 'Avoid hiring costs and reduce overhead by letting us manage back-office tasks efficiently.') }}
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">Expert Handling</h6>
+                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('outsourcing_benefit2_title', 'Expert Handling') }}</h6>
                                 <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    Work with experienced professionals without the hassle of in-house training or turnover.
+                                    {{ getContent('outsourcing_benefit2_description', 'Work with experienced professionals without the hassle of in-house training or turnover.') }}
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">Time Savings</h6>
+                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('outsourcing_benefit3_title', 'Time Savings') }}</h6>
                                 <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    More time for innovation, leadership, and managing what really matters for your business.
+                                    {{ getContent('outsourcing_benefit3_description', 'More time for innovation, leadership, and managing what really matters for your business.') }}
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">Adaptability</h6>
+                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('outsourcing_benefit4_title', 'Adaptability') }}</h6>
                                 <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    Scale our services to your needs — from startups to enterprises with flexible solutions.
+                                    {{ getContent('outsourcing_benefit4_description', 'Scale our services to your needs — from startups to enterprises with flexible solutions.') }}
                                 </p>
                             </div>
                         </div>
@@ -186,41 +191,40 @@
 
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">Get Started Today</h4>
+                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">{{ getContent('outsourcing_cta_title', 'Get Started Today') }}</h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            Talk to us about outsourcing. Let's make your operations leaner and smarter.
+                            {{ getContent('outsourcing_cta_description', 'Talk to us about outsourcing. Let\'s make your operations leaner and smarter.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            Contact Us Now
+                            {{ getContent('outsourcing_cta_button_text', 'Contact Us Now') }}
                         </a>
                     </div>
 
                     <!-- Quick Facts -->
-<div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-    <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
 
-    <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: #666; font-size: 0.9rem;">Years of Experience</span>
-            <strong style="color: #326D78; font-size: 1.1rem;">10+</strong>
-        </div>
-    </div>
+                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('outsourcing_fact1_label', 'Years of Experience') }}</span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('outsourcing_fact1_value', '10+') }}</strong>
+                            </div>
+                        </div>
 
-    <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: #666; font-size: 0.9rem;">Team Members</span>
-            <strong style="color: #326D78; font-size: 1.1rem;">50+</strong>
-        </div>
-    </div>
+                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('outsourcing_fact2_label', 'Team Members') }}</span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('outsourcing_fact2_value', '50+') }}</strong>
+                            </div>
+                        </div>
 
-    <div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: #666; font-size: 0.9rem;">Client Focus</span>
-            <strong style="color: #326D78; font-size: 1.1rem;">100%</strong>
-        </div>
-    </div>
-</div>
-
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('outsourcing_fact3_label', 'Client Focus') }}</span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('outsourcing_fact3_value', '100%') }}</strong>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Related Services -->
                     <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
@@ -229,21 +233,21 @@
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                Taxation Services
+                                {{ getContent('outsourcing_related_service1', 'Taxation Services') }}
                             </a>
                         </div>
 
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                Business Advisory
+                                {{ getContent('outsourcing_related_service2', 'Business Advisory') }}
                             </a>
                         </div>
 
                         <div>
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                Audit & Assurance
+                                {{ getContent('outsourcing_related_service3', 'Audit & Assurance') }}
                             </a>
                         </div>
                     </div>
