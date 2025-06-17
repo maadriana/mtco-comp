@@ -48,7 +48,7 @@
 
                 <!-- Service Image -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up">
-                    <img src="{{ asset('assets/img/taxation.jpg') }}" alt="Outsourcing Services"
+                    <img src="{{ asset('assets/img/outsourcing.jpg') }}" alt="Outsourcing Services"
                          style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 </div>
 

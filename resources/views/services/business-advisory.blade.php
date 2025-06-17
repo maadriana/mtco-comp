@@ -46,6 +46,12 @@
             <!-- Main Content -->
             <div class="col-lg-8">
 
+                 <!-- Service Image -->
+                <div style="margin-bottom: 3rem;" data-aos="fade-up">
+                    <img src="{{ asset('assets/img/business-advisory.jpg') }}" alt="Governance, Risk and Internal Audit Services"
+                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                </div>
+
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">

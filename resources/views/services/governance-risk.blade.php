@@ -48,7 +48,7 @@
 
                 <!-- Service Image -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up">
-                    <img src="{{ asset('assets/img/taxation.jpg') }}" alt="Governance, Risk and Internal Audit Services"
+                    <img src="{{ asset('assets/img/risk-and-internal.jpg') }}" alt="Governance, Risk and Internal Audit Services"
                          style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 </div>
 
