@@ -41,6 +41,10 @@ Route::get('/about', function () {
 return view('partials.about');
 })->name('about');
 
+Route::get('/international', function () {
+    return view('partials.international');
+})->name('international');
+
 Route::get('/current-vacancies/external-audit', function () {
     return view('current-vacancies.external-audit');
 })->name('careers.external-audit');

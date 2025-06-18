@@ -76,32 +76,16 @@
                         {{ getContent('audit_approach_title', 'Our Approach') }}
                     </h3>
 
+                    @foreach(range(1,3) as $i)
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('audit_approach_item1_title', 'Client-Focused Strategy') }}
+                            {{ getContent("audit_approach_item{$i}_title") }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('audit_approach_item1_description', 'We understand the need to provide advice to help you develop your business and achieve your commercial objectives. Our team works closely with you to identify opportunities for improvement and growth.') }}
+                            {{ getContent("audit_approach_item{$i}_description") }}
                         </p>
                     </div>
-
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('audit_approach_item2_title', 'Strong Partnerships') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('audit_approach_item2_description', 'The key to a valuable compliance service is the strength of the relationship between the client and service team. We invest time in understanding your business to provide tailored solutions.') }}
-                        </p>
-                    </div>
-
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('audit_approach_item3_title', 'Expert Team Involvement') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('audit_approach_item3_description', 'By involving the most experienced members of our team right from the start, we focus on your specific strategic needs and ensure the highest quality of service delivery.') }}
-                        </p>
-                    </div>
+                    @endforeach
                 </div>
 
                 <!-- Services List -->
@@ -111,33 +95,19 @@
                     </h3>
 
                     <div style="background: white; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
-                        <div style="padding: 1.5rem; border-bottom: 1px solid #e9ecef;">
+                        @foreach(range(1,2) as $i)
+                        <div style="padding: 1.5rem; {{ $i == 1 ? 'border-bottom: 1px solid #e9ecef;' : '' }}">
                             <div style="display: flex; align-items: start;">
                                 <div style="background: #326D78; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-                                    <i class="fas fa-file-contract" style="font-size: 1rem;"></i>
+                                    <i class="fas {{ $i == 1 ? 'fa-file-contract' : 'fa-shield-check' }}" style="font-size: 1rem;"></i>
                                 </div>
                                 <div>
-                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">{{ getContent('audit_service1_title', 'External Audit of Financial Statements') }}</h5>
-                                    <p style="color: #666; margin: 0; line-height: 1.6;">
-                                        {{ getContent('audit_service1_description', 'Comprehensive external audits of financial statements to ensure accuracy, compliance with accounting standards, and regulatory requirements. We provide detailed insights and recommendations for financial reporting improvements.') }}
-                                    </p>
+                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">{{ getContent("audit_service{$i}_title") }}</h5>
+                                    <p style="color: #666; margin: 0; line-height: 1.6;">{{ getContent("audit_service{$i}_description") }}</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div style="padding: 1.5rem;">
-                            <div style="display: flex; align-items: start;">
-                                <div style="background: #326D78; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-                                    <i class="fas fa-shield-check" style="font-size: 1rem;"></i>
-                                </div>
-                                <div>
-                                    <h5 style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">{{ getContent('audit_service2_title', 'Other Assurance and Attestation Services') }}</h5>
-                                    <p style="color: #666; margin: 0; line-height: 1.6;">
-                                        {{ getContent('audit_service2_description', 'Specialized assurance services including internal control reviews, compliance audits, and attestation services. We help ensure your business operations meet industry standards and regulatory requirements.') }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -148,38 +118,14 @@
                     </h3>
 
                     <div class="row">
+                        @foreach(range(1,4) as $i)
                         <div class="col-md-6 mb-3">
                             <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('audit_benefit1_title', 'Enhanced Credibility') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('audit_benefit1_description', 'Independent audit opinions enhance stakeholder confidence and business credibility.') }}
-                                </p>
+                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent("audit_benefit{$i}_title") }}</h6>
+                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">{{ getContent("audit_benefit{$i}_description") }}</p>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('audit_benefit2_title', 'Risk Management') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('audit_benefit2_description', 'Identify and mitigate financial and operational risks through comprehensive reviews.') }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('audit_benefit3_title', 'Regulatory Compliance') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('audit_benefit3_description', 'Ensure compliance with all relevant accounting standards and regulatory requirements.') }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('audit_benefit4_title', 'Process Improvement') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('audit_benefit4_description', 'Receive recommendations for improving internal controls and business processes.') }}
-                                </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -203,53 +149,27 @@
                     <!-- Quick Facts -->
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
                         <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                        @foreach(range(1,3) as $i)
+                        <div style="margin-bottom: {{ $i < 3 ? '1rem' : '0' }}; padding-bottom: {{ $i < 3 ? '1rem' : '0' }}; border-bottom: {{ $i < 3 ? '1px solid #e9ecef' : 'none' }};">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('audit_fact1_label', 'Years of Experience') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('audit_fact1_value', '10+') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">{{ getContent("audit_fact{$i}_label") }}</span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent("audit_fact{$i}_value") }}</strong>
                             </div>
                         </div>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('audit_fact2_label', 'Team Members') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('audit_fact2_value', '50+') }}</strong>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('audit_fact3_label', 'Client Focus') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('audit_fact3_value', '100%') }}</strong>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <!-- Related Services -->
                     <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
+                        @foreach(range(1,3) as $i)
+                        <div style="margin-bottom: {{ $i < 3 ? '1rem' : '0' }};">
+                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; {{ $i < 3 ? 'border-bottom: 1px solid #f1f1f1;' : '' }}">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('audit_related_service1', 'Business Advisory') }}
+                                {{ getContent("audit_related_service{$i}") }}
                             </a>
                         </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('audit_related_service2', 'Taxation Services') }}
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('audit_related_service3', 'Accounting Services') }}
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -273,7 +193,6 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
         .container h1 {
             font-size: 2.2rem !important;

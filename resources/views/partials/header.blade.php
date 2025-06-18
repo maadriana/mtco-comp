@@ -91,8 +91,9 @@
           </li>
 
           <li>
-            <a href="{{ url('/') }}">{{ getContent('nav_international_text', 'International') }}</a>
+         <a href="{{ route('international') }}" class="{{ request()->routeIs('international') ? 'active' : '' }}">{{ getContent('nav_international_text', 'International') }}</a>
           </li>
+
 
           <li>
             <a href="{{ url('/#contact') }}" class="{{ request()->is('#contact') ? 'active' : '' }}">{{ getContent('nav_contact_text', 'Contact') }}</a>

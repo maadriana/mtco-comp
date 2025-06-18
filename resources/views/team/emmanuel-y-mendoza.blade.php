@@ -197,7 +197,7 @@
                 <div style="position: sticky; top: 2rem;">
 
                     <!-- Education Block -->
-                    <div style="background: #326D78; color: white; padding: 2rem; margin-bottom: 2rem; position: relative;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="background: #326D78; color: white; padding: 2rem; margin-bottom: 2rem; position: relative;" data-aos="fade-up" data-aos-delay="100">
                         <div style="position: absolute; top: -15px; right: -15px; width: 60px; height: 60px; border: 3px solid #4a9aba; transform: rotate(45deg);"></div>
 
                         <h3 style="color: white; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
@@ -214,7 +214,7 @@
                     </div>
 
                     <!-- Professional Affiliations -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400">
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
                         <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
 
                         <div style="space-y: 1rem;">
@@ -253,7 +253,7 @@
                     </div>
 
                     <!-- Quote/Philosophy -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="500">
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="100">
                         <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin: 0;">
                             "{{ \App\Models\Content::where('key', 'emmanuel_quote')->value('value') ?: 'Excellence in professional practice comes from the intersection of technical expertise, ethical leadership, and unwavering commitment to client success.' }}"
                         </p>
