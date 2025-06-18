@@ -3,7 +3,12 @@
 use Illuminate\Support\Facades\DB;
 
 if (!function_exists('getContent')) {
-    function getContent($key, $default = '')
+    /**
+     * Retrieve content by key from `contents` table.
+     * If binary image is stored, return base64 data URI.
+     * If text value is stored, return that instead.
+     */
+    function getContent(string $key, string $default = ''): string
     {
         $content = DB::table('contents')->where('key', $key)->first();
 
@@ -11,22 +16,24 @@ if (!function_exists('getContent')) {
             return $default;
         }
 
-        // For images, return the base64 encoded data URL
-        if ($key === 'about_image' && $content->image) {
+        if (!empty($content->image)) {
             $finfo = new finfo(FILEINFO_MIME_TYPE);
             $mimeType = $finfo->buffer($content->image);
-            return 'data:' . $mimeType . ';base64,' . base64_encode($content->image);
+            $base64 = base64_encode($content->image);
+            return "data:{$mimeType};base64,{$base64}";
         }
 
-        // For text content, return the value
         return $content->value ?? $default;
     }
 }
 
 if (!function_exists('hasImageContent')) {
-    function hasImageContent($key)
+    /**
+     * Check if a content record has an image binary.
+     */
+    function hasImageContent(string $key): bool
     {
         $content = DB::table('contents')->where('key', $key)->first();
-        return $content && $content->image;
+        return $content && !empty($content->image);
     }
 }

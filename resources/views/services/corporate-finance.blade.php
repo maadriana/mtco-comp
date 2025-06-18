@@ -127,7 +127,7 @@
                 </div>
 
                 <!-- CTA -->
-                <div style="text-align: left;">
+                <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
                         {{ getContent('finance_cta_text', 'Start Your Journey Today') }}
                         <i class="fas fa-arrow-right ms-2"></i>
