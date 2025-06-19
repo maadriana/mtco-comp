@@ -63,7 +63,7 @@
                         {{ getContent('restructuring_overview_title', 'Expert Financial Recovery') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('restructuring_overview_paragraph', 'We help and advise business owners with financial problems every day. We have an acute awareness of how stressful it can be when your business runs into difficulty.') }}
+                        {{ getContent('restructuring_overview_paragraph1', 'We help and advise business owners with financial problems every day. We have an acute awareness of how stressful it can be when your business runs into difficulty.') }}
                     </p>
                 </div>
 
@@ -102,8 +102,10 @@
                 </div>
 
                 <!-- Services List -->
-                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;"  data-aos="fade-up" data-aos-delay="100">
-                    <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">{{ getContent('restructuring_services_title', 'Our Approach Includes:') }}</h4>
+                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
+                    <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
+                        {{ getContent('restructuring_services_title', 'Our Services Include:') }}
+                    </h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
@@ -124,30 +126,12 @@
                     </div>
                 </div>
 
-                <!-- Benefits Section -->
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ getContent('restructuring_benefits_title', 'Why Work With Us') }}
-                    </h3>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('restructuring_benefit1_title', 'Discreet Advisory') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('restructuring_benefit1_description', 'We handle sensitive financial matters with discretion and professionalism.') }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('restructuring_benefit2_title', 'Strategic Recovery') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('restructuring_benefit2_description', 'Our focus is always to protect value and plan for sustainable business recovery.') }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- CTA -->
+                <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
+                    <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
+                        {{ getContent('restructuring_cta_text', 'Get Expert Help Today') }}
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
                 </div>
 
             </div>
@@ -158,37 +142,53 @@
 
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">{{ getContent('restructuring_cta_title', 'Get Expert Help Today') }}</h4>
+                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
+                            {{ getContent('restructuring_sidebar_cta_title', 'Get Expert Help Today') }}
+                        </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            {{ getContent('restructuring_cta_description', 'If your business is in distress, talk to our recovery specialists for guidance and support.') }}
+                            {{ getContent('restructuring_sidebar_cta_description', 'If your business is in distress, talk to our recovery specialists for guidance and support.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            {{ getContent('restructuring_cta_button_text', 'Contact Us Now') }}
+                            {{ getContent('restructuring_sidebar_cta_button_text', 'Contact Us Now') }}
                         </a>
                     </div>
 
                     <!-- Quick Facts -->
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
+                            {{ getContent('restructuring_related_title', 'Quick Facts') }}
+                        </h5>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('restructuring_fact1_label', 'Cases Handled') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('restructuring_fact1_value', '300+') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('restructuring_fact1_label', 'Cases Handled') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('restructuring_fact1_value', '300+') }}
+                                </strong>
                             </div>
                         </div>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('restructuring_fact2_label', 'Sectors Served') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('restructuring_fact2_value', '25+') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('restructuring_fact2_label', 'Sectors Served') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('restructuring_fact2_value', '25+') }}
+                                </strong>
                             </div>
                         </div>
 
                         <div>
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('restructuring_fact3_label', 'Success Rate') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('restructuring_fact3_value', '91%') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('restructuring_fact3_label', 'Success Rate') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('restructuring_fact3_value', '91%') }}
+                                </strong>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('restructuring_related_service2', 'Risk Management') }}
+                                {{ getContent('restructuring_related_service2', 'Corporate Finance') }}
                             </a>
                         </div>
 

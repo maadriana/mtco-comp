@@ -47,7 +47,7 @@
             <div class="col-lg-8">
 
                 <!-- Service Image -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up">
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     @if(hasImageContent('forensic_service_image'))
                         <img src="{{ getContent('forensic_service_image') }}" alt="Forensic and Litigation Support"
                              style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -58,11 +58,11 @@
                 </div>
 
                 <!-- Service Overview -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up">
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
                         {{ getContent('forensic_overview_title', 'Protecting Your Interests') }}
                     </h2>
-                    <p style="color: #666; font-size: 1.1rem; line-height: 1.7;">
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
                         {{ getContent('forensic_overview_paragraph1', 'Legal challenges come in many forms. When these challenges need to be resolved through litigation, you require effective support that will protect your interests.') }}
                     </p>
                 </div>
@@ -102,28 +102,32 @@
                 </div>
 
                 <!-- Services List -->
-                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;">
+                <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ getContent('forensic_services_title', 'We Regularly Advise Clients On:') }}
+                        {{ getContent('forensic_services_title', 'Our Services Include:') }}
                     </h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8); margin-top: 4px;"></i>
-                            <span>{{ getContent('forensic_service1', 'Commercial and contractual disputes and mediation involving business or share valuations') }}</span>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('forensic_service1', 'Commercial and contractual disputes') }}</span>
                         </div>
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
                             <span>{{ getContent('forensic_service2', 'Expert witness and quantification of loss') }}</span>
                         </div>
-                        <div style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8); margin-top: 4px;"></i>
-                            <span>{{ getContent('forensic_service3', 'Forensic investigations, particularly in relation to fraud claims, tax investigations and asset tracing') }}</span>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('forensic_service3', 'Forensic investigations and asset tracing') }}</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('forensic_service4', 'Business valuations and mediation') }}</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- CTA -->
-                <div>
+                <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
                         {{ getContent('forensic_cta_text', 'Get Expert Support') }}
                         <i class="fas fa-arrow-right ms-2"></i>
@@ -151,7 +155,9 @@
 
                     <!-- Quick Facts -->
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
+                            {{ getContent('forensic_related_title', 'Quick Facts') }}
+                        </h5>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -189,28 +195,26 @@
 
                     <!-- Related Services -->
                     <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
-                            {{ getContent('forensic_related_title', 'Related Services') }}
-                        </h5>
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
 
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('forensic_related_service1', 'Risk & Restructuring') }}
+                                {{ getContent('forensic_related_service1', 'Business Restructuring') }}
                             </a>
                         </div>
 
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('forensic_related_service2', 'Corporate Advisory') }}
+                                {{ getContent('forensic_related_service2', 'Business Advisory') }}
                             </a>
                         </div>
 
                         <div>
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('forensic_related_service3', 'Compliance Services') }}
+                                {{ getContent('forensic_related_service3', 'Audit & Assurance') }}
                             </a>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', \App\Models\Content::where('key', 'governance_page_title')->value('value') ?: 'Governance & Risk Management - Services')
+@section('title', 'Governance & Risk Management - Services')
 
 @section('content')
 
@@ -19,22 +19,19 @@
                 <li class="breadcrumb-item">
                     <a href="{{ url('/#services') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">Services</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">
-                    {{ \App\Models\Content::where('key', 'governance_page_title')->value('value') ?: 'Governance & Risk Management' }}
-                </li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Governance & Risk Management</li>
             </ol>
         </nav>
     </div>
 
-    <!-- Header Content with Transition -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    {{ \App\Models\Content::where('key', 'governance_page_title')->value('value') ?: 'Governance & Risk Management' }}
+                    {{ getContent('governance_page_title', 'Governance & Risk Management') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    {{ \App\Models\Content::where('key', 'governance_page_subtitle')->value('value') ?: 'Comprehensive governance frameworks and risk management solutions to strengthen your organization\'s foundation and ensure sustainable growth.' }}
+                    {{ getContent('governance_page_subtitle', 'Comprehensive governance frameworks and risk management solutions to strengthen your organization\'s foundation and ensure sustainable growth.') }}
                 </p>
             </div>
         </div>
@@ -51,11 +48,8 @@
 
                 <!-- Service Image -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
-                    @php
-                        $governanceServiceImage = \App\Models\Content::where('key', 'governance_service_image')->first();
-                    @endphp
-                    @if($governanceServiceImage && $governanceServiceImage->image)
-                        <img src="data:image/jpeg;base64,{{ base64_encode($governanceServiceImage->image) }}" alt="Governance & Risk Management"
+                    @if(hasImageContent('governance_service_image'))
+                        <img src="{{ getContent('governance_service_image') }}" alt="Governance & Risk Management"
                              style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     @else
                         <img src="{{ asset('assets/img/risk-and-internal.jpg') }}" alt="Governance & Risk Management"
@@ -66,50 +60,76 @@
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        {{ \App\Models\Content::where('key', 'governance_overview_title')->value('value') ?: 'Building Strong Foundations' }}
+                        {{ getContent('governance_overview_title', 'Building Strong Foundations') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ \App\Models\Content::where('key', 'governance_overview_paragraph1')->value('value') ?: 'At Mendoza Tugano & Co., CPAs (MTC), we help organizations establish robust governance structures and effective risk management frameworks that promote transparency, accountability, and long-term sustainability.' }}
+                        {{ getContent('governance_overview_paragraph1', 'At Mendoza Tugano & Co., CPAs (MTC), we help organizations establish robust governance structures and effective risk management frameworks that promote transparency, accountability, and long-term sustainability.') }}
                     </p>
                 </div>
 
                 <!-- Key Approaches -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ \App\Models\Content::where('key', 'governance_approach_title')->value('value') ?: 'Our Approach' }}
+                        {{ getContent('governance_approach_title', 'Our Approach') }}
                     </h3>
 
-                    @foreach(range(1, 3) as $i)
-                    <div style="margin-bottom: {{ $i < 3 ? '2rem' : '0' }}; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ \App\Models\Content::where('key', "governance_approach_item{$i}_title")->value('value') ?? 'Approach Item ' . $i }}
+                            {{ getContent('governance_approach_item1_title', 'Comprehensive Framework Design') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ \App\Models\Content::where('key', "governance_approach_item{$i}_description")->value('value') ?? 'Approach item description for item ' . $i }}
+                            {{ getContent('governance_approach_item1_description', 'We develop tailored governance structures that align with your organization\'s objectives while ensuring compliance with regulatory requirements and industry best practices.') }}
                         </p>
                     </div>
-                    @endforeach
+
+                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                            {{ getContent('governance_approach_item2_title', 'Risk Assessment & Management') }}
+                        </h4>
+                        <p style="color: #666; margin: 0; line-height: 1.6;">
+                            {{ getContent('governance_approach_item2_description', 'Our systematic approach to risk identification, assessment, and mitigation helps protect your organization from potential threats while enabling strategic decision-making.') }}
+                        </p>
+                    </div>
+
+                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                            {{ getContent('governance_approach_item3_title', 'Continuous Monitoring & Improvement') }}
+                        </h4>
+                        <p style="color: #666; margin: 0; line-height: 1.6;">
+                            {{ getContent('governance_approach_item3_description', 'We implement monitoring systems and regular reviews to ensure your governance and risk management frameworks remain effective and adapt to changing business environments.') }}
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Services List -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ \App\Models\Content::where('key', 'governance_services_title')->value('value') ?: 'Our Services Include:' }}
+                        {{ getContent('governance_services_title', 'Our Services Include:') }}
                     </h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        @foreach(range(1, 4) as $i)
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ \App\Models\Content::where('key', "governance_service{$i}_title")->value('value') ?? "Service {$i}" }}</span>
+                            <span>{{ getContent('governance_service1', 'Corporate governance advisory') }}</span>
                         </div>
-                        @endforeach
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('governance_service2', 'Risk management frameworks') }}</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('governance_service3', 'Internal audit services') }}</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('governance_service4', 'Compliance monitoring') }}</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- CTA -->
-                <div style="text-align: left;">
+                <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
-                        {{ \App\Models\Content::where('key', 'governance_cta_button_text')->value('value') ?: 'Start Your Journey Today' }}
+                        {{ getContent('governance_cta_text', 'Strengthen Your Governance') }}
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -123,40 +143,80 @@
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
-                            {{ \App\Models\Content::where('key', 'governance_cta_title')->value('value') ?: 'Strengthen Your Governance' }}
+                            {{ getContent('governance_sidebar_cta_title', 'Strengthen Your Governance') }}
                         </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            {{ \App\Models\Content::where('key', 'governance_cta_description')->value('value') ?: 'Ready to build a stronger governance framework? Let\'s discuss how we can help secure your organization\'s future.' }}
+                            {{ getContent('governance_sidebar_cta_description', 'Ready to build a stronger governance framework? Let\'s discuss how we can help secure your organization\'s future.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            {{ \App\Models\Content::where('key', 'governance_cta_button_text')->value('value') ?: 'Contact Us Now' }}
+                            {{ getContent('governance_sidebar_cta_button_text', 'Contact Us Now') }}
                         </a>
                     </div>
 
                     <!-- Quick Facts -->
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
-                        @foreach(range(1, 3) as $i)
-                        <div style="margin-bottom: {{ $i < 3 ? '1rem' : '0' }}; padding-bottom: {{ $i < 3 ? '1rem' : '0' }}; border-bottom: {{ $i < 3 ? '1px solid #e9ecef' : 'none' }};">
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
+                            {{ getContent('governance_related_title', 'Quick Facts') }}
+                        </h5>
+
+                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ \App\Models\Content::where("key", "governance_fact{$i}_label")->value('value') ?? "Fact {$i}" }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ \App\Models\Content::where("key", "governance_fact{$i}_value")->value('value') ?? 'N/A' }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('governance_fact1_label', 'Frameworks Implemented') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('governance_fact1_value', '150+') }}
+                                </strong>
                             </div>
                         </div>
-                        @endforeach
+
+                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('governance_fact2_label', 'Risk Assessments') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('governance_fact2_value', '200+') }}
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('governance_fact3_label', 'Compliance Rate') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('governance_fact3_value', '99%') }}
+                                </strong>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Related Services -->
                     <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
-                        @foreach(range(1, 3) as $i)
-                        <div style="margin-bottom: {{ $i < 3 ? '1rem' : '0' }};">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; {{ $i < 3 ? 'border-bottom: 1px solid #f1f1f1;' : '' }}">
+
+                        <div style="margin-bottom: 1rem;">
+                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ \App\Models\Content::where("key", "governance_related_service{$i}")->value('value') ?? "Related Service {$i}" }}
+                                {{ getContent('governance_related_service1', 'Audit & Assurance') }}
                             </a>
                         </div>
-                        @endforeach
+
+                        <div style="margin-bottom: 1rem;">
+                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
+                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
+                                {{ getContent('governance_related_service2', 'Business Advisory') }}
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
+                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
+                                {{ getContent('governance_related_service3', 'Corporate Finance') }}
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -165,15 +225,6 @@
         </div>
     </div>
 </section>
-
-<!-- AOS Library (make sure it's globally available) -->
-@push('scripts')
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-@endpush
 
 <style>
     .breadcrumb-item + .breadcrumb-item::before {

@@ -46,10 +46,15 @@
             <!-- Main Content -->
             <div class="col-lg-8">
 
-                 <!-- Service Image -->
-                <div style="margin-bottom: 3rem;" data-aos="fade-up">
-                    <img src="{{ asset('assets/img/business-advisory.jpg') }}" alt="Governance, Risk and Internal Audit Services"
-                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <!-- Service Image -->
+                <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
+                    @if(hasImageContent('advisory_service_image'))
+                        <img src="{{ getContent('advisory_service_image') }}" alt="Business Advisory Services"
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @else
+                        <img src="{{ asset('assets/img/business-advisory.jpg') }}" alt="Business Advisory Services"
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    @endif
                 </div>
 
                 <!-- Service Overview -->
@@ -58,7 +63,7 @@
                         {{ getContent('advisory_overview_title', 'Targeted Consulting Advice') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('advisory_overview_paragraph', 'Our breadth of experience allows you to benefit from specific and targeted consulting advice to support your long-term growth plans.') }}
+                        {{ getContent('advisory_overview_paragraph1', 'Our breadth of experience allows you to benefit from specific and targeted consulting advice to support your long-term growth plans.') }}
                     </p>
                 </div>
 
@@ -98,7 +103,9 @@
 
                 <!-- Services List -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
-                    <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">{{ getContent('advisory_services_title', 'Our Services Include:') }}</h4>
+                    <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
+                        {{ getContent('advisory_services_title', 'Our Services Include:') }}
+                    </h4>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div style="display: flex; align-items: center;">
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
@@ -108,33 +115,23 @@
                             <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
                             <span>{{ getContent('advisory_service2', 'Strategic planning') }}</span>
                         </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('advisory_service3', 'Process optimization') }}</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
+                            <span>{{ getContent('advisory_service4', 'Performance improvement') }}</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Benefits Section -->
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ getContent('advisory_benefits_title', 'Why Choose Us') }}
-                    </h3>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('advisory_benefit1_title', 'Growth-Focused Planning') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('advisory_benefit1_description', 'We provide actionable strategies designed to help your business grow and thrive.') }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; height: 100%;">
-                                <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.75rem;">{{ getContent('advisory_benefit2_title', 'Strategic Partnerships') }}</h6>
-                                <p style="color: #666; margin: 0; font-size: 0.95rem; line-height: 1.5;">
-                                    {{ getContent('advisory_benefit2_description', 'We build long-term relationships to provide consistent and effective advisory services.') }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- CTA -->
+                <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
+                    <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
+                        {{ getContent('advisory_cta_text', 'Get Started Today') }}
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
                 </div>
 
             </div>
@@ -145,37 +142,53 @@
 
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">{{ getContent('advisory_cta_title', 'Get Started Today') }}</h4>
+                        <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
+                            {{ getContent('advisory_sidebar_cta_title', 'Get Started Today') }}
+                        </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            {{ getContent('advisory_cta_description', 'Contact us to explore how our advisory services can support your growth journey.') }}
+                            {{ getContent('advisory_sidebar_cta_description', 'Contact us to explore how our advisory services can support your growth journey.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            {{ getContent('advisory_cta_button_text', 'Contact Us Now') }}
+                            {{ getContent('advisory_sidebar_cta_button_text', 'Contact Us Now') }}
                         </a>
                     </div>
 
                     <!-- Quick Facts -->
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Quick Facts</h5>
+                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
+                            {{ getContent('advisory_related_title', 'Quick Facts') }}
+                        </h5>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('advisory_fact1_label', 'Clients Served') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('advisory_fact1_value', '200+') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('advisory_fact1_label', 'Clients Served') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('advisory_fact1_value', '200+') }}
+                                </strong>
                             </div>
                         </div>
 
                         <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('advisory_fact2_label', 'Industries Covered') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('advisory_fact2_value', '20+') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('advisory_fact2_label', 'Industries Covered') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('advisory_fact2_value', '20+') }}
+                                </strong>
                             </div>
                         </div>
 
                         <div>
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">{{ getContent('advisory_fact3_label', 'Advisory Accuracy') }}</span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">{{ getContent('advisory_fact3_value', '98%') }}</strong>
+                                <span style="color: #666; font-size: 0.9rem;">
+                                    {{ getContent('advisory_fact3_label', 'Advisory Accuracy') }}
+                                </span>
+                                <strong style="color: #326D78; font-size: 1.1rem;">
+                                    {{ getContent('advisory_fact3_value', '98%') }}
+                                </strong>
                             </div>
                         </div>
                     </div>
@@ -187,7 +200,7 @@
                         <div style="margin-bottom: 1rem;">
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('advisory_related_service1', 'Taxation Services') }}
+                                {{ getContent('advisory_related_service1', 'Corporate Finance') }}
                             </a>
                         </div>
 
@@ -201,7 +214,7 @@
                         <div>
                             <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
                                 <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('advisory_related_service3', 'Accounting Services') }}
+                                {{ getContent('advisory_related_service3', 'Tax Services') }}
                             </a>
                         </div>
                     </div>
