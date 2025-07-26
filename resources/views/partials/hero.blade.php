@@ -43,7 +43,7 @@
           </p>
 
           <div class="mt-3">
-            <a href="{{ route('about') }}" class="btn btn-primary custom-btn">{{ getContent('about_button_text', 'Learn More') }}</a>
+            <a href="{{ route('history') }}" class="btn btn-primary custom-btn">{{ getContent('about_button_text', 'Learn More') }}</a>
           </div>
         </div>
       </div>

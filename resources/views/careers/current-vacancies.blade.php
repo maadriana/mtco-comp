@@ -44,49 +44,16 @@
             <!-- Left Content on Diagonal -->
             <div class="col-lg-7" style="position: relative; z-index: 10;">
                 <div style="color: white; padding-right: 2rem;">
-                    <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 0.5rem 1.5rem; border-radius: 25px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
-                        <small style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Join Our Team</small>
-                    </div>
 
-                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white">
-                        Build Your Career<br>
-                        <span style="font-weight: 300; color: white;">With Excellence</span>
-                    </h1>
+
+                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
+  Current <span style="font-weight: 500;">Vacancies</span>
+</h1>
+
 
                     <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
-                        We are always interested in receiving applications from high-caliber individuals to further strengthen our team.
+                        We are looking for passionate individuals who value professionalism, continuous learning, and client service. Join our dynamic and growing team.
                     </p>
-
-                    <!-- Inline Stats -->
-                    <div class="d-flex align-items-center gap-4 flex-wrap">
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-briefcase" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">2</h4>
-                                <small style="opacity: 0.8;">Open Roles</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-users" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">50+</h4>
-                                <small style="opacity: 0.8;">Professionals</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-chart-line" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">∞</h4>
-                                <small style="opacity: 0.8;">Growth</small>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -127,7 +94,8 @@
                             'location' => 'Makati City',
                             'closing' => 'Ongoing',
                             'route' => route('careers.external-audit'),
-                            'image' => 'assets/img/job-audit.jpg'
+                            'image' => 'assets/img/job-audit.jpg',
+                            'description' => 'Assist in the performance of financial audits in compliance with Philippine Standards on Auditing (PSA) and relevant regulatory requirements. Work closely with senior auditors, managers, and partners to deliver quality assurance services to clients across diverse industries.'
                         ],
                         [
                             'title' => 'Accounting Services Associate',
@@ -136,7 +104,8 @@
                             'location' => 'Makati City',
                             'closing' => 'Ongoing',
                             'route' => route('careers.accounting-services'),
-                            'image' => 'assets/img/job-accounting.jpg'
+                            'image' => 'assets/img/job-accounting.jpg',
+                            'description' => 'Provide end-to-end accounting support including bookkeeping, financial reporting, and BIR compliance. Help clients maintain accurate records and stay compliant with Philippine tax laws.'
                         ],
                     ];
                 @endphp
@@ -157,11 +126,16 @@
                                     <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
                                         {{ $job['title'] }}
                                     </h4>
-                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px;">
+                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;">
                                         {{ $job['department'] }}
                                     </span>
 
-                                    <div class="row g-2 mt-3">
+                                    <!-- Job Description -->
+                                    <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
+                                        {{ $job['description'] }}
+                                    </p>
+
+                                    <div class="row g-2">
                                         <div class="col-6">
                                             <small style="color: #6c757d;">
                                                 <i class="fas fa-clock me-1"></i>{{ $job['type'] }}
@@ -196,19 +170,19 @@
                     @endforeach
                 </div>
 
-<!-- Call to Action Section -->
-<div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-    <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-        <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
-        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">Don't See the Right Fit?</h3>
-        <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
-            We're always interested in connecting with talented professionals. Send us your resume and we'll keep you in mind for future opportunities.
-        </p>
-        <a href="{{ route('careers.apply') }}" class="btn send-resume-btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
-            <i class="fas fa-envelope me-2"></i>Send Your Resume
-        </a>
-    </div>
-</div>
+                <!-- Call to Action Section -->
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                    <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">Don't See the Right Fit?</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
+                            We're always interested in connecting with talented professionals. Send us your resume and we'll keep you in mind for future opportunities.
+                        </p>
+                        <a href="{{ route('careers.apply') }}" class="btn send-resume-btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
+                            <i class="fas fa-envelope me-2"></i>Send Your Resume
+                        </a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -216,7 +190,7 @@
 </section>
 
 <style>
-        .send-resume-btn:hover {
+    .send-resume-btn:hover {
         background: #2c5f69 !important;
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);

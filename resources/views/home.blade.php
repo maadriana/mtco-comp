@@ -5,8 +5,9 @@
 @section('content')
 
   @include('partials.hero')
-  @include('partials.services')
   @include('partials.team')
+  @include('partials.services')
+  @include('partials.news')
   @include('partials.careers')
   @include('partials.faq')
   @include('partials.contact')

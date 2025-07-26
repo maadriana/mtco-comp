@@ -508,7 +508,7 @@ input[type="file"]::-webkit-file-upload-button {
 
                     <!-- Form Header -->
                     <div style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); color: white; padding: 2rem; text-align: center;">
-                        <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <div style="background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
                             <i class="fas fa-paper-plane" style="font-size: 2rem;"></i>
                         </div>
                         <h3 style="margin: 0; font-weight: 600; color: white">Application Form</h3>

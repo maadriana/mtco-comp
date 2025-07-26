@@ -1,5 +1,5 @@
 <!-- Careers Section -->
-<section id="careers" class="careers section">
+<section id="careers" class="careers section light-background">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">

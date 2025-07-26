@@ -44,49 +44,14 @@
             <!-- Left Content on Diagonal -->
             <div class="col-lg-7" style="position: relative; z-index: 10;">
                 <div style="color: white; padding-right: 2rem;">
-                    <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 0.5rem 1.5rem; border-radius: 25px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
-                        <small style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Start Your Journey</small>
-                    </div>
 
-                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2;  color: white">
-                        Graduate<br>
-                        <span style="font-weight: 300; color: white;">Program</span>
-                    </h1>
+                   <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
+  Graduate <span style="font-weight: 500;">Program</span>
+</h1>
 
                     <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px;">
-                        Are you ready to explore a world of opportunities and kick-start your professional career?
+                        Begin your professional journey with confidence. Our Graduate Program is designed to support your transition from university to the world of accounting, audit, and advisory services.
                     </p>
-
-                    <!-- Inline Stats -->
-                    <div class="d-flex align-items-center gap-4 flex-wrap">
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-graduation-cap" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0;  color: white">Fresh</h4>
-                                <small style="opacity: 0.8;">Graduates</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-rocket" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">Fast</h4>
-                                <small style="opacity: 0.8;">Track Learning</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-globe" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white">Global</h4>
-                                <small style="opacity: 0.8;">Opportunities</small>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -112,78 +77,30 @@
 
                 <!-- Intro Text -->
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 style="color: #333; font-weight: 700; font-size: 2.5rem; margin-bottom: 1rem;">
+                    <h2 style="color: #333; font-weight: 700; font-size: 2.5rem; margin-bottom: 0.5rem;">
                         Why Choose Our Graduate Program?
                     </h2>
+                    <p style="color: #555; font-size: 1.1rem; margin-bottom: 1rem;">
+                        Gain early access to real client work, structured learning, and mentorship from industry experts. We help you build the technical and soft skills needed to succeed in your journey and beyond.
+                    </p>
                     <div style="width: 80px; height: 4px; background: #326D78; margin: 0 auto; border-radius: 2px;"></div>
                 </div>
 
                 <!-- Value Props Grid -->
                 <div class="row gy-4 mb-5">
 
-                    <!-- Learning & Development -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="value-card" style="background: linear-gradient(135deg, #2183d3, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
+                    <!-- Internship Opportunities -->
+                    <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-card" style="background: linear-gradient(135deg, #5788af, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
                             <!-- Background Pattern -->
                             <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
                             <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
 
                             <div style="position: relative; z-index: 2;">
                                 <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">You Value Learning</h4>
+                                <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Internship Opportunities</h4>
                                 <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                    Mendoza Tugano & Co. offers you a tailor-made program focused on maximizing your learning and development so you get to where you want to be faster and more effectively.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Global Opportunities -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="value-card" style="background: linear-gradient(135deg, #2183d3, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
-                            <!-- Background Pattern -->
-                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
-                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-
-                            <div style="position: relative; z-index: 2;">
-                                <i class="fas fa-globe-americas" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Work Abroad</h4>
-                                <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                    Mendoza Tugano & Co. not only aims to deliver value to our clients, but also to enrich your experience with us, both professionally and personally.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Renowned Clients -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="value-card" style="background: linear-gradient(135deg, #2183d3, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
-                            <!-- Background Pattern -->
-                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
-                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-
-                            <div style="position: relative; z-index: 2;">
-                                <i class="fas fa-building" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Renowned Clients</h4>
-                                <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                    Mendoza Tugano & Co. seeks out the latest and best solutions for our top tier clients who are renowned and successful organisations.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Work Culture -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="value-card" style="background: linear-gradient(135deg, #2183d3, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
-                            <!-- Background Pattern -->
-                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
-                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-
-                            <div style="position: relative; z-index: 2;">
-                                <i class="fas fa-smile" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Have Fun!</h4>
-                                <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                    Work hard, play hard. Mendoza Tugano & Co. will expect a lot from you, but you will get a lot back. Experience our open and friendly culture.
+                                    Build a strong foundation through hands-on experience and professional development. Our internship program is open to students pursuing accountancy or related business degrees.
                                 </p>
                             </div>
                         </div>
@@ -191,8 +108,51 @@
 
                 </div>
 
+                <!-- Internship Journey Section -->
+                <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="color: #333; font-weight: 700; font-size: 2rem; margin-bottom: 3rem;">
+                        Your Internship Journey:
+                    </h3>
+
+                    <div class="row gy-4">
+                        <!-- Gain Real Experience -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="value-card" style="background: linear-gradient(135deg, #5788af, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
+                                <!-- Background Pattern -->
+                                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
+                                <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+
+                                <div style="position: relative; z-index: 2;">
+                                    <i class="fas fa-briefcase" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
+                                    <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Gain Real Experience</h4>
+                                    <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
+                                        Work alongside professionals on live projects, learn how to use audit and accounting tools, and gain exposure to different client industries.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Learn and Develop -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="value-card" style="background: linear-gradient(135deg, #5788af, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
+                                <!-- Background Pattern -->
+                                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
+                                <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+
+                                <div style="position: relative; z-index: 2;">
+                                    <i class="fas fa-user-graduate" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
+                                    <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Learn and Develop</h4>
+                                    <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
+                                        Receive structured training, attend learning sessions, and gain valuable insights that prepare you for your future career.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Contact Section -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
                     <div style="background: white; padding: 4rem 3rem; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 3px solid #326D78; position: relative; overflow: hidden;">
 
                         <!-- Background Decoration -->
@@ -200,7 +160,7 @@
                         <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; opacity: 0.05;"></div>
 
                         <div style="position: relative; z-index: 2;">
-                            <div style="background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <div style=" background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
                                 <i class="fas fa-paper-plane" style="font-size: 2rem; color: white;"></i>
                             </div>
 

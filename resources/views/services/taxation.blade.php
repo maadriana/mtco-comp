@@ -8,7 +8,7 @@
 <div style="position: relative; margin-top: -1.5rem; background: #326D78; padding: 100px 0 80px 0;">
 
     <!-- Breadcrumb -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;">
+    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    {{ getContent('taxation_page_title', 'Tax Advisory and Compliance') }}
+                    {{ getContent('taxation_page_title', 'Taxation') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    {{ getContent('taxation_page_subtitle', 'Precisely tailored tax solutions for individuals and businesses in an ever-changing environment.') }}
+                    {{ getContent('taxation_page_subtitle', 'Providing businesses with clarity, compliance, and strategic guidance in an evolving tax landscape.') }}
                 </p>
             </div>
         </div>
@@ -60,70 +60,58 @@
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        {{ getContent('taxation_overview_title', 'Precisely Tailored Solutions') }}
+                        {{ getContent('taxation_overview_title', 'Strategic Tax Guidance') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('taxation_overview_paragraph1', 'The tax issues confronting every individual and every public, private and multinational company are unique. That is why we specialise in providing precisely tailored tax solutions.') }}
+                        {{ getContent('taxation_overview_paragraph1', 'Our Taxation services provide businesses with clarity, compliance, and strategic guidance in an evolving tax landscape. We advise clients on Philippine tax laws including compliance with BIR regulations, tax planning, and audit support.') }}
+                    </p>
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        {{ getContent('taxation_overview_paragraph2', 'Our services include preparation and filing of tax returns, representation in BIR assessments and tax court cases, and guidance on tax-efficient structures under Philippine laws.') }}
                     </p>
                 </div>
 
-                <!-- Key Approaches -->
+                <!-- Key Service Areas -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ getContent('taxation_approach_title', 'Our Approach') }}
+                        {{ getContent('taxation_services_title', 'Our Core Services') }}
                     </h3>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('taxation_approach_item1_title', 'Individual Business Needs') }}
+                            {{ getContent('taxation_service_item1_title', 'Tax Compliance & Preparation') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('taxation_approach_item1_description', 'Our priority is to provide you with an outcome that best meets your individual business needs while delivering practical business solutions that drive your success.') }}
+                            {{ getContent('taxation_service_item1_description', 'Comprehensive preparation and filing of tax returns ensuring full compliance with BIR regulations and Philippine tax laws.') }}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('taxation_approach_item2_title', 'Philippines Expertise') }}
+                            {{ getContent('taxation_service_item2_title', 'BIR Assessments & Tax Court Representation') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('taxation_approach_item2_description', 'With our unique experience in the Philippines, we offer practical solutions to assist clients who face an ever changing environment in this economy.') }}
+                            {{ getContent('taxation_service_item2_description', 'Expert representation in BIR assessments and tax court cases, providing strategic defense and resolution of tax disputes.') }}
                         </p>
                     </div>
 
                     <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('taxation_approach_item3_title', 'Comprehensive Advisory') }}
+                            {{ getContent('taxation_service_item3_title', 'Tax-Efficient Structures & Planning') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('taxation_approach_item3_description', 'We regularly advise clients on investment strategies, cross-border M&A issues, corporate restructurings, pre-IPO tax planning, and field-audit investigations.') }}
+                            {{ getContent('taxation_service_item3_description', 'Guidance on tax-efficient structures under Philippine laws, helping clients optimize their tax position while maintaining compliance.') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Services List -->
+                <!-- Value Proposition -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ getContent('taxation_services_title', 'Our Services Include:') }}
+                        {{ getContent('taxation_value_title', 'Our Commitment') }}
                     </h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('taxation_service1', 'Tax planning and advisory') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('taxation_service2', 'Tax compliance services') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('taxation_service3', 'Tax assessments and claims assistance') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('taxation_service4', 'Estate tax advisory') }}</span>
-                        </div>
-                    </div>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.7; font-size: 1.1rem;">
+                        {{ getContent('taxation_value_description', 'We help clients manage tax risk while identifying opportunities for savings and compliance efficiency. Our approach ensures you stay compliant with evolving Philippine tax regulations while maximizing your tax benefits.') }}
+                    </p>
                 </div>
 
                 <!-- CTA -->
@@ -143,79 +131,31 @@
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
-                            {{ getContent('taxation_sidebar_cta_title', 'Optimize Your Tax Strategy') }}
+                            {{ getContent('taxation_sidebar_cta_title', 'Ready to Optimize?') }}
                         </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            {{ getContent('taxation_sidebar_cta_description', 'Contact us to discuss your tax planning needs. Our experienced team is ready to help you navigate the complex tax landscape.') }}
+                            {{ getContent('taxation_sidebar_cta_description', 'Contact our experienced tax team to discuss your compliance needs and strategic tax planning opportunities.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            {{ getContent('taxation_sidebar_cta_button_text', 'Contact Us Now') }}
+                            {{ getContent('taxation_sidebar_cta_button_text', 'Contact Our Team') }}
                         </a>
                     </div>
 
                     <!-- Quick Facts -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
                             {{ getContent('taxation_related_title', 'Quick Facts') }}
                         </h5>
 
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                        <div style="text-align: center; padding: 1.5rem;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('taxation_fact1_label', 'Years of Experience') }}
+                                <span style="color: #666; font-size: 1rem; font-weight: 500;">
+                                    {{ getContent('taxation_fact_label', 'Tax Cases Handled') }}
                                 </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('taxation_fact1_value', '15+') }}
+                                <strong style="color: #326D78; font-size: 1.5rem; font-weight: 00;">
+                                    {{ getContent('taxation_fact_value', '500+') }}
                                 </strong>
                             </div>
-                        </div>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('taxation_fact2_label', 'Tax Cases Handled') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('taxation_fact2_value', '500+') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('taxation_fact3_label', 'Client Satisfaction') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('taxation_fact3_value', '100%') }}
-                                </strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Related Services -->
-                    <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('taxation_related_service1', 'Business Advisory') }}
-                            </a>
-                        </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('taxation_related_service2', 'Audit & Assurance') }}
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('taxation_related_service3', 'Corporate Finance') }}
-                            </a>
                         </div>
                     </div>
 
@@ -251,6 +191,12 @@
 
         div[style*="position: sticky"] {
             position: static !important;
+        }
+
+        /* Mobile breadcrumb fix */
+        div[style*="position: absolute"][style*="top: 20px"][style*="left: 70px"] {
+            top: 10px !important;
+            left: 20px !important;
         }
     }
 </style>

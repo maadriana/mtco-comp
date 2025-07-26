@@ -8,7 +8,7 @@
 <div style="position: relative; margin-top: -1.5rem; background: #326D78; padding: 100px 0 80px 0;">
 
     <!-- Breadcrumb -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;">
+    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -141,7 +141,7 @@
                 <div style="position: sticky; top: 2rem;">
 
                     <!-- Contact Card -->
-                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
                             {{ getContent('governance_sidebar_cta_title', 'Strengthen Your Governance') }}
                         </h4>
@@ -151,72 +151,6 @@
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
                             {{ getContent('governance_sidebar_cta_button_text', 'Contact Us Now') }}
                         </a>
-                    </div>
-
-                    <!-- Quick Facts -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
-                            {{ getContent('governance_related_title', 'Quick Facts') }}
-                        </h5>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('governance_fact1_label', 'Frameworks Implemented') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('governance_fact1_value', '150+') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('governance_fact2_label', 'Risk Assessments') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('governance_fact2_value', '200+') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('governance_fact3_label', 'Compliance Rate') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('governance_fact3_value', '99%') }}
-                                </strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Related Services -->
-                    <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('governance_related_service1', 'Audit & Assurance') }}
-                            </a>
-                        </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('governance_related_service2', 'Business Advisory') }}
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('governance_related_service3', 'Corporate Finance') }}
-                            </a>
-                        </div>
                     </div>
 
                 </div>
@@ -251,6 +185,12 @@
 
         div[style*="position: sticky"] {
             position: static !important;
+        }
+
+        /* Mobile breadcrumb fix */
+        div[style*="position: absolute"][style*="top: 20px"][style*="left: 70px"] {
+            top: 10px !important;
+            left: 20px !important;
         }
     }
 </style>

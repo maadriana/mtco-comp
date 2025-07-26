@@ -8,7 +8,7 @@
 <div style="position: relative; margin-top: -1.5rem; background: #326D78; padding: 100px 0 80px 0;">
 
     <!-- Breadcrumb -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;">
+    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -31,7 +31,7 @@
                     {{ getContent('finance_page_title', 'Corporate Finance and Advisory') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    {{ getContent('finance_page_subtitle', 'Strategic solutions to support your financial growth and business goals.') }}
+                    {{ getContent('finance_page_subtitle', 'Supporting critical business transactions with end-to-end guidance that drives sound investment decisions and optimizes shareholder value.') }}
                 </p>
             </div>
         </div>
@@ -60,76 +60,64 @@
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        {{ getContent('finance_overview_title', 'Achieving Your Business Ambitions') }}
+                        {{ getContent('finance_overview_title', 'Supporting Critical Business Transactions') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('finance_overview_paragraph1', 'Whatever ambitions you have for your business, Mendoza Tugano & Co., CPAs\' corporate finance specialists can help you to achieve them.') }}
+                        {{ getContent('finance_overview_paragraph1', 'We support critical business transactions through our Corporate Finance and Advisory services. From mergers and acquisitions to business valuations and capital raising, we provide end-to-end guidance that drives sound investment decisions.') }}
+                    </p>
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        {{ getContent('finance_overview_paragraph2', 'Our team conducts due diligence, financial modeling, deal structuring, and transaction support. We help businesses unlock opportunities, manage risks, and optimize shareholder value.') }}
                     </p>
                 </div>
 
-                <!-- Key Approaches -->
+                <!-- Core Services -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ getContent('finance_approach_title', 'Our Approach') }}
+                        {{ getContent('finance_services_title', 'Our Core Services') }}
                     </h3>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('finance_approach_item1_title', 'Specialist Expertise') }}
+                            {{ getContent('finance_service_item1_title', 'Mergers and Acquisitions') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('finance_approach_item1_description', 'We provide specialist skills, practical experience, know-how and objectivity to assist you in your future plans, whether you are looking to expand, merge or sell your business.') }}
+                            {{ getContent('finance_service_item1_description', 'Comprehensive M&A advisory including deal origination, due diligence, valuation, negotiation support, and transaction execution to maximize value for all stakeholders.') }}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('finance_approach_item2_title', 'Comprehensive Services') }}
+                            {{ getContent('finance_service_item2_title', 'Business Valuations & Financial Modeling') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('finance_approach_item2_description', 'We provide a comprehensive range of partner-led advisory and transaction support services across a wide variety of industry sectors both locally and overseas.') }}
+                            {{ getContent('finance_service_item2_description', 'Professional business valuations and sophisticated financial modeling to support strategic decision-making, investment planning, and transaction structuring.') }}
                         </p>
                     </div>
 
                     <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('finance_approach_item3_title', 'Growth Identification') }}
+                            {{ getContent('finance_service_item3_title', 'Capital Raising & Deal Structuring') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('finance_approach_item3_description', 'Our team of professionals have the capability of identifying growth opportunities for businesses from start-up ventures to established enterprises.') }}
+                            {{ getContent('finance_service_item3_description', 'Strategic capital raising solutions and optimal deal structuring to secure funding, optimize capital structure, and achieve business growth objectives.') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Services List -->
+                <!-- Advisory Approach -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ getContent('finance_services_title', 'Our Services Include:') }}
+                        {{ getContent('finance_approach_title', 'Our Advisory Approach') }}
                     </h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('finance_service1', 'Financial due diligence') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('finance_service2', 'Valuations') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('finance_service3', 'Initial public offerings') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('finance_service4', 'Mergers and acquisitions') }}</span>
-                        </div>
-                    </div>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.7; font-size: 1.1rem;">
+                        {{ getContent('finance_approach_description', 'Our advisory approach blends technical expertise with strategic insight. We combine deep financial analysis with practical market knowledge to deliver solutions that unlock opportunities, manage risks, and create sustainable value for your business and stakeholders.') }}
+                    </p>
                 </div>
 
                 <!-- CTA -->
                 <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
-                        {{ getContent('finance_cta_text', 'Start Your Journey Today') }}
+                        {{ getContent('finance_cta_text', 'Discuss Your Transaction Needs') }}
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -141,82 +129,16 @@
                 <div style="position: sticky; top: 2rem;">
 
                     <!-- Contact Card -->
-                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
-                            {{ getContent('finance_sidebar_cta_title', 'Start Your Journey Today') }}
+                            {{ getContent('finance_sidebar_cta_title', 'Ready to Unlock Value?') }}
                         </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            {{ getContent('finance_sidebar_cta_description', 'Let\'s talk about how we can help your business meet its corporate finance goals.') }}
+                            {{ getContent('finance_sidebar_cta_description', 'Let our corporate finance experts help you navigate complex transactions and optimize your business value.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            {{ getContent('finance_sidebar_cta_button_text', 'Contact Us Now') }}
+                            {{ getContent('finance_sidebar_cta_button_text', 'Get Expert Guidance') }}
                         </a>
-                    </div>
-
-                    <!-- Quick Facts -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
-                            {{ getContent('finance_related_title', 'Quick Facts') }}
-                        </h5>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('finance_fact1_label', 'Years of Experience') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('finance_fact1_value', '20+') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('finance_fact2_label', 'Team Strength') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('finance_fact2_value', 'Partner-Led') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('finance_fact3_label', 'Sectors Served') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('finance_fact3_value', '15+') }}
-                                </strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Related Services -->
-                    <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('finance_related_service1', 'Business Advisory') }}
-                            </a>
-                        </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('finance_related_service2', 'Audit & Assurance') }}
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('finance_related_service3', 'Risk & Restructuring') }}
-                            </a>
-                        </div>
                     </div>
 
                 </div>
@@ -251,6 +173,12 @@
 
         div[style*="position: sticky"] {
             position: static !important;
+        }
+
+        /* Mobile breadcrumb fix */
+        div[style*="position: absolute"][style*="top: 20px"][style*="left: 70px"] {
+            top: 10px !important;
+            left: 20px !important;
         }
     }
 </style>

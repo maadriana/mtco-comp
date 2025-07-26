@@ -44,49 +44,16 @@
             <!-- Left Content on Diagonal -->
             <div class="col-lg-7" style="position: relative; z-index: 10;">
                 <div style="color: white; padding-right: 2rem;">
-                    <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 0.5rem 1.5rem; border-radius: 25px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
-                        <small style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Career Growth</small>
-                    </div>
 
-                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white ">
-                        Experienced<br>
-                        <span style="font-weight: 300; color: white;">Professionals</span>
+
+                   <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
+                 Experienced <span style="font-weight: 500;">Professionals</span>
                     </h1>
 
-                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px;">
-                        A career with Mendoza Tugano & Co. is more than just a job; it opens doors to a wealth of opportunities.
-                    </p>
 
-                    <!-- Inline Stats -->
-                    <div class="d-flex align-items-center gap-4 flex-wrap">
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-clock" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white ">10+</h4>
-                                <small style="opacity: 0.8;">Years Experience</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-users" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white ">50+</h4>
-                                <small style="opacity: 0.8;">Team Members</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                                <i class="fas fa-chart-line" style="color: white; font-size: 1.2rem;"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: white ">∞</h4>
-                                <small style="opacity: 0.8;">Growth Potential</small>
-                            </div>
-                        </div>
-                    </div>
+                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px;">
+                        Take your career to the next level with MTC. We value experienced professionals who bring strong expertise, integrity, and a drive to lead.
+                    </p>
                 </div>
             </div>
 
@@ -128,7 +95,7 @@
         </div>
         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">Professionalism</h4>
         <p style="color: #666; line-height: 1.7; margin: 0;">
-            Professionalism and positive people relationships are characteristics we look for in the individuals to be part of our service team.
+            We uphold the highest standards of conduct in every engagement. At MTC, you’ll work with a team that values ethics, client trust, and professional excellence.
         </p>
     </div>
 </div>
@@ -141,7 +108,7 @@
         </div>
         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">Career Growth</h4>
         <p style="color: #666; line-height: 1.7; margin: 0;">
-            If you possess the characteristics we value, Mendoza Tugano & Co. might be your opportunity to make a rewarding career change.
+            We invest in your success. From technical training and mentoring to leadership development and exposure to complex client engagements, MTC offers a platform where you can thrive and advance.
         </p>
     </div>
 </div>
@@ -149,59 +116,6 @@
 
                 </div>
 
-                <!-- Services Preview Section -->
-                <div class="text-center mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem;">Experience the Difference</h3>
-                    <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
-                        Experience the difference with Mendoza Tugano & Co. Take a look at our services and discover the opportunities that await you.
-                    </p>
-                </div>
-
-                <!-- Services Grid -->
-                <div class="row gy-3 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-md-4">
-                        <div class="service-pill" style="background: rgba(50, 109, 120, 0.1); padding: 1rem 1.5rem; border-radius: 25px; text-align: center; transition: all 0.3s ease;">
-                            <a href="{{ route('services.audit') }}" style="text-decoration: none; color: #326D78; font-weight: 600;">
-                                <i class="fas fa-search-dollar me-2"></i>Audit and Assurance
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-pill" style="background: rgba(50, 109, 120, 0.1); padding: 1rem 1.5rem; border-radius: 25px; text-align: center; transition: all 0.3s ease;">
-                            <a href="{{ route('services.advisory') }}" style="text-decoration: none; color: #326D78; font-weight: 600;">
-                                <i class="fas fa-lightbulb me-2"></i>Business Advisory
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-pill" style="background: rgba(50, 109, 120, 0.1); padding: 1rem 1.5rem; border-radius: 25px; text-align: center; transition: all 0.3s ease;">
-                            <a href="{{ route('services.outsourcing') }}" style="text-decoration: none; color: #326D78; font-weight: 600;">
-                                <i class="fas fa-users me-2"></i>Outsourcing
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-pill" style="background: rgba(50, 109, 120, 0.1); padding: 1rem 1.5rem; border-radius: 25px; text-align: center; transition: all 0.3s ease;">
-                            <a href="{{ route('services.restructuring') }}" style="text-decoration: none; color: #326D78; font-weight: 600;">
-                                <i class="fas fa-project-diagram me-2"></i>Business Restructuring
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-pill" style="background: rgba(50, 109, 120, 0.1); padding: 1rem 1.5rem; border-radius: 25px; text-align: center; transition: all 0.3s ease;">
-                            <a href="{{ route('services.finance') }}" style="text-decoration: none; color: #326D78; font-weight: 600;">
-                                <i class="fas fa-chart-pie me-2"></i>Corporate Finance
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-pill" style="background: rgba(50, 109, 120, 0.1); padding: 1rem 1.5rem; border-radius: 25px; text-align: center; transition: all 0.3s ease;">
-                            <a href="{{ route('services.taxation') }}" style="text-decoration: none; color: #326D78; font-weight: 600;">
-                                <i class="fas fa-calculator me-2"></i>Taxation
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- CTA Section -->
                 <div class="text-center" data-aos="fade-up" data-aos-delay="500">

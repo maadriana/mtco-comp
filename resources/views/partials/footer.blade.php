@@ -35,7 +35,7 @@
         <h4>{{ getContent('footer_useful_links_title', 'Useful Links') }}</h4>
         <ul>
           <li><a href="{{ url('/#hero') }}">{{ getContent('footer_link1_text', 'Home') }}</a></li>
-          <li><a href="{{ route('about') }}">{{ getContent('footer_link2_text', 'About us') }}</a></li>
+          <li><a href="{{ route('history') }}">{{ getContent('footer_link2_text', 'About us') }}</a></li>
           <li><a href="{{ url('/#careers') }}">{{ getContent('footer_link3_text', 'Careers') }}</a></li>
           <li><a href="{{ url('/#team') }}">{{ getContent('footer_link4_text', 'People') }}</a></li>
         </ul>

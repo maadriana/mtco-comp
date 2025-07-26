@@ -8,7 +8,7 @@
 <div style="position: relative; margin-top: -1.5rem; background: #326D78; padding: 100px 0 80px 0;">
 
     <!-- Breadcrumb -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;">
+    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    {{ getContent('advisory_page_title', 'Business Advisory Services') }}
+                    {{ getContent('advisory_page_title', 'Business Advisory') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    {{ getContent('advisory_page_subtitle', 'Strategic consulting to drive business growth and long-term success.') }}
+                    {{ getContent('advisory_page_subtitle', 'Empowering companies to navigate change, seize opportunities, and resolve operational challenges through deep industry knowledge and practical insights.') }}
                 </p>
             </div>
         </div>
@@ -60,76 +60,73 @@
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        {{ getContent('advisory_overview_title', 'Targeted Consulting Advice') }}
+                        {{ getContent('advisory_overview_title', 'Driving Performance and Long-Term Value') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('advisory_overview_paragraph1', 'Our breadth of experience allows you to benefit from specific and targeted consulting advice to support your long-term growth plans.') }}
+                        {{ getContent('advisory_overview_paragraph1', 'Our Business Advisory services empower companies to navigate change, seize opportunities, and resolve operational challenges. We combine deep industry knowledge with practical insights to help clients drive performance and long-term value.') }}
+                    </p>
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        {{ getContent('advisory_overview_paragraph2', 'We assist with business planning, internal control enhancement, process improvement, financial modeling, and performance management. Whether you are launching a new venture or improving an existing one, we provide hands-on support that will help transform your goals into measurable results.') }}
                     </p>
                 </div>
 
-                <!-- Key Approaches -->
+                <!-- Key Service Areas -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ getContent('advisory_approach_title', 'Our Approach') }}
+                        {{ getContent('advisory_services_title', 'Our Core Advisory Services') }}
                     </h3>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_approach_item1_title', 'Deep Understanding') }}
+                            {{ getContent('advisory_service_item1_title', 'Business Planning & Strategy') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_approach_item1_description', 'By developing a real understanding of your business and the issues and challenges you face, our advisory teams use local and global knowledge to help you achieve your goals.') }}
+                            {{ getContent('advisory_service_item1_description', 'Comprehensive business planning and strategic guidance to help you define clear objectives, identify growth opportunities, and develop actionable roadmaps for success.') }}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_approach_item2_title', 'Risk Mitigation & Success') }}
+                            {{ getContent('advisory_service_item2_title', 'Process Improvement & Internal Controls') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_approach_item2_description', 'Not only do we help you understand and plan to mitigate your vulnerabilities, we also help you to establish a clear pathway to success.') }}
+                            {{ getContent('advisory_service_item2_description', 'Enhancement of internal controls and operational processes to improve efficiency, reduce risks, and strengthen organizational governance frameworks.') }}
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                            {{ getContent('advisory_service_item3_title', 'Financial Modeling & Performance Management') }}
+                        </h4>
+                        <p style="color: #666; margin: 0; line-height: 1.6;">
+                            {{ getContent('advisory_service_item3_description', 'Advanced financial modeling and performance management systems to support data-driven decision making and monitor key business metrics.') }}
                         </p>
                     </div>
 
                     <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
                         <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_approach_item3_title', 'Proven Track Record') }}
+                            {{ getContent('advisory_service_item4_title', 'New Venture & Operational Support') }}
                         </h4>
                         <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_approach_item3_description', 'We have experience working with a range of clients — from family-owned businesses to public companies and from entrepreneurial start-ups to established global entities.') }}
+                            {{ getContent('advisory_service_item4_description', 'Hands-on support for new ventures and operational improvements, providing practical guidance to transform business goals into measurable results.') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Services List -->
+                <!-- Value Proposition -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ getContent('advisory_services_title', 'Our Services Include:') }}
+                        {{ getContent('advisory_value_title', 'Transforming Goals into Results') }}
                     </h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('advisory_service1', 'Business consulting') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('advisory_service2', 'Strategic planning') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('advisory_service3', 'Process optimization') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('advisory_service4', 'Performance improvement') }}</span>
-                        </div>
-                    </div>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.7; font-size: 1.1rem;">
+                        {{ getContent('advisory_value_description', 'Our approach combines strategic thinking with practical implementation. We work closely with your team to understand your unique challenges and opportunities, delivering customized solutions that drive sustainable growth and operational excellence.') }}
+                    </p>
                 </div>
 
                 <!-- CTA -->
                 <div style="text-align: left;" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ url('/#contact') }}" style="display: inline-block; background: #326D78; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(50, 109, 120, 0.3);">
-                        {{ getContent('advisory_cta_text', 'Get Started Today') }}
+                        {{ getContent('advisory_cta_text', 'Schedule Your Advisory Consultation') }}
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -141,82 +138,16 @@
                 <div style="position: sticky; top: 2rem;">
 
                     <!-- Contact Card -->
-                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
-                            {{ getContent('advisory_sidebar_cta_title', 'Get Started Today') }}
+                            {{ getContent('advisory_sidebar_cta_title', 'Ready to Transform Your Business?') }}
                         </h4>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
-                            {{ getContent('advisory_sidebar_cta_description', 'Contact us to explore how our advisory services can support your growth journey.') }}
+                            {{ getContent('advisory_sidebar_cta_description', 'Contact our advisory team to explore how we can help you navigate challenges and drive performance improvements.') }}
                         </p>
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
-                            {{ getContent('advisory_sidebar_cta_button_text', 'Contact Us Now') }}
+                            {{ getContent('advisory_sidebar_cta_button_text', 'Contact Our Team') }}
                         </a>
-                    </div>
-
-                    <!-- Quick Facts -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
-                            {{ getContent('advisory_related_title', 'Quick Facts') }}
-                        </h5>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('advisory_fact1_label', 'Clients Served') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('advisory_fact1_value', '200+') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('advisory_fact2_label', 'Industries Covered') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('advisory_fact2_value', '20+') }}
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    {{ getContent('advisory_fact3_label', 'Advisory Accuracy') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.1rem;">
-                                    {{ getContent('advisory_fact3_value', '98%') }}
-                                </strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Related Services -->
-                    <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">Related Services</h5>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('advisory_related_service1', 'Corporate Finance') }}
-                            </a>
-                        </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0; border-bottom: 1px solid #f1f1f1;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('advisory_related_service2', 'Audit & Assurance') }}
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="#" style="color: #326D78; text-decoration: none; font-weight: 500; display: block; padding: 0.5rem 0;">
-                                <i class="fas fa-arrow-right me-2" style="font-size: 0.8rem;"></i>
-                                {{ getContent('advisory_related_service3', 'Tax Services') }}
-                            </a>
-                        </div>
                     </div>
 
                 </div>
@@ -251,6 +182,12 @@
 
         div[style*="position: sticky"] {
             position: static !important;
+        }
+
+        /* Mobile breadcrumb fix */
+        div[style*="position: absolute"][style*="top: 20px"][style*="left: 70px"] {
+            top: 10px !important;
+            left: 20px !important;
         }
     }
 </style>
