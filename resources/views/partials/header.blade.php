@@ -45,26 +45,18 @@
       <div class="social-links d-none d-md-flex align-items-center">
         @if(getContent('header_social_twitter'))
           <a href="{{ getContent('header_social_twitter') }}" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-        @else
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
         @endif
 
         @if(getContent('header_social_facebook'))
           <a href="{{ getContent('header_social_facebook') }}" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-        @else
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         @endif
 
         @if(getContent('header_social_instagram'))
           <a href="{{ getContent('header_social_instagram') }}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-        @else
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         @endif
 
         @if(getContent('header_social_linkedin'))
           <a href="{{ getContent('header_social_linkedin') }}" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-        @else
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         @endif
       </div>
     </div>
@@ -104,32 +96,31 @@
           </li>
 
           <!-- 3. Services -->
-<li class="dropdown {{ request()->is('services/*') ? 'active' : '' }}">
-  <a href="{{ url('/#services') }}">
-    <span>{{ getContent('nav_services_text', 'Services') }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
-  </a>
-  <ul>
-    <li><a href="{{ route('services.audit') }}" class="{{ request()->routeIs('services.audit') ? 'active' : '' }}">{{ getContent('nav_service_audit', 'Audit and Assurance') }}</a></li>
-    <li><a href="{{ route('services.advisory') }}" class="{{ request()->routeIs('services.advisory') ? 'active' : '' }}">{{ getContent('nav_service_advisory', 'Business Advisory') }}</a></li>
-    <li><a href="{{ route('services.outsourcing') }}" class="{{ request()->routeIs('services.outsourcing') ? 'active' : '' }}">{{ getContent('nav_service_outsourcing', 'Outsourcing') }}</a></li>
-    <li><a href="{{ route('services.restructuring') }}" class="{{ request()->routeIs('services.restructuring') ? 'active' : '' }}">{{ getContent('nav_service_restructuring', 'Business Restructuring and Insolvency') }}</a></li>
-    <li><a href="{{ route('services.finance') }}" class="{{ request()->routeIs('services.finance') ? 'active' : '' }}">{{ getContent('nav_service_finance', 'Corporate Finance and Advisory') }}</a></li>
-    <li><a href="{{ route('services.forensic') }}" class="{{ request()->routeIs('services.forensic') ? 'active' : '' }}">{{ getContent('nav_service_forensic', 'Forensic and Litigation Support') }}</a></li>
-    <li><a href="{{ route('services.governance') }}" class="{{ request()->routeIs('services.governance') ? 'active' : '' }}">{{ getContent('nav_service_governance', 'Governance, Risk and Internal Audit') }}</a></li>
-    <li><a href="{{ route('services.taxation') }}" class="{{ request()->routeIs('services.taxation') ? 'active' : '' }}">{{ getContent('nav_service_taxation', 'Taxation') }}</a></li>
-  </ul>
-</li>
+          <li class="dropdown {{ request()->is('services/*') ? 'active' : '' }}">
+            <a href="{{ url('/#services') }}">
+              <span>{{ getContent('nav_services_text', 'Services') }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="{{ route('services.audit') }}" class="{{ request()->routeIs('services.audit') ? 'active' : '' }}">{{ getContent('nav_service_audit', 'Audit and Assurance') }}</a></li>
+              <li><a href="{{ route('services.advisory') }}" class="{{ request()->routeIs('services.advisory') ? 'active' : '' }}">{{ getContent('nav_service_advisory', 'Business Advisory') }}</a></li>
+              <li><a href="{{ route('services.outsourcing') }}" class="{{ request()->routeIs('services.outsourcing') ? 'active' : '' }}">{{ getContent('nav_service_outsourcing', 'Outsourcing') }}</a></li>
+              <li><a href="{{ route('services.restructuring') }}" class="{{ request()->routeIs('services.restructuring') ? 'active' : '' }}">{{ getContent('nav_service_restructuring', 'Business Restructuring and Insolvency') }}</a></li>
+              <li><a href="{{ route('services.finance') }}" class="{{ request()->routeIs('services.finance') ? 'active' : '' }}">{{ getContent('nav_service_finance', 'Corporate Finance and Advisory') }}</a></li>
+              <li><a href="{{ route('services.forensic') }}" class="{{ request()->routeIs('services.forensic') ? 'active' : '' }}">{{ getContent('nav_service_forensic', 'Forensic and Litigation Support') }}</a></li>
+              <li><a href="{{ route('services.governance') }}" class="{{ request()->routeIs('services.governance') ? 'active' : '' }}">{{ getContent('nav_service_governance', 'Governance, Risk and Internal Audit') }}</a></li>
+              <li><a href="{{ route('services.taxation') }}" class="{{ request()->routeIs('services.taxation') ? 'active' : '' }}">{{ getContent('nav_service_taxation', 'Taxation') }}</a></li>
+            </ul>
+          </li>
 
           <!-- 4. News & Updates -->
-<li class="dropdown {{ request()->is('news-updates*') ? 'active' : '' }}">
-  <a href="{{ url('/#news') }}">
-    <span>{{ getContent('nav_news_text', 'News & Updates') }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
-  </a>
-  <ul>
-    <li><a href="{{ route('news.updates') }}" class="{{ request()->is('news-updates') ? 'active' : '' }}">{{ getContent('nav_news_updates', 'News & Updates') }}</a></li>
-    <li><a href="{{ route('tax.tools') }}">{{ getContent('nav_tax_tools', 'Tax Tools and Information') }}</a></li>
-  </ul>
-</li>
+          <li class="dropdown {{ request()->is('news-updates*') ? 'active' : '' }}">
+            <a href="{{ url('/#news') }}">
+              <span>{{ getContent('nav_news_text', 'News & Updates') }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="{{ route('news.updates') }}" class="{{ request()->is('news-updates') ? 'active' : '' }}">{{ getContent('nav_news_updates', 'News & Updates') }}</a></li>
+            </ul>
+          </li>
 
           <!-- 5. Careers -->
           <li class="dropdown {{ request()->is('careers/*') ? 'active' : '' }}">

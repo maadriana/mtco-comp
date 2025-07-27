@@ -69,12 +69,12 @@
                             @php
                                 $fullName = \App\Models\Content::where('key', 'emmanuel_full_name')->value('value') ?: 'Emmanuel Y. Mendoza';
                                 $nameParts = explode(' ', $fullName);
-                                $firstName = array_slice($nameParts, 0, -1);
-                                $lastName = end($nameParts);
+                                $firstName = $nameParts[0]; // Emmanuel
+                                $middleAndLast = array_slice($nameParts, 1); // Y. Mendoza
                             @endphp
                             <h1 style="font-size: 2.9rem; font-weight: 700; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
-                                {{ implode(' ', $firstName) }}<br>
-                                <span style="color: #326D78;">{{ $lastName }}</span>
+                                {{ $firstName }}<br>
+                                <span style="color: #326D78;">{{ implode(' ', $middleAndLast) }}</span>
                             </h1>
                             <h2 style="font-size: 1.3rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
                                 {{ \App\Models\Content::where('key', 'emmanuel_position')->value('value') ?: 'Managing Partner' }}
@@ -218,42 +218,40 @@
                         <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
 
                         <div style="space-y: 1rem;">
-                            <div style="display: flex; align-items: start; margin-bottom: 1rem;">
-                                <div style="width: 8px; height: 8px; background: #326D78; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                                <div>
-                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_name')->value('value') ?: 'PICPA' }}</strong><br>
-                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_description')->value('value') ?: 'Philippine Institute of Certified Public Accountants' }}</small>
-                                </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_name')->value('value') ?: 'Board of Accountancy' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_description')->value('value') ?: 'Professional Regulatory Board' }}</small>
                             </div>
 
-                            <div style="display: flex; align-items: start; margin-bottom: 1rem;">
-                                <div style="width: 8px; height: 8px; background: #4a9aba; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                                <div>
-                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_name')->value('value') ?: 'ACPAPP' }}</strong><br>
-                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_description')->value('value') ?: 'Association of CPAs in Public Practice' }}</small>
-                                </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_name')->value('value') ?: 'Securities and Exchange Commission' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_description')->value('value') ?: 'Capital Markets Regulator' }}</small>
                             </div>
 
-                            <div style="display: flex; align-items: start; margin-bottom: 1rem;">
-                                <div style="width: 8px; height: 8px; background: #74d3e3; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                                <div>
-                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_name')->value('value') ?: 'Bank Institute of the Philippines' }}</strong><br>
-                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_description')->value('value') ?: 'Professional Banking Association' }}</small>
-                                </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_name')->value('value') ?: 'Bureau of Internal Revenue' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_description')->value('value') ?: 'Tax Administration Authority' }}</small>
                             </div>
 
-                            <div style="display: flex; align-items: start;">
-                                <div style="width: 8px; height: 8px; background: #5bb3c7; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                                <div>
-                                    <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_name')->value('value') ?: 'ACPAPP Committee' }}</strong><br>
-                                    <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_description')->value('value') ?: 'Auditing Standards and Practices' }}</small>
-                                </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_name')->value('value') ?: 'Insurance Commission' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_description')->value('value') ?: 'Insurance Industry Regulator' }}</small>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Accreditation -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="150">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
+
+                        <div>
+                            <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_accreditation1_name')->value('value') ?: 'PICPA' }}</strong><br>
+                            <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_accreditation1_description')->value('value') ?: 'Philippine Institute of Certified Public Accountants' }}</small>
+                        </div>
+                    </div>
+
                     <!-- Quote/Philosophy -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="200">
                         <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin: 0;">
                             "{{ \App\Models\Content::where('key', 'emmanuel_quote')->value('value') ?: 'Excellence in professional practice comes from the intersection of technical expertise, ethical leadership, and unwavering commitment to client success.' }}"
                         </p>

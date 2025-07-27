@@ -3,8 +3,8 @@
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>NEWS AND UPDATES</h2>
-    <p><span>Stay Informed with</span> <span class="description-title">Latest Developments</span></p>
+    <h2>{{ getContent('news_section_title', 'NEWS AND UPDATES') }}</h2>
+    <p>{!! getContent('news_section_subtitle', '<span>Stay Informed with</span> <span class="description-title">Latest Developments</span>') !!}</p>
   </div><!-- End Section Title -->
 
   <div class="container">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="intro-text">
                   <p class="lead mb-3">
-                    Stay informed with the latest developments in tax, audit, and business regulations in the Philippines. Our News and Updates section brings you timely insights, regulatory issuances, and industry trends that matter to your business.
+                    {{ getContent('news_intro_description', 'Stay informed with the latest developments in tax, audit, and business regulations in the Philippines. Our News and Updates section brings you timely insights, regulatory issuances, and industry trends that matter to your business.') }}
                   </p>
                   <p class="mb-0">
                     We provide concise updates on new BIR and SEC regulations, changes in financial reporting standards, government circulars, and other policy shifts that impact compliance and operations. Whether it's a tax deadline reminder or a recent legal ruling, our goal is to keep you ahead of the curve with credible, practical information.
@@ -39,47 +39,84 @@
             @php
               $cards = [
                 [
-                  'title' => 'BIR Digital Tax Receipts',
-                  'desc' => 'Learn about the new Bureau of Internal Revenue digital tax receipt requirements and implementation guidelines for businesses operating in the Philippines.',
-                  'route' => route('news.bir-article'),
+                  'title' => getContent('news_article1_title', 'BIR Digital Tax Receipts'),
+                  'desc' => getContent('news_article1_excerpt', 'Learn about the new Bureau of Internal Revenue digital tax receipt requirements and implementation guidelines for businesses operating in the Philippines.'),
+                  'route' => !empty(getContent('news_article1_external_link')) ? getContent('news_article1_external_link') : route('news.bir-article'),
+                  'external' => !empty(getContent('news_article1_external_link')),
                   'icon' => 'bi-receipt',
-                  'category' => 'BIR'
+                  'category' => getContent('news_article1_category', 'BIR'),
+                  'date' => getContent('news_article1_date', 'January 15, 2025'),
+                  'read_time' => getContent('news_article1_read_time', '8 min read'),
+                  'read_more_text' => getContent('news_article1_read_more_text', 'Read More'),
+                  'image' => hasImageContent('news_article1_image') ? getContent('news_article1_image') : null,
                 ],
                 [
-                  'title' => 'SEC Financial Reporting 2025',
-                  'desc' => 'Discover the updated Securities and Exchange Commission financial reporting standards and compliance requirements for the year 2025.',
-                  'route' => route('news.sec-article'),
+                  'title' => getContent('news_article2_title', 'SEC Financial Reporting 2025'),
+                  'desc' => getContent('news_article2_excerpt', 'Discover the updated Securities and Exchange Commission financial reporting standards and compliance requirements for the year 2025.'),
+                  'route' => !empty(getContent('news_article2_external_link')) ? getContent('news_article2_external_link') : route('news.sec-article'),
+                  'external' => !empty(getContent('news_article2_external_link')),
                   'icon' => 'bi-file-earmark-text',
-                  'category' => 'SEC'
+                  'category' => getContent('news_article2_category', 'SEC'),
+                  'date' => getContent('news_article2_date', 'January 10, 2025'),
+                  'read_time' => getContent('news_article2_read_time', '5 min read'),
+                  'read_more_text' => getContent('news_article2_read_more_text', 'Read More'),
+                  'image' => hasImageContent('news_article2_image') ? getContent('news_article2_image') : null,
                 ],
                 [
-                  'title' => 'PSA Updates 2025',
-                  'desc' => 'Stay updated with the latest Philippine Statistics Authority regulations and requirements that impact business registration and compliance.',
-                  'route' => route('news.psa-article'),
+                  'title' => getContent('news_article3_title', 'PSA Updates 2025'),
+                  'desc' => getContent('news_article3_excerpt', 'Stay updated with the latest Philippine Statistics Authority regulations and requirements that impact business registration and compliance.'),
+                  'route' => !empty(getContent('news_article3_external_link')) ? getContent('news_article3_external_link') : route('news.psa-article'),
+                  'external' => !empty(getContent('news_article3_external_link')),
                   'icon' => 'bi-graph-up-arrow',
-                  'category' => 'PSA'
+                  'category' => getContent('news_article3_category', 'PSA'),
+                  'date' => getContent('news_article3_date', 'January 8, 2025'),
+                  'read_time' => getContent('news_article3_read_time', '4 min read'),
+                  'read_more_text' => getContent('news_article3_read_more_text', 'Read More'),
+                  'image' => hasImageContent('news_article3_image') ? getContent('news_article3_image') : null,
                 ]
               ];
             @endphp
 
             @foreach ($cards as $index => $item)
             <div class="news-item" data-aos="fade-up" data-aos-delay="{{ 200 + ($index * 100) }}">
-              <a href="{{ $item['route'] }}" class="news-card-link">
+              <a href="{{ $item['route'] }}" class="news-card-link" {{ $item['external'] ? 'target="_blank" rel="noopener noreferrer"' : '' }}>
                 <article class="news-card">
                   <div class="news-card-header">
-                    <div class="category-badge">{{ $item['category'] }}</div>
+                    <div class="category-badge">
+                      {{ $item['category'] }}
+                      @if($item['external'])
+                        <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 0.8em;"></i>
+                      @endif
+                    </div>
                     <div class="news-icon">
                       <i class="bi {{ $item['icon'] }}"></i>
                     </div>
                   </div>
+
+                  @if($item['image'])
+                  <div class="news-card-image">
+                    <img src="data:image/jpeg;base64,{{ base64_encode($item['image']) }}" alt="{{ $item['title'] }}" style="width: 100%; height: 200px; object-fit: cover;">
+                  </div>
+                  @endif
+
                   <div class="news-card-body">
+                    <div class="news-meta">
+                      <span class="news-date">
+                        <i class="bi bi-calendar3"></i>
+                        {{ $item['date'] }}
+                      </span>
+                      <span class="news-read-time">
+                        <i class="bi bi-clock"></i>
+                        {{ $item['read_time'] }}
+                      </span>
+                    </div>
                     <h3 class="news-title">{{ $item['title'] }}</h3>
                     <p class="news-excerpt">{{ $item['desc'] }}</p>
                   </div>
                   <div class="news-card-footer">
                     <div class="read-more-btn">
-                      <span>Read Article</span>
-                      <i class="bi bi-chevron-right"></i>
+                      <span>{{ $item['read_more_text'] }}</span>
+                      <i class="bi {{ $item['external'] ? 'bi-box-arrow-up-right' : 'bi-chevron-right' }}"></i>
                     </div>
                   </div>
                 </article>
@@ -373,6 +410,9 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .news-icon {
@@ -401,10 +441,43 @@
   color: white;
 }
 
+/* Card Image */
+.news-card-image {
+  margin: 1rem 1.5rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.news-card-image img {
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-card-image img {
+  transform: scale(1.05);
+}
+
 /* Card Body */
 .news-card-body {
   padding: 1.5rem;
   flex-grow: 1;
+}
+
+.news-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.news-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.news-meta i {
+  font-size: 0.8rem;
 }
 
 .news-title {
@@ -425,6 +498,10 @@
   line-height: 1.6;
   font-size: 0.95rem;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Card Footer */
@@ -445,20 +522,50 @@
   border-radius: 25px;
   transition: all 0.3s ease;
   background: transparent;
+  width: 100%;
+  justify-content: center;
 }
 
 .read-more-btn i {
   transition: transform 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .news-card:hover .read-more-btn {
   background: #326C79;
   color: white;
-  transform: translateX(5px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(50, 108, 121, 0.3);
 }
 
 .news-card:hover .read-more-btn i {
   transform: translateX(3px);
+}
+
+/* External link styling */
+.news-card-link[target="_blank"] .category-badge {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+}
+
+.news-card-link[target="_blank"]:hover .news-card {
+  border-color: #17a2b8;
+}
+
+.news-card-link[target="_blank"]:hover .read-more-btn {
+  background: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.news-card-link[target="_blank"] .news-icon {
+  background: rgba(23, 162, 184, 0.1);
+}
+
+.news-card-link[target="_blank"] .news-icon i {
+  color: #17a2b8;
+}
+
+.news-card-link[target="_blank"]:hover .news-icon {
+  background: #17a2b8;
 }
 
 /* Responsive Design */
@@ -550,6 +657,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .news-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* Animation for grid items */
@@ -564,5 +676,37 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Accessibility improvements */
+.news-card-link:focus {
+  outline: 2px solid #326C79;
+  outline-offset: 2px;
+  border-radius: 15px;
+}
+
+.news-card-link:focus .news-card {
+  box-shadow: 0 0 0 2px rgba(50, 108, 121, 0.2);
+}
+
+/* Loading state for images */
+.news-card-image img {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.news-card-image img[src] {
+  background: none;
+  animation: none;
 }
 </style>

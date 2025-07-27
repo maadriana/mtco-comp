@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Outsourcing - Services')
+@section('title', 'Business Outsourcing - Services')
 
 @section('content')
 
@@ -19,7 +19,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{ url('/#services') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">Services</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Outsourcing</li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Business Outsourcing</li>
             </ol>
         </nav>
     </div>
@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    {{ getContent('outsourcing_page_title', 'Outsourcing') }}
+                    {{ getContent('outsourcing_page_title', 'Business Outsourcing') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    {{ getContent('outsourcing_page_subtitle', 'Streamline non-core functions and focus on strategic growth with our cost-efficient, compliant, and operationally flexible outsourcing solutions.') }}
+                    {{ getContent('outsourcing_page_subtitle', 'Tailored bookkeeping and financial support to help optimize your business resources and focus on growth.') }}
                 </p>
             </div>
         </div>
@@ -60,57 +60,90 @@
                 <!-- Service Overview -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h2 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 2rem;">
-                        {{ getContent('outsourcing_overview_title', 'Focus on Strategic Growth') }}
+                        {{ getContent('outsourcing_overview_title', 'Tailored Solutions for Every Need') }}
                     </h2>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('outsourcing_overview_paragraph1', 'Outsourcing enables businesses to streamline non-core functions and focus on strategic growth. Our firm provides outsourcing solutions that offer cost-efficiency, compliance, and operational flexibility.') }}
+                        {{ getContent('outsourcing_overview_paragraph1', 'At Mendoza Tugano & Co., CPAs (MTC), we have an outsourcing division to provide our clients with tailored solutions for all bookkeeping requirements.') }}
                     </p>
                     <p style="color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        {{ getContent('outsourcing_overview_paragraph2', 'We support our clients with services such as payroll processing, bookkeeping, financial reporting, and tax compliance. With a strong focus on data integrity and confidentiality, we serve as an extension of your team to ensure accuracy and timeliness in all deliverables.') }}
+                        {{ getContent('outsourcing_overview_paragraph2', 'Our approach focuses on building strong relationships with our clients to understand their unique business needs and provide strategic insights that drive growth and success.') }}
                     </p>
                 </div>
 
-                <!-- Key Service Areas -->
+                <!-- Key Service Areas (Dynamic) -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
-                        {{ getContent('outsourcing_services_title', 'Our Core Outsourcing Services') }}
+                        {{ getContent('outsourcing_services_title', 'Our Outsourcing Services') }}
                     </h3>
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('outsourcing_service_item1_title', 'Payroll Processing & Bookkeeping') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('outsourcing_service_item1_description', 'Comprehensive payroll processing and bookkeeping services to ensure accurate records, timely payments, and full compliance with Philippine labor and tax regulations.') }}
-                        </p>
-                    </div>
+                    @php
+                        // Get all dynamic service items from database
+                        $serviceItems = [];
+                        $i = 1;
+                        while(true) {
+                            $titleKey = "outsourcing_service_item{$i}_title";
+                            $descKey = "outsourcing_service_item{$i}_description";
+                            $title = \App\Models\Content::where('key', $titleKey)->value('value');
+                            $description = \App\Models\Content::where('key', $descKey)->value('value');
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('outsourcing_service_item2_title', 'Financial Reporting & Tax Compliance') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('outsourcing_service_item2_description', 'Professional financial reporting and tax compliance services to maintain accuracy, meet regulatory requirements, and support informed business decision-making.') }}
-                        </p>
-                    </div>
+                            if ($title || $description) {
+                                $serviceItems[] = [
+                                    'title' => $title,
+                                    'description' => $description,
+                                    'index' => $i
+                                ];
+                                $i++;
+                            } else {
+                                break;
+                            }
+                        }
 
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('outsourcing_service_item3_title', 'Data Integrity & Confidentiality') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('outsourcing_service_item3_description', 'Rigorous data security protocols and confidentiality measures to protect sensitive business information while ensuring accuracy and timeliness in all deliverables.') }}
-                        </p>
-                    </div>
+                        // If no service items found, use defaults
+                        if (empty($serviceItems)) {
+                            $serviceItems = [
+                                [
+                                    'title' => 'Bookkeeping & Accounting',
+                                    'description' => 'Stay compliant and organized with our expert accounting and ledger maintenance services. We provide comprehensive bookkeeping solutions tailored to your business needs.',
+                                    'index' => 1
+                                ],
+                                [
+                                    'title' => 'Payroll Processing',
+                                    'description' => 'Efficient payroll processing services that ensure accuracy, timeliness, and compliance with Philippine labor regulations and tax requirements.',
+                                    'index' => 2
+                                ],
+                                [
+                                    'title' => 'Financial Reporting',
+                                    'description' => 'Professional financial reporting services that provide accurate, timely reports to support informed business decision-making and regulatory compliance.',
+                                    'index' => 3
+                                ],
+                                [
+                                    'title' => 'Tax Compliance Support',
+                                    'description' => 'Comprehensive tax compliance support to ensure your business meets all Philippine tax requirements while minimizing risks and maximizing efficiency.',
+                                    'index' => 4
+                                ]
+                            ];
+                        }
+                    @endphp
+
+                    @foreach($serviceItems as $index => $serviceItem)
+                        <div style="margin-bottom: {{ $loop->last ? '0' : '2rem' }}; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                            <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                                {{ $serviceItem['title'] ?: 'Service Title' }}
+                            </h4>
+                            <p style="color: #666; margin: 0; line-height: 1.6;">
+                                {{ $serviceItem['description'] ?: 'Service description will appear here.' }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
                 <!-- Value Proposition -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ getContent('outsourcing_value_title', 'Philippine-Based Excellence') }}
+                        {{ getContent('outsourcing_value_title', 'Focus on What Matters Most') }}
                     </h4>
                     <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.7; font-size: 1.1rem;">
-                        {{ getContent('outsourcing_value_description', 'Our outsourcing team leverages Philippine-based talent and technology to help clients operate efficiently and scale with confidence. We serve as an extension of your team, focusing on delivering exceptional value while maintaining the highest standards of data integrity and confidentiality.') }}
+                        {{ getContent('outsourcing_value_description', 'By outsourcing your financial and administrative functions to our experienced team, you can focus on core business activities while ensuring accuracy, compliance, and cost-efficiency in your back-office operations.') }}
                     </p>
                 </div>
 
@@ -129,7 +162,7 @@
                 <div style="position: sticky; top: 2rem;">
 
                     <!-- Contact Card -->
-                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
                             {{ getContent('outsourcing_sidebar_cta_title', 'Ready to Streamline Operations?') }}
                         </h4>
@@ -140,6 +173,7 @@
                             {{ getContent('outsourcing_sidebar_cta_button_text', 'Contact Our Team') }}
                         </a>
                     </div>
+
                 </div>
             </div>
 

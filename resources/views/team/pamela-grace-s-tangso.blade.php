@@ -38,40 +38,6 @@
     $pamela_education2_degree = \App\Models\Content::where('key', 'pamela_education2_degree')->value('value');
     $pamela_education2_institution = \App\Models\Content::where('key', 'pamela_education2_institution')->value('value');
 
-    // Industry Experience
-    $industries = [];
-    for($i = 1; $i <= 12; $i++) {
-        $industry = \App\Models\Content::where('key', "pamela_industry{$i}")->value('value');
-        if($industry) $industries[] = $industry;
-    }
-    if(empty($industries)) {
-        $industries = ['Manufacturing', 'Manning Agencies', 'Merchandising', 'Stock Brokerage', 'Banking', 'Online Gaming', 'Trusts', 'Non-Profit', 'Cooperatives', 'Power Generation', 'Property Mgmt', 'BPO'];
-    }
-
-    // Career Timeline
-    $pamela_timeline1_period = \App\Models\Content::where('key', 'pamela_timeline1_period')->value('value') ?? '2022 - Present';
-    $pamela_timeline1_position = \App\Models\Content::where('key', 'pamela_timeline1_position')->value('value') ?? 'Partner at Mendoza Tugano & Co.';
-    $pamela_timeline2_period = \App\Models\Content::where('key', 'pamela_timeline2_period')->value('value') ?? '10 Years Corporate';
-    $pamela_timeline2_position = \App\Models\Content::where('key', 'pamela_timeline2_position')->value('value') ?? 'Tax Head - OIC at Global Business Power Corporation (MGen Subsidiary)';
-    $pamela_timeline3_period = \App\Models\Content::where('key', 'pamela_timeline3_period')->value('value') ?? '7 Years Foundation';
-    $pamela_timeline3_position = \App\Models\Content::where('key', 'pamela_timeline3_position')->value('value') ?? 'Audit & Tax Services at Mendoza Querido & Co.';
-
-    // Professional Affiliations
-    $pamela_affiliation1_name = \App\Models\Content::where('key', 'pamela_affiliation1_name')->value('value') ?? 'PICPA';
-    $pamela_affiliation1_description = \App\Models\Content::where('key', 'pamela_affiliation1_description')->value('value') ?? 'Philippine Institute of Certified Public Accountants';
-    $pamela_affiliation2_name = \App\Models\Content::where('key', 'pamela_affiliation2_name')->value('value');
-    $pamela_affiliation2_description = \App\Models\Content::where('key', 'pamela_affiliation2_description')->value('value');
-
-    // Core Expertise
-    $expertiseList = [];
-    for($i = 1; $i <= 4; $i++) {
-        $expertise = \App\Models\Content::where('key', "pamela_expertise{$i}")->value('value');
-        if($expertise) $expertiseList[] = $expertise;
-    }
-    if(empty($expertiseList)) {
-        $expertiseList = ['Tax Compliance & Planning', 'Risk Mitigation Strategies', 'Multi-Industry Auditing', 'Corporate Tax Leadership'];
-    }
-
     // Professional Quote
     $pamela_quote = \App\Models\Content::where('key', 'pamela_quote')->value('value') ?? 'Strategic tax planning combined with comprehensive industry knowledge creates sustainable value and minimizes risk across diverse business environments.';
 @endphp
@@ -137,13 +103,13 @@
                         <div style="margin-bottom: 2rem;">
                             @php
                                 $nameParts = explode(' ', $pamela_full_name);
-                                $firstName = array_shift($nameParts);
-                                $secondName = array_shift($nameParts);
-                                $lastName = implode(' ', $nameParts);
+                                $firstName = $nameParts[0]; // Pamela
+                                $secondName = $nameParts[1]; // Grace
+                                $middleAndLast = array_slice($nameParts, 2); // S. Tangso
                             @endphp
                             <h1 style="font-size: 2.9rem; font-weight: 700; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
                                 {{ $firstName }} {{ $secondName }}<br>
-                                <span style="color: #326D78;">{{ $lastName }}</span>
+                                <span style="color: #326D78;">{{ implode(' ', $middleAndLast) }}</span>
                             </h1>
                             <h2 style="font-size: 1.3rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
                                 {{ $pamela_position }}
@@ -264,88 +230,43 @@
                         @endif
                     </div>
 
-                    <!-- Industry Experience -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Industry Experience</h3>
-
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
-                            @foreach($industries as $index => $industry)
-                                @php
-                                    $colors = ['#326D78', '#4a9aba', '#74d3e3', '#5bb3c7'];
-                                    $color = $colors[$index % 4];
-                                @endphp
-                                <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid {{ $color }};">{{ $industry }}</span>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <!-- Career Highlights -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="500">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Career Timeline</h3>
-
-                        <div style="space-y: 1.5rem;">
-                            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e9ecef;">
-                                <h5 style="color: #326D78; font-weight: 600; margin-bottom: 0.5rem;">{{ $pamela_timeline1_period }}</h5>
-                                <p style="color: #666; margin: 0; font-size: 0.9rem;">{{ $pamela_timeline1_position }}</p>
-                            </div>
-
-                            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e9ecef;">
-                                <h5 style="color: #4a9aba; font-weight: 600; margin-bottom: 0.5rem;">{{ $pamela_timeline2_period }}</h5>
-                                <p style="color: #666; margin: 0; font-size: 0.9rem;">{{ $pamela_timeline2_position }}</p>
-                            </div>
-
-                            <div>
-                                <h5 style="color: #74d3e3; font-weight: 600; margin-bottom: 0.5rem;">{{ $pamela_timeline3_period }}</h5>
-                                <p style="color: #666; margin: 0; font-size: 0.9rem;">{{ $pamela_timeline3_position }}</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Professional Affiliations -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78;" data-aos="fade-up" data-aos-delay="600">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Membership</h3>
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
 
-                        <div style="display: flex; align-items: start; margin-bottom: {{ $pamela_affiliation2_name ? '1rem' : '2rem' }};">
-                            <div style="width: 8px; height: 8px; background: #326D78; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                            <div>
-                                <strong style="color: #333;">{{ $pamela_affiliation1_name }}</strong><br>
-                                <small style="color: #666;">{{ $pamela_affiliation1_description }}</small>
+                        <div style="space-y: 1rem;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_affiliation1_name')->value('value') ?: 'Board of Accountancy' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'pamela_affiliation1_description')->value('value') ?: 'Professional Regulatory Board' }}</small>
                             </div>
-                        </div>
 
-                        @if($pamela_affiliation2_name && $pamela_affiliation2_description)
-                        <div style="display: flex; align-items: start; margin-bottom: 2rem;">
-                            <div style="width: 8px; height: 8px; background: #4a9aba; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                            <div>
-                                <strong style="color: #333;">{{ $pamela_affiliation2_name }}</strong><br>
-                                <small style="color: #666;">{{ $pamela_affiliation2_description }}</small>
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_affiliation2_name')->value('value') ?: 'Bureau of Internal Revenue' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'pamela_affiliation2_description')->value('value') ?: 'Tax Administration Authority' }}</small>
                             </div>
-                        </div>
-                        @endif
-
-                        <div style="padding: 1rem; background: white; border-radius: 8px;">
-                            <h6 style="color: #326D78; font-weight: 600; margin-bottom: 0.5rem;">Core Expertise</h6>
-                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                @foreach($expertiseList as $index => $expertise)
-                                    @php
-                                        $colors = ['#326D78', '#4a9aba', '#74d3e3', '#5bb3c7'];
-                                        $color = $colors[$index % 4];
-                                    @endphp
-                                    <li style="margin-bottom: {{ $loop->last ? '0' : '0.5rem' }}; color: #666; display: flex; align-items: center;">
-                                        <i class="fas fa-check-circle me-2" style="color: {{ $color }}; font-size: 0.8rem;"></i>
-                                        {{ $expertise }}
-                                    </li>
-                                @endforeach
-                            </ul>
                         </div>
                     </div>
 
-                    <!-- Professional Quote -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-top: 2rem;" data-aos="fade-up" data-aos-delay="700">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Philosophy</h3>
-                        <blockquote style="font-style: italic; color: #666; line-height: 1.6; margin: 0; border-left: 4px solid #326D78; padding-left: 1rem;">
+                    <!-- Accreditation -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="150">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
+
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_accreditation1_name')->value('value') ?: 'PICPA' }}</strong><br>
+                            <small style="color: #666;">{{ \App\Models\Content::where('key', 'pamela_accreditation1_description')->value('value') ?: 'Philippine Institute of Certified Public Accountants' }}</small>
+                        </div>
+
+                        <div>
+                            <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_accreditation2_name')->value('value') ?: 'TMAP' }}</strong><br>
+                            <small style="color: #666;">{{ \App\Models\Content::where('key', 'pamela_accreditation2_description')->value('value') ?: 'Tax Management Association of the Philippines' }}</small>
+                        </div>
+                    </div>
+
+                    <!-- Quote/Philosophy -->
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="200">
+                        <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin: 0;">
                             "{{ $pamela_quote }}"
-                        </blockquote>
+                        </p>
                     </div>
 
                 </div>

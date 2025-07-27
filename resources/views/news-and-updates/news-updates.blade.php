@@ -57,17 +57,71 @@
             <!-- Main Content -->
             <div class="col-lg-8">
 
-                <!-- News Article 1 -->
-                <article class="news-article" data-date="2025-01-15" data-month="2025-01" data-year="2025" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                @php
+                  $articles = [
+                    [
+                      'title' => getContent('news_article1_title', 'New BIR Revenue Regulation on Digital Tax Receipts'),
+                      'category' => getContent('news_article1_category', 'Tax Updates'),
+                      'date' => getContent('news_article1_date', 'January 15, 2025'),
+                      'read_time' => getContent('news_article1_read_time', '8 min read'),
+                      'excerpt' => getContent('news_article1_excerpt', 'The Bureau of Internal Revenue has issued new guidelines requiring businesses to implement digital tax receipts by March 2025. This regulation affects all registered taxpayers with annual gross receipts exceeding PHP 3 million and introduces significant changes to existing invoicing systems.'),
+                      'route' => !empty(getContent('news_article1_external_link')) ? getContent('news_article1_external_link') : route('news.bir-article'),
+                      'external' => !empty(getContent('news_article1_external_link')),
+                      'read_more_text' => getContent('news_article1_read_more_text', 'Read More'),
+                      'image' => hasImageContent('news_article1_image') ? getContent('news_article1_image') : null,
+                      'data_date' => '2025-01-15',
+                      'data_month' => '2025-01',
+                      'data_year' => '2025',
+                      'button_color' => '#326D78'
+                    ],
+                    [
+                      'title' => getContent('news_article2_title', 'SEC Announces Updated Financial Reporting Standards for 2025'),
+                      'category' => getContent('news_article2_category', 'SEC Regulations'),
+                      'date' => getContent('news_article2_date', 'January 10, 2025'),
+                      'read_time' => getContent('news_article2_read_time', '5 min read'),
+                      'excerpt' => getContent('news_article2_excerpt', 'The Securities and Exchange Commission has released comprehensive updates to financial reporting standards effective June 2025. These changes include enhanced disclosure requirements for related party transactions and revised guidelines for revenue recognition in service industries.'),
+                      'route' => !empty(getContent('news_article2_external_link')) ? getContent('news_article2_external_link') : route('news.sec-article'),
+                      'external' => !empty(getContent('news_article2_external_link')),
+                      'read_more_text' => getContent('news_article2_read_more_text', 'Read More'),
+                      'image' => hasImageContent('news_article2_image') ? getContent('news_article2_image') : null,
+                      'data_date' => '2025-01-10',
+                      'data_month' => '2025-01',
+                      'data_year' => '2025',
+                      'button_color' => '#5ba3b0'
+                    ],
+                    [
+                      'title' => getContent('news_article3_title', 'Philippine Standards on Auditing (PSA) Updates for 2025'),
+                      'category' => getContent('news_article3_category', 'Audit Standards'),
+                      'date' => getContent('news_article3_date', 'January 8, 2025'),
+                      'read_time' => getContent('news_article3_read_time', '4 min read'),
+                      'excerpt' => getContent('news_article3_excerpt', 'The Auditing and Assurance Standards Council has issued revisions to several Philippine Standards on Auditing, including enhanced procedures for assessing fraud risks and updated requirements for auditor independence. These changes take effect for audits of financial statements for periods beginning on or after April 15, 2025.'),
+                      'route' => !empty(getContent('news_article3_external_link')) ? getContent('news_article3_external_link') : route('news.psa-article'),
+                      'external' => !empty(getContent('news_article3_external_link')),
+                      'read_more_text' => getContent('news_article3_read_more_text', 'Read More'),
+                      'image' => hasImageContent('news_article3_image') ? getContent('news_article3_image') : null,
+                      'data_date' => '2025-01-08',
+                      'data_month' => '2025-01',
+                      'data_year' => '2025',
+                      'button_color' => '#4a8a96'
+                    ]
+                  ];
+                @endphp
+
+                @foreach($articles as $index => $article)
+                <!-- News Article {{ $index + 1 }} -->
+                <article class="news-article" data-date="{{ $article['data_date'] }}" data-month="{{ $article['data_month'] }}" data-year="{{ $article['data_year'] }}" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="{{ 100 + ($index * 100) }}">
                     <div style="position: relative; height: 250px; overflow: hidden;">
-                        @if(hasImageContent('news_article1_image'))
-                            <img src="{{ getContent('news_article1_image') }}" alt="BIR Updates" style="width: 100%; height: 100%; object-fit: cover;">
+                        @if($article['image'])
+                            <img src="data:image/jpeg;base64,{{ base64_encode($article['image']) }}" alt="{{ $article['title'] }}" style="width: 100%; height: 100%; object-fit: cover;">
                         @else
-                            <img src="{{ asset('assets/img/services.jpg') }}" alt="BIR Updates" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('assets/img/services.jpg') }}" alt="{{ $article['title'] }}" style="width: 100%; height: 100%; object-fit: cover;">
                         @endif
                         <div style="position: absolute; top: 20px; left: 20px;">
-                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px);">
-                                {{ getContent('news_article1_category', 'Tax Updates') }}
+                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 0.25rem;">
+                                {{ $article['category'] }}
+                                @if($article['external'])
+                                    <i class="fas fa-external-link-alt" style="font-size: 0.7em;"></i>
+                                @endif
                             </span>
                         </div>
                     </div>
@@ -75,24 +129,31 @@
                     <div style="padding: 2rem;">
                         <div style="display: flex; align-items: center; margin-bottom: 1rem; color: #666; font-size: 0.9rem;">
                             <i class="fas fa-calendar-alt me-2"></i>
-                            <span>{{ getContent('news_article1_date', 'January 15, 2025') }}</span>
+                            <span>{{ $article['date'] }}</span>
                             <span style="margin: 0 1rem;">•</span>
                             <i class="fas fa-clock me-2"></i>
-                            <span>{{ getContent('news_article1_read_time', '3 min read') }}</span>
+                            <span>{{ $article['read_time'] }}</span>
+                            @if($article['external'])
+                                <span style="margin: 0 1rem;">•</span>
+                                <i class="fas fa-link me-2"></i>
+                                <span class="text-info">External Source</span>
+                            @endif
                         </div>
 
                         <h3 style="color: #333; font-weight: 600; margin-bottom: 1rem; font-size: 1.5rem;">
-                            {{ getContent('news_article1_title', 'New BIR Revenue Regulation on Digital Tax Receipts') }}
+                            {{ $article['title'] }}
                         </h3>
 
                         <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">
-                            {{ getContent('news_article1_excerpt', 'The Bureau of Internal Revenue has issued new guidelines requiring businesses to implement digital tax receipts by March 2025. This regulation affects all registered taxpayers with annual gross receipts exceeding PHP 3 million and introduces significant changes to existing invoicing systems.') }}
+                            {{ $article['excerpt'] }}
                         </p>
 
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <a href="{{ route('news.bir-article') }}" style="display: inline-flex; align-items: center; background: #326D78; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                                {{ getContent('news_article1_read_more_text', 'Read More') }}
-                                <i class="fas fa-arrow-right ms-2"></i>
+                            <a href="{{ $article['route'] }}"
+                               style="display: inline-flex; align-items: center; background: {{ $article['button_color'] }}; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
+                               {{ $article['external'] ? 'target="_blank" rel="noopener noreferrer"' : '' }}>
+                                {{ $article['read_more_text'] }}
+                                <i class="fas {{ $article['external'] ? 'fa-external-link-alt' : 'fa-arrow-right' }} ms-2"></i>
                             </a>
 
                             <div style="display: flex; gap: 0.5rem;">
@@ -109,112 +170,7 @@
                         </div>
                     </div>
                 </article>
-
-                <!-- News Article 2 -->
-                <article class="news-article" data-date="2025-01-10" data-month="2025-01" data-year="2025" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="200">
-                    <div style="position: relative; height: 250px; overflow: hidden;">
-                        @if(hasImageContent('news_article2_image'))
-                            <img src="{{ getContent('news_article2_image') }}" alt="SEC Regulations" style="width: 100%; height: 100%; object-fit: cover;">
-                        @else
-                            <img src="{{ asset('assets/img/services.jpg') }}" alt="SEC Regulations" style="width: 100%; height: 100%; object-fit: cover;">
-                        @endif
-                        <div style="position: absolute; top: 20px; left: 20px;">
-                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px);">
-                                {{ getContent('news_article2_category', 'SEC Regulations') }}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div style="padding: 2rem;">
-                        <div style="display: flex; align-items: center; margin-bottom: 1rem; color: #666; font-size: 0.9rem;">
-                            <i class="fas fa-calendar-alt me-2"></i>
-                            <span>{{ getContent('news_article2_date', 'January 10, 2025') }}</span>
-                            <span style="margin: 0 1rem;">•</span>
-                            <i class="fas fa-clock me-2"></i>
-                            <span>{{ getContent('news_article2_read_time', '5 min read') }}</span>
-                        </div>
-
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1rem; font-size: 1.5rem;">
-                            {{ getContent('news_article2_title', 'SEC Announces Updated Financial Reporting Standards for 2025') }}
-                        </h3>
-
-                        <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">
-                            {{ getContent('news_article2_excerpt', 'The Securities and Exchange Commission has released comprehensive updates to financial reporting standards effective June 2025. These changes include enhanced disclosure requirements for related party transactions and revised guidelines for revenue recognition in service industries.') }}
-                        </p>
-
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <a href="{{ route('news.sec-article') }}" style="display: inline-flex; align-items: center; background: #5ba3b0; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                                {{ getContent('news_article2_read_more_text', 'Read More') }}
-                                <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
-
-                            <div style="display: flex; gap: 0.5rem;">
-                                <a href="#" style="width: 35px; height: 35px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease;">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" style="width: 35px; height: 35px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease;">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" style="width: 35px; height: 35px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease;">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- News Article 3 -->
-                <article class="news-article" data-date="2025-01-08" data-month="2025-01" data-year="2025" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="300">
-                    <div style="position: relative; height: 250px; overflow: hidden;">
-                        @if(hasImageContent('news_article3_image'))
-                            <img src="{{ getContent('news_article3_image') }}" alt="Audit Standards" style="width: 100%; height: 100%; object-fit: cover;">
-                        @else
-                            <img src="{{ asset('assets/img/services.jpg') }}" alt="Audit Standards" style="width: 100%; height: 100%; object-fit: cover;">
-                        @endif
-                        <div style="position: absolute; top: 20px; left: 20px;">
-                            <span style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px);">
-                                {{ getContent('news_article3_category', 'Audit Standards') }}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div style="padding: 2rem;">
-                        <div style="display: flex; align-items: center; margin-bottom: 1rem; color: #666; font-size: 0.9rem;">
-                            <i class="fas fa-calendar-alt me-2"></i>
-                            <span>{{ getContent('news_article3_date', 'January 8, 2025') }}</span>
-                            <span style="margin: 0 1rem;">•</span>
-                            <i class="fas fa-clock me-2"></i>
-                            <span>{{ getContent('news_article3_read_time', '4 min read') }}</span>
-                        </div>
-
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1rem; font-size: 1.5rem;">
-                            {{ getContent('news_article3_title', 'Philippine Standards on Auditing (PSA) Updates for 2025') }}
-                        </h3>
-
-                        <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">
-                            {{ getContent('news_article3_excerpt', 'The Auditing and Assurance Standards Council has issued revisions to several Philippine Standards on Auditing, including enhanced procedures for assessing fraud risks and updated requirements for auditor independence. These changes take effect for audits of financial statements for periods beginning on or after April 15, 2025.') }}
-                        </p>
-
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <a href="{{ route('news.psa-article') }}" style="display: inline-flex; align-items: center; background: #4a8a96; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                                {{ getContent('news_article3_read_more_text', 'Read More') }}
-                                <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
-
-                            <div style="display: flex; gap: 0.5rem;">
-                                <a href="#" style="width: 35px; height: 35px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease;">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" style="width: 35px; height: 35px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease;">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" style="width: 35px; height: 35px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease;">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                @endforeach
 
                 <!-- Load More Button -->
                 <div style="text-align: center; margin-top: 2rem;" data-aos="fade-up" data-aos-delay="400">
@@ -392,8 +348,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!noResultsMsg) {
                 noResultsMsg = document.createElement('div');
                 noResultsMsg.id = 'noResultsMessage';
-                noResultsMsg.style.cssText = 'text-align: center; padding: 3rem; color: #666; font-size: 1.1rem;';
-                noResultsMsg.innerHTML = '<i class="fas fa-search" style="font-size: 2rem; margin-bottom: 1rem; display: block; opacity: 0.5;"></i>No articles found matching your criteria.';
+                noResultsMsg.style.cssText = 'text-align: center; padding: 3rem; color: #666; font-size: 1.1rem; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);';
+                noResultsMsg.innerHTML = `
+                    <div style="margin-bottom: 1rem;">
+                        <i class="fas fa-search" style="font-size: 3rem; opacity: 0.3; color: #326D78;"></i>
+                    </div>
+                    <h5 style="color: #333; margin-bottom: 0.5rem;">No articles found</h5>
+                    <p style="color: #666; margin: 0;">Try adjusting your search terms or filters to find what you're looking for.</p>
+                `;
                 articles[0].parentNode.appendChild(noResultsMsg);
             }
             noResultsMsg.style.display = 'block';
@@ -432,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
     article a[style*="background: #4a8a96"]:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        filter: brightness(1.1);
     }
 
     /* Social button hover effects */
@@ -439,12 +402,6 @@ document.addEventListener('DOMContentLoaded', function() {
         background: #326D78 !important;
         color: white !important;
         transform: translateY(-2px);
-    }
-
-    /* Tag hover effects */
-    div a[style*="background: #f8f9fa"]:hover {
-        background: #326D78 !important;
-        color: white !important;
     }
 
     /* Search input focus */
@@ -465,6 +422,43 @@ document.addEventListener('DOMContentLoaded', function() {
         color: #326D78 !important;
     }
 
+    /* External link indicators */
+    .text-info {
+        color: #17a2b8 !important;
+        font-weight: 500;
+    }
+
+    /* Enhanced article image hover */
+    article img {
+        transition: transform 0.3s ease;
+    }
+
+    article:hover img {
+        transform: scale(1.02);
+    }
+
+    /* Filter active states */
+    .year-filter.active,
+    .month-filter.active {
+        color: #326D78 !important;
+        font-weight: 600 !important;
+        background: rgba(50, 108, 121, 0.05);
+        border-radius: 5px;
+        margin: 0 -0.5rem;
+        padding: 0.5rem !important;
+    }
+
+    /* Loading animation for images */
+    article img[src*="data:image"] {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Responsive improvements */
     @media (max-width: 768px) {
         .container h1 {
             font-size: 2.2rem !important;
@@ -485,6 +479,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
         article div[style*="display: flex; gap: 0.5rem"] {
             justify-content: center;
+        }
+
+        /* Stack article meta on mobile */
+        article div[style*="display: flex; align-items: center; margin-bottom: 1rem"] {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        article div[style*="display: flex; align-items: center; margin-bottom: 1rem"] span[style*="margin: 0 1rem"] {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        article {
+            margin-bottom: 1.5rem !important;
+        }
+
+        article div[style*="padding: 2rem"] {
+            padding: 1.5rem !important;
+        }
+
+        /* Adjust image height on mobile */
+        article div[style*="height: 250px"] {
+            height: 200px !important;
+        }
+    }
+
+    /* Accessibility improvements */
+    article a:focus,
+    .year-filter:focus,
+    .month-filter:focus {
+        outline: 2px solid #326D78;
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
+    /* Print styles */
+    @media print {
+        .col-lg-4,
+        button,
+        .breadcrumb {
+            display: none !important;
+        }
+
+        article {
+            box-shadow: none !important;
+            border: 1px solid #ddd !important;
+            break-inside: avoid;
         }
     }
 </style>

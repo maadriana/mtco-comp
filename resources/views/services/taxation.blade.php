@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Taxation - Services')
+@section('title', 'Tax Advisory and Compliance - Services')
 
 @section('content')
 
@@ -19,7 +19,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{ url('/#services') }}" style="color: #326D78; text-decoration: none; font-weight: 500;">Services</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Taxation</li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #6c757d; font-weight: 500;">Tax Advisory and Compliance</li>
             </ol>
         </nav>
     </div>
@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 style="color: white; font-size: 3rem; font-weight: 600; margin-bottom: 1rem;">
-                    {{ getContent('taxation_page_title', 'Taxation') }}
+                    {{ getContent('taxation_page_title', 'Tax Advisory and Compliance') }}
                 </h1>
                 <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.6; margin: 0;">
-                    {{ getContent('taxation_page_subtitle', 'Providing businesses with clarity, compliance, and strategic guidance in an evolving tax landscape.') }}
+                    {{ getContent('taxation_page_subtitle', 'Precisely tailored tax solutions for individuals and businesses in an ever-changing environment.') }}
                 </p>
             </div>
         </div>
@@ -70,38 +70,66 @@
                     </p>
                 </div>
 
-                <!-- Key Service Areas -->
+                <!-- Key Service Areas (Dynamic) -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         {{ getContent('taxation_services_title', 'Our Core Services') }}
                     </h3>
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('taxation_service_item1_title', 'Tax Compliance & Preparation') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('taxation_service_item1_description', 'Comprehensive preparation and filing of tax returns ensuring full compliance with BIR regulations and Philippine tax laws.') }}
-                        </p>
-                    </div>
+                    @php
+                        // Get all dynamic service items from database
+                        $serviceItems = [];
+                        $i = 1;
+                        while(true) {
+                            $titleKey = "taxation_service_item{$i}_title";
+                            $descKey = "taxation_service_item{$i}_description";
+                            $title = \App\Models\Content::where('key', $titleKey)->value('value');
+                            $description = \App\Models\Content::where('key', $descKey)->value('value');
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('taxation_service_item2_title', 'BIR Assessments & Tax Court Representation') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('taxation_service_item2_description', 'Expert representation in BIR assessments and tax court cases, providing strategic defense and resolution of tax disputes.') }}
-                        </p>
-                    </div>
+                            if ($title || $description) {
+                                $serviceItems[] = [
+                                    'title' => $title,
+                                    'description' => $description,
+                                    'index' => $i
+                                ];
+                                $i++;
+                            } else {
+                                break;
+                            }
+                        }
 
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('taxation_service_item3_title', 'Tax-Efficient Structures & Planning') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('taxation_service_item3_description', 'Guidance on tax-efficient structures under Philippine laws, helping clients optimize their tax position while maintaining compliance.') }}
-                        </p>
-                    </div>
+                        // If no service items found, use defaults
+                        if (empty($serviceItems)) {
+                            $serviceItems = [
+                                [
+                                    'title' => 'Tax Compliance & Preparation',
+                                    'description' => 'Comprehensive preparation and filing of tax returns ensuring full compliance with BIR regulations and Philippine tax laws.',
+                                    'index' => 1
+                                ],
+                                [
+                                    'title' => 'BIR Assessments & Tax Court Representation',
+                                    'description' => 'Expert representation in BIR assessments and tax court cases, providing strategic defense and resolution of tax disputes.',
+                                    'index' => 2
+                                ],
+                                [
+                                    'title' => 'Tax-Efficient Structures & Planning',
+                                    'description' => 'Guidance on tax-efficient structures under Philippine laws, helping clients optimize their tax position while maintaining compliance.',
+                                    'index' => 3
+                                ]
+                            ];
+                        }
+                    @endphp
+
+                    @foreach($serviceItems as $index => $serviceItem)
+                        <div style="margin-bottom: {{ $loop->last ? '0' : '2rem' }}; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                            <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                                {{ $serviceItem['title'] ?: 'Service Title' }}
+                            </h4>
+                            <p style="color: #666; margin: 0; line-height: 1.6;">
+                                {{ $serviceItem['description'] ?: 'Service description will appear here.' }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
                 <!-- Value Proposition -->
@@ -129,7 +157,7 @@
                 <div style="position: sticky; top: 2rem;">
 
                     <!-- Contact Card -->
-                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
                         <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">
                             {{ getContent('taxation_sidebar_cta_title', 'Ready to Optimize?') }}
                         </h4>
@@ -139,24 +167,6 @@
                         <a href="{{ url('/#contact') }}" style="display: inline-block; background: white; color: #326D78; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; width: 100%; text-align: center;">
                             {{ getContent('taxation_sidebar_cta_button_text', 'Contact Our Team') }}
                         </a>
-                    </div>
-
-                    <!-- Quick Facts -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 1.5rem;">
-                            {{ getContent('taxation_related_title', 'Quick Facts') }}
-                        </h5>
-
-                        <div style="text-align: center; padding: 1.5rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #666; font-size: 1rem; font-weight: 500;">
-                                    {{ getContent('taxation_fact_label', 'Tax Cases Handled') }}
-                                </span>
-                                <strong style="color: #326D78; font-size: 1.5rem; font-weight: 00;">
-                                    {{ getContent('taxation_fact_value', '500+') }}
-                                </strong>
-                            </div>
-                        </div>
                     </div>
 
                 </div>

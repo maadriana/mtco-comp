@@ -70,47 +70,71 @@
                     </p>
                 </div>
 
-                <!-- Key Service Areas -->
+                <!-- Key Service Areas (Dynamic) -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         {{ getContent('advisory_services_title', 'Our Core Advisory Services') }}
                     </h3>
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_service_item1_title', 'Business Planning & Strategy') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_service_item1_description', 'Comprehensive business planning and strategic guidance to help you define clear objectives, identify growth opportunities, and develop actionable roadmaps for success.') }}
-                        </p>
-                    </div>
+                    @php
+                        // Get all dynamic service items from database
+                        $serviceItems = [];
+                        $i = 1;
+                        while(true) {
+                            $titleKey = "advisory_service_item{$i}_title";
+                            $descKey = "advisory_service_item{$i}_description";
+                            $title = \App\Models\Content::where('key', $titleKey)->value('value');
+                            $description = \App\Models\Content::where('key', $descKey)->value('value');
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_service_item2_title', 'Process Improvement & Internal Controls') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_service_item2_description', 'Enhancement of internal controls and operational processes to improve efficiency, reduce risks, and strengthen organizational governance frameworks.') }}
-                        </p>
-                    </div>
+                            if ($title || $description) {
+                                $serviceItems[] = [
+                                    'title' => $title,
+                                    'description' => $description,
+                                    'index' => $i
+                                ];
+                                $i++;
+                            } else {
+                                break;
+                            }
+                        }
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_service_item3_title', 'Financial Modeling & Performance Management') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_service_item3_description', 'Advanced financial modeling and performance management systems to support data-driven decision making and monitor key business metrics.') }}
-                        </p>
-                    </div>
+                        // If no service items found, use defaults
+                        if (empty($serviceItems)) {
+                            $serviceItems = [
+                                [
+                                    'title' => 'Business Planning & Strategy',
+                                    'description' => 'Comprehensive business planning and strategic guidance to help you define clear objectives, identify growth opportunities, and develop actionable roadmaps for success.',
+                                    'index' => 1
+                                ],
+                                [
+                                    'title' => 'Process Improvement & Internal Controls',
+                                    'description' => 'Enhancement of internal controls and operational processes to improve efficiency, reduce risks, and strengthen organizational governance frameworks.',
+                                    'index' => 2
+                                ],
+                                [
+                                    'title' => 'Financial Modeling & Performance Management',
+                                    'description' => 'Advanced financial modeling and performance management systems to support data-driven decision making and monitor key business metrics.',
+                                    'index' => 3
+                                ],
+                                [
+                                    'title' => 'New Venture & Operational Support',
+                                    'description' => 'Hands-on support for new ventures and operational improvements, providing practical guidance to transform business goals into measurable results.',
+                                    'index' => 4
+                                ]
+                            ];
+                        }
+                    @endphp
 
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('advisory_service_item4_title', 'New Venture & Operational Support') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('advisory_service_item4_description', 'Hands-on support for new ventures and operational improvements, providing practical guidance to transform business goals into measurable results.') }}
-                        </p>
-                    </div>
+                    @foreach($serviceItems as $index => $serviceItem)
+                        <div style="margin-bottom: {{ $loop->last ? '0' : '2rem' }}; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                            <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                                {{ $serviceItem['title'] ?: 'Service Title' }}
+                            </h4>
+                            <p style="color: #666; margin: 0; line-height: 1.6;">
+                                {{ $serviceItem['description'] ?: 'Service description will appear here.' }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
                 <!-- Value Proposition -->

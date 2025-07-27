@@ -67,63 +67,76 @@
                     </p>
                 </div>
 
-                <!-- Key Approaches -->
+                <!-- Key Approaches (Dynamic) -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         {{ getContent('governance_approach_title', 'Our Approach') }}
                     </h3>
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('governance_approach_item1_title', 'Comprehensive Framework Design') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('governance_approach_item1_description', 'We develop tailored governance structures that align with your organization\'s objectives while ensuring compliance with regulatory requirements and industry best practices.') }}
-                        </p>
-                    </div>
+                    @php
+                        // Get all dynamic approach items from database
+                        $approachItems = [];
+                        $i = 1;
+                        while(true) {
+                            $titleKey = "governance_approach_item{$i}_title";
+                            $descKey = "governance_approach_item{$i}_description";
+                            $title = \App\Models\Content::where('key', $titleKey)->value('value');
+                            $description = \App\Models\Content::where('key', $descKey)->value('value');
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('governance_approach_item2_title', 'Risk Assessment & Management') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('governance_approach_item2_description', 'Our systematic approach to risk identification, assessment, and mitigation helps protect your organization from potential threats while enabling strategic decision-making.') }}
-                        </p>
-                    </div>
+                            if ($title || $description) {
+                                $approachItems[] = [
+                                    'title' => $title,
+                                    'description' => $description,
+                                    'index' => $i
+                                ];
+                                $i++;
+                            } else {
+                                break;
+                            }
+                        }
 
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('governance_approach_item3_title', 'Continuous Monitoring & Improvement') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('governance_approach_item3_description', 'We implement monitoring systems and regular reviews to ensure your governance and risk management frameworks remain effective and adapt to changing business environments.') }}
-                        </p>
-                    </div>
+                        // If no approach items found, use defaults
+                        if (empty($approachItems)) {
+                            $approachItems = [
+                                [
+                                    'title' => 'Comprehensive Framework Design',
+                                    'description' => 'We develop tailored governance structures that align with your organization\'s objectives while ensuring compliance with regulatory requirements and industry best practices.',
+                                    'index' => 1
+                                ],
+                                [
+                                    'title' => 'Risk Assessment & Management',
+                                    'description' => 'Our systematic approach to risk identification, assessment, and mitigation helps protect your organization from potential threats while enabling strategic decision-making.',
+                                    'index' => 2
+                                ],
+                                [
+                                    'title' => 'Continuous Monitoring & Improvement',
+                                    'description' => 'We implement monitoring systems and regular reviews to ensure your governance and risk management frameworks remain effective and adapt to changing business environments.',
+                                    'index' => 3
+                                ]
+                            ];
+                        }
+                    @endphp
+
+                    @foreach($approachItems as $index => $approachItem)
+                        <div style="margin-bottom: {{ $loop->last ? '0' : '2rem' }}; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                            <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                                {{ $approachItem['title'] ?: 'Approach Title' }}
+                            </h4>
+                            <p style="color: #666; margin: 0; line-height: 1.6;">
+                                {{ $approachItem['description'] ?: 'Approach description will appear here.' }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
-                <!-- Services List -->
+                <!-- Value Proposition -->
                 <div style="background: #326D78; padding: 2rem; border-radius: 15px; color: white; margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h4 style="color: white; font-weight: 600; margin-bottom: 1.5rem;">
-                        {{ getContent('governance_services_title', 'Our Services Include:') }}
+                        {{ getContent('governance_value_title', 'Strategic Risk Management Excellence') }}
                     </h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('governance_service1', 'Corporate governance advisory') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('governance_service2', 'Risk management frameworks') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('governance_service3', 'Internal audit services') }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-check-circle" style="margin-right: 1rem; color: rgba(255,255,255,0.8);"></i>
-                            <span>{{ getContent('governance_service4', 'Compliance monitoring') }}</span>
-                        </div>
-                    </div>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.7; font-size: 1.1rem;">
+                        {{ getContent('governance_value_description', 'Our governance and risk management solutions integrate seamlessly with your business operations, providing strategic insights that drive informed decision-making. We combine industry expertise with proven methodologies to deliver frameworks that not only protect your organization but also enable growth and innovation in an increasingly complex business environment.') }}
+                    </p>
                 </div>
 
                 <!-- CTA -->

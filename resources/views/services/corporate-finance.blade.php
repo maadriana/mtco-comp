@@ -70,38 +70,66 @@
                     </p>
                 </div>
 
-                <!-- Core Services -->
+                <!-- Core Services (Dynamic) -->
                 <div style="margin-bottom: 3rem;" data-aos="fade-up" data-aos-delay="100">
                     <h3 style="color: #333; font-weight: 600; margin-bottom: 2rem; font-size: 1.5rem;">
                         {{ getContent('finance_services_title', 'Our Core Services') }}
                     </h3>
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('finance_service_item1_title', 'Mergers and Acquisitions') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('finance_service_item1_description', 'Comprehensive M&A advisory including deal origination, due diligence, valuation, negotiation support, and transaction execution to maximize value for all stakeholders.') }}
-                        </p>
-                    </div>
+                    @php
+                        // Get all dynamic service items from database
+                        $serviceItems = [];
+                        $i = 1;
+                        while(true) {
+                            $titleKey = "finance_service_item{$i}_title";
+                            $descKey = "finance_service_item{$i}_description";
+                            $title = \App\Models\Content::where('key', $titleKey)->value('value');
+                            $description = \App\Models\Content::where('key', $descKey)->value('value');
 
-                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('finance_service_item2_title', 'Business Valuations & Financial Modeling') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('finance_service_item2_description', 'Professional business valuations and sophisticated financial modeling to support strategic decision-making, investment planning, and transaction structuring.') }}
-                        </p>
-                    </div>
+                            if ($title || $description) {
+                                $serviceItems[] = [
+                                    'title' => $title,
+                                    'description' => $description,
+                                    'index' => $i
+                                ];
+                                $i++;
+                            } else {
+                                break;
+                            }
+                        }
 
-                    <div style="padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
-                        <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
-                            {{ getContent('finance_service_item3_title', 'Capital Raising & Deal Structuring') }}
-                        </h4>
-                        <p style="color: #666; margin: 0; line-height: 1.6;">
-                            {{ getContent('finance_service_item3_description', 'Strategic capital raising solutions and optimal deal structuring to secure funding, optimize capital structure, and achieve business growth objectives.') }}
-                        </p>
-                    </div>
+                        // If no service items found, use defaults
+                        if (empty($serviceItems)) {
+                            $serviceItems = [
+                                [
+                                    'title' => 'Mergers and Acquisitions',
+                                    'description' => 'Comprehensive M&A advisory including deal origination, due diligence, valuation, negotiation support, and transaction execution to maximize value for all stakeholders.',
+                                    'index' => 1
+                                ],
+                                [
+                                    'title' => 'Business Valuations & Financial Modeling',
+                                    'description' => 'Professional business valuations and sophisticated financial modeling to support strategic decision-making, investment planning, and transaction structuring.',
+                                    'index' => 2
+                                ],
+                                [
+                                    'title' => 'Capital Raising & Deal Structuring',
+                                    'description' => 'Strategic capital raising solutions and optimal deal structuring to secure funding, optimize capital structure, and achieve business growth objectives.',
+                                    'index' => 3
+                                ]
+                            ];
+                        }
+                    @endphp
+
+                    @foreach($serviceItems as $index => $serviceItem)
+                        <div style="margin-bottom: {{ $loop->last ? '0' : '2rem' }}; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid #326D78; border-radius: 8px;">
+                            <h4 style="color: #326D78; font-weight: 600; margin-bottom: 1rem; font-size: 1.2rem;">
+                                {{ $serviceItem['title'] ?: 'Service Title' }}
+                            </h4>
+                            <p style="color: #666; margin: 0; line-height: 1.6;">
+                                {{ $serviceItem['description'] ?: 'Service description will appear here.' }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
                 <!-- Advisory Approach -->

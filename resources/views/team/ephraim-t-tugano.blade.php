@@ -34,36 +34,6 @@
     $ephraim_education2_degree = \App\Models\Content::where('key', 'ephraim_education2_degree')->value('value');
     $ephraim_education2_institution = \App\Models\Content::where('key', 'ephraim_education2_institution')->value('value');
 
-    // Professional Affiliations
-    $ephraim_affiliation1_name = \App\Models\Content::where('key', 'ephraim_affiliation1_name')->value('value') ?? 'PICPA';
-    $ephraim_affiliation1_description = \App\Models\Content::where('key', 'ephraim_affiliation1_description')->value('value') ?? 'Philippine Institute of Certified Public Accountants';
-    $ephraim_affiliation2_name = \App\Models\Content::where('key', 'ephraim_affiliation2_name')->value('value');
-    $ephraim_affiliation2_description = \App\Models\Content::where('key', 'ephraim_affiliation2_description')->value('value');
-    $ephraim_affiliation3_name = \App\Models\Content::where('key', 'ephraim_affiliation3_name')->value('value');
-    $ephraim_affiliation3_description = \App\Models\Content::where('key', 'ephraim_affiliation3_description')->value('value');
-    $ephraim_affiliation4_name = \App\Models\Content::where('key', 'ephraim_affiliation4_name')->value('value');
-    $ephraim_affiliation4_description = \App\Models\Content::where('key', 'ephraim_affiliation4_description')->value('value');
-
-    // Industry Expertise
-    $industries = [];
-    for($i = 1; $i <= 8; $i++) {
-        $industry = \App\Models\Content::where('key', "ephraim_industry{$i}")->value('value');
-        if($industry) $industries[] = $industry;
-    }
-    if(empty($industries)) {
-        $industries = ['Manufacturing', 'Retail', 'Pharmaceuticals', 'Services', 'Mining', 'Hospitality', 'Real Estate', 'Non-Profit'];
-    }
-
-    // Core Competencies
-    $competencies = [];
-    for($i = 1; $i <= 5; $i++) {
-        $competency = \App\Models\Content::where('key', "ephraim_competency{$i}")->value('value');
-        if($competency) $competencies[] = $competency;
-    }
-    if(empty($competencies)) {
-        $competencies = ['Due Diligence & Valuation', 'Audit Software Implementation', 'Quality Assurance Management', 'Financial System Migration', 'Ethics & Compliance Leadership'];
-    }
-
     // Professional Quote
     $ephraim_quote = \App\Models\Content::where('key', 'ephraim_quote')->value('value') ?? 'Precision in audit practice stems from unwavering commitment to ethical standards, innovative methodologies, and deep understanding of diverse industry complexities.';
 @endphp
@@ -129,12 +99,12 @@
                         <div style="margin-bottom: 2rem;">
                             @php
                                 $nameParts = explode(' ', $ephraim_full_name);
-                                $firstName = array_shift($nameParts);
-                                $lastName = implode(' ', $nameParts);
+                                $firstName = $nameParts[0]; // Ephraim
+                                $middleAndLast = array_slice($nameParts, 1); // T. Tugano
                             @endphp
                             <h1 style="font-size: 2.9rem; font-weight: 700; color: #333; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -2px;">
                                 {{ $firstName }}<br>
-                                <span style="color: #326D78;">{{ $lastName }}</span>
+                                <span style="color: #326D78;">{{ implode(' ', $middleAndLast) }}</span>
                             </h1>
                             <h2 style="font-size: 1.3rem; font-weight: 300; color: #666; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
                                 {{ $ephraim_position }}
@@ -255,90 +225,53 @@
                         @endif
                     </div>
 
-                    <!-- Industry Expertise -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Industry Expertise</h3>
-
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
-                            @foreach($industries as $index => $industry)
-                                @php
-                                    $colors = ['#326D78', '#4a9aba', '#74d3e3', '#5bb3c7'];
-                                    $color = $colors[$index % 4];
-                                @endphp
-                                <span style="background: #f8f9fa; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; color: #666; text-align: center; border-left: 3px solid {{ $color }};">{{ $industry }}</span>
-                            @endforeach
-                        </div>
-                    </div>
-
                     <!-- Professional Affiliations -->
-                    @if($ephraim_affiliation1_name)
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="500">
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
                         <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
 
-                        <div style="display: flex; align-items: start; margin-bottom: 1rem;">
-                            <div style="width: 8px; height: 8px; background: #326D78; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                            <div>
-                                <strong style="color: #333;">{{ $ephraim_affiliation1_name }}</strong><br>
-                                <small style="color: #666;">{{ $ephraim_affiliation1_description }}</small>
+                        <div style="space-y: 1rem;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'ephraim_affiliation1_name')->value('value') ?: 'Board of Accountancy' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'ephraim_affiliation1_description')->value('value') ?: 'Professional Regulatory Board' }}</small>
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'ephraim_affiliation2_name')->value('value') ?: 'Securities and Exchange Commission' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'ephraim_affiliation2_description')->value('value') ?: 'Capital Markets Regulator' }}</small>
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'ephraim_affiliation3_name')->value('value') ?: 'Bureau of Internal Revenue' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'ephraim_affiliation3_description')->value('value') ?: 'Tax Administration Authority' }}</small>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: #333;">{{ \App\Models\Content::where('key', 'ephraim_affiliation4_name')->value('value') ?: 'Insurance Commission' }}</strong><br>
+                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'ephraim_affiliation4_description')->value('value') ?: 'Insurance Industry Regulator' }}</small>
                             </div>
                         </div>
-
-                        @if($ephraim_affiliation2_name)
-                        <div style="display: flex; align-items: start; margin-bottom: 1rem;">
-                            <div style="width: 8px; height: 8px; background: #4a9aba; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                            <div>
-                                <strong style="color: #333;">{{ $ephraim_affiliation2_name }}</strong><br>
-                                <small style="color: #666;">{{ $ephraim_affiliation2_description }}</small>
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($ephraim_affiliation3_name)
-                        <div style="display: flex; align-items: start; margin-bottom: 1rem;">
-                            <div style="width: 8px; height: 8px; background: #74d3e3; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                            <div>
-                                <strong style="color: #333;">{{ $ephraim_affiliation3_name }}</strong><br>
-                                <small style="color: #666;">{{ $ephraim_affiliation3_description }}</small>
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($ephraim_affiliation4_name)
-                        <div style="display: flex; align-items: start;">
-                            <div style="width: 8px; height: 8px; background: #5bb3c7; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
-                            <div>
-                                <strong style="color: #333;">{{ $ephraim_affiliation4_name }}</strong><br>
-                                <small style="color: #666;">{{ $ephraim_affiliation4_description }}</small>
-                            </div>
-                        </div>
-                        @endif
-                    </div>
-                    @endif
-
-                    <!-- Core Competencies -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78;" data-aos="fade-up" data-aos-delay="600">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Core Competencies</h3>
-
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            @foreach($competencies as $index => $competency)
-                                @php
-                                    $colors = ['#326D78', '#4a9aba', '#74d3e3', '#5bb3c7', '#326D78'];
-                                    $color = $colors[$index % 5];
-                                @endphp
-                                <li style="margin-bottom: {{ $loop->last ? '0' : '0.75rem' }}; color: #666; display: flex; align-items: center;">
-                                    <i class="fas fa-check-circle me-2" style="color: {{ $color }};"></i>
-                                    {{ $competency }}
-                                </li>
-                            @endforeach
-                        </ul>
                     </div>
 
-                    <!-- Professional Quote -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-top: 2rem;" data-aos="fade-up" data-aos-delay="700">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Philosophy</h3>
-                        <blockquote style="font-style: italic; color: #666; line-height: 1.6; margin: 0; border-left: 4px solid #326D78; padding-left: 1rem;">
+                    <!-- Accreditation -->
+                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="150">
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
+
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: #333;">{{ \App\Models\Content::where('key', 'ephraim_accreditation1_name')->value('value') ?: 'PICPA' }}</strong><br>
+                            <small style="color: #666;">{{ \App\Models\Content::where('key', 'ephraim_accreditation1_description')->value('value') ?: 'Philippine Institute of Certified Public Accountants' }}</small>
+                        </div>
+
+                        <div>
+                            <strong style="color: #333;">{{ \App\Models\Content::where('key', 'ephraim_accreditation2_name')->value('value') ?: 'ACPAPP' }}</strong><br>
+                            <small style="color: #666;">{{ \App\Models\Content::where('key', 'ephraim_accreditation2_description')->value('value') ?: 'Association of CPAs in Public Practice' }}</small>
+                        </div>
+                    </div>
+
+                    <!-- Quote/Philosophy -->
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="200">
+                        <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin: 0;">
                             "{{ $ephraim_quote }}"
-                        </blockquote>
+                        </p>
                     </div>
 
                 </div>

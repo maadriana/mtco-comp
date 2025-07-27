@@ -62,16 +62,6 @@
         ];
     }
 
-    // Notable Clients
-    $clients = [];
-    for($i = 1; $i <= 8; $i++) {
-        $client = \App\Models\Content::where('key', "jekell_client{$i}")->value('value');
-        if($client) $clients[] = $client;
-    }
-    if(empty($clients)) {
-        $clients = ['San Miguel', 'Meralco', 'Petron', 'Ayala Land', 'SSS', 'PhilHealth', 'ERC', 'CAAP'];
-    }
-
     // Professional Affiliations
     $jekell_affiliation1_name = \App\Models\Content::where('key', 'jekell_affiliation1_name')->value('value') ?? 'PICPA';
     $jekell_affiliation1_description = \App\Models\Content::where('key', 'jekell_affiliation1_description')->value('value') ?? 'Philippine Institute of Certified Public Accountants';
@@ -303,23 +293,11 @@
                         </div>
                     </div>
 
-                    <!-- Major Clients -->
-                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78;" data-aos="fade-up" data-aos-delay="600">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Notable Clients</h3>
-
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
-                            @foreach($clients as $client)
-                                <span style="background: white; padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.8rem; color: #666; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">{{ $client }}</span>
-                            @endforeach
-                        </div>
-                    </div>
-
                     <!-- Professional Quote -->
-                    <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-top: 2rem;" data-aos="fade-up" data-aos-delay="700">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Philosophy</h3>
-                        <blockquote style="font-style: italic; color: #666; line-height: 1.6; margin: 0; border-left: 4px solid #326D78; padding-left: 1rem;">
+                    <div style="background: #f8f9fa; padding: 2rem; border-left: 5px solid #326D78; font-style: italic;" data-aos="fade-up" data-aos-delay="700">
+                        <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin: 0;">
                             "{{ $jekell_quote }}"
-                        </blockquote>
+                        </p>
                     </div>
 
                 </div>
