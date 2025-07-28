@@ -135,12 +135,7 @@
             </ul>
           </li>
 
-          <!-- 6. International -->
-          <li>
-            <a href="{{ route('international') }}" class="{{ request()->routeIs('international') ? 'active' : '' }}">{{ getContent('nav_international_text', 'International') }}</a>
-          </li>
-
-          <!-- 7. MTC Care -->
+          <!-- 6. MTC Care -->
           <li class="dropdown {{ request()->is('csr') || request()->is('galleries') ? 'active' : '' }}">
             <a href="{{ url('/#faq') }}">
               <span>{{ getContent('nav_mtc_care_text', 'MTC Care') }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
@@ -149,6 +144,11 @@
               <li><a href="{{ route('mtc.csr') }}" class="{{ request()->is('csr') ? 'active' : '' }}">{{ getContent('nav_csr_text', 'CSR') }}</a></li>
               <li><a href="{{ route('mtc.galleries') }}" class="{{ request()->is('galleries') ? 'active' : '' }}">{{ getContent('nav_galleries_text', 'Galleries') }}</a></li>
             </ul>
+          </li>
+
+          <!-- 7. International -->
+          <li>
+            <a href="{{ route('international') }}" class="{{ request()->routeIs('international') ? 'active' : '' }}">{{ getContent('nav_international_text', 'International') }}</a>
           </li>
 
         </ul>

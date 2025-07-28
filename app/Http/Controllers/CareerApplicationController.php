@@ -85,11 +85,12 @@ class CareerApplicationController extends Controller
 
             Log::info('=== ATTEMPTING TO SEND EMAIL ===');
 
-            // Send email with direct temp file attachment
+            // Send email with noreply configuration
             Mail::raw('', function ($message) use ($request, $emailBody, $file, $tempPath) {
-                $message->to('mariaadriananicoletrinidad@gmail.com')
+                $message->to('career@mtco.com.ph')
                         ->subject('New Career Application: ' . $request->job_title)
-                        ->from(config('mail.from.address'), config('mail.from.name'))
+                        ->from('noreply@mtco.com.ph', 'MTCO Career Portal')
+                        ->replyTo($request->email, $request->name)
                         ->html($emailBody);
 
                 Log::info('=== ATTACHING FILE ===', [

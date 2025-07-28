@@ -555,9 +555,6 @@ input[type="file"]::-webkit-file-upload-button {
                                         <option value="">Select a position</option>
                                         <option value="External Audit Associate">External Audit Associate</option>
                                         <option value="Accounting Services Associate">Accounting Services Associate</option>
-                                        <option value="Graduate Program">Graduate Program</option>
-                                        <option value="Internship Opportunities">Internship Opportunities</option>
-                                        <option value="Other">Other Position</option>
                                     </select>
                                 </div>
 

@@ -68,7 +68,7 @@
                       'route' => !empty(getContent('news_article1_external_link')) ? getContent('news_article1_external_link') : route('news.bir-article'),
                       'external' => !empty(getContent('news_article1_external_link')),
                       'read_more_text' => getContent('news_article1_read_more_text', 'Read More'),
-                      'image' => hasImageContent('news_article1_image') ? getContent('news_article1_image') : null,
+                      'image' => hasImageContent('news_article1_image') ? getContent('news_article1_image') : asset('assets/img/news1.jpg'),
                       'data_date' => '2025-01-15',
                       'data_month' => '2025-01',
                       'data_year' => '2025',
@@ -83,7 +83,7 @@
                       'route' => !empty(getContent('news_article2_external_link')) ? getContent('news_article2_external_link') : route('news.sec-article'),
                       'external' => !empty(getContent('news_article2_external_link')),
                       'read_more_text' => getContent('news_article2_read_more_text', 'Read More'),
-                      'image' => hasImageContent('news_article2_image') ? getContent('news_article2_image') : null,
+                      'image' => hasImageContent('news_article2_image') ? getContent('news_article2_image') : asset('assets/img/news2.jpg'),
                       'data_date' => '2025-01-10',
                       'data_month' => '2025-01',
                       'data_year' => '2025',
@@ -98,7 +98,7 @@
                       'route' => !empty(getContent('news_article3_external_link')) ? getContent('news_article3_external_link') : route('news.psa-article'),
                       'external' => !empty(getContent('news_article3_external_link')),
                       'read_more_text' => getContent('news_article3_read_more_text', 'Read More'),
-                      'image' => hasImageContent('news_article3_image') ? getContent('news_article3_image') : null,
+                      'image' => hasImageContent('news_article3_image') ? getContent('news_article3_image') : asset('assets/img/news3.jpg'),
                       'data_date' => '2025-01-08',
                       'data_month' => '2025-01',
                       'data_year' => '2025',
@@ -111,10 +111,10 @@
                 <!-- News Article {{ $index + 1 }} -->
                 <article class="news-article" data-date="{{ $article['data_date'] }}" data-month="{{ $article['data_month'] }}" data-year="{{ $article['data_year'] }}" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="{{ 100 + ($index * 100) }}">
                     <div style="position: relative; height: 250px; overflow: hidden;">
-                        @if($article['image'])
-                            <img src="data:image/jpeg;base64,{{ base64_encode($article['image']) }}" alt="{{ $article['title'] }}" style="width: 100%; height: 100%; object-fit: cover;">
+                        @if(hasImageContent('news_article' . ($index + 1) . '_image'))
+                            <img src="{{ getContent('news_article' . ($index + 1) . '_image') }}" alt="{{ $article['title'] }}" style="width: 100%; height: 100%; object-fit: cover;">
                         @else
-                            <img src="{{ asset('assets/img/services.jpg') }}" alt="{{ $article['title'] }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ $article['image'] }}" alt="{{ $article['title'] }}" style="width: 100%; height: 100%; object-fit: cover;">
                         @endif
                         <div style="position: absolute; top: 20px; left: 20px;">
                             <span style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 0.25rem;">

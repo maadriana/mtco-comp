@@ -75,7 +75,7 @@
                     @if(hasImageContent('psa_article_featured_image'))
                         <img src="{{ getContent('psa_article_featured_image') }}" alt="PSA Updates 2025" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     @else
-                        <img src="{{ asset('assets/img/services.jpg') }}" alt="PSA Updates 2025" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <img src="{{ asset('assets/img/news3.jpg') }}" alt="PSA Updates 2025" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     @endif
                 </div>
 

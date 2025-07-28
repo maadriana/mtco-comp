@@ -112,7 +112,7 @@
                             @if(hasImageContent('csr_gallery_image1'))
                                 <img src="{{ getContent('csr_gallery_image1') }}" alt="Community Outreach" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Community Outreach" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/BA5.jpg') }}" alt="Community Outreach" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @endif
                             <div class="gallery-overlay" style="position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; background: linear-gradient(135deg, rgba(50, 109, 120, 0.8), rgba(91, 163, 176, 0.8)); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="text-align: center; color: white;">
@@ -129,7 +129,7 @@
                             @if(hasImageContent('csr_gallery_image2'))
                                 <img src="{{ getContent('csr_gallery_image2') }}" alt="Tree Planting" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Tree Planting" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/BA4.jpg') }}" alt="Tree Planting" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @endif
                             <div class="gallery-overlay" style="position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; background: linear-gradient(135deg, rgba(50, 109, 120, 0.8), rgba(91, 163, 176, 0.8)); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="text-align: center; color: white;">
@@ -146,7 +146,7 @@
                             @if(hasImageContent('csr_gallery_image3'))
                                 <img src="{{ getContent('csr_gallery_image3') }}" alt="Scholarship Program" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Scholarship Program" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/BA2.jpg') }}" alt="Scholarship Program" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @endif
                             <div class="gallery-overlay" style="position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; background: linear-gradient(135deg, rgba(50, 109, 120, 0.8), rgba(91, 163, 176, 0.8)); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="text-align: center; color: white;">
@@ -163,7 +163,7 @@
                             @if(hasImageContent('csr_gallery_image4'))
                                 <img src="{{ getContent('csr_gallery_image4') }}" alt="Food Drive" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Food Drive" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/BA1.jpg') }}" alt="Food Drive" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @endif
 
                             <!-- Always visible blur overlay with + -->
@@ -193,7 +193,7 @@
                             @if(hasImageContent('team_gallery_image1'))
                                 <img src="{{ getContent('team_gallery_image1') }}" alt="Annual Party" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Annual Party" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/CO1.jpg') }}" alt="Annual Party" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
                             @endif
                             <div class="gallery-overlay" style="position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; background: linear-gradient(135deg, rgba(74, 138, 150, 0.8), rgba(50, 109, 120, 0.8)); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="text-align: center; color: white;">
@@ -210,7 +210,7 @@
                             @if(hasImageContent('team_gallery_image2'))
                                 <img src="{{ getContent('team_gallery_image2') }}" alt="Team Building" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Team Building" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/CO3.jpeg') }}" alt="Team Building" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @endif
                             <div class="gallery-overlay" style="position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; background: linear-gradient(135deg, rgba(74, 138, 150, 0.8), rgba(50, 109, 120, 0.8)); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="text-align: center; color: white;">
@@ -227,7 +227,7 @@
                             @if(hasImageContent('team_gallery_image3'))
                                 <img src="{{ getContent('team_gallery_image3') }}" alt="Award Ceremony" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @else
-                                <img src="{{ asset('assets/img/services.jpg') }}" alt="Award Ceremony" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                                <img src="{{ asset('assets/img/CO4.jpg') }}" alt="Award Ceremony" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
                             @endif
 
                             <!-- Always visible blur overlay with + -->
@@ -309,61 +309,61 @@
 const galleryData = {
     csr: [
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Medical Mission',
-            description: 'Community health outreach program'
+            src: '{{ asset("assets/img/BA5.jpg") }}',
+            title: 'Bahay Aruga',
+            description: 'Support initiative and outreach activities for pediatric cancer patients and their families'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Tree Planting Activity',
-            description: 'Environmental conservation initiative'
+            src: '{{ asset("assets/img/BA4.jpg") }}',
+            title: 'Bahay Aruga',
+            description: 'Support initiative and outreach activities for pediatric cancer patients and their families'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Scholarship Program',
-            description: 'Supporting education in the community'
+            src: '{{ asset("assets/img/BA2.jpg") }}',
+            title: 'Bahay Aruga',
+            description: 'Support initiative and outreach activities for pediatric cancer patients and their families'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Community Food Drive',
-            description: 'Helping families in need'
+            src: '{{ asset("assets/img/BA1.jpg") }}',
+            title: 'Bahay Aruga',
+            description: 'Support initiative and outreach activities for pediatric cancer patients and their families'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Educational Workshop',
-            description: 'Financial literacy program'
+            src: '{{ asset("assets/img/BA3.jpg") }}',
+            title: 'Bahay Aruga',
+            description: 'Support initiative and outreach activities for pediatric cancer patients and their families'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Community Clean-up',
-            description: 'Environmental awareness campaign'
+            src: '{{ asset("assets/img/BA6.jpg") }}',
+            title: 'Bahay Aruga',
+            description: 'Support initiative and outreach activities for pediatric cancer patients and their families'
         }
     ],
     team: [
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Annual Company Celebration',
-            description: 'Year-end company gathering'
+            src: '{{ asset("assets/img/CO1.jpg") }}',
+            title: 'Company Outing 2024',
+            description: 'A team-building getaway to strengthen camaraderie and celebrate milestones'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Team Building Activities',
-            description: 'Strengthening team bonds'
+            src: '{{ asset("assets/img/CO3.jpeg") }}',
+            title: 'Company Outing 2024',
+            description: 'A team-building getaway to strengthen camaraderie and celebrate milestones'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Awards & Recognition',
-            description: 'Celebrating achievements'
+            src: '{{ asset("assets/img/CO4.jpg") }}',
+            title: 'Company Outing 2024',
+            description: 'A team-building getaway to strengthen camaraderie and celebrate milestones'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Office Christmas Party',
-            description: 'Holiday celebration with the team'
+            src: '{{ asset("assets/img/CO5.jpg") }}',
+            title: 'Company Outing 2024',
+            description: 'A team-building getaway to strengthen camaraderie and celebrate milestones'
         },
         {
-            src: '{{ asset("assets/img/services.jpg") }}',
-            title: 'Professional Development',
-            description: 'Training and development sessions'
+            src: '{{ asset("assets/img/CO2.jpg") }}',
+            title: 'Company Outing 2024',
+            description: 'A team-building getaway to strengthen camaraderie and celebrate milestones'
         }
     ]
 };

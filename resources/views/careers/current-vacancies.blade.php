@@ -45,14 +45,12 @@
             <div class="col-lg-7" style="position: relative; z-index: 10;">
                 <div style="color: white; padding-right: 2rem;">
 
-
                     <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
-  Current <span style="font-weight: 500;">Vacancies</span>
-</h1>
-
+                        {{ getContent('current_vacancies_main_title', 'Current Vacancies') }}
+                    </h1>
 
                     <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
-                        We are looking for passionate individuals who value professionalism, continuous learning, and client service. Join our dynamic and growing team.
+                        {{ getContent('current_vacancies_description', 'We are looking for passionate individuals who value professionalism, continuous learning, and client service. Join our dynamic and growing team.') }}
                     </p>
                 </div>
             </div>
@@ -63,7 +61,7 @@
                     <div style="display: inline-block; width: 120px; height: 120px; background: #326D78; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(50, 109, 120, 0.3); transform: rotate(-5deg);">
                         <i class="fas fa-rocket" style="font-size: 3rem; color: white; transform: rotate(5deg);"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #326D78; margin-bottom: 0.5rem;">Start Your Journey</h3>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #326D78; margin-bottom: 0.5rem;">{{ getContent('current_vacancies_subtitle', 'Start Your Journey') }}</h3>
                     <p style="font-size: 1rem; color: #64748b; margin: 0;">Excellence begins here</p>
                 </div>
             </div>
@@ -80,7 +78,7 @@
                 <!-- Section Header -->
                 <div class="text-center mb-5" data-aos="fade-up">
                     <h2 style="color: #326D78; font-weight: 400; font-size: 2.1rem; margin-bottom: 1rem;">
-                        Available Positions
+                        {{ getContent('available_positions_title', 'Available Positions') }}
                     </h2>
                     <div style="width: 60px; height: 4px; background: #326D78; margin: 0 auto; border-radius: 2px;"></div>
                 </div>
@@ -88,24 +86,24 @@
                 @php
                     $jobs = [
                         [
-                            'title' => 'External Audit Associate',
-                            'type' => 'Permanent',
-                            'department' => 'Audit and Assurance',
-                            'location' => 'Makati City',
-                            'closing' => 'Ongoing',
+                            'title' => getContent('job1_title', 'External Audit Associate'),
+                            'type' => getContent('job1_type', 'Permanent'),
+                            'department' => getContent('job1_department', 'Audit and Assurance'),
+                            'location' => getContent('job1_location', 'Makati City'),
+                            'closing' => getContent('job1_closing', 'Ongoing'),
                             'route' => route('careers.external-audit'),
                             'image' => 'assets/img/job-audit.jpg',
-                            'description' => 'Assist in the performance of financial audits in compliance with Philippine Standards on Auditing (PSA) and relevant regulatory requirements. Work closely with senior auditors, managers, and partners to deliver quality assurance services to clients across diverse industries.'
+                            'description' => getContent('job1_description', 'Assist in the performance of financial audits in compliance with Philippine Standards on Auditing (PSA) and relevant regulatory requirements. Work closely with senior auditors, managers, and partners to deliver quality assurance services to clients across diverse industries.')
                         ],
                         [
-                            'title' => 'Accounting Services Associate',
-                            'type' => 'Permanent',
-                            'department' => 'Accounting and Outsource Services',
-                            'location' => 'Makati City',
-                            'closing' => 'Ongoing',
+                            'title' => getContent('job2_title', 'Accounting Services Associate'),
+                            'type' => getContent('job2_type', 'Permanent'),
+                            'department' => getContent('job2_department', 'Accounting and Outsource Services'),
+                            'location' => getContent('job2_location', 'Makati City'),
+                            'closing' => getContent('job2_closing', 'Ongoing'),
                             'route' => route('careers.accounting-services'),
                             'image' => 'assets/img/job-accounting.jpg',
-                            'description' => 'Provide end-to-end accounting support including bookkeeping, financial reporting, and BIR compliance. Help clients maintain accurate records and stay compliant with Philippine tax laws.'
+                            'description' => getContent('job2_description', 'Provide end-to-end accounting support including bookkeeping, financial reporting, and BIR compliance. Help clients maintain accurate records and stay compliant with Philippine tax laws.')
                         ],
                     ];
                 @endphp
@@ -174,12 +172,12 @@
                 <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
                     <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
                         <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
-                        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">Don't See the Right Fit?</h3>
+                        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">{{ getContent('cta_title', 'Don\'t See the Right Fit?') }}</h3>
                         <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
-                            We're always interested in connecting with talented professionals. Send us your resume and we'll keep you in mind for future opportunities.
+                            {{ getContent('cta_description', 'We\'re always interested in connecting with talented professionals. Send us your resume and we\'ll keep you in mind for future opportunities.') }}
                         </p>
                         <a href="{{ route('careers.apply') }}" class="btn send-resume-btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
-                            <i class="fas fa-envelope me-2"></i>Send Your Resume
+                            <i class="fas fa-envelope me-2"></i>{{ getContent('cta_button_text', 'Send Your Resume') }}
                         </a>
                     </div>
                 </div>

@@ -60,11 +60,11 @@ class ContactController extends Controller
 
             Log::info('=== ATTEMPTING TO SEND CONTACT EMAIL ===');
 
-            // Send email
+            // Send email with noreply configuration
             Mail::raw('', function ($message) use ($request, $emailBody) {
-                $message->to('mariaadriananicoletrinidad@gmail.com')
+                $message->to('career@mtco.com.ph')
                         ->subject('Contact Form: ' . $request->subject)
-                        ->from(config('mail.from.address'), config('mail.from.name'))
+                        ->from('noreply@mtco.com.ph', 'MTCO Contact Portal')
                         ->replyTo($request->email, $request->name)
                         ->html($emailBody);
             });

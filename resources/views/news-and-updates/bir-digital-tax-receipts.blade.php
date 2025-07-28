@@ -75,7 +75,7 @@
                     @if(hasImageContent('bir_article_featured_image'))
                         <img src="{{ getContent('bir_article_featured_image') }}" alt="BIR Digital Tax Receipts" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     @else
-                        <img src="{{ asset('assets/img/services.jpg') }}" alt="BIR Digital Tax Receipts" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <img src="{{ asset('assets/img/news1.jpg') }}" alt="BIR Digital Tax Receipts" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     @endif
                 </div>
 

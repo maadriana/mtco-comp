@@ -155,7 +155,7 @@
                     <div class="row g-4">
                         <div class="col-lg-4">
                             <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); height: 100%; border-top: 4px solid #326D78; transition: all 0.3s ease;">
-                                <div style="background: linear-gradient(135deg, #326D78, #5ba3b0); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; width: 60px; height: 60px;">
+                                <div style="background: linear-gradient(135deg, #326D78, #5ba3b0); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
                                     <i class="fas fa-globe" style="color: white; font-size: 1.2rem;"></i>
                                 </div>
                                 <h4 style="font-size: 1.25rem; font-weight: 600; color: #326D78; margin-bottom: 1rem;">
@@ -169,7 +169,7 @@
 
                         <div class="col-lg-4">
                             <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); height: 100%; border-top: 4px solid #5ba3b0; transition: all 0.3s ease;">
-                                <div style="background: linear-gradient(135deg, #5ba3b0, #4a8a96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; width: 60px; height: 60px;">
+                                <div style="background: linear-gradient(135deg, #5ba3b0, #4a8a96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
                                     <i class="fas fa-handshake" style="color: white; font-size: 1.2rem;"></i>
                                 </div>
                                 <h4 style="font-size: 1.25rem; font-weight: 600; color: #5ba3b0; margin-bottom: 1rem;">
@@ -183,7 +183,7 @@
 
                         <div class="col-lg-4">
                             <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); height: 100%; border-top: 4px solid #4a8a96; transition: all 0.3s ease;">
-                                <div style="background: linear-gradient(135deg, #4a8a96, #326D78); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; width: 60px; height: 60px;">
+                                <div style="background: linear-gradient(135deg, #4a8a96, #326D78); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
                                     <i class="fas fa-award" style="color: white; font-size: 1.2rem;"></i>
                                 </div>
                                 <h4 style="font-size: 1.25rem; font-weight: 600; color: #4a8a96; margin-bottom: 1rem;">
@@ -218,7 +218,7 @@
                 <!-- Disclaimer -->
                 <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 1px solid #ffd93d; padding: 2.5rem; border-radius: 12px; margin-bottom: 3rem; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); opacity: 0; animation: fadeInUp 1s ease-out 1.1s forwards;">
                     <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div style="background: #ffc107; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; width: 40px; height: 40px;">
+                        <div style="background: #ffc107; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; ">
                             <i class="fas fa-info-circle" style="color: white; font-size: 1.2rem;"></i>
                         </div>
                         <h3 style="font-size: 1.4rem; font-weight: 600; color: #856404; margin: 0;">

@@ -32,7 +32,7 @@
         @if(hasImageContent('about_image'))
           <img src="{{ getContent('about_image') }}" alt="About Image" style="max-width: 100%; height: auto;">
         @else
-          <img src="{{ asset('assets/img/about.jpg') }}" alt="About Image" style="max-width: 100%; height: auto;">
+          <img src="{{ asset('assets/img/home.jpg') }}" alt="About Image" style="max-width: 100%; height: auto;">
         @endif
       </div>
 
