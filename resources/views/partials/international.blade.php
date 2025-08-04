@@ -215,8 +215,22 @@
                     </p>
                 </div>
 
+                <!-- Contact CTA -->
+                <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #f8fafb 0%, #e8f4f8 100%); border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); margin-bottom: 5rem; opacity: 0; animation: fadeInUp 1s ease-out 1.1s forwards;">
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #2a2a2a; margin-bottom: 1rem;">
+                        {{ \App\Models\Content::where('key', 'contact_cta_title')->value('value') ?? 'Ready to leverage our global network?' }}
+                    </h3>
+                    <p style="font-size: 1.1rem; color: #6c757d; margin-bottom: 2rem;">
+                        {{ \App\Models\Content::where('key', 'contact_cta_description')->value('value') ?? 'Connect with our team to learn how AGN International can support your business growth.' }}
+                    </p>
+                    <a href="{{ url('/#contact') }}" style="display: inline-block; background: linear-gradient(135deg, #326D78, #5ba3b0); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(50, 109, 120, 0.3);">
+                        {{ \App\Models\Content::where('key', 'contact_cta_button')->value('value') ?? 'Contact Us Today' }}
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+
                 <!-- Disclaimer -->
-                <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 1px solid #ffd93d; padding: 2.5rem; border-radius: 12px; margin-bottom: 3rem; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); opacity: 0; animation: fadeInUp 1s ease-out 1.1s forwards;">
+                <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 1px solid #ffd93d; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); opacity: 0; animation: fadeInUp 1s ease-out 1.3s forwards;">
                     <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
                         <div style="background: #ffc107; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; ">
                             <i class="fas fa-info-circle" style="color: white; font-size: 1.2rem;"></i>
@@ -228,20 +242,6 @@
                     <p style="font-size: 1rem; color: #856404; line-height: 1.7; margin: 0;">
                         {{ \App\Models\Content::where('key', 'disclaimer_content')->value('value') ?? 'AGN International Ltd is a company limited by guarantee registered in England & Wales, number 3132548, registered office 24 Greville Street, London EC1N 8SS, United Kingdom. AGN International Ltd (and its regional affiliates; together "AGN") is a not-for-profit worldwide membership association of separate and independent accounting and advisory businesses. AGN does not provide and is not responsible for services to the clients of its members. Members provide services to their clients under their own local agreements with those clients. Members are not in partnership together, they are neither agents of nor obligate one another and are not responsible for the services of other members.' }}
                     </p>
-                </div>
-
-                <!-- Contact CTA -->
-                <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #f8fafb 0%, #e8f4f8 100%); border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); opacity: 0; animation: fadeInUp 1s ease-out 1.3s forwards;">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #2a2a2a; margin-bottom: 1rem;">
-                        {{ \App\Models\Content::where('key', 'contact_cta_title')->value('value') ?? 'Ready to leverage our global network?' }}
-                    </h3>
-                    <p style="font-size: 1.1rem; color: #6c757d; margin-bottom: 2rem;">
-                        {{ \App\Models\Content::where('key', 'contact_cta_description')->value('value') ?? 'Connect with our team to learn how AGN International can support your business growth.' }}
-                    </p>
-                    <a href="{{ url('/#contact') }}" style="display: inline-block; background: linear-gradient(135deg, #326D78, #5ba3b0); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(50, 109, 120, 0.3);">
-                        {{ \App\Models\Content::where('key', 'contact_cta_button')->value('value') ?? 'Contact Us Today' }}
-                        <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
                 </div>
 
             </div>

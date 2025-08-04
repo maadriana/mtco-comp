@@ -232,29 +232,6 @@
 
                 </div>
 
-                <!-- Social Sharing -->
-                <div style="border-top: 1px solid #e9ecef; padding-top: 2rem; margin-top: 3rem;" data-aos="fade-up" data-aos-delay="700">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <div>
-                            <h5 style="color: #333; margin-bottom: 0.5rem;">Share this article:</h5>
-                        </div>
-                        <div style="display: flex; gap: 0.75rem;">
-                            <a href="#" style="width: 45px; height: 45px; background: #4a8a96; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease;">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" style="width: 45px; height: 45px; background: #4a8a96; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease;">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" style="width: 45px; height: 45px; background: #4a8a96; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease;">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" style="width: 45px; height: 45px; background: #4a8a96; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease;">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Back to News -->
                 <div style="margin-top: 3rem;" data-aos="fade-up" data-aos-delay="800">
                     <a href="{{ route('news.updates') }}" style="display: inline-flex; align-items: center; background: #f8f9fa; color: #4a8a96; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid #e9ecef;">

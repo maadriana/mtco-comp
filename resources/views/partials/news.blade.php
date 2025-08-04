@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <!-- News Grid -->
+        <!-- News Grid - Updated to include View More as part of the grid -->
         <div class="news-grid-container">
           <div class="news-grid">
 
@@ -48,7 +48,8 @@
                   'date' => getContent('news_article1_date', 'January 15, 2025'),
                   'read_time' => getContent('news_article1_read_time', '8 min read'),
                   'read_more_text' => getContent('news_article1_read_more_text', 'Read More'),
-                  'image' => hasImageContent('news_article1_image') ? getContent('news_article1_image') : null,
+                  'image' => hasImageContent('news_article1_image') ? getContent('news_article1_image') : asset('assets/img/news1.jpg'),
+                  'image_alt' => getContent('news_article1_image_alt', 'BIR Digital Tax Receipts'),
                 ],
                 [
                   'title' => getContent('news_article2_title', 'SEC Financial Reporting 2025'),
@@ -60,7 +61,8 @@
                   'date' => getContent('news_article2_date', 'January 10, 2025'),
                   'read_time' => getContent('news_article2_read_time', '5 min read'),
                   'read_more_text' => getContent('news_article2_read_more_text', 'Read More'),
-                  'image' => hasImageContent('news_article2_image') ? getContent('news_article2_image') : null,
+                  'image' => hasImageContent('news_article2_image') ? getContent('news_article2_image') : asset('assets/img/news2.jpg'),
+                  'image_alt' => getContent('news_article2_image_alt', 'SEC Financial Reporting Standards'),
                 ],
                 [
                   'title' => getContent('news_article3_title', 'PSA Updates 2025'),
@@ -72,7 +74,8 @@
                   'date' => getContent('news_article3_date', 'January 8, 2025'),
                   'read_time' => getContent('news_article3_read_time', '4 min read'),
                   'read_more_text' => getContent('news_article3_read_more_text', 'Read More'),
-                  'image' => hasImageContent('news_article3_image') ? getContent('news_article3_image') : null,
+                  'image' => hasImageContent('news_article3_image') ? getContent('news_article3_image') : asset('assets/img/news3.jpg'),
+                  'image_alt' => getContent('news_article3_image_alt', 'PSA Updates and Regulations'),
                 ]
               ];
             @endphp
@@ -93,11 +96,23 @@
                     </div>
                   </div>
 
-                  @if($item['image'])
+                  <!-- Enhanced Image Section -->
                   <div class="news-card-image">
-                    <img src="data:image/jpeg;base64,{{ base64_encode($item['image']) }}" alt="{{ $item['title'] }}" style="width: 100%; height: 200px; object-fit: cover;">
+                    @if(hasImageContent('news_article' . ($index + 1) . '_image'))
+                      <img src="data:image/jpeg;base64,{{ base64_encode(getContent('news_article' . ($index + 1) . '_image')) }}"
+                           alt="{{ $item['image_alt'] }}"
+                           loading="lazy">
+                    @else
+                      <img src="{{ $item['image'] }}"
+                           alt="{{ $item['image_alt'] }}"
+                           loading="lazy">
+                    @endif
+                    <div class="image-overlay">
+                      <div class="overlay-icon">
+                        <i class="bi {{ $item['icon'] }}"></i>
+                      </div>
+                    </div>
                   </div>
-                  @endif
 
                   <div class="news-card-body">
                     <div class="news-meta">
@@ -124,22 +139,24 @@
             </div>
             @endforeach
 
-          </div>
+            <!-- View More Section - Now part of the grid -->
+            <div class="news-item view-more-item" data-aos="fade-up" data-aos-delay="500">
+              <a href="{{ route('news.updates') }}" class="news-card-link">
+                <article class="news-card view-more-card">
+                  <div class="view-more-content">
+                    <div class="view-more-icon">
+                      <i class="bi bi-plus-circle"></i>
+                    </div>
+                    <h4 class="view-more-title">View More Articles</h4>
+                    <p class="view-more-text">Explore all news and updates</p>
+                    <div class="view-more-arrow">
+                      <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
 
-          <!-- View More Section -->
-          <div class="view-more-section" data-aos="fade-left" data-aos-delay="500">
-            <a href="{{ route('news.updates') }}" class="view-more-card">
-              <div class="view-more-content">
-                <div class="view-more-icon">
-                  <i class="bi bi-plus-circle"></i>
-                </div>
-                <h4 class="view-more-title">View More Articles</h4>
-                <p class="view-more-text">Explore all news and updates</p>
-                <div class="view-more-arrow">
-                  <i class="bi bi-arrow-right"></i>
-                </div>
-              </div>
-            </a>
           </div>
         </div>
       </div><!-- End Column -->
@@ -216,158 +233,30 @@
   color: #455a64;
 }
 
-/* News Grid Container */
+/* News Grid Container - Simplified */
 .news-grid-container {
-  display: flex;
-  gap: 2rem;
   margin-top: 3rem;
-  align-items: stretch;
 }
 
-/* News Grid */
+/* News Grid - Updated to handle 4 items in 2 rows */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  flex: 1;
 }
 
-/* View More Section */
-.view-more-section {
-  flex-shrink: 0;
-  width: 280px;
-}
-
-.view-more-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
-}
-
-.view-more-card .view-more-content {
-  background: white;
-  border: 1px solid #e9ecef;
-  border-radius: 15px;
-  padding: 2.5rem 2rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #2c3e50;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.view-more-card .view-more-content::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(50, 108, 121, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-.view-more-card:hover .view-more-content {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(50, 108, 121, 0.15);
-  border-color: #326C79;
-}
-
-.view-more-card:hover .view-more-content::before {
-  transform: scale(1.2);
-  background: radial-gradient(circle, rgba(50, 108, 121, 0.08) 0%, transparent 70%);
-}
-
-.view-more-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #326C79, #4A9BAE);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(50, 108, 121, 0.2);
-}
-
-.view-more-icon i {
-  font-size: 2rem;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.view-more-card:hover .view-more-icon {
-  transform: scale(1.1) rotate(90deg);
-  box-shadow: 0 6px 20px rgba(50, 108, 121, 0.3);
-}
-
-.view-more-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-  color: #2c3e50 !important;
-}
-
-.view-more-text {
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
-  color: #6c757d !important;
-}
-
-.view-more-arrow {
-  width: 40px;
-  height: 40px;
-  background: #326C79;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.view-more-arrow i {
-  font-size: 1.2rem;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.view-more-card:hover .view-more-arrow {
-  transform: translateX(5px) scale(1.1);
-  background: #255A65;
-}
-
-.view-more-card:hover .view-more-arrow i {
-  transform: translateX(3px);
-}
-
-/* News Cards */
-.news-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
+/* Ensure all cards have the same height */
 .news-card {
   background: white;
   border: 1px solid #e9ecef;
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
-  height: 100%;
+  height: 550px; /* Increased height to accommodate images */
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .news-card::before {
@@ -391,6 +280,14 @@
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(50, 108, 121, 0.15);
   border-color: #326C79;
+}
+
+/* News Card Link */
+.news-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
 }
 
 /* Card Header */
@@ -441,25 +338,76 @@
   color: white;
 }
 
-/* Card Image */
+/* Enhanced Card Image with Overlay */
 .news-card-image {
   margin: 1rem 1.5rem 0;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
+  height: 180px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .news-card-image img {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(50, 108, 121, 0.8), rgba(74, 155, 174, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+}
+
+.overlay-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.overlay-icon i {
+  font-size: 1.8rem;
+  color: white;
 }
 
 .news-card:hover .news-card-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.news-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.news-card:hover .overlay-icon {
+  transform: scale(1) rotate(5deg);
 }
 
 /* Card Body */
 .news-card-body {
   padding: 1.5rem;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .news-meta {
@@ -481,7 +429,7 @@
 }
 
 .news-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #212529;
   margin-bottom: 1rem;
@@ -496,8 +444,9 @@
 .news-excerpt {
   color: #6c757d;
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin: 0;
+  flex-grow: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -542,6 +491,114 @@
   transform: translateX(3px);
 }
 
+/* View More Card Styling - Updated for consistency */
+.view-more-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+  height: 550px; /* Same height as other cards */
+}
+
+.view-more-card::before {
+  background: linear-gradient(90deg, #326C79, #4A9BAE);
+}
+
+.view-more-content {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.view-more-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(50, 108, 121, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.view-more-card:hover .view-more-content::before {
+  transform: scale(1.2);
+  background: radial-gradient(circle, rgba(50, 108, 121, 0.08) 0%, transparent 70%);
+}
+
+.view-more-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #326C79, #4A9BAE);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(50, 108, 121, 0.2);
+}
+
+.view-more-icon i {
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.view-more-card:hover .view-more-icon {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 20px rgba(50, 108, 121, 0.3);
+}
+
+.view-more-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  color: #2c3e50 !important;
+}
+
+.view-more-text {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  color: #6c757d !important;
+}
+
+.view-more-arrow {
+  width: 40px;
+  height: 40px;
+  background: #326C79;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.view-more-arrow i {
+  font-size: 1.2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.view-more-card:hover .view-more-arrow {
+  transform: translateX(5px) scale(1.1);
+  background: #255A65;
+}
+
+.view-more-card:hover .view-more-arrow i {
+  transform: translateX(3px);
+}
+
 /* External link styling */
 .news-card-link[target="_blank"] .category-badge {
   background: linear-gradient(135deg, #17a2b8, #138496);
@@ -568,33 +625,28 @@
   background: #17a2b8;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .news-grid-container {
-    flex-direction: column;
-  }
+/* Image loading states */
+.news-card-image img {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
 
-  .view-more-section {
-    width: 100%;
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
   }
-
-  .view-more-card .view-more-content {
-    padding: 2rem;
-    flex-direction: row;
-    text-align: left;
-    gap: 1.5rem;
-  }
-
-  .view-more-icon {
-    margin-bottom: 0;
-    flex-shrink: 0;
-  }
-
-  .view-more-arrow {
-    margin-left: auto;
+  100% {
+    background-position: -200% 0;
   }
 }
 
+.news-card-image img[src] {
+  background: none;
+  animation: none;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .news-section {
     padding: 60px 0;
@@ -623,22 +675,22 @@
     gap: 1.5rem;
   }
 
+  .news-card {
+    height: auto;
+    min-height: 450px;
+  }
+
+  .news-card-image {
+    height: 160px;
+  }
+
   .news-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
-  .view-more-card .view-more-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .view-more-icon {
-    margin-bottom: 1rem;
-  }
-
-  .view-more-arrow {
-    margin-left: 0;
+  .view-more-card {
+    height: auto;
+    min-height: 350px;
   }
 }
 
@@ -658,9 +710,25 @@
     padding-right: 1rem;
   }
 
+  .news-card-image {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 140px;
+  }
+
   .news-meta {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .news-card {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .view-more-card {
+    height: auto;
+    min-height: 300px;
   }
 }
 
@@ -689,24 +757,30 @@
   box-shadow: 0 0 0 2px rgba(50, 108, 121, 0.2);
 }
 
-/* Loading state for images */
+/* Image fade-in effect */
 .news-card-image img {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.news-card-image img[src] {
-  background: none;
-  animation: none;
+.news-card-image img.loaded {
+  opacity: 1;
 }
 </style>
+
+<script>
+// Image loading optimization
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.news-card-image img');
+
+  images.forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        this.classList.add('loaded');
+      });
+    }
+  });
+});
+</script>

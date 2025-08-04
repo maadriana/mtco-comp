@@ -13,7 +13,7 @@
     $pamela_profile_image = \App\Models\Content::where('key', 'pamela_profile_image')->first();
 
     // Hero Stats
-    $pamela_stat1_value = \App\Models\Content::where('key', 'pamela_stat1_value')->value('value') ?? '17+';
+    $pamela_stat1_value = \App\Models\Content::where('key', 'pamela_stat1_value')->value('value') ?? '20+';
     $pamela_stat1_label = \App\Models\Content::where('key', 'pamela_stat1_label')->value('value') ?? 'Years Total Experience';
     $pamela_stat2_value = \App\Models\Content::where('key', 'pamela_stat2_value')->value('value') ?? '10+';
     $pamela_stat2_label = \App\Models\Content::where('key', 'pamela_stat2_label')->value('value') ?? 'Industries Served';
@@ -232,24 +232,22 @@
 
                     <!-- Professional Affiliations -->
                     <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
 
                         <div style="space-y: 1rem;">
                             <div style="margin-bottom: 1rem;">
                                 <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_affiliation1_name')->value('value') ?: 'Board of Accountancy' }}</strong><br>
-                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'pamela_affiliation1_description')->value('value') ?: 'Professional Regulatory Board' }}</small>
                             </div>
 
                             <div style="margin-bottom: 1.5rem;">
                                 <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_affiliation2_name')->value('value') ?: 'Bureau of Internal Revenue' }}</strong><br>
-                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'pamela_affiliation2_description')->value('value') ?: 'Tax Administration Authority' }}</small>
                             </div>
                         </div>
                     </div>
 
                     <!-- Accreditation -->
                     <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="150">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
 
                         <div style="margin-bottom: 1rem;">
                             <strong style="color: #333;">{{ \App\Models\Content::where('key', 'pamela_accreditation1_name')->value('value') ?: 'PICPA' }}</strong><br>

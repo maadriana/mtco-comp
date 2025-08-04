@@ -59,22 +59,10 @@
         <h4>{{ getContent('footer_contact_title', 'Get In Touch') }}</h4>
         <p>{{ getContent('footer_contact_description', 'For inquiries, you may call us through our hotline at (02) 8887-1888 or send an email to contact@mtco.com.ph') }}</p>
         <div class="social-links d-flex">
-          @if(getContent('footer_social_twitter'))
-            <a href="{{ getContent('footer_social_twitter') }}" target="_blank"><i class="bi bi-twitter-x"></i></a>
-          @else
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-          @endif
-
           @if(getContent('footer_social_facebook'))
             <a href="{{ getContent('footer_social_facebook') }}" target="_blank"><i class="bi bi-facebook"></i></a>
           @else
             <a href="#"><i class="bi bi-facebook"></i></a>
-          @endif
-
-          @if(getContent('footer_social_instagram'))
-            <a href="{{ getContent('footer_social_instagram') }}" target="_blank"><i class="bi bi-instagram"></i></a>
-          @else
-            <a href="#"><i class="bi bi-instagram"></i></a>
           @endif
 
           @if(getContent('footer_social_linkedin'))
@@ -88,7 +76,6 @@
   </div>
 
   <div class="container copyright text-center mt-4">
-    <p>{{ getContent('footer_copyright_text', '©') }} <span>{{ getContent('footer_copyright_text', 'Copyright') }}</span> <strong class="px-1 sitename">{{ getContent('footer_company_name', 'BizLand') }}</strong> <span>{{ getContent('footer_rights_text', 'All Rights Reserved') }}</span></p>
     <div class="credits">
       {{ getContent('footer_credits_text', 'Designed by') }}
       @if(getContent('footer_credits_link'))

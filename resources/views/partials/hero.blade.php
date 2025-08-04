@@ -6,7 +6,7 @@
         <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.2;">
           {!! getContent('hero_title', 'Welcome to <span>Mendoza Tugano & Co., CPAs</span>') !!}
         </h1>
-        <p style="font-size: 1.3rem; color: #666;">
+        <p style="font-size: 1.3rem; color: #666666;">
           {{ getContent('hero_subtitle', 'Preserving a legacy of excellence') }}
         </p>
         <div class="d-flex">

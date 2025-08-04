@@ -129,7 +129,8 @@
                                     <div style="color: #4a8a96; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">{{ getContent('history_year_2024', '2024') }}</div>
                                     <h4 style="color: #2a2a2a; font-weight: 600; margin-bottom: 1rem;">{{ getContent('history_2024_title', 'Global Recognition') }}</h4>
                                     <p style="color: #6c757d; line-height: 1.6; margin: 0;">
-                                        {{ getContent('history_2024_description', 'MTC was admitted as a member of AGN International, a worldwide association of independent accounting and advisory businesses serving clients globally for over 40 years.') }}
+                                        {{ getContent('history_2024_description_start', 'MTC was admitted as a member of') }}
+                                        <a href="{{ route('international') }}" style="color: #4a8a96; text-decoration: none; font-weight: 600; border-bottom: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.borderBottomColor='#4a8a96'; this.style.color='#326D78';" onmouseout="this.style.borderBottomColor='transparent'; this.style.color='#4a8a96';">AGN International</a>{{ getContent('history_2024_description_end', ', a worldwide association of independent accounting and advisory businesses serving clients globally for over 40 years.') }}
                                     </p>
                                 </div>
                             </div>
@@ -269,48 +270,6 @@
                         {{ getContent('history_cta_text', 'Partner With Us Today') }}
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About Section - Preserving a Legacy of Excellence -->
-<section style="background: linear-gradient(135deg, #f8fafb 0%, #e8f4f6 100%); padding: 6rem 0;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div style="text-align: center; margin-bottom: 4rem;">
-                    <div style="display: inline-block; background: rgba(50, 109, 120, 0.1); color: #326D78; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s ease-out 0.3s forwards;">
-                        {{ getContent('history_about_badge', 'About Us') }}
-                    </div>
-                    <h2 style="font-size: 2.6rem; font-weight: 600; color: #2a2a2a; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards;">
-                        {!! getContent('history_about_title', 'Preserving a Legacy of <span style="font-weight: 600; color: #326D78;">Excellence</span>') !!}
-                    </h2>
-                    <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #326D78, #5ba3b0); border-radius: 2px; margin: 0 auto; opacity: 0; animation: scaleX 1s ease-out 0.9s forwards; transform-origin: center;"></div>
-                </div>
-
-                <div style="display: grid; gap: 2.5rem; max-width: 900px; margin: 0 auto;">
-                    <!-- First Paragraph -->
-                    <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 6px solid #326D78; opacity: 0; animation: fadeInUp 1s ease-out 1.2s forwards;">
-                        <p style="font-size: 1.1rem; color: #6c757d; line-height: 1.8; margin: 0; text-align: justify;">
-                            {{ getContent('history_about_paragraph1', 'Emmanuel Y. Mendoza, a seasoned audit and accounting practitioner, redefined the landscape of audit and accounting services. With Mendoza Querido & Co., he founded an institution that upheld unwavering dedication, precision, and integrity, earning a reputation as an industry luminary. Building on the legacy of Mendoza Querido & Co., Mendoza Tugano & Co., CPAs, emerged — a firm that seamlessly carries forward the same principles of excellence.') }}
-                        </p>
-                    </div>
-
-                    <!-- Second Paragraph -->
-                    <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 6px solid #5ba3b0; opacity: 0; animation: fadeInUp 1s ease-out 1.5s forwards;">
-                        <p style="font-size: 1.1rem; color: #6c757d; line-height: 1.8; margin: 0; text-align: justify;">
-                            {{ getContent('history_about_paragraph2', 'Mendoza Tugano & Co., CPAs, represents not just continuity but an elevation of the principles that have defined the legacy of Mendoza Querido & Co. Our commitment to delivering precise, ethical, and personalized financial solutions mirrors the trust and reliability that clients have come to expect from our lineage. With a seasoned team of professionals who share the same vision, we stand at the intersection of tradition and innovation, ready to provide cutting-edge audit and accounting services.') }}
-                        </p>
-                    </div>
-
-                    <!-- Third Paragraph -->
-                    <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 6px solid #4a8a96; opacity: 0; animation: fadeInUp 1s ease-out 1.8s forwards;">
-                        <p style="font-size: 1.1rem; color: #6c757d; line-height: 1.8; margin: 0; text-align: justify;">
-                            {{ getContent('history_about_paragraph3', 'At Mendoza Tugano & Co., CPAs, "Passion for Excellence" is not merely a motto — it\'s a pledge rooted in a heritage of trust and dedication. As we embrace the opportunities of the digital age, we do so with the same unwavering commitment to client success. With Mendoza Tugano & Co., CPAs, we look forward to creating a future where our clients\' financial aspirations are not only realized but exceeded, ensuring that our legacy of excellence continues to thrive for generations to come.') }}
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>

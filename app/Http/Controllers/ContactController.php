@@ -24,6 +24,11 @@ class ContactController extends Controller
 
             Log::info('=== CONTACT VALIDATION PASSED ===');
 
+            // Get email configuration from environment
+            $contactEmail = config('mail.contact_email', env('CONTACT_EMAIL'));
+            $fromAddress = config('mail.from.address');
+            $fromName = config('mail.from.name');
+
             // Get current time in Philippines timezone
             $philippinesTime = Carbon::now('Asia/Manila')->format('F j, Y \a\t g:i A');
 
@@ -61,10 +66,10 @@ class ContactController extends Controller
             Log::info('=== ATTEMPTING TO SEND CONTACT EMAIL ===');
 
             // Send email with noreply configuration
-            Mail::raw('', function ($message) use ($request, $emailBody) {
-                $message->to('career@mtco.com.ph')
+            Mail::raw('', function ($message) use ($request, $emailBody, $contactEmail, $fromAddress, $fromName) {
+                $message->to($contactEmail)
                         ->subject('Contact Form: ' . $request->subject)
-                        ->from('noreply@mtco.com.ph', 'MTCO Contact Portal')
+                        ->from($fromAddress, $fromName)
                         ->replyTo($request->email, $request->name)
                         ->html($emailBody);
             });
@@ -90,7 +95,7 @@ class ContactController extends Controller
             ]);
 
             return redirect()->back()
-                ->withErrors(['contact_error' => 'There was an error sending your message. Please try again or contact us directly at contact@mtco.com.ph'])
+                ->withErrors(['contact_error' => 'There was an error sending your message. Please try again or contact us directly.'])
                 ->withInput();
         }
     }

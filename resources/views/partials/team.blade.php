@@ -39,31 +39,6 @@
               @else
                 <img src="{{ asset('assets/img/team/' . $defaultImages[$i]) }}" class="img-fluid" alt="{{ $memberName }}">
               @endif
-              <div class="social">
-                @if($memberTwitter)
-                  <a href="{{ $memberTwitter }}" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                @else
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                @endif
-
-                @if($memberFacebook)
-                  <a href="{{ $memberFacebook }}" target="_blank"><i class="bi bi-facebook"></i></a>
-                @else
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                @endif
-
-                @if($memberInstagram)
-                  <a href="{{ $memberInstagram }}" target="_blank"><i class="bi bi-instagram"></i></a>
-                @else
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                @endif
-
-                @if($memberLinkedin)
-                  <a href="{{ $memberLinkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
-                @else
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                @endif
-              </div>
             </div>
             <div class="member-info text-center">
               <h4>

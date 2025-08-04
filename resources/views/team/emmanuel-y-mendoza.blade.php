@@ -112,6 +112,10 @@
                                 <h3 style="font-size: 2.3rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">{{ \App\Models\Content::where('key', 'emmanuel_stat3_value')->value('value') ?: '2015' }}</h3>
                                 <p style="color: #666; margin: 0; font-weight: 500;">{{ \App\Models\Content::where('key', 'emmanuel_stat3_label')->value('value') ?: 'Independent Director Since' }}</p>
                             </div>
+                            <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-top: 4px solid #74d3e3;">
+                                <h3 style="font-size: 2.3rem; font-weight: 700; color: #74d3e3; margin-bottom: 0.5rem;">{{ \App\Models\Content::where('key', 'emmanuel_stat4_value')->value('value') ?: '30+ years' }}</h3>
+                                <p style="color: #666; margin: 0; font-weight: 500;">{{ \App\Models\Content::where('key', 'emmanuel_stat4_label')->value('value') ?: 'Professional Experience' }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,34 +219,30 @@
 
                     <!-- Professional Affiliations -->
                     <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
 
                         <div style="space-y: 1rem;">
                             <div style="margin-bottom: 1rem;">
                                 <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_name')->value('value') ?: 'Board of Accountancy' }}</strong><br>
-                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation1_description')->value('value') ?: 'Professional Regulatory Board' }}</small>
                             </div>
 
                             <div style="margin-bottom: 1rem;">
                                 <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_name')->value('value') ?: 'Securities and Exchange Commission' }}</strong><br>
-                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation2_description')->value('value') ?: 'Capital Markets Regulator' }}</small>
                             </div>
 
                             <div style="margin-bottom: 1rem;">
                                 <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_name')->value('value') ?: 'Bureau of Internal Revenue' }}</strong><br>
-                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation3_description')->value('value') ?: 'Tax Administration Authority' }}</small>
                             </div>
 
                             <div style="margin-bottom: 1.5rem;">
                                 <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_name')->value('value') ?: 'Insurance Commission' }}</strong><br>
-                                <small style="color: #666;">{{ \App\Models\Content::where('key', 'emmanuel_affiliation4_description')->value('value') ?: 'Insurance Industry Regulator' }}</small>
                             </div>
                         </div>
                     </div>
 
                     <!-- Accreditation -->
                     <div style="background: white; padding: 2rem; border: 1px solid #e9ecef; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="150">
-                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Accreditation</h3>
+                        <h3 style="color: #333; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.5rem;">Professional Affiliations</h3>
 
                         <div>
                             <strong style="color: #333;">{{ \App\Models\Content::where('key', 'emmanuel_accreditation1_name')->value('value') ?: 'PICPA' }}</strong><br>

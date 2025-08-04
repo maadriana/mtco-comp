@@ -69,9 +69,9 @@
       <!-- Logo -->
       <a href="{{ url('/') }}" class="logo d-flex align-items-center">
         @if(hasImageContent('header_logo'))
-          <img src="{{ getContent('header_logo') }}" alt="MTCO Logo" height="40">
+          <img src="{{ getContent('header_logo') }}" alt="MTCO Logo">
         @else
-          <img src="{{ asset('assets/img/mtco-logo.png') }}" alt="MTCO Logo" height="40">
+          <img src="{{ asset('assets/img/mtco-logo.png') }}" alt="MTCO Logo">
         @endif
       </a>
 
@@ -113,14 +113,12 @@
           </li>
 
           <!-- 4. News & Updates -->
-          <li class="dropdown {{ request()->is('news-updates*') ? 'active' : '' }}">
-            <a href="{{ url('/#news') }}">
-              <span>{{ getContent('nav_news_text', 'News & Updates') }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              <li><a href="{{ route('news.updates') }}" class="{{ request()->is('news-updates') ? 'active' : '' }}">{{ getContent('nav_news_updates', 'News & Updates') }}</a></li>
-            </ul>
-          </li>
+<li class="{{ request()->is('news-updates*') ? 'active' : '' }}">
+  <a href="{{ route('news.updates') }}">
+    <span>{{ getContent('nav_news_text', 'News & Updates') }}</span>
+  </a>
+</li>
+
 
           <!-- 5. Careers -->
           <li class="dropdown {{ request()->is('careers/*') ? 'active' : '' }}">

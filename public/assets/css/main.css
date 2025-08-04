@@ -208,7 +208,7 @@ h6 {
 }
 
 .header .logo img {
-    max-height: 90px;
+    max-height: 130px;
     height: auto;
     margin-right: 8px;
 }
@@ -252,11 +252,10 @@ h6 {
     position: relative;
   }
 
-  .navmenu a,
-  .navmenu a:focus {
+  nav.navmenu ul li a {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 15px;
+    font-size: 16px !important;
     font-family: var(--nav-font);
     font-weight: 500;
     font-weight: bold;

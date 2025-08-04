@@ -47,6 +47,11 @@ class CareerApplicationController extends Controller
                 'temp_exists' => file_exists($tempPath)
             ]);
 
+            // Get email configuration from environment
+            $careerEmail = config('mail.career_email', env('CAREER_EMAIL'));
+            $fromAddress = config('mail.from.address');
+            $fromName = config('mail.from.name');
+
             // Get current time in Philippines timezone
             $philippinesTime = Carbon::now('Asia/Manila')->format('F j, Y \a\t g:i A');
 
@@ -86,10 +91,10 @@ class CareerApplicationController extends Controller
             Log::info('=== ATTEMPTING TO SEND EMAIL ===');
 
             // Send email with noreply configuration
-            Mail::raw('', function ($message) use ($request, $emailBody, $file, $tempPath) {
-                $message->to('career@mtco.com.ph')
+            Mail::raw('', function ($message) use ($request, $emailBody, $file, $tempPath, $careerEmail, $fromAddress, $fromName) {
+                $message->to($careerEmail)
                         ->subject('New Career Application: ' . $request->job_title)
-                        ->from('noreply@mtco.com.ph', 'MTCO Career Portal')
+                        ->from($fromAddress, $fromName)
                         ->replyTo($request->email, $request->name)
                         ->html($emailBody);
 
