@@ -431,17 +431,6 @@
                             {{ getContent('history_value_care_desc', 'We value the well-being of our employees and create a supportive, inclusive, and nurturing work environment that promotes their physical and emotional health, growth, and job satisfaction.') }}
                         </p>
                     </div>
-
-                    <!-- Community Engagement -->
-                    <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 6px solid #8dd3e0; opacity: 0; animation: fadeInUp 1s ease-out 2.4s forwards; transition: all 0.3s ease; grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
-                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem; justify-content: center;">
-                            <i class="fas fa-hands-helping" style="color: #8dd3e0; font-size: 2.5rem; margin-right: 1.5rem;"></i>
-                            <h4 style="color: #8dd3e0; font-weight: 600; margin: 0; font-size: 1.4rem;">{{ getContent('history_value_community_title', 'Community Engagement') }}</h4>
-                        </div>
-                        <p style="color: #6c757d; line-height: 1.6; margin: 0; text-align: center;">
-                            {{ getContent('history_value_community_desc', 'We actively engage with and contribute to the communities we serve, recognizing our responsibility to make a positive impact beyond business operations.') }}
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>

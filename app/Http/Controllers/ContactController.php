@@ -14,12 +14,22 @@ class ContactController extends Controller
         try {
             Log::info('=== CONTACT FORM STARTED ===', ['name' => $request->name]);
 
-            // Validate the request
+            // Validate the request including privacy consent
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
                 'subject' => 'required|string|max:255',
                 'message' => 'required|string|max:5000',
+                'privacy_consent' => 'required|accepted',
+            ], [
+                // Custom error messages
+                'name.required' => 'Please enter your name.',
+                'email.required' => 'Please enter your email address.',
+                'email.email' => 'Please enter a valid email address.',
+                'subject.required' => 'Please enter a subject.',
+                'message.required' => 'Please enter your message.',
+                'privacy_consent.required' => 'You must agree to the Data Privacy Notice to send your message.',
+                'privacy_consent.accepted' => 'You must agree to the Data Privacy Notice to send your message.',
             ]);
 
             Log::info('=== CONTACT VALIDATION PASSED ===');
@@ -32,8 +42,8 @@ class ContactController extends Controller
             // Get current time in Philippines timezone
             $philippinesTime = Carbon::now('Asia/Manila')->format('F j, Y \a\t g:i A');
 
-            // Create email body
-           $emailBody = "
+            // Create email body with privacy consent confirmation
+            $emailBody = "
     <div style='font-family: \"Open Sans\", sans-serif; max-width: 650px; margin: 0 auto; background-color: #f4f6f8; padding: 0; border-radius: 10px; overflow: hidden; font-size: 12px; color: #333;'>
 
         <!-- HEADER -->
@@ -52,6 +62,15 @@ class ContactController extends Controller
             <p><strong style='color: #326C79;'>Message:</strong></p>
             <div style='padding: 15px; background-color: #f5f5f5; border-radius: 8px; line-height: 1.6;'>
                 " . nl2br(htmlspecialchars($request->message)) . "
+            </div>
+
+            <hr style='margin: 20px 0; border-top: 1px solid #ddd;' />
+
+            <!-- PRIVACY CONSENT CONFIRMATION -->
+            <div style='padding: 12px; background-color: #e8f4f8; border-radius: 6px; border-left: 4px solid #326C79;'>
+                <p style='margin: 0; color: #326C79; font-size: 11px;'>
+                    <strong>✓ Data Privacy Consent:</strong> The sender has agreed to MTC Company's Data Privacy Notice and consented to the collection and processing of their personal data.
+                </p>
             </div>
         </div>
 
@@ -74,7 +93,19 @@ class ContactController extends Controller
                         ->html($emailBody);
             });
 
-            Log::info('=== CONTACT EMAIL SENT SUCCESSFULLY ===');
+            Log::info('=== CONTACT EMAIL SENT SUCCESSFULLY ===', [
+                'privacy_consent' => 'agreed',
+                'sender_email' => $request->email
+            ]);
+
+            // Optional: Log privacy consent for compliance records
+            Log::info('=== PRIVACY CONSENT RECORDED ===', [
+                'name' => $request->name,
+                'email' => $request->email,
+                'consent_timestamp' => $philippinesTime,
+                'ip_address' => $request->ip(),
+                'user_agent' => $request->userAgent()
+            ]);
 
             return redirect()->back()->with('contact_success', 'Your message has been sent. Thank you!');
 

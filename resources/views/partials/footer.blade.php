@@ -62,13 +62,15 @@
           @if(getContent('footer_social_facebook'))
             <a href="{{ getContent('footer_social_facebook') }}" target="_blank"><i class="bi bi-facebook"></i></a>
           @else
-            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#" onclick="showComingSoonAlert('Facebook'); return false;" title="Facebook page coming soon!">
+              <i class="bi bi-facebook"></i>
+            </a>
           @endif
 
           @if(getContent('footer_social_linkedin'))
             <a href="{{ getContent('footer_social_linkedin') }}" target="_blank"><i class="bi bi-linkedin"></i></a>
           @else
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/company/mendoza-tugano-co-cpas/" target="_blank"><i class="bi bi-linkedin"></i></a>
           @endif
         </div>
       </div>
@@ -86,3 +88,162 @@
     </div>
   </div>
 </footer>
+
+<style>
+/* Coming Soon Alert Styles */
+.coming-soon-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: linear-gradient(135deg, #326C79 0%, #2a5a64 100%);
+    color: white;
+    padding: 25px 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(50, 108, 121, 0.4);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: slideInScale 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    backdrop-filter: blur(10px);
+}
+
+.coming-soon-alert h4 {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.coming-soon-alert p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.coming-soon-alert button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.coming-soon-alert button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes slideInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7) translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideOutScale {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7) translateY(-30px);
+    }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+</style>
+
+<script>
+function showComingSoonAlert(platform) {
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'alert-overlay';
+    document.body.appendChild(overlay);
+
+    // Create alert
+    const alert = document.createElement('div');
+    alert.className = 'coming-soon-alert';
+    alert.innerHTML = `
+        <h4>
+            <i class="bi bi-${platform.toLowerCase()}"></i>
+            ${platform} Page
+        </h4>
+        <p>Our ${platform} page will be available soon! Stay tuned for updates and follow us on other platforms.</p>
+        <button onclick="closeComingSoonAlert()">Got it!</button>
+    `;
+
+    document.body.appendChild(alert);
+    document.body.style.overflow = 'hidden';
+
+    // Auto close after 4 seconds
+    setTimeout(() => {
+        if (document.querySelector('.coming-soon-alert')) {
+            closeComingSoonAlert();
+        }
+    }, 4000);
+
+    // Close on overlay click
+    overlay.addEventListener('click', closeComingSoonAlert);
+
+    // Close on Escape key
+    const escapeHandler = (e) => {
+        if (e.key === 'Escape') {
+            closeComingSoonAlert();
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    };
+    document.addEventListener('keydown', escapeHandler);
+}
+
+function closeComingSoonAlert() {
+    const alert = document.querySelector('.coming-soon-alert');
+    const overlay = document.querySelector('.alert-overlay');
+
+    if (alert && overlay) {
+        // Animate out
+        alert.style.animation = 'slideOutScale 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards';
+        overlay.style.animation = 'fadeOut 0.3s ease forwards';
+
+        setTimeout(() => {
+            if (alert.parentNode) alert.parentNode.removeChild(alert);
+            if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+}
+</script>

@@ -74,6 +74,164 @@
     to { width: 0%; }
 }
 
+/* Privacy Notice Modal Styles */
+.privacy-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    backdrop-filter: blur(5px);
+    padding: 20px;
+}
+
+.privacy-modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+}
+
+.privacy-modal-header {
+    background: linear-gradient(135deg, #326C79 0%, #2a5a64 100%);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.privacy-modal-body {
+    padding: 30px;
+    line-height: 1.6;
+    color: #444;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Custom Scrollbar Styling */
+.privacy-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.privacy-modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.privacy-modal-body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.privacy-modal-body::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Firefox scrollbar */
+.privacy-modal-body {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+.privacy-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.privacy-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.privacy-notice-box {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.privacy-checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.privacy-checkbox-container.error {
+    border-color: #dc3545;
+    background: #fdf2f2;
+}
+
+.privacy-checkbox {
+    margin: 0;
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: #326C79;
+}
+
+.privacy-checkbox-label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.privacy-link {
+    color: #326C79;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.privacy-link:hover {
+    color: #2a5a64;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7) translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
     #contactSuccessAlert, #contactErrorAlert, #contactFieldErrorAlert, #contactValidationAlert {
@@ -83,6 +241,37 @@
         max-width: none !important;
         min-width: none !important;
         transform: none !important;
+    }
+
+    .privacy-modal {
+        padding: 15px;
+    }
+
+    .privacy-modal-content {
+        max-height: calc(100vh - 30px);
+        border-radius: 15px;
+    }
+
+    .privacy-modal-header {
+        padding: 20px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .privacy-modal-body {
+        padding: 20px;
+    }
+
+    .privacy-checkbox-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .privacy-modal-close {
+        top: 15px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
 }
 </style>
@@ -128,6 +317,80 @@
     </div>
 </div>
 
+<!-- Privacy Notice Modal -->
+<div id="privacyModal" class="privacy-modal">
+    <div class="privacy-modal-content">
+        <div class="privacy-modal-header">
+            <button class="privacy-modal-close" onclick="closePrivacyModal()">&times;</button>
+            <h2 style="margin: 0; font-size: 24px; font-weight: 700;">
+                <i class="bi bi-shield-check" style="margin-right: 10px;"></i>
+                Data Privacy Notice
+            </h2>
+            <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 14px;">
+                MTC Company Contact Form Data Privacy Information
+            </p>
+        </div>
+        <div class="privacy-modal-body">
+            <p>We, <strong>MTC Company</strong>, are committed to fully protect your personal data privacy in compliance with Republic Act No. 10173, otherwise known as the <strong>Data Privacy Act of 2012 (DPA)</strong>, its Implementing Rules and Regulations (IRR) and National Privacy Commission (NPC) Issuances.</p>
+
+            <h4 style="color: #326C79; margin-top: 25px; margin-bottom: 15px;">Why do we collect your information?</h4>
+            <p>We collect and process your personal information through our contact form to:</p>
+            <ul style="padding-left: 20px; margin: 10px 0;">
+                <li>Properly address your inquiries and requests</li>
+                <li>Forward your inquiries to appropriate personnel for action and response</li>
+                <li>Provide updates on MTC Company's services, initiatives, and industry developments</li>
+                <li>Maintain communication records as required by business operations</li>
+                <li>Comply with legal and regulatory requirements</li>
+            </ul>
+
+            <h4 style="color: #326C79; margin-top: 25px; margin-bottom: 15px;">What information do we collect?</h4>
+            <p>Through our contact form, we collect:</p>
+            <ul style="padding-left: 20px; margin: 10px 0;">
+                <li>Your name</li>
+                <li>Email address</li>
+                <li>Subject of inquiry</li>
+                <li>Message content</li>
+                <li>Date and time of submission</li>
+            </ul>
+
+            <h4 style="color: #326C79; margin-top: 25px; margin-bottom: 15px;">How we protect your information?</h4>
+            <p>MTC Company ensures that adequate physical, technical, and organizational security measures are in place to protect your personal information's confidentiality, integrity, and availability. We implement:</p>
+            <ul style="padding-left: 20px; margin: 10px 0;">
+                <li>Secured servers protected by firewalls</li>
+                <li>Encryption of data transmission</li>
+                <li>Restricted access to authorized personnel only</li>
+                <li>Regular security assessments and updates</li>
+            </ul>
+
+            <h4 style="color: #326C79; margin-top: 25px; margin-bottom: 15px;">Who we share your information with?</h4>
+            <p>As a general rule, personal data processed by MTC Company is not shared with any other party unless such disclosure is allowed under the DPA. We may share your information with:</p>
+            <ul style="padding-left: 20px; margin: 10px 0;">
+                <li>Authorized personnel within MTC Company who need the information to respond to your inquiries</li>
+                <li>Third-party service providers who assist us in our operations, bound by confidentiality agreements</li>
+                <li>Government agencies when required by law</li>
+            </ul>
+
+            <h4 style="color: #326C79; margin-top: 25px; margin-bottom: 15px;">How long do we keep your data?</h4>
+            <p>Your personal information will be retained for a period of <strong>seven (7) years</strong> from the date of submission, unless you request deletion or as required by other applicable laws and regulations.</p>
+
+            <h4 style="color: #326C79; margin-top: 25px; margin-bottom: 15px;">Your Rights as a Data Subject</h4>
+            <p>Under the Data Privacy Act, you have the right to:</p>
+            <ul style="padding-left: 20px; margin: 10px 0;">
+                <li><strong>Access</strong> your personal data we process</li>
+                <li><strong>Correct</strong> inaccurate or incomplete personal data</li>
+                <li><strong>Erasure</strong> of your personal data when warranted</li>
+                <li><strong>Object</strong> to processing based on consent or legitimate interest</li>
+                <li><strong>Data portability</strong> to obtain and transfer your data</li>
+                <li><strong>Indemnification</strong> for damages due to unlawful processing</li>
+            </ul>
+
+            <p style="font-size: 13px; color: #666; margin-top: 20px; font-style: italic;">
+                By submitting this contact form, you acknowledge that you have read, understood, and agree to this Data Privacy Notice and consent to the processing of your personal data as described herein.
+            </p>
+        </div>
+    </div>
+</div>
+
 <!-- Contact Form Validation Alert -->
 <div id="contactValidationAlert" style="
     position: fixed;
@@ -169,7 +432,7 @@
     </div>
 
     <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0 0 20px 0;" id="contactValidationMessage">
-        Please fill in all required fields before submitting the form.
+        Please fill in all required fields and accept the data privacy notice before submitting the form.
     </p>
 
     <div style="height: 3px; background: #f0f0f0; border-radius: 2px; overflow: hidden; margin: 0;">
@@ -178,7 +441,7 @@
             background: #ef4444;
             width: 100%;
             border-radius: 2px;
-            animation: shrinkProgressFast 1.5s linear forwards;
+            animation: shrinkProgressFast 2s linear forwards;
         "></div>
     </div>
 </div>
@@ -508,6 +771,29 @@
                             <textarea class="form-control" name="message" rows="10" id="message-field" required>{{ old('message') }}</textarea>
                         </div>
 
+                        <!-- Data Privacy Notice Section -->
+                        <div class="col-md-12">
+                            <div class="privacy-notice-box">
+                                <h5 style="color: #326C79; margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="bi bi-shield-check" style="margin-right: 8px; font-size: 18px;"></i>
+                                    Data Privacy Notice
+                                </h5>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 15px; line-height: 1.5;">
+                                    MTC Company is committed to protecting your personal data in compliance with the Data Privacy Act of 2012.
+                                    The information you provide will be used to process your inquiry and communicate with you regarding our services.
+                                </p>
+
+                                <div class="privacy-checkbox-container" id="privacyCheckboxContainer">
+                                    <input type="checkbox" id="privacy-consent" name="privacy_consent" class="privacy-checkbox" required>
+                                    <label for="privacy-consent" class="privacy-checkbox-label">
+                                        I have read and agree to the
+                                        <span class="privacy-link" onclick="openPrivacyModal()">Data Privacy Notice</span>
+                                        and consent to the collection and processing of my personal data as described therein.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-12 text-center">
                             <button type="submit" id="submitBtn"
                                    style="background: #326C79;
@@ -536,14 +822,48 @@
 </section><!-- /Contact Section -->
 
 <script>
+// Privacy Modal Functions
+function openPrivacyModal() {
+    document.getElementById('privacyModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closePrivacyModal() {
+    document.getElementById('privacyModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside content
+document.getElementById('privacyModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closePrivacyModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('privacyModal').style.display === 'flex') {
+        closePrivacyModal();
+    }
+});
+
 // Contact form validation and submission
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const submitBtnText = document.getElementById('submitBtnText');
     const loadingOverlay = document.getElementById('contactLoadingOverlay');
+    const privacyCheckbox = document.getElementById('privacy-consent');
+    const privacyContainer = document.getElementById('privacyCheckboxContainer');
 
     if (form && submitBtn) {
+        // Reset privacy checkbox error state when checked
+        privacyCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                privacyContainer.classList.remove('error');
+            }
+        });
+
         form.addEventListener('submit', function(e) {
             // Validate form before submission
             const nameField = document.getElementById('name-field');
@@ -551,8 +871,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const subjectField = document.getElementById('subject-field');
             const messageField = document.getElementById('message-field');
 
+            let hasErrors = false;
+
             // Check if all required fields are filled
             if (!nameField.value.trim() || !emailField.value.trim() || !subjectField.value.trim() || !messageField.value.trim()) {
+                hasErrors = true;
+            }
+
+            // Check if privacy consent is checked
+            if (!privacyCheckbox.checked) {
+                hasErrors = true;
+                privacyContainer.classList.add('error');
+
+                // Scroll to privacy notice if not visible
+                privacyContainer.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+
+            if (hasErrors) {
                 e.preventDefault(); // Prevent form submission
                 showContactValidationAlert();
                 return;
@@ -574,10 +912,10 @@ function showContactValidationAlert() {
     const alert = document.getElementById('contactValidationAlert');
     alert.style.display = 'block';
 
-    // Auto-dismiss after 1.5 seconds
+    // Auto-dismiss after 2 seconds
     setTimeout(() => {
         closeContactValidationAlert();
-    }, 1500);
+    }, 2000);
 }
 
 // Close contact validation alert

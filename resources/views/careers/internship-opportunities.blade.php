@@ -10,10 +10,10 @@
     <!-- Diagonal Background Sections -->
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
         <!-- Main diagonal section -->
-        <div style="position: absolute; top: 0; left: 0; width: 70%; height: 100%; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: 2;"></div>
+        <div style="position: absolute; top: 0; left: 0; width: 70%; height: 180%; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: 2;"></div>
 
         <!-- Secondary diagonal accent -->
-        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); z-index: 1;"></div>
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 150%; background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); z-index: 1;"></div>
 
         <!-- Floating geometric elements -->
         <div style="position: absolute; top: 15%; right: 15%; width: 80px; height: 80px; background: #4a9aba; transform: rotate(45deg); opacity: 0.7; z-index: 3;"></div>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Breadcrumb Overlay -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
+    <div class="breadcrumb-container" style="position: absolute; top: 50px; left: 20px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -42,21 +42,21 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <!-- Left Content on Diagonal -->
-            <div class="col-lg-7" style="position: relative; z-index: 10;">
-                <div style="color: white; padding-right: 2rem;">
-                   <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
+            <div class="col-lg-7 col-md-8 col-12" style="position: relative; z-index: 10;">
+                <div class="header-content" style="color: white; padding-right: 2rem; padding-top: 1rem;">
+                   <h1 class="header-title" style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
                         How to <span style="font-weight: 500;">Apply</span>
                    </h1>
 
-                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px;">
+                    <p class="header-description" style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
                         Ready to join our team? Applying is easy.
                     </p>
                 </div>
             </div>
 
             <!-- Right Side - Minimalist -->
-            <div class="col-lg-5" style="position: relative; z-index: 5;">
-                <div style="text-align: center; color: #64748b; padding: 2rem;">
+            <div class="col-lg-5 col-md-4 col-12" style="position: relative; z-index: 5;">
+                <div class="header-icon-section" style="text-align: center; color: #64748b; padding: 2rem;">
                     <div style="display: inline-block; width: 120px; height: 120px; background: #326D78; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(50, 109, 120, 0.3); transform: rotate(-5deg);">
                         <i class="fas fa-clipboard-list" style="font-size: 3rem; color: white; transform: rotate(5deg);"></i>
                     </div>
@@ -187,20 +187,150 @@
         position: relative;
     }
 
-    /* Responsive adjustments */
+    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-        .container h1 {
+        /* Header adjustments */
+        .header-title {
+            font-size: 2.2rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .header-description {
+            font-size: 1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .header-content {
+            padding-right: 1rem !important;
+            padding-top: 2rem !important;
+        }
+
+        /* Breadcrumb mobile positioning */
+        .breadcrumb-container {
+            left: 15px !important;
+            top: 22px !important;
+            padding: 8px 15px !important;
+            max-width: calc(100% - 30px);
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem !important;
+        }
+
+        /* Hide right side content on very small screens */
+        .header-icon-section {
+            display: none !important;
+        }
+
+        /* Header height adjustment */
+        div[style*="height: 400px"] {
+            height: 300px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Extra small screens */
+        .header-title {
+            font-size: 1.8rem !important;
+        }
+
+        .breadcrumb-container {
+            left: 10px !important;
+            top: 22px !important;
+            padding: 6px 12px !important;
+        }
+
+        .container {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .header-content {
+            padding-right: 0.5rem !important;
+        }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .header-icon-section i {
+            font-size: 2rem !important;
+        }
+
+        .header-icon-section h3 {
+            font-size: 1.2rem !important;
+        }
+
+        .header-icon-section p {
+            font-size: 0.9rem !important;
+        }
+    }
+    /* Tablet to Desktop adjustments */
+    @media (min-width: 800px) and (max-width: 1300px) {
+        .breadcrumb-container {
+            top: 22px !important;
+            left: 20px !important;
+        }
+
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 100px !important;
+            height: 100px !important;
+        }
+
+        .header-icon-section i {
             font-size: 2.5rem !important;
         }
 
-        .container p {
-            font-size: 1rem !important;
+        .header-icon-section h3 {
+            font-size: 1.3rem !important;
         }
 
-        .col-lg-5:first-child {
-            margin-bottom: 2rem;
+        .header-icon-section p {
+            font-size: 0.95rem !important;
         }
     }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .header-icon-section i {
+            font-size: 2rem !important;
+        }
+
+        .header-icon-section h3 {
+            font-size: 1.2rem !important;
+        }
+
+        .header-icon-section p {
+            font-size: 0.9rem !important;
+        }
+    }
+    @media (min-width: 1301px) {
+    .breadcrumb-container {
+        top: 22px !important;
+        left: 30px !important;
+    }
+}
 </style>
 
 @endsection

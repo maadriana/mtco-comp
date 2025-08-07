@@ -22,7 +22,7 @@
     </div>
 
     <!-- Breadcrumb Overlay -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
+    <div class="breadcrumb-container" style="position: absolute; top: 50px; left: 20px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -42,22 +42,22 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <!-- Left Content on Diagonal -->
-            <div class="col-lg-7" style="position: relative; z-index: 10;">
-                <div style="color: white; padding-right: 2rem;">
+            <div class="col-lg-7 col-md-8 col-12" style="position: relative; z-index: 10;">
+                <div class="header-content" style="color: white; padding-right: 2rem; padding-top: 1rem;">
 
-                    <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
+                    <h1 class="header-title" style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
                         {{ getContent('current_vacancies_main_title', 'Current Vacancies') }}
                     </h1>
 
-                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
+                    <p class="header-description" style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
                         {{ getContent('current_vacancies_description', 'We are looking for passionate individuals who value professionalism, continuous learning, and client service. Join our dynamic and growing team.') }}
                     </p>
                 </div>
             </div>
 
             <!-- Right Side - Minimalist -->
-            <div class="col-lg-5" style="position: relative; z-index: 5;">
-                <div style="text-align: center; color: #64748b; padding: 2rem;">
+            <div class="col-lg-5 col-md-4 col-12" style="position: relative; z-index: 5;">
+                <div class="header-icon-section" style="text-align: center; color: #64748b; padding: 2rem;">
                     <div style="display: inline-block; width: 120px; height: 120px; background: #326D78; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(50, 109, 120, 0.3); transform: rotate(-5deg);">
                         <i class="fas fa-rocket" style="font-size: 3rem; color: white; transform: rotate(5deg);"></i>
                     </div>
@@ -115,12 +115,12 @@
                             <div class="row g-0 align-items-stretch">
 
                                 <!-- Image Section -->
-                                <div class="col-md-3">
-                                    <img src="{{ asset($job['image']) }}" alt="{{ $job['title'] }}" class="img-fluid h-100 w-100" style="object-fit: cover;">
+                                <div class="col-md-3 col-12">
+                                    <img src="{{ asset($job['image']) }}" alt="{{ $job['title'] }}" class="img-fluid h-100 w-100 job-image" style="object-fit: cover;">
                                 </div>
 
                                 <!-- Content Section -->
-                                <div class="col-md-6 p-4">
+                                <div class="col-md-6 col-12 p-4">
                                     <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
                                         {{ $job['title'] }}
                                     </h4>
@@ -153,7 +153,7 @@
                                 </div>
 
                                 <!-- Action Section -->
-                                <div class="col-md-3 p-4 d-flex flex-column justify-content-center" style="background: #f8f9fa;">
+                                <div class="col-md-3 col-12 p-4 d-flex flex-column justify-content-center job-actions" style="background: #f8f9fa;">
                                     <a href="{{ $job['route'] }}" class="btn btn-view w-100 mb-2" style="background: #326D78; color: white; border: none; border-radius: 25px; padding: 0.7rem; transition: background-color 0.3s ease;">
                                         View Details
                                     </a>
@@ -230,29 +230,180 @@
         position: relative;
     }
 
-    /* Responsive adjustments */
+    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-        .container h1 {
+        /* Header adjustments */
+        .header-title {
+            font-size: 2.2rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .header-description {
+            font-size: 1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .header-content {
+            padding-right: 1rem !important;
+            padding-top: 2rem !important;
+        }
+
+        /* Breadcrumb mobile positioning */
+        .breadcrumb-container {
+            left: 15px !important;
+            top: 22px !important;
+            padding: 8px 15px !important;
+            max-width: calc(100% - 30px);
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem !important;
+        }
+
+        /* Hide right side content on very small screens */
+        .header-icon-section {
+            display: none !important;
+        }
+
+        /* Header height adjustment */
+        div[style*="height: 400px"] {
+            height: 300px !important;
+        }
+
+        /* Job cards mobile layout */
+        .job-card .row.g-0 {
+            flex-direction: column;
+        }
+
+        .job-image {
+            height: 200px !important;
+            width: 100% !important;
+        }
+
+        .job-actions {
+            background: white !important;
+            border-top: 1px solid #e9ecef;
+            padding: 1.5rem !important;
+        }
+
+        .job-actions .btn {
+            width: 100% !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .job-actions .btn:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* CTA section mobile */
+        div[style*="padding: 3rem"] {
+            padding: 2rem 1.5rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Extra small screens */
+        .header-title {
+            font-size: 1.8rem !important;
+        }
+
+        .breadcrumb-container {
+            left: 10px !important;
+            top: 22px !important;
+            padding: 6px 12px !important;
+        }
+
+        .container {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .header-content {
+            padding-right: 0.5rem !important;
+        }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .header-icon-section i {
+            font-size: 2rem !important;
+        }
+
+        .header-icon-section h3 {
+            font-size: 1.2rem !important;
+        }
+
+        .header-icon-section p {
+            font-size: 0.9rem !important;
+        }
+    }
+    /* Tablet to Desktop adjustments */
+    @media (min-width: 800px) and (max-width: 1300px) {
+        .breadcrumb-container {
+            top: 22px !important;
+            left: 20px !important;
+        }
+
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 100px !important;
+            height: 100px !important;
+        }
+
+        .header-icon-section i {
             font-size: 2.5rem !important;
         }
 
-        .container p {
-            font-size: 1rem !important;
+        .header-icon-section h3 {
+            font-size: 1.3rem !important;
         }
 
-        .job-card {
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            width: 100%;
-            margin-bottom: 0.5rem;
-        }
-
-        .col-lg-6:first-child {
-            margin-bottom: 2rem;
+        .header-icon-section p {
+            font-size: 0.95rem !important;
         }
     }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .header-icon-section i {
+            font-size: 2rem !important;
+        }
+
+        .header-icon-section h3 {
+            font-size: 1.2rem !important;
+        }
+
+        .header-icon-section p {
+            font-size: 0.9rem !important;
+        }
+    }
+    @media (min-width: 1301px) {
+    .breadcrumb-container {
+        top: 22px !important;
+        left: 30px !important;
+    }
+}
 </style>
 
 @endsection

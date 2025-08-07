@@ -10,10 +10,10 @@
     <!-- Diagonal Background Sections -->
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
         <!-- Main diagonal section -->
-        <div style="position: absolute; top: 0; left: 0; width: 70%; height: 100%; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: 2;"></div>
+        <div style="position: absolute; top: 0; left: 0; width: 70%; height: 180%; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: 2;"></div>
 
         <!-- Secondary diagonal accent -->
-        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); z-index: 1;"></div>
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 150%; background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); z-index: 1;"></div>
 
         <!-- Floating geometric elements -->
         <div style="position: absolute; top: 15%; right: 15%; width: 80px; height: 80px; background: #4a9aba; transform: rotate(45deg); opacity: 0.7; z-index: 3;"></div>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Breadcrumb Overlay -->
-    <div style="position: absolute; top: 20px; left: 70px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
+    <div class="breadcrumb-container" style="position: absolute; top: 50px; left: 20px; background: rgba(255, 255, 255, 0.95); padding: 10px 20px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; width: auto; z-index: 100;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="font-size: 0.9rem;">
                 <li class="breadcrumb-item">
@@ -42,26 +42,26 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <!-- Left Content on Diagonal -->
-            <div class="col-lg-7" style="position: relative; z-index: 10;">
-                <div style="color: white; padding-right: 2rem;">
+            <div class="col-lg-7 col-md-8 col-12" style="position: relative; z-index: 10;">
+                <div class="header-content" style="color: white; padding-right: 2rem; padding-top: 1rem;">
 
-                   <h1 style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
-  Graduate <span style="font-weight: 500;">Program</span>
-</h1>
+                    <h1 class="header-title" style="font-size: 3.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.2; color: white;">
+                        {{ getContent('graduate_main_title', 'Graduate Program') }}
+                    </h1>
 
-                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px;">
-                        Begin your professional journey with confidence. Our Graduate Program is designed to support your transition from university to the world of accounting, audit, and advisory services.
+                    <p class="header-description" style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; max-width: 500px; color: white">
+                        {{ getContent('graduate_description', 'Begin your professional journey with confidence. Our Graduate Program is designed to support your transition from university to the world of accounting, audit, and advisory services.') }}
                     </p>
                 </div>
             </div>
 
             <!-- Right Side - Minimalist -->
-            <div class="col-lg-5" style="position: relative; z-index: 5;">
-                <div style="text-align: center; color: #64748b; padding: 2rem;">
+            <div class="col-lg-5 col-md-4 col-12" style="position: relative; z-index: 5;">
+                <div class="header-icon-section" style="text-align: center; color: #64748b; padding: 2rem;">
                     <div style="display: inline-block; width: 120px; height: 120px; background: #326D78; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(50, 109, 120, 0.3); transform: rotate(-5deg);">
                         <i class="fas fa-graduation-cap" style="font-size: 3rem; color: white; transform: rotate(5deg);"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #326D78; margin-bottom: 0.5rem;">Begin Your Future</h3>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #326D78; margin-bottom: 0.5rem;">{{ getContent('graduate_subtitle', 'Begin Your Future') }}</h3>
                     <p style="font-size: 1rem; color: #64748b; margin: 0;">Excellence starts here</p>
                 </div>
             </div>
@@ -69,126 +69,205 @@
     </div>
 </div>
 
-<!-- Value Propositions Section -->
+<!-- Main Content Section -->
 <section class="py-5" style="background: #f8f9fa;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
 
-                <!-- Intro Text -->
+                <!-- Section Header -->
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 style="color: #333; font-weight: 700; font-size: 2.5rem; margin-bottom: 0.5rem;">
-                        Why Choose Our Graduate Program?
+                    <h2 style="color: #326D78; font-weight: 400; font-size: 2.1rem; margin-bottom: 1rem;">
+                        {{ getContent('graduate_program_title', 'Why Choose Our Graduate Program?') }}
                     </h2>
-                    <p style="color: #555; font-size: 1.1rem; margin-bottom: 1rem;">
-                        Gain early access to real client work, structured learning, and mentorship from industry experts. We help you build the technical and soft skills needed to succeed in your journey and beyond.
-                    </p>
-                    <div style="width: 80px; height: 4px; background: #326D78; margin: 0 auto; border-radius: 2px;"></div>
+                    <div style="width: 60px; height: 4px; background: #326D78; margin: 0 auto; border-radius: 2px;"></div>
                 </div>
 
-                <!-- Value Props Grid -->
-                <div class="row gy-4 mb-5">
+                <!-- Program Cards -->
+                <div class="row gy-4">
+                    <!-- Internship Opportunities Card -->
+                    <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card border-0 shadow-lg program-card h-100" style="border-radius: 16px; overflow: hidden;">
+                            <div class="row g-0 align-items-stretch">
 
-                    <!-- Internship Opportunities -->
-                    <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-                        <div class="value-card" style="background: linear-gradient(135deg, #5788af, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
-                            <!-- Background Pattern -->
-                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
-                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+                                <!-- Icon Section -->
+                                <div class="col-md-3 col-12">
+                                    <div class="d-flex align-items-center justify-content-center h-100" style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); min-height: 200px;">
+                                        <i class="fas fa-book-open" style="font-size: 4rem; color: white;"></i>
+                                    </div>
+                                </div>
 
-                            <div style="position: relative; z-index: 2;">
-                                <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Internship Opportunities</h4>
-                                <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                    Build a strong foundation through hands-on experience and professional development. Our internship program is open to students pursuing accountancy or related business degrees.
-                                </p>
+                                <!-- Content Section -->
+                                <div class="col-md-6 col-12 p-4">
+                                    <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
+                                        {{ getContent('internship_title', 'Internship Opportunities') }}
+                                    </h4>
+                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;">
+                                        Graduate Program
+                                    </span>
+
+                                    <!-- Description -->
+                                    <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
+                                        {{ getContent('internship_description', 'Build a strong foundation through hands-on experience and professional development. Our internship program is open to students pursuing accountancy or related business degrees.') }}
+                                    </p>
+
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-graduation-cap me-1"></i>Students Welcome
+                                            </small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-hands-helping me-1"></i>Hands-on Training
+                                            </small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-chart-bar me-1"></i>Professional Development
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Section -->
+                                <div class="col-md-3 col-12 p-4 d-flex flex-column justify-content-center program-actions" style="background: #f8f9fa;">
+                                    <div class="text-center">
+                                        <i class="fas fa-users" style="font-size: 2rem; color: #326D78; margin-bottom: 1rem;"></i>
+                                        <p style="font-size: 0.9rem; color: #6c757d; margin: 0;">Build Your Foundation</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                </div>
+                    <!-- Real Experience Card -->
+                    <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card border-0 shadow-lg program-card h-100" style="border-radius: 16px; overflow: hidden;">
+                            <div class="row g-0 align-items-stretch">
 
-                <!-- Internship Journey Section -->
-                <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <h3 style="color: #333; font-weight: 700; font-size: 2rem; margin-bottom: 3rem;">
-                        Your Internship Journey:
-                    </h3>
-
-                    <div class="row gy-4">
-                        <!-- Gain Real Experience -->
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="value-card" style="background: linear-gradient(135deg, #5788af, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
-                                <!-- Background Pattern -->
-                                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
-                                <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-
-                                <div style="position: relative; z-index: 2;">
-                                    <i class="fas fa-briefcase" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                    <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Gain Real Experience</h4>
-                                    <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                        Work alongside professionals on live projects, learn how to use audit and accounting tools, and gain exposure to different client industries.
-                                    </p>
+                                <!-- Icon Section -->
+                                <div class="col-md-3 col-12">
+                                    <div class="d-flex align-items-center justify-content-center h-100" style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); min-height: 200px;">
+                                        <i class="fas fa-briefcase" style="font-size: 4rem; color: white;"></i>
+                                    </div>
                                 </div>
+
+                                <!-- Content Section -->
+                                <div class="col-md-6 col-12 p-4">
+                                    <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
+                                        {{ getContent('experience_title', 'Gain Real Experience') }}
+                                    </h4>
+                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;">
+                                        Practical Learning
+                                    </span>
+
+                                    <!-- Description -->
+                                    <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
+                                        {{ getContent('experience_description', 'Work alongside professionals on live projects, learn how to use audit and accounting tools, and gain exposure to different client industries.') }}
+                                    </p>
+
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-project-diagram me-1"></i>Live Projects
+                                            </small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-tools me-1"></i>Professional Tools
+                                            </small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-industry me-1"></i>Multi-Industry
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Section -->
+                                <div class="col-md-3 col-12 p-4 d-flex flex-column justify-content-center program-actions" style="background: #f8f9fa;">
+                                    <div class="text-center">
+                                        <i class="fas fa-rocket" style="font-size: 2rem; color: #326D78; margin-bottom: 1rem;"></i>
+                                        <p style="font-size: 0.9rem; color: #6c757d; margin: 0;">Launch Your Career</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Learn and Develop -->
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="value-card" style="background: linear-gradient(135deg, #5788af, #7ebbec); color: white; padding: 2.5rem; border-radius: 25px; height: 100%; position: relative; overflow: hidden;">
-                                <!-- Background Pattern -->
-                                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
-                                <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+                    <!-- Learn and Develop Card -->
+                    <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card border-0 shadow-lg program-card h-100" style="border-radius: 16px; overflow: hidden;">
+                            <div class="row g-0 align-items-stretch">
 
-                                <div style="position: relative; z-index: 2;">
-                                    <i class="fas fa-user-graduate" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                                    <h4 style="font-weight: 700; margin-bottom: 1rem; color: white;">Learn and Develop</h4>
-                                    <p style="margin: 0; line-height: 1.6; opacity: 0.95;">
-                                        Receive structured training, attend learning sessions, and gain valuable insights that prepare you for your future career.
-                                    </p>
+                                <!-- Icon Section -->
+                                <div class="col-md-3 col-12">
+                                    <div class="d-flex align-items-center justify-content-center h-100" style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); min-height: 200px;">
+                                        <i class="fas fa-user-graduate" style="font-size: 4rem; color: white;"></i>
+                                    </div>
                                 </div>
+
+                                <!-- Content Section -->
+                                <div class="col-md-6 col-12 p-4">
+                                    <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
+                                        {{ getContent('development_title', 'Learn and Develop') }}
+                                    </h4>
+                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;">
+                                        Continuous Learning
+                                    </span>
+
+                                    <!-- Description -->
+                                    <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
+                                        {{ getContent('development_description', 'Receive structured training, attend learning sessions, and gain valuable insights that prepare you for your future career.') }}
+                                    </p>
+
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-chalkboard-teacher me-1"></i>Training Sessions
+                                            </small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-lightbulb me-1"></i>Valuable Insights
+                                            </small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small style="color: #6c757d;">
+                                                <i class="fas fa-road me-1"></i>Career Preparation
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Section -->
+                                <div class="col-md-3 col-12 p-4 d-flex flex-column justify-content-center program-actions" style="background: #f8f9fa;">
+                                    <div class="text-center">
+                                        <i class="fas fa-star" style="font-size: 2rem; color: #326D78; margin-bottom: 1rem;"></i>
+                                        <p style="font-size: 0.9rem; color: #6c757d; margin: 0;">Grow Your Skills</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Section -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
-                    <div style="background: white; padding: 4rem 3rem; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 3px solid #326D78; position: relative; overflow: hidden;">
-
-                        <!-- Background Decoration -->
-                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; opacity: 0.1;"></div>
-                        <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; opacity: 0.05;"></div>
-
-                        <div style="position: relative; z-index: 2;">
-                            <div style=" background: linear-gradient(135deg, #326D78, #4a8a96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                                <i class="fas fa-paper-plane" style="font-size: 2rem; color: white;"></i>
-                            </div>
-
-                            <h3 style="color: #333; font-weight: 700; margin-bottom: 1rem; font-size: 2rem;">Ready to Start Your Journey?</h3>
-                            <p style="color: #666; margin-bottom: 2.5rem; font-size: 1.2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                                Join our graduate program and kick-start your career with one of the leading accounting firms in the Philippines.
-                            </p>
-
-                            <!-- Contact Information -->
-                            <div style="background: #f8f9fa; padding: 2rem; border-radius: 20px; margin-bottom: 2rem;">
-                                <h5 style="color: #326D78; font-weight: 600; margin-bottom: 1rem;">Send Your CV</h5>
-                                <p style="margin: 0; color: #666;">
-                                    Please send a copy of your curriculum vitae to<br>
-                                    <a href="mailto:hr@mtco.com.ph" style="color: #326D78; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
-                                        <i class="fas fa-envelope me-2"></i>hr@mtco.com.ph
-                                    </a>
-                                </p>
-                            </div>
-
-                            <div class="d-flex flex-wrap gap-3 justify-content-center">
-                                <a href="mailto:hr@mtco.com.ph" class="btn btn-lg" style="background: #326D78; color: white; border: none; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; transition: all 0.3s ease;">
-                                    <i class="fas fa-envelope me-2"></i>Send Resume
-                                </a>
-                                <a href="{{ route('careers.vacancies') }}" class="btn btn-outline-primary btn-lg" style="border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; transition: all 0.3s ease; border-color: #326D78; color: #326D78;">
-                                    <i class="fas fa-briefcase me-2"></i>View Open Positions
-                                </a>
-                            </div>
-                        </div>
+                <!-- Call to Action Section -->
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                    <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <i class="fas fa-handshake" style="font-size: 3rem; color: #326D78; margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 1rem;">{{ getContent('graduate_cta_title', 'Ready to Start Your Journey?') }}</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
+                            {{ getContent('graduate_cta_description', 'Join our Graduate Program and take the first step towards building a successful career in accounting and business advisory services.') }}
+                        </p>
+                        <a href="{{ route('careers.apply') }}" class="btn send-resume-btn" style="background: #326D78; color: white; border-radius: 25px; padding: 1rem 2.5rem; font-weight: 600; border: none; font-size: 1.1rem;">
+                            <i class="fas fa-envelope me-2"></i>{{ getContent('graduate_cta_button_text', 'Apply Now') }}
+                        </a>
                     </div>
                 </div>
 
@@ -198,21 +277,33 @@
 </section>
 
 <style>
-    .value-card {
-        transition: all 0.4s ease;
-    }
-
-    .value-card:hover {
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn:hover {
+    .send-resume-btn:hover {
+        background: #2c5f69 !important;
         transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+    .program-card {
+        transition: all 0.3s ease;
+        border-radius: 16px;
     }
 
-    .breadcrumb-item + .breadcrumb-item::before {
+    .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .btn-outline-success:hover {
+        background: #28a745 !important;
+        color: white !important;
+        border-color: #28a745 !important;
+    }
+
+    .btn[style*="background: #326D78"]:hover {
+        background: #2c5f69 !important;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
         content: "›";
         color: #6c757d;
         font-weight: bold;
@@ -223,20 +314,171 @@
         position: relative;
     }
 
-    /* Responsive adjustments */
+    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-        .container h1 {
+        /* Header adjustments */
+        .header-title {
+            font-size: 2.2rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .header-description {
+            font-size: 1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .header-content {
+            padding-right: 1rem !important;
+            padding-top: 2rem !important;
+        }
+
+        /* Breadcrumb mobile positioning */
+        .breadcrumb-container {
+            left: 15px !important;
+            top: 22px !important;
+            padding: 8px 15px !important;
+            max-width: calc(100% - 30px);
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem !important;
+        }
+
+        /* Hide right side content on very small screens */
+        .header-icon-section {
+            display: none !important;
+        }
+
+        /* Header height adjustment */
+        div[style*="height: 400px"] {
+            height: 300px !important;
+        }
+
+        /* Program cards mobile layout */
+        .program-card .row.g-0 {
+            flex-direction: column;
+        }
+
+        .program-card .col-md-3:first-child > div {
+            height: 150px !important;
+            min-height: 150px !important;
+        }
+
+        .program-actions {
+            background: white !important;
+            border-top: 1px solid #e9ecef;
+            padding: 1.5rem !important;
+        }
+
+        /* CTA section mobile */
+        div[style*="padding: 3rem"] {
+            padding: 2rem 1.5rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Extra small screens */
+        .header-title {
+            font-size: 1.8rem !important;
+        }
+
+        .breadcrumb-container {
+            left: 10px !important;
+            top: 22px !important;
+            padding: 6px 12px !important;
+        }
+
+        .container {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .header-content {
+            padding-right: 0.5rem !important;
+        }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .header-icon-section i {
+            font-size: 2rem !important;
+        }
+
+        .header-icon-section h3 {
+            font-size: 1.2rem !important;
+        }
+
+        .header-icon-section p {
+            font-size: 0.9rem !important;
+        }
+    }
+    /* Tablet to Desktop adjustments */
+    @media (min-width: 800px) and (max-width: 1300px) {
+        .breadcrumb-container {
+            top: 22px !important;
+            left: 20px !important;
+        }
+
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 100px !important;
+            height: 100px !important;
+        }
+
+        .header-icon-section i {
             font-size: 2.5rem !important;
         }
 
-        .container p {
-            font-size: 1rem !important;
+        .header-icon-section h3 {
+            font-size: 1.3rem !important;
         }
 
-        .col-lg-5:first-child {
-            margin-bottom: 2rem;
+        .header-icon-section p {
+            font-size: 0.95rem !important;
         }
     }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .header-icon-section {
+            padding: 1rem !important;
+        }
+
+        .header-icon-section div[style*="width: 120px"] {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .header-icon-section i {
+            font-size: 2rem !important;
+        }
+
+        .header-icon-section h3 {
+            font-size: 1.2rem !important;
+        }
+
+        .header-icon-section p {
+            font-size: 0.9rem !important;
+        }
+    }
+    @media (min-width: 1301px) {
+    .breadcrumb-container {
+        top: 22px !important;
+        left: 30px !important;
+    }
+}
 </style>
 
 @endsection
