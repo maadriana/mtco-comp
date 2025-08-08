@@ -218,9 +218,10 @@
 
             </div>
 
-            <!-- Sidebar -->
+            <!-- Sidebar - REMOVED STICKY BEHAVIOR -->
             <div class="col-lg-4">
-                <div style="position: sticky; top: 2rem;">
+                <!-- CHANGED: Removed position: sticky; top: 2rem; -->
+                <div>
 
                     <!-- Related Articles -->
                     <div style="background: white; border: 1px solid #e9ecef; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">
@@ -312,9 +313,7 @@
             margin-top: 3rem;
         }
 
-        div[style*="position: sticky"] {
-            position: static !important;
-        }
+        /* REMOVED: div[style*="position: sticky"] rule since we removed sticky */
 
         div[style*="display: flex; justify-content: space-between"] {
             flex-direction: column;

@@ -5,7 +5,7 @@
 @section('content')
 
 <!-- Layered Wave Header Design -->
-<div style="position: relative; margin-top: -1.5rem; background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); padding: 0; overflow: hidden; min-height: 450px;">
+<div style="position: relative; margin-top: -1.5rem; background: linear-gradient(135deg, #326D78  0%, #6dc6d5 100%); padding: 0; overflow: hidden; min-height: 450px;">
 
     <!-- Wave Background Layers -->
     <div style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);">
@@ -60,7 +60,7 @@
 
                 <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; color: white">
                     Accounting Services<br>
-                    <span style="font-weight: 300; opacity: 0.9; color: white">Associate</span>
+                    <span style="font-weight: 700; opacity: 0.9; color: white">Associate</span>
                 </h1>
 
                 <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -136,39 +136,39 @@
                                     <ul style="font-size: 1rem; line-height: 1.7; color: #444; margin: 0; list-style: none; padding: 0;">
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Administer all accounting, taxation process and ensure optimal quality of all processes
+                                            Administer all accounting, taxation process and ensure optimal quality of all processes
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Coordinate with all third-party application providers and shared services
+                                            Coordinate with all third-party application providers and shared services
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Prepare reports for ledgers, trial balance and reconcile all statements and ensure integrity of all data
+                                            Prepare reports for ledgers, trial balance and reconcile all statements and ensure integrity of all data
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Perform research on various accounting processes, analyze variances and prepare appropriate reports
+                                            Perform research on various accounting processes, analyze variances and prepare appropriate reports
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Administer all reconcile statements for cash and income accounts
+                                            Administer all reconcile statements for cash and income accounts
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Maintain portfolio activity, update entries in general ledger and evaluate it regularly to ensure accuracy in rate
+                                            Maintain portfolio activity, update entries in general ledger and evaluate it regularly to ensure accuracy in rate
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Prepare reports for respective accounts and clients
+                                            Prepare reports for respective accounts and clients
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Coordinate with internal auditors, answer all related queries, and prepare associated reports
+                                            Coordinate with internal auditors, answer all related queries, and prepare associated reports
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Monitor all accounting deliverables, process all vouchers and ensure work is completed on time
+                                            Monitor all accounting deliverables, process all vouchers and ensure work is completed on time
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
@@ -176,15 +176,15 @@
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Evaluate all cost receivables and payables on a regular basis to ensure accuracy
+                                            Evaluate all cost receivables and payables on a regular basis to ensure accuracy
                                         </li>
                                         <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Manage all information and update it on automated systems and generate accounting reports
+                                            Manage all information and update it on automated systems and generate accounting reports
                                         </li>
                                         <li style="margin-bottom: 0; padding-left: 1.5rem; position: relative;">
                                             <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.25rem; color: #326D78; font-size: 0.9rem;"></i>
-                                            ● Forecast budget requirements, update journal entries, and prepare reports accordingly
+                                            Forecast budget requirements, update journal entries, and prepare reports accordingly
                                         </li>
                                     </ul>
                                 </div>
@@ -207,31 +207,31 @@
                                 <ul style="font-size: 1rem; line-height: 1.7; color: #444; margin: 0; list-style: none; padding: 0;">
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● Holder of Bachelor of Science in Accountancy, or its equivalent
+                                        Holder of Bachelor of Science in Accountancy, or its equivalent
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● CPA title is optional
+                                        CPA title is optional
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● Minimum 1 year of experience. Fresh graduates are welcome to apply
+                                        Minimum 1 year of experience. Fresh graduates are welcome to apply
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● Knowledge of any accounting software is an advantage
+                                        Knowledge of any accounting software is an advantage
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● Excellent analytical skills
+                                        Excellent analytical skills
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● Excellent verbal and written communication skills
+                                        Excellent verbal and written communication skills
                                     </li>
                                     <li style="margin-bottom: 0; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-star" style="position: absolute; left: 0; top: 0.25rem; color: #4a9aba; font-size: 0.9rem;"></i>
-                                        ● Able to work in a fast-paced changing environment
+                                        Able to work in a fast-paced changing environment
                                     </li>
                                 </ul>
                             </div>
@@ -253,27 +253,27 @@
                                 <ul style="font-size: 1rem; line-height: 1.7; color: #444; margin: 0; list-style: none; padding: 0;">
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-file" style="position: absolute; left: 0; top: 0.25rem; color: #74d3e3; font-size: 0.9rem;"></i>
-                                        ● Curriculum vitae / resume
+                                        Curriculum vitae / resume
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-file" style="position: absolute; left: 0; top: 0.25rem; color: #74d3e3; font-size: 0.9rem;"></i>
-                                        ● Transcript of records
+                                        Transcript of records
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-file" style="position: absolute; left: 0; top: 0.25rem; color: #74d3e3; font-size: 0.9rem;"></i>
-                                        ● Latest National Bureau of Investigation (NBI) clearance
+                                        Latest National Bureau of Investigation (NBI) clearance
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-file" style="position: absolute; left: 0; top: 0.25rem; color: #74d3e3; font-size: 0.9rem;"></i>
-                                        ● Results of the Certified Public Accountant Licensure Examinations (CPALE), if CPA
+                                        Results of the Certified Public Accountant Licensure Examinations (CPALE), if CPA
                                     </li>
                                     <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-file" style="position: absolute; left: 0; top: 0.25rem; color: #74d3e3; font-size: 0.9rem;"></i>
-                                        ● Latest medical certificate
+                                        Latest medical certificate
                                     </li>
                                     <li style="margin-bottom: 0; padding-left: 1.5rem; position: relative;">
                                         <i class="fas fa-file" style="position: absolute; left: 0; top: 0.25rem; color: #74d3e3; font-size: 0.9rem;"></i>
-                                        ● 2" x 2" picture on white background, taken within the last six months from date of application
+                                        2" x 2" picture on white background, taken within the last six months from date of application
                                     </li>
                                 </ul>
                             </div>

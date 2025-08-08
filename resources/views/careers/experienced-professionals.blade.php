@@ -83,118 +83,84 @@
                     <div style="width: 60px; height: 4px; background: #326D78; margin: 0 auto; border-radius: 2px;"></div>
                 </div>
 
-                <!-- Feature Cards -->
-                <div class="row gy-4">
+                <!-- Feature Cards - Modern Design -->
+                <div class="row gy-5">
                     <!-- Professionalism Card -->
                     <div class="col-12" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card border-0 shadow-lg feature-card h-100" style="border-radius: 16px; overflow: hidden;">
-                            <div class="row g-0 align-items-stretch">
+                        <div class="modern-feature-card" style="background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 1px solid #f0f0f0; overflow: hidden; position: relative;">
 
-                                <!-- Icon Section -->
-                                <div class="col-md-3 col-12">
-                                    <div class="d-flex align-items-center justify-content-center h-100" style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); min-height: 200px;">
-                                        <i class="fas fa-handshake" style="font-size: 4rem; color: white;"></i>
+                            <!-- Background Pattern -->
+                            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: linear-gradient(135deg, #326D78, #4a9aba); border-radius: 50%; opacity: 0.05; z-index: 1;"></div>
+                            <div style="position: absolute; bottom: -30px; left: -30px; width: 120px; height: 120px; background: #326D78; border-radius: 50%; opacity: 0.03; z-index: 1;"></div>
+
+                            <div class="row align-items-center" style="position: relative; z-index: 2;">
+                                <!-- Image Section -->
+                                <div class="col-md-5 col-12 mb-4 mb-md-0">
+                                    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(50, 109, 120, 0.15);">
+                                        <img src="{{ asset('assets/img/prof.jpg') }}" alt="Professional Excellence"
+                                             style="width: 100%; height: 280px; object-fit: cover; display: block;">
                                     </div>
                                 </div>
 
                                 <!-- Content Section -->
-                                <div class="col-md-6 col-12 p-4">
-                                    <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
-                                        {{ getContent('professionalism_title', 'Professionalism') }}
-                                    </h4>
-                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;">
-                                        Core Values
-                                    </span>
+                                <div class="col-md-7 col-12">
+                                    <div class="feature-content" style="padding-left: 2rem;">
+                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                            <div style="background: linear-gradient(135deg, #326D78, #4a9aba); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                                <i class="fas fa-handshake" style="color: white; font-size: 1.5rem;"></i>
+                                            </div>
+                                            <div>
+                                                <h3 style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin: 0;">
+                                                    {{ getContent('professionalism_title', 'Professionalism') }}
+                                                </h3>
+                                            </div>
+                                        </div>
 
-                                    <!-- Description -->
-                                    <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
-                                        {{ getContent('professionalism_description', 'We uphold the highest standards of conduct in every engagement. At MTC, you\'ll work with a team that values ethics, client trust, and professional excellence.') }}
-                                    </p>
-
-                                    <div class="row g-2">
-                                        <div class="col-6">
-                                            <small style="color: #6c757d;">
-                                                <i class="fas fa-check-circle me-1"></i>Ethical Standards
-                                            </small>
-                                        </div>
-                                        <div class="col-6">
-                                            <small style="color: #6c757d;">
-                                                <i class="fas fa-shield-alt me-1"></i>Client Trust
-                                            </small>
-                                        </div>
-                                        <div class="col-6">
-                                            <small style="color: #6c757d;">
-                                                <i class="fas fa-award me-1"></i>Excellence
-                                            </small>
-                                        </div>
+                                        <p style="color: #5a6c7d; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                                            {{ getContent('professionalism_description', 'We uphold the highest standards of conduct in every engagement. At MTC, you\'ll work with a team that values ethics, client trust, and professional excellence.') }}
+                                        </p>
                                     </div>
                                 </div>
-
-                                <!-- Action Section -->
-                                <div class="col-md-3 col-12 p-4 d-flex flex-column justify-content-center feature-actions" style="background: #f8f9fa;">
-                                    <div class="text-center">
-                                        <i class="fas fa-star" style="font-size: 2rem; color: #326D78; margin-bottom: 1rem;"></i>
-                                        <p style="font-size: 0.9rem; color: #6c757d; margin: 0;">Professional Standards</p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
 
                     <!-- Career Growth Card -->
                     <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card border-0 shadow-lg feature-card h-100" style="border-radius: 16px; overflow: hidden;">
-                            <div class="row g-0 align-items-stretch">
+                        <div class="modern-feature-card" style="background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 1px solid #f0f0f0; overflow: hidden; position: relative;">
 
-                                <!-- Icon Section -->
-                                <div class="col-md-3 col-12">
-                                    <div class="d-flex align-items-center justify-content-center h-100" style="background: linear-gradient(135deg, #326D78 0%, #4a9aba 100%); min-height: 200px;">
-                                        <i class="fas fa-chart-line" style="font-size: 4rem; color: white;"></i>
+                            <!-- Background Pattern -->
+                            <div style="position: absolute; top: -30px; left: -30px; width: 180px; height: 180px; background: linear-gradient(135deg, #4a9aba, #326D78); border-radius: 50%; opacity: 0.05; z-index: 1;"></div>
+                            <div style="position: absolute; bottom: -50px; right: -50px; width: 140px; height: 140px; background: #326D78; border-radius: 50%; opacity: 0.03; z-index: 1;"></div>
+
+                            <div class="row align-items-center" style="position: relative; z-index: 2;">
+                                <!-- Content Section (on left for variety) -->
+                                <div class="col-md-7 col-12 mb-4 mb-md-0">
+                                    <div class="feature-content" style="padding-right: 2rem;">
+                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                            <div style="background: linear-gradient(135deg, #4a9aba, #326D78); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                                <i class="fas fa-chart-line" style="color: white; font-size: 1.5rem;"></i>
+                                            </div>
+                                            <div>
+                                                <h3 style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin: 0;">
+                                                    {{ getContent('career_growth_title', 'Career Growth') }}
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        <p style="color: #5a6c7d; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                                            {{ getContent('career_growth_description', 'We invest in your success. From technical training and mentoring to leadership development and exposure to complex client engagements, MTC offers a platform where you can thrive and advance.') }}
+                                        </p>
                                     </div>
                                 </div>
 
-                                <!-- Content Section -->
-                                <div class="col-md-6 col-12 p-4">
-                                    <h4 style="font-weight: 700; color: #326D78; margin-bottom: 0.5rem;">
-                                        {{ getContent('career_growth_title', 'Career Growth') }}
-                                    </h4>
-                                    <span class="badge" style="background: #326D78; color: white; font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;">
-                                        Professional Development
-                                    </span>
-
-                                    <!-- Description -->
-                                    <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
-                                        {{ getContent('career_growth_description', 'We invest in your success. From technical training and mentoring to leadership development and exposure to complex client engagements, MTC offers a platform where you can thrive and advance.') }}
-                                    </p>
-
-                                    <div class="row g-2">
-                                        <div class="col-6">
-                                            <small style="color: #6c757d;">
-                                                <i class="fas fa-graduation-cap me-1"></i>Training
-                                            </small>
-                                        </div>
-                                        <div class="col-6">
-                                            <small style="color: #6c757d;">
-                                                <i class="fas fa-users me-1"></i>Mentoring
-                                            </small>
-                                        </div>
-                                        <div class="col-6">
-                                            <small style="color: #6c757d;">
-                                                <i class="fas fa-rocket me-1"></i>Leadership
-                                            </small>
-                                        </div>
+                                <!-- Image Section (on right) -->
+                                <div class="col-md-5 col-12">
+                                    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(50, 109, 120, 0.15);">
+                                        <img src="{{ asset('assets/img/growth.jpg') }}" alt="Career Growth Opportunities"
+                                             style="width: 100%; height: 280px; object-fit: cover; display: block;">
                                     </div>
                                 </div>
-
-                                <!-- Action Section -->
-                                <div class="col-md-3 col-12 p-4 d-flex flex-column justify-content-center feature-actions" style="background: #f8f9fa;">
-                                    <div class="text-center">
-                                        <i class="fas fa-trophy" style="font-size: 2rem; color: #326D78; margin-bottom: 1rem;"></i>
-                                        <p style="font-size: 0.9rem; color: #6c757d; margin: 0;">Growth Opportunities</p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -211,14 +177,32 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
     }
-    .feature-card {
-        transition: all 0.3s ease;
-        border-radius: 16px;
+
+    .modern-feature-card {
+        transition: all 0.4s ease;
+        border-radius: 24px;
     }
 
-    .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    .modern-feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .modern-feature-card img {
+        transition: transform 0.4s ease;
+    }
+
+    .modern-feature-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .feature-content .col-6 > div {
+        transition: all 0.3s ease;
+    }
+
+    .feature-content .col-6 > div:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
     .btn-outline-success:hover {
@@ -283,19 +267,18 @@
         }
 
         /* Feature cards mobile layout */
-        .feature-card .row.g-0 {
-            flex-direction: column;
+        .modern-feature-card .row {
+            flex-direction: column !important;
         }
 
-        .feature-card .col-md-3:first-child > div {
-            height: 150px !important;
-            min-height: 150px !important;
+        .modern-feature-card .feature-content {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            margin-top: 1.5rem;
         }
 
-        .feature-actions {
-            background: white !important;
-            border-top: 1px solid #e9ecef;
-            padding: 1.5rem !important;
+        .modern-feature-card img {
+            height: 220px !important;
         }
 
         /* CTA section mobile */
@@ -358,6 +341,7 @@
             font-size: 0.9rem !important;
         }
     }
+
     /* Tablet to Desktop adjustments */
     @media (min-width: 800px) and (max-width: 1300px) {
         .breadcrumb-container {
@@ -387,35 +371,12 @@
         }
     }
 
-    /* Tablet adjustments */
-    @media (min-width: 768px) and (max-width: 991px) {
-        .header-icon-section {
-            padding: 1rem !important;
-        }
-
-        .header-icon-section div[style*="width: 120px"] {
-            width: 80px !important;
-            height: 80px !important;
-        }
-
-        .header-icon-section i {
-            font-size: 2rem !important;
-        }
-
-        .header-icon-section h3 {
-            font-size: 1.2rem !important;
-        }
-
-        .header-icon-section p {
-            font-size: 0.9rem !important;
-        }
-    }
     @media (min-width: 1301px) {
-    .breadcrumb-container {
-        top: 22px !important;
-        left: 30px !important;
+        .breadcrumb-container {
+            top: 22px !important;
+            left: 30px !important;
+        }
     }
-}
 </style>
 
 @endsection

@@ -1,5 +1,5 @@
-<!-- Hero Section -->
-<section id="hero" class="hero section light-background">
+<!-- Hero Section - FIXED: Added scroll-margin-top to prevent shaking -->
+<section id="hero" class="hero section light-background" style="scroll-margin-top: 0;">
   <div class="container">
     <div class="row gy-4">
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">

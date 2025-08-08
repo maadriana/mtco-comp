@@ -157,9 +157,9 @@
 
             </div>
 
-            <!-- Sidebar -->
+            <!-- Sidebar - FIXED: Removed sticky positioning -->
             <div class="col-lg-4">
-                <div style="position: sticky; top: 2rem;">
+                <div style="margin-top: 0;">
 
                     <!-- Contact Card -->
                     <div style="background: #326D78; color: white; padding: 2rem; border-radius: 10px;" data-aos="fade-up" data-aos-delay="100">
@@ -202,10 +202,6 @@
 
         .col-lg-4 {
             margin-top: 3rem;
-        }
-
-        div[style*="position: sticky"] {
-            position: static !important;
         }
 
         /* Mobile breadcrumb fix */

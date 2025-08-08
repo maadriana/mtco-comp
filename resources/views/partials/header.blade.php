@@ -1,5 +1,4 @@
 <style>
-  /* Fix horizontal scroll issue - NO scrollbars on navbar */
   body {
     overflow-x: hidden;
   }
@@ -28,7 +27,40 @@
       font-size: 12px !important;
     }
   }
+
+  /* CRITICAL FIX: Prevent shaking when clicking Home */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* Account for sticky header height */
+  }
+
+  /* Ensure hero section doesn't conflict with smooth scroll */
+  #hero {
+    scroll-margin-top: 0;
+  }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // CRITICAL FIX: Handle Home navigation clicks to prevent shaking
+    const homeLinks = document.querySelectorAll('a[href*="#hero"], a[href="/"]');
+
+    homeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // If it's a Home link that goes to #hero, prevent default and scroll to top
+            if (href.includes('#hero')) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+</script>
 
 <header id="header" class="header sticky-top">
   <!-- Top Bar -->
@@ -78,9 +110,9 @@
       <!-- Navigation -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <!-- 1. Home -->
+          <!-- 1. Home - FIXED: Change href to prevent shaking -->
           <li>
-            <a href="{{ url('/#hero') }}" class="{{ request()->is('/') ? 'active' : '' }}">{{ getContent('nav_home_text', 'Home') }}</a>
+            <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">{{ getContent('nav_home_text', 'Home') }}</a>
           </li>
 
           <!-- 2. About -->
